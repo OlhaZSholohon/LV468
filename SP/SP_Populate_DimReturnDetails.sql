@@ -17,9 +17,6 @@ DECLARE @Loop INT,
 
 SET @Loop = 1;
 SET @RandValue = round( rand()*123,0)
- 
- --select round(rand()*1,0)
-
 
 ;WITH CTE_TempDictionary as (
 SELECT 'Expenditures Expenditures Expenditures' [ReturnDescription], 'Repair' AS [ReturnKind]
@@ -39,7 +36,7 @@ SELECT 'Revenue Expenditures Expenditures Revenue Revenue' [ReturnDescription], 
 INSERT INTO [DimReturnDetails] ([ReturnKind], [ReturnDescription])
 SELECT   
         c1.[ReturnKind],
-	      c2.[ReturnDescription]
+	   c2.[ReturnDescription]
 FROM CTE_TempDictionary c1
 CROSS JOIN
 CTE_TempDictionary c2
@@ -51,10 +48,9 @@ SET @RowsForWhile = @NumberOfRows - @InsertedRows
 WHILE @Loop <= @RowsForWhile
 BEGIN 
 INSERT INTO [DimReturnDetails] ([ReturnKind], [ReturnDescription])
-  VALUES ( 
+VALUES ( 
           'Repair',
           'Revenue Expenditures Expenditures Revenue Revenue' 
-         )
-  SET @Loop = @Loop + 1 
-
- END
+       )
+SET @Loop = @Loop + 1 
+END
