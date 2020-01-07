@@ -1,16 +1,18 @@
 --CREATE TABLE DimClients(
- --ClientID INT NOT NULL PRIMARY KEY IDENTITY(1,1)
- --, FirstName VARCHAR(50)
- --, LastName VARCHAR(50)
- --, Gender VARCHAR(50)
- --, Birthday DATE
- --, Email NVARCHAR(100)
- --, Phone NVARCHAR(50)
- --, UserLogin NVARCHAR(100)
- --, LoginPassword VARCHAR(50)
- --- захешувати пароль
- --, RegistrationDate DATE
+-- ClientID INT NOT NULL PRIMARY KEY IDENTITY(1,1)
+-- , FirstName VARCHAR(50)
+-- , LastName VARCHAR(50)
+-- , Gender VARCHAR(50)
+-- , Birthday DATE
+-- , Email NVARCHAR(100)
+-- , Phone NVARCHAR(50)
+-- , UserLogin NVARCHAR(100)
+-- , LoginPassword VARCHAR(50)
+-- захешувати пароль
+-- , RegistrationDate DATE
 --)
+
+--Exec SP_Clients 20000
 
 CREATE  PROCEDURE SP_Clients 
   @NumberOfRows INT
@@ -18,8 +20,9 @@ CREATE  PROCEDURE SP_Clients
   AS
 
   DECLARE @Loop INT, 
-  			@RandValue INT;
-  			@InsertedRows INT;
+  			@RandValue INT,
+  			@InsertedRows INT,
+			@RowsForWhile INT,
   			@GenderRandom INT;
 
   SET @loop = 1;
@@ -49,11 +52,11 @@ CREATE  PROCEDURE SP_Clients
   				c3.Gender ,
   					c4.Birthday,
   						c5.Email + CAST(@RandValue as NVARCHAR(20)),
-  							c6.Phone + CAST(@RandValue as NVARCHAR(20)),
-  								c7.UserLogin + CAST(@RandValue as NVARCHAR(20)),
-  									c8.LoginPassword + CAST(@RandValue as NVARCHAR(20)),
-  										c9.RegistrationDate
-  )
+  							c5.Phone + CAST(@RandValue as NVARCHAR(20)),
+  								c5.UserLogin + CAST(@RandValue as NVARCHAR(20)),
+  									c5.LoginPassword + CAST(@RandValue as NVARCHAR(20)),
+  										c5.RegistrationDate
+  
   FROM CTE_TempDictionary c1
   		CROSS JOIN
   	   CTE_TempDictionary c2
@@ -63,14 +66,14 @@ CREATE  PROCEDURE SP_Clients
        CTE_TempDictionary c4
         CROSS JOIN
        CTE_TempDictionary c5
-        CROSS JOIN
-       CTE_TempDictionary c6
-        CROSS JOIN
-       CTE_TempDictionary c7
-        CROSS JOIN
-       CTE_TempDictionary c8
-        CROSS JOIN
-       CTE_TempDictionary c9
+        --CROSS JOIN
+       --CTE_TempDictionary c6
+        --CROSS JOIN
+       --CTE_TempDictionary c7
+        --CROSS JOIN
+       --CTE_TempDictionary c8
+        --CROSS JOIN
+       --CTE_TempDictionary c9
 
              
   SELECT @InsertedRows = @@ROWCOUNT
@@ -81,7 +84,7 @@ CREATE  PROCEDURE SP_Clients
 
   BEGIN 
 
-  SET @GenderRandom = round (rand()*(1-0)+1,0)
+  SET @GenderRandom = round (rand()+1,0)
 
   INSERT INTO DimClients (FirstName,LastName,Gender,Birthday,Email,Phone,UserLogin,LoginPassword,RegistrationDate)
   Values ('Max' + CAST(@Loop AS NVARCHAR(10)),
