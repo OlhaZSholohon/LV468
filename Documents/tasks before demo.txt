@@ -1,0 +1,37 @@
+Create staging database 
+Create staging schema for tables
+Create tables according to db design but with nvarchar(255) columns
+Create .bat file which will execute create tables script from folder
+Create ssis package CreateStagingTables which will call .bat file 
+Create files for dim tables (DimSuppliers,DimProducts,DimLocations,DimGaranties, DimClients)
+https://www.generatedata.com/
+https://www.convertcsv.com/generate-test-data.htm
+https://sourceforge.net/projects/benerator/files/
+https://www.red-gate.com/products/sql-development/sql-data-generator/index
+
+
+create packages (use containers) for loading data from files into staging tables. These packages also should call stored procedures which populates tables with dummy data
+LoadDimSuppliers
+LoadDimProducts
+LoadDimLocations
+LoadDimGaranties
+LoadDimClients
+
+Create procedure for populating  staging tables 
+DimDate
+DimReturnDetails
+DimPayments
+DimFeedbackDetails
+DimDiscounts
+DimDeliveryDetails
+
+create packages which call these procedures
+LoadDimDate
+LoadDimReturnDetails
+LoadDimPayments
+LoadDimFeedbackDetails
+LoadDimDiscounts
+LoadDimDeliveryDetails
+
+
+Create master ssis package which will call all other packages
