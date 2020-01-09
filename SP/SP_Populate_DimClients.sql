@@ -14,7 +14,7 @@
 --Truncate table DimClients
 --Select count (*)
 --from DimClients
---Exec SP_clients 3000
+--Exec SP_clients 10000
 
 CREATE OR Alter PROCEDURE SP_Clients 
   @NumberOfRows INT
@@ -51,14 +51,14 @@ CREATE OR Alter PROCEDURE SP_Clients
 
   INSERT INTO DimClients (FirstName,LastName,Gender,Birthday,Email,Phone,UserLogin,LoginPassword,RegistrationDate)
   SELECT c1.FirstName + CAST(@RandValue as NVARCHAR(10)),
-  			c2.LastName + CAST(@RandValue as NVARCHAR(10)),
-  				c3.Gender ,
-  					c4.Birthday,
-  						c5.Email + CAST(@RandValue as NVARCHAR(20)),
-  							c5.Phone + CAST(@RandValue as NVARCHAR(20)),
-  								c5.UserLogin + CAST(@RandValue as NVARCHAR(20)),
-  									c5.LoginPassword + CAST(@RandValue as NVARCHAR(20)),
-  										c5.RegistrationDate
+  		 c2.LastName + CAST(@RandValue as NVARCHAR(10)),
+  		 c3.Gender ,
+  		 c4.Birthday,
+  		 c5.Email + CAST(@RandValue as NVARCHAR(20)),
+  		 c5.Phone + CAST(@RandValue as NVARCHAR(20)),
+  		 c5.UserLogin + CAST(@RandValue as NVARCHAR(20)),
+  		 c5.LoginPassword + CAST(@RandValue as NVARCHAR(20)),
+  		 c5.RegistrationDate
   
   FROM CTE_TempDictionary c1
   		CROSS JOIN
@@ -87,7 +87,7 @@ CREATE OR Alter PROCEDURE SP_Clients
 
   BEGIN 
 
-  SET @GenderRandom = round (rand()*(1-0)+1,0)
+  SET @GenderRandom = round (rand()+1,0)
 
   INSERT INTO DimClients (FirstName,LastName,Gender,Birthday,Email,Phone,UserLogin,LoginPassword,RegistrationDate)
   Values ('Max' + CAST(@Loop AS NVARCHAR(10)),
