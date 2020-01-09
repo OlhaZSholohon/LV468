@@ -14,7 +14,7 @@
 --Truncate table DimClients
 --Select count (*)
 --from DimClients
---Exec SP_clients 25000
+--Exec SP_clients 3000
 
 CREATE OR Alter PROCEDURE SP_Clients 
   @NumberOfRows INT
