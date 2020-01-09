@@ -38,3 +38,24 @@ LoadDimDiscounts
 LoadDimDeliveryDetails
 
 Create master ssis package which will call all other packages - Andiy
+
+
+
+declare @StartDate date= '2019-01-09';
+declare @EndDate date= '2020-01-09'
+
+;WITH CTE_DateSequence
+  AS
+  (
+	  SELECT @StartDate AS DateValue
+	
+	UNION ALL
+
+	  SELECT DATEADD(DAY, 1, DateValue)
+	  FROM CTE_DateSequence
+	  WHERE DateValue < @EndDate
+  )
+ 
+
+select * from CTE_DateSequence
+OPTION (MAXRECURSION 1000)
