@@ -1,4 +1,6 @@
-
+IF OBJECT_ID('stage.DimClients') IS NOT NULL
+DROP TABLE stage.DimClients
+GO
 CREATE TABLE [stage].[DimClients](
 	[ClientID] [int] IDENTITY(1,1) NOT NULL,
 	[FirstName] [nvarchar](255) NULL,
