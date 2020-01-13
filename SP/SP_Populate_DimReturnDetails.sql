@@ -22,9 +22,15 @@ SET @RandValue = round( rand()*123,0)
 
 ;WITH CTE_TempDictionary as (
 SELECT 'Repair' [ReturnKind], 'Item arrives damaged, does not match the listing description, or is the wrong item - 1' AS [ReturnDescription]
+<<<<<<< HEAD
 union all 
 SELECT 'Change product' [ReturnKind], 'Item arrives damaged, does not match the listing description, or is the wrong item - 2' AS [ReturnDescription]
 union all 
+=======
+union all 
+SELECT 'Change product' [ReturnKind], 'Item arrives damaged, does not match the listing description, or is the wrong item - 2' AS [ReturnDescription]
+union all 
+>>>>>>> e53fc5502a5d811ba858089cc3d814a662c4af47
 SELECT 'Return money' [ReturnKind], 'Item arrives damaged, does not match the listing description, or is the wrong item - 3' AS [ReturnDescription]
 )
 
@@ -32,12 +38,17 @@ SELECT 'Return money' [ReturnKind], 'Item arrives damaged, does not match the li
 INSERT INTO [DimReturnDetails] ([ReturnKind], [ReturnDescription])
 SELECT   
 <<<<<<< HEAD
+<<<<<<< HEAD
        c1.[ReturnKind],
 	   c2.[ReturnDescription]+CAST(@RandValue as nvarchar(10))
 =======
         c1.[ReturnKind],
 	   c2.[ReturnDescription]
 >>>>>>> 5dfcde05b2bd6666602f6fafae08bcd363bc5add
+=======
+       c1.[ReturnKind],
+       c2.[ReturnDescription]+CAST(@RandValue as nvarchar(10))
+>>>>>>> e53fc5502a5d811ba858089cc3d814a662c4af47
 FROM CTE_TempDictionary c1
 CROSS JOIN
 CTE_TempDictionary c2
@@ -56,6 +67,7 @@ SET @RandReturnKind = (SELECT TOP 1 ReturnKind FROM #TDimReturnDetails ORDER BY 
 INSERT INTO [DimReturnDetails] ([ReturnKind], [ReturnDescription])
 VALUES ( 
 <<<<<<< HEAD
+<<<<<<< HEAD
           @RandReturnKind,
           'Item arrives damaged, does not match the listing description, or is the wrong item - ' + CAST(round(rand()*300, 0) as nvarchar(10))
        )
@@ -64,7 +76,11 @@ END
 =======
           'Repair',
           'Revenue Expenditures Expenditures Revenue Revenue' 
+=======
+          @RandReturnKind,
+          'Item arrives damaged, does not match the listing description, or is the wrong item - ' + CAST(round(rand()*300, 0) as nvarchar(10))
+>>>>>>> e53fc5502a5d811ba858089cc3d814a662c4af47
        )
-SET @Loop = @Loop + 1 
+SET @Loop = @Loop + 1  
 END
 >>>>>>> 5dfcde05b2bd6666602f6fafae08bcd363bc5add
