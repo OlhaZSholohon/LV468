@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Creating_Tables_in_TestDBStage"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{17D0997E-11CC-41E6-8B72-CE9704CA2301}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{07395E38-51A7-4EDC-9C23-47A26310F01E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -29,7 +29,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
-          Executable="\\fstrain\Homes\Lv-468.DB\atybintc\Documents\LV468\StagingTables\BatchFile.bat" />
+          Executable="\\fstrain\Exchange\Lv-468.DB\BatchFile.bat" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
