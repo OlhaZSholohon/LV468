@@ -53,5 +53,5 @@ VALUES (
           @RandReturnKind,
           'Item arrives damaged, does not match the listing description, or is the wrong item - ' + CAST(round(rand()*300, 0) as nvarchar(10))
        )
-SET @Loop = @Loop + 1 
+SET @Loop = @Loop + 1  
 END
