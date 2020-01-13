@@ -1,13 +1,20 @@
-IF OBJECT_ID('dbo.DimDeliveryDetails', 'U') IS NOT NULL 
-DROP TABLE dbo.DimDeliveryDetails;
-CREATE TABLE DimDeliveryDetails(
-DeliveryDetailID INT NOT NULL PRIMARY KEY IDENTITY(1,1),  StatusDelivery BIT
+USE [TestDBStage]
+IF OBJECT_ID('[Staging].DimDeliveryDetails', 'U') IS NOT NULL 
+DROP TABLE Staging.DimDeliveryDetails;
+CREATE TABLE [Staging].DimDeliveryDetails(
+DeliveryDetailID INT NOT NULL IDENTITY(1,1),  
+StatusDelivery BIT
  )
---exec SP_Populate_DimDeliveryDetails 100
-CREATE OR ALTER PROCEDURE SP_Populate_DimDeliveryDetails
+--exec Staging.SP_Populate_DimDeliveryDetails 100
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [Staging].[SP_Populate_DimDeliveryDetails]
   @NumberOfRows INT
 AS
-DECLARE @Loop INT; -- ітератор   
+DECLARE @Loop INT;   
 SET @Loop = 1;
 WHILE @Loop <= @NumberOfRows
 BEGIN 
@@ -17,4 +24,4 @@ VALUES (
         )
 SET @Loop = @Loop + 1 
 END
-select * from DimDeliveryDetails
+  
