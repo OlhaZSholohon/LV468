@@ -24,7 +24,7 @@ union all
 SELECT 'foxtrot' SupplierName, 'foxtrot@gmail.com' SupplierEmail, '09666666' SupplierPhone, 'My name is foxtrot. I want to be your supplier!' AS SupplierDescription
 )
 
-INSERT INTO DimSuppliers (SupplierName, SupplierEmail, SupplierPhone, SupplierDescription)
+INSERT INTO staging.DimSuppliers (SupplierName, SupplierEmail, SupplierPhone, SupplierDescription)
 SELECT c1.SupplierName + CAST(@RandValue1 as nvarchar(10)),
 			c2.SupplierEmail + CAST(@RandValue1 as nvarchar(10)),
 				c3.SupplierPhone + CAST(@RandValue1 as nvarchar(10)) + CAST(@RandValue2 as nvarchar(10)),
@@ -43,7 +43,7 @@ SET @RowsForWhile = @NumberOfRows - @InsertedRows
 
 WHILE @Loop <= @RowsForWhile
 Begin
-	INSERT INTO DimSuppliers (SupplierName, SupplierEmail, SupplierPhone, SupplierDescription)
+	INSERT INTO staging.DimSuppliers (SupplierName, SupplierEmail, SupplierPhone, SupplierDescription)
 	VALUES ('SupplierName - ' + CAST(@Loop as nvarchar(10)),
 			'SupplierEmail_' + CAST(@Loop as nvarchar(10)) + '@gmail.com',
 			CAST(@Loop as nvarchar(10)) + CAST(@Loop+1 as nvarchar(10)) + CAST(@Loop+2 as nvarchar(10)) + CAST(@Loop+3 as nvarchar(10)),
