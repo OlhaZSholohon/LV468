@@ -1,10 +1,5 @@
 USE [TestDBStage]
-GO
-/****** Object:  Table [staging].[DimLocations]    Script Date: 09-Jan-20 13:30:10 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
+DROP TABLE IF EXISTS [staging].[DimLocations];
 CREATE TABLE [staging].[DimLocations](
 	[LocationID] [int] IDENTITY(1,1) NOT NULL,
 	[Country] [nvarchar](255) NULL,
@@ -13,5 +8,4 @@ CREATE TABLE [staging].[DimLocations](
 	[Adress] [nvarchar](255) NULL,
 	[PostNumber] [nvarchar](255) NULL,
 	[DeliveryService] [nvarchar](255) NULL
-) ON [PRIMARY]
-GO
+) 
