@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Creating_Tables_in_TestDBStage"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{78D531D6-B83D-460A-B48E-787FFDEC08FD}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{ED08F96D-03B5-4C8A-8BFB-94A6D937123F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -29,7 +29,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
-          Executable="\\fstrain\Exchange\Lv-468.DB\BatchFile.bat" />
+          Executable="H:\LV468\BatchFile\BatchFile.bat" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
