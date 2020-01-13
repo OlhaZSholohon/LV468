@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Loading_Data_into_StageDBTest", "Loading_Data_into_StageDBTest\Loading_Data_into_StageDBTest.dtproj", "{33FEDF8C-64AD-49D7-AD6B-4088C3A6D5B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33FEDF8C-64AD-49D7-AD6B-4088C3A6D5B8}.Development|Default.ActiveCfg = Development
+		{33FEDF8C-64AD-49D7-AD6B-4088C3A6D5B8}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7AA8D883-AB76-4BC8-BEEF-816AA6802C94}
+	EndGlobalSection
+EndGlobal
