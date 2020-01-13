@@ -1,22 +1,12 @@
---USE TestDBStage;
-
-/*IF OBJECT_ID('staging.DimGaranties') IS NOT NULL
-	DROP TABLE staging.DimGaranties
-CREATE TABLE staging.DimGaranties(
-   GarantyID INT NOT NULL IDENTITY(1,1)
- , NameGaranty NVARCHAR(255)
- , Duration NVARCHAR(255)
- , PriceGaranty NVARCHAR(255)
- , DescriptionGaranty NVARCHAR(MAX)
-)
-*/
 
 USE TestDBStage;
-GO
---exec SP_PopulateDimGaranties 100;
 
+--exec staging.SP_PopulateDimGaranties 100;
+
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'staging.SP_PopulateDimGaranties') AND type in (N'P', N'PC'))
+  DROP PROCEDURE [staging].[SP_PopulateDimGaranties]
 GO
-CREATE OR ALTER PROCEDURE SP_PopulateDimGaranties 
+CREATE PROCEDURE staging.SP_PopulateDimGaranties 
   @NumberOfRows INT
 AS
 

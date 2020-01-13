@@ -1,19 +1,10 @@
-create database example
-use example
+USE TestDBStage;
 
-drop procedure SP_PopulateFactLocation
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'staging.SP_PopulateDimLocation') AND type in (N'P', N'PC'))
+  DROP PROCEDURE [staging].[SP_PopulateDimLocation]
 
-/*CREATE TABLE DimLocations(
- LocationID INT NOT NULL PRIMARY KEY IDENTITY(1,1)
- , Country VARCHAR(50)
- , Region VARCHAR(50)
- , City VARCHAR(50)
- , Adress VARCHAR(100)
- , PostNumber INT
- , DeliveryService VARCHAR(50)
-)*/
-
-CREATE PROCEDURE SP_PopulateFactLocation
+GO
+CREATE PROCEDURE staging.SP_PopulateDimLocation
 	@NumberOfRows INT
 AS
 DECLARE @Loop  INT,
@@ -34,7 +25,7 @@ UNION ALL
 SELECT 'UkraineFour' Country, 'LvivshchynaFour' Region, 'LvivFour' City, 'GorodotskaFour' Adress, 4 PostNumber, 'UkrPoshtaFour' AS DeliveryService
 )
 
-INSERT INTO DimLocations (Country, Region, City, Adress, PostNumber, DeliveryService)
+INSERT INTO staging.DimLocations (Country, Region, City, Adress, PostNumber, DeliveryService)
 SELECT c1.Country ,
 			c2.Region,
 				c3.City,
@@ -58,7 +49,7 @@ SET @RowsForWhile = @NumberOfRows - @InsertedRows
 
 WHILE @Loop <= @RowsForWhile
 BEGIN
-INSERT INTO DimLocations (Country, Region, City, Adress, PostNumber, DeliveryService)
+INSERT INTO staging.DimLocations (Country, Region, City, Adress, PostNumber, DeliveryService)
 VALUES( 
 		'NewCountry' + CAST(@Loop as nvarchar(10)),
 		'NewRegin' + CAST(@Loop as nvarchar(10)),
@@ -71,4 +62,4 @@ SET @Loop = @Loop + 1;
 END
 
 --exec SP_PopulateFactLocation 10000
- select * from DimLocations 
+--select * from DimLocations 

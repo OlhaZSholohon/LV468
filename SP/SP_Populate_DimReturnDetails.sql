@@ -1,19 +1,15 @@
 USE [TestDBStage]
 
-IF OBJECT_ID('Staging.DimReturnDetails', 'U') IS NOT NULL 
-DROP TABLE [Staging].DimReturnDetails;
-CREATE TABLE [Staging].DimReturnDetails(
- ReturnDetailID INT NOT NULL  IDENTITY(1,1)
- , ReturnKind NVARCHAR(255)
- , ReturnDescription NVARCHAR(255)
-)
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'staging.SP_Populate_DimReturnDetails') AND type in (N'P', N'PC'))
+  DROP PROCEDURE [staging].[SP_Populate_DimReturnDetails]
+
 --exec SP_Populate_DimReturnDetails 100
 GO
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
- ALTER PROCEDURE [Staging].SP_Populate_DimReturnDetails
+ CREATE PROCEDURE [staging].SP_Populate_DimReturnDetails
  @NumberOfRows INT
 AS
 
@@ -35,7 +31,7 @@ union all
 SELECT 'Return money' [ReturnKind], 'Item arrives damaged, does not match the listing description, or is the wrong item - 3' AS [ReturnDescription]
 )
 
-INSERT INTO [DimReturnDetails] ([ReturnKind], [ReturnDescription])
+INSERT INTO [staging].[DimReturnDetails] ([ReturnKind], [ReturnDescription])
 SELECT   
        c1.[ReturnKind],
 	   c2.[ReturnDescription]+CAST(@RandValue as nvarchar(10))
@@ -60,7 +56,7 @@ FROM( SELECT TOP (1) c1 FROM (VALUES ('Repair'), ('Change product'), ('Return mo
 );
 
  
-INSERT INTO [DimReturnDetails] ([ReturnKind], [ReturnDescription])
+INSERT INTO [staging].[DimReturnDetails] ([ReturnKind], [ReturnDescription])
 VALUES ( 
           @RandReturnKind,
           'Item arrives damaged, does not match the listing description, or is the wrong item - ' + CAST(round(rand()*300, 0) as nvarchar(10))

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Main_package"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{CCEDE0B2-CDC3-4732-86E3-B07350C2CC4D}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{49811D90-85D1-44E3-BC8C-A97E2FFA109C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -102,20 +102,20 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\DimProducts"
+          TopLeft="498.85715135263,220.341179527131" />
+        <NodeLayout
           Size="141.6,41.6"
           Id="Package\For Loop Container\DimGaranties"
-          TopLeft="83.2000042915347,20.4000016773449" />
+          TopLeft="58.2000038657872,17.3411781050343" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="287.2,184.8"
-          Size="287.2,228"
+          PanelSize="287.2,167.2"
+          Size="287.2,210.4"
           Id="Package\For Loop Container"
-          TopLeft="168.571431442183,56.2823537305152" />
-        <NodeLayout
-          Size="137.6,41.6"
-          Id="Package\DimProducts"
-          TopLeft="498.85715135263,203.517649879423" />
+          TopLeft="139.000002367156,37.776471118036" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

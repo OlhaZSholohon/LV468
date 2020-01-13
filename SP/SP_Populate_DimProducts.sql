@@ -1,33 +1,14 @@
-use ITASS;
+use TestDBStage;
+
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'staging.SP_PopulateDimProducts') AND type in (N'P', N'PC'))
+  DROP PROCEDURE [staging].[SP_PopulateDimProducts]
 
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-/*
-CREATE TABLE dbo.DimProducts(
- ProductID INT NOT NULL PRIMARY KEY IDENTITY(1,1)
- , ProductName VARCHAR(100)
- , CategoryName VARCHAR(50)
- , SubcategoryName VARCHAR(50)
- , BrandName VARCHAR(50)
- , Thicknes DECIMAL
- , [Weight] DECIMAL
- , ProductDescription NVARCHAR(MAX)
- , DefaultGaranty INT
- , DefaultGarantyName VARCHAR(50)
- , Price DECIMAL
-)
-*/
-
-
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE PROCEDURE SP_PopulateDimProducts
+CREATE PROCEDURE staging.SP_PopulateDimProducts
 	@NumberOfRows INT
 AS
 
@@ -50,7 +31,7 @@ SELECT 'Apple MacBook Pro' ProductName, 'New' CategoryName, 'Thin' SubcategoryNa
 'Some description about laptop Apple MacBook Pro' ProductDescription, '6' DefaultGaranty, 'Default Garanty Apple' DefaultGarantyName, '35900' AS Price
 )
 
-INSERT INTO DimProducts(ProductName,CategoryName,SubcategoryName,BrandName,Thicknes,[Weight],ProductDescription,DefaultGaranty,DefaultGarantyName,Price)
+INSERT INTO staging.DimProducts(ProductName,CategoryName,SubcategoryName,BrandName,Thicknes,[Weight],ProductDescription,DefaultGaranty,DefaultGarantyName,Price)
 SELECT c1.ProductName + CAST(@RandValue as nvarchar(10)),
 			c2.CategoryName,
 			c3.SubcategoryName,
@@ -87,7 +68,7 @@ SET @RowsForWhile = @NumberOfRows - @InsertedRows
 
 WHILE @Loop <= @RowsForWhile
 BEGIN
-	INSERT INTO DimProducts(ProductName,CategoryName,SubcategoryName,BrandName,Thicknes,[Weight],ProductDescription,DefaultGaranty,DefaultGarantyName,Price)
+	INSERT INTO staging.DimProducts(ProductName,CategoryName,SubcategoryName,BrandName,Thicknes,[Weight],ProductDescription,DefaultGaranty,DefaultGarantyName,Price)
 	VALUES(
 		'ProductName-' + CAST(@Loop as nvarchar(10)),
 		'CategoryName-' +  CAST(@Loop as nvarchar(10)),

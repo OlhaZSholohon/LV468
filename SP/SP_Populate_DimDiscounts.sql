@@ -1,24 +1,12 @@
-IF OBJECT_ID('dbo.DimDiscounts') IS NOT NULL
-	DROP TABLE dbo.DimDiscounts
-CREATE TABLE DimDiscounts(
- DiscountID INT NOT NULL PRIMARY KEY IDENTITY(1,1)
- , StartDiscount DATE
- , EndDiscount DATE
- , PercentDiscount INT
- , DescriptionDiscount VARCHAR(200)
-)
-
---CREATE DATABASE TestNoFK;
---USE TestNoFK;
-
-
+USE TestDBStage;
 ---exec SP_PopulateDimDiscounts 100
 GO
 
-IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'SP_PopulateDimDiscounts') AND type in (N'P', N'PC'))
-  DROP PROCEDURE [dbo].[SP_PopulateDimDiscounts]
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'staging.SP_PopulateDimDiscounts') AND type in (N'P', N'PC'))
+  DROP PROCEDURE [staging].[SP_PopulateDimDiscounts]
   go
-CREATE PROCEDURE SP_PopulateDimDiscounts 
+
+CREATE PROCEDURE staging.SP_PopulateDimDiscounts 
   @NumberOfRows INT
 AS
 
@@ -40,7 +28,7 @@ union all
 SELECT 'DescriptionDiscount-4' AS DescriptionDiscount, round(rand()*20, 0) AS PercentDiscount
 )
 
-INSERT INTO DimDiscounts (StartDiscount, EndDiscount, PercentDiscount, DescriptionDiscount )
+INSERT INTO staging.DimDiscounts (StartDiscount, EndDiscount, PercentDiscount, DescriptionDiscount )
 SELECT  
 
 		GETDATE(),
@@ -59,7 +47,7 @@ SET @RowsForWhile = @NumberOfRows - @InsertedRows
 
 WHILE @Loop <= @RowsForWhile
 BEGIN 
-  INSERT INTO DimDiscounts (StartDiscount, EndDiscount, PercentDiscount, DescriptionDiscount )
+  INSERT INTO staging.DimDiscounts (StartDiscount, EndDiscount, PercentDiscount, DescriptionDiscount )
   VALUES ( CAST (DATEADD (DAY , -round(rand()*100, 0) , GETDATE()) AS DATE),
           CAST (DATEADD (DAY , round(rand()*100, 0) , GETDATE()) AS DATE),
           round(rand()*100, 0),
