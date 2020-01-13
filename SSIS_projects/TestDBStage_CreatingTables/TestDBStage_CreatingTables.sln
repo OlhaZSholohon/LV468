@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "TestDBStage_CreatingTables", "TestDBStage_CreatingTables\TestDBStage_CreatingTables.dtproj", "{C35C4AC3-A93B-4179-82AE-39A75DE9AAEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C35C4AC3-A93B-4179-82AE-39A75DE9AAEA}.Development|Default.ActiveCfg = Development
+		{C35C4AC3-A93B-4179-82AE-39A75DE9AAEA}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F63323A-74A6-45C2-92AC-39C04D42C004}
+	EndGlobalSection
+EndGlobal

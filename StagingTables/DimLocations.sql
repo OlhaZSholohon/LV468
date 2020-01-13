@@ -1,5 +1,9 @@
-USE [TestDBStage]
-DROP TABLE IF EXISTS [staging].[DimLocations];
+USE TestDBStage;
+
+IF OBJECT_ID('staging.DimLocations') IS NOT NULL
+	DROP TABLE staging.DimLocations
+
+
 CREATE TABLE [staging].[DimLocations](
 	[LocationID] [int] IDENTITY(1,1) NOT NULL,
 	[Country] [nvarchar](255) NULL,

@@ -1,8 +1,10 @@
-USE [TestDBStage];
-DROP TABLE IF EXISTS [staging].[DimDates];
+USE TestDBStage;
+
+IF OBJECT_ID('staging.DimDates') IS NOT NULL
+	DROP TABLE staging.DimDates
 
 CREATE TABLE [staging].[DimDates](
-	[DateKey] [int] NOT NULL,
+	[DateKey] [int] IDENTITY NOT NULL,
 	[Date] [nvarchar](255) NULL,
 	[Day] [nvarchar](255) NULL,
 	[Month] [nvarchar](255) NULL,

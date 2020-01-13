@@ -1,6 +1,7 @@
-USE [TestDBStage];
+USE TestDBStage;
 
-DROP TABLE IF EXISTS [staging].[DimDiscounts];
+IF OBJECT_ID('staging.DimDiscounts') IS NOT NULL
+	DROP TABLE staging.DimDiscounts
 
 CREATE TABLE [staging].[DimDiscounts](
 	[DiscountID] [int] IDENTITY(1,1) NOT NULL,
