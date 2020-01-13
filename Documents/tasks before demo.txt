@@ -1,0 +1,61 @@
+Create staging database - Volodymyr
+Create staging schema for tables - Ihor
+Create tables according to db design but with nvarchar(255) columns - all
+Create .bat file which will execute create tables script from folder - Mykahilo
+Create ssis package CreateStagingTables which will call .bat file  - Artur
+Create files for dim tables (DimSuppliers,DimProducts,DimLocations,DimGaranties, DimClients)
+https://www.generatedata.com/
+https://www.convertcsv.com/generate-test-data.htm
+https://sourceforge.net/projects/benerator/files/
+https://www.red-gate.com/products/sql-development/sql-data-generator/index
+https://mockaroo.com/
+
+create packages (use containers) for loading data from files into staging tables. These packages also should call stored procedures which populates tables with dummy data
+LoadDimSuppliers - Ihor
+LoadDimProducts  - Volodymyr
+LoadDimLocations  - Mykhailo
+LoadDimGaranties - Andriy
+LoadDimClients  - Artur
+
+Create procedure for populating  staging tables (for loop )
+DimDate - Nadia
+DimReturnDetails - Markiyan
+DimPayments  - Nadia
+DimFeedbackDetails  - Zahar
+DimDiscounts  - Zahar
+DimDeliveryDetails - Markian
+
+
+
+
+
+create packages which call these procedures
+LoadDimDate  - Nadia
+LoadDimReturnDetails
+LoadDimPayments
+LoadDimFeedbackDetails
+LoadDimDiscounts
+LoadDimDeliveryDetails
+
+Create master ssis package which will call all other packages - Andiy
+
+
+
+declare @StartDate date= '2019-01-09';
+declare @EndDate date= '2020-01-09'
+
+;WITH CTE_DateSequence
+  AS
+  (
+	  SELECT @StartDate AS DateValue
+	
+	UNION ALL
+
+	  SELECT DATEADD(DAY, 1, DateValue)
+	  FROM CTE_DateSequence
+	  WHERE DateValue < @EndDate
+  )
+ 
+
+select * from CTE_DateSequence
+OPTION (MAXRECURSION 1000)

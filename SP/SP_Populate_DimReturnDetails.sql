@@ -8,7 +8,7 @@ CREATE TABLE DimReturnDetails(
 --exec SP_Populate_DimReturnDetails 100
 CREATE OR ALTER PROCEDURE SP_Populate_DimReturnDetails
   @NumberOfRows INT
-AS
+AS 
 
 DECLARE @Loop INT, 
         @InsertedRows INT,
@@ -31,8 +31,13 @@ SELECT 'Return money' [ReturnKind], 'Item arrives damaged, does not match the li
 
 INSERT INTO [DimReturnDetails] ([ReturnKind], [ReturnDescription])
 SELECT   
+<<<<<<< HEAD
        c1.[ReturnKind],
 	   c2.[ReturnDescription]+CAST(@RandValue as nvarchar(10))
+=======
+        c1.[ReturnKind],
+	   c2.[ReturnDescription]
+>>>>>>> 5dfcde05b2bd6666602f6fafae08bcd363bc5add
 FROM CTE_TempDictionary c1
 CROSS JOIN
 CTE_TempDictionary c2
@@ -50,8 +55,16 @@ BEGIN
 SET @RandReturnKind = (SELECT TOP 1 ReturnKind FROM #TDimReturnDetails ORDER BY NEWID())
 INSERT INTO [DimReturnDetails] ([ReturnKind], [ReturnDescription])
 VALUES ( 
+<<<<<<< HEAD
           @RandReturnKind,
           'Item arrives damaged, does not match the listing description, or is the wrong item - ' + CAST(round(rand()*300, 0) as nvarchar(10))
        )
 SET @Loop = @Loop + 1 
 END
+=======
+          'Repair',
+          'Revenue Expenditures Expenditures Revenue Revenue' 
+       )
+SET @Loop = @Loop + 1 
+END
+>>>>>>> 5dfcde05b2bd6666602f6fafae08bcd363bc5add
