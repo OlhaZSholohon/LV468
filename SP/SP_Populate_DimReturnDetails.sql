@@ -1,20 +1,27 @@
-IF OBJECT_ID('dbo.DimReturnDetails', 'U') IS NOT NULL 
-DROP TABLE dbo.DimReturnDetails;
-CREATE TABLE DimReturnDetails(
- ReturnDetailID INT NOT NULL PRIMARY KEY IDENTITY(1,1)
- , ReturnKind VARCHAR(100)
- , ReturnDescription VARCHAR(200)
+USE [TestDBStage]
+
+IF OBJECT_ID('Staging.DimReturnDetails', 'U') IS NOT NULL 
+DROP TABLE [Staging].DimReturnDetails;
+CREATE TABLE [Staging].DimReturnDetails(
+ ReturnDetailID INT NOT NULL  IDENTITY(1,1)
+ , ReturnKind NVARCHAR(255)
+ , ReturnDescription NVARCHAR(255)
 )
 --exec SP_Populate_DimReturnDetails 100
-CREATE OR ALTER PROCEDURE SP_Populate_DimReturnDetails
-  @NumberOfRows INT
-AS 
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ ALTER PROCEDURE [Staging].SP_Populate_DimReturnDetails
+ @NumberOfRows INT
+AS
 
 DECLARE @Loop INT, 
         @InsertedRows INT,
         @RandValue INT,
         @RowsForWhile INT,
-		@RandReturnKind NVARCHAR(30);
+		@RandReturnKind NVARCHAR(50);
 
 
 SET @Loop = 1;
@@ -22,40 +29,20 @@ SET @RandValue = round( rand()*123,0)
 
 ;WITH CTE_TempDictionary as (
 SELECT 'Repair' [ReturnKind], 'Item arrives damaged, does not match the listing description, or is the wrong item - 1' AS [ReturnDescription]
-<<<<<<< HEAD
 union all 
 SELECT 'Change product' [ReturnKind], 'Item arrives damaged, does not match the listing description, or is the wrong item - 2' AS [ReturnDescription]
 union all 
-=======
-union all 
-SELECT 'Change product' [ReturnKind], 'Item arrives damaged, does not match the listing description, or is the wrong item - 2' AS [ReturnDescription]
-union all 
->>>>>>> e53fc5502a5d811ba858089cc3d814a662c4af47
 SELECT 'Return money' [ReturnKind], 'Item arrives damaged, does not match the listing description, or is the wrong item - 3' AS [ReturnDescription]
 )
 
-
 INSERT INTO [DimReturnDetails] ([ReturnKind], [ReturnDescription])
 SELECT   
-<<<<<<< HEAD
-<<<<<<< HEAD
        c1.[ReturnKind],
 	   c2.[ReturnDescription]+CAST(@RandValue as nvarchar(10))
-=======
-        c1.[ReturnKind],
-	   c2.[ReturnDescription]
->>>>>>> 5dfcde05b2bd6666602f6fafae08bcd363bc5add
-=======
-       c1.[ReturnKind],
-       c2.[ReturnDescription]+CAST(@RandValue as nvarchar(10))
->>>>>>> e53fc5502a5d811ba858089cc3d814a662c4af47
 FROM CTE_TempDictionary c1
 CROSS JOIN
 CTE_TempDictionary c2
 
-SELECT * 
-INTO #TDimReturnDetails
-FROM DimReturnDetails
 
 SELECT @InsertedRows = @@ROWCOUNT
 
@@ -63,24 +50,22 @@ SET @RowsForWhile = @NumberOfRows - @InsertedRows
 
 WHILE @Loop <= @RowsForWhile
 BEGIN 
-SET @RandReturnKind = (SELECT TOP 1 ReturnKind FROM #TDimReturnDetails ORDER BY NEWID())
+ 
+SET @RandReturnKind = (
+SELECT c1--AS [text()]
+FROM( SELECT TOP (1) c1 FROM (VALUES ('Repair'), ('Change product'), ('Return money') ) AS S1(c1)
+	ORDER BY ABS(CHECKSUM(NEWID()))
+	) AS S2
+--FOR XML PATH('')
+);
+
+ 
 INSERT INTO [DimReturnDetails] ([ReturnKind], [ReturnDescription])
 VALUES ( 
-<<<<<<< HEAD
-<<<<<<< HEAD
           @RandReturnKind,
           'Item arrives damaged, does not match the listing description, or is the wrong item - ' + CAST(round(rand()*300, 0) as nvarchar(10))
        )
 SET @Loop = @Loop + 1 
 END
-=======
-          'Repair',
-          'Revenue Expenditures Expenditures Revenue Revenue' 
-=======
-          @RandReturnKind,
-          'Item arrives damaged, does not match the listing description, or is the wrong item - ' + CAST(round(rand()*300, 0) as nvarchar(10))
->>>>>>> e53fc5502a5d811ba858089cc3d814a662c4af47
-       )
-SET @Loop = @Loop + 1  
-END
->>>>>>> 5dfcde05b2bd6666602f6fafae08bcd363bc5add
+
+ 
