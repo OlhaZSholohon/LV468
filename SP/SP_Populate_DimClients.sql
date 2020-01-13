@@ -14,9 +14,14 @@
 --Truncate table DimClients
 --Select count (*)
 --from DimClients
---Exec SP_clients 10000
+USE TestDBStage;
+--Exec staging.SP_clients 10000
 
-CREATE OR Alter PROCEDURE SP_Clients 
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'staging.SP_PopulateDimClients') AND type in (N'P', N'PC'))
+  DROP PROCEDURE [staging].[SP_PopulateDimClients]
+GO
+
+CREATE PROCEDURE staging.SP_PopulateDimClients 
   @NumberOfRows INT
 
   AS
@@ -49,7 +54,7 @@ CREATE OR Alter PROCEDURE SP_Clients
   	                                                                                                               
    )
 
-  INSERT INTO DimClients (FirstName,LastName,Gender,Birthday,Email,Phone,UserLogin,LoginPassword,RegistrationDate)
+  INSERT INTO staging.DimClients (FirstName,LastName,Gender,Birthday,Email,Phone,UserLogin,LoginPassword,RegistrationDate)
   SELECT c1.FirstName + CAST(@RandValue as NVARCHAR(10)),
   		 c2.LastName + CAST(@RandValue as NVARCHAR(10)),
   		 c3.Gender ,
@@ -89,7 +94,7 @@ CREATE OR Alter PROCEDURE SP_Clients
 
   SET @GenderRandom = round (rand()+1,0)
 
-  INSERT INTO DimClients (FirstName,LastName,Gender,Birthday,Email,Phone,UserLogin,LoginPassword,RegistrationDate)
+  INSERT INTO staging.DimClients (FirstName,LastName,Gender,Birthday,Email,Phone,UserLogin,LoginPassword,RegistrationDate)
   Values ('Max' + CAST(@Loop AS NVARCHAR(10)),
   			'Sydor'+ CAST(@Loop AS NVARCHAR(10)),
                CASE 
