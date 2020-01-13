@@ -1,10 +1,6 @@
-USE [TestDBStage]
-GO
-/****** Object:  Table [staging].[DimDates]    Script Date: 09-Jan-20 13:30:10 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
+USE [TestDBStage];
+DROP TABLE IF EXISTS [staging].[DimDates];
+
 CREATE TABLE [staging].[DimDates](
 	[DateKey] [int] NOT NULL,
 	[Date] [nvarchar](255) NULL,
@@ -16,5 +12,4 @@ CREATE TABLE [staging].[DimDates](
 	[WeekDay] [nvarchar](255) NULL,
 	[Quarter] [nvarchar](255) NULL,
 	[IsWeekday] [nvarchar](255) NULL
-) ON [PRIMARY]
-GO
+) 
