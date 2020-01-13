@@ -1,17 +1,4 @@
-/*
-IF OBJECT_ID('dbo.DimSuppliers', 'U') IS NOT NULL 
-  DROP TABLE dbo.DimSuppliers; 
-
-CREATE TABLE DimSuppliers(
- SupplierID INT NOT NULL PRIMARY KEY IDENTITY(1,1)
- , SupplierName VARCHAR(100)
- , SupplierEmail VARCHAR(100)
- , SupplierPhone VARCHAR(100)
- , SupplierDescription VARCHAR(100)
-)
-*/
-
-CREATE OR ALTER PROCEDURE SP_PopulateDimSuppliers
+CREATE OR ALTER PROCEDURE staging.SP_PopulateDimSuppliers
 	@NumberOfRows INT
 AS
 
@@ -60,7 +47,7 @@ Begin
 	VALUES ('SupplierName - ' + CAST(@Loop as nvarchar(10)),
 			'SupplierEmail_' + CAST(@Loop as nvarchar(10)) + '@gmail.com',
 			CAST(@Loop as nvarchar(10)) + CAST(@Loop+1 as nvarchar(10)) + CAST(@Loop+2 as nvarchar(10)) + CAST(@Loop+3 as nvarchar(10)),
-			'SupplierDescription_SupplierDescription - ' + CAST(@Loop as nvarchar(10)
+			'SupplierDescription_SupplierDescription - ' + CAST(@Loop as nvarchar(10))
 		)
 
 	SET @Loop = @Loop + 1
