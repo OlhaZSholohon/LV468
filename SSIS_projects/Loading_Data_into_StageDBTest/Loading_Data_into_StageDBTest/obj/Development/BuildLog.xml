@@ -2,18 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Loading_Data_into_StageDBTest</Name>
-    <LastWriteTime>2020-01-14T00:09:13.8386108Z</LastWriteTime>
+    <LastWriteTime>2020-01-14T10:21:34.2841235Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Main_package.dtsx</Name>
-      <LastWriteTime>2020-01-14T00:18:06.8509067Z</LastWriteTime>
+      <LastWriteTime>2020-01-14T10:21:31.7948746Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimGaranties.dtsx</Name>
-      <LastWriteTime>2020-01-13T23:34:40.02325Z</LastWriteTime>
+      <LastWriteTime>2020-01-14T10:20:09.9576917Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -59,6 +59,11 @@
     <ProjectBuildItemInfo>
       <Name>DimDiscounts.dtsx</Name>
       <LastWriteTime>2020-01-14T00:11:22.6104867Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DimSuppliers.dtsx</Name>
+      <LastWriteTime>2020-01-14T10:20:08.3625322Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimGaranties"
   DTS:PackageType="5"
-  DTS:VersionBuild="60"
-  DTS:VersionGUID="{D0937855-B2EE-40C7-B351-CAF356A7E6B5}">
+  DTS:VersionBuild="64"
+  DTS:VersionGUID="{2E9415C3-6DFB-404D-8BBC-0C34B06B9200}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC4VdYPfaZST4xOiAcU6/EkAAAAAASAAACgAAAAEAAAALqg8oLYtgx9hcZruDKpEVUYAAAArwqJ8wSoTSBuDjZM1HeZb4fr6o4Fviw1FAAAAFuJNZUKz2eJq9L1NJ3QCv/53JTU</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAY67f27VwrRI+L+q1sUSFFAAAAAASAAACgAAAAEAAAAMu4stDd1iTym40qHm/Kr2UYAAAATtat2DoL7dXh/sy/nPhnEIjfiC22mQ91FAAAAFExumrCozJoeMa7FMQ1DcwnnNQh</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -751,7 +751,7 @@
         <NodeLayout
           Size="208.8,41.6"
           Id="Package\Executing Stored Procedure"
-          TopLeft="66.9387766501645,113.613446971537" />
+          TopLeft="91.4285729855906,128.470590037046" />
         <NodeLayout
           Size="263.2,41.6"
           Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties"
@@ -766,33 +766,33 @@
         <NodeLayout
           Size="224,41.6"
           Id="Package\Truncating Table DimGaranties"
-          TopLeft="55.5102050269658,54.5882355147403" />
+          TopLeft="99.5918384307327,63.3277314356278" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="55.5102050269658,75.3882355147403">
+          TopLeft="211.591838430733,104.927731435628">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="11.4285716231987,59.0252114567969"
+              EndConnector="-15.7632654451421,23.5428586014179"
               Start="0,0"
-              End="3.92857162319871,59.0252114567969">
+              End="-15.7632654451421,16.0428586014179">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-18.5,0" />
+                    End="0,7.77142930070895" />
                   <mssgle:CubicBezierSegment
-                    Point1="-18.5,0"
-                    Point2="-22.5,0"
-                    Point3="-22.5,4" />
+                    Point1="0,7.77142930070895"
+                    Point2="0,11.7714293007089"
+                    Point3="-4,11.7714293007089" />
                   <mssgle:LineSegment
-                    End="-22.5,55.0252114567969" />
+                    End="-11.7632654451421,11.7714293007089" />
                   <mssgle:CubicBezierSegment
-                    Point1="-22.5,55.0252114567969"
-                    Point2="-22.5,59.0252114567969"
-                    Point3="-18.5,59.0252114567969" />
+                    Point1="-11.7632654451421,11.7714293007089"
+                    Point2="-15.7632654451421,11.7714293007089"
+                    Point3="-15.7632654451421,15.7714293007089" />
                   <mssgle:LineSegment
-                    End="3.92857162319871,59.0252114567969" />
+                    End="-15.7632654451421,16.0428586014179" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -803,30 +803,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="171.338776650165,155.213446971537">
+          TopLeft="197.138776752344,170.070590037046">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="27.1102038689329,46.9932782645045"
+              EndConnector="0,32.1361351989963"
               Start="0,0"
-              End="27.1102038689329,39.4932782645045">
+              End="0,24.6361351989963">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.4966391322522" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.4966391322522"
-                    Point2="0,23.4966391322522"
-                    Point3="4,23.4966391322522" />
-                  <mssgle:LineSegment
-                    End="23.1102038689329,23.4966391322522" />
-                  <mssgle:CubicBezierSegment
-                    Point1="23.1102038689329,23.4966391322522"
-                    Point2="27.1102038689329,23.4966391322522"
-                    Point3="27.1102038689329,27.4966391322522" />
-                  <mssgle:LineSegment
-                    End="27.1102038689329,39.4932782645045" />
+                    End="0,24.6361351989963" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -844,6 +832,10 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimGaranties_csv"
+          TopLeft="190.428574671551,48.9411771569698" />
+        <NodeLayout
           Size="155.2,41.6"
           Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\Data Conversion"
           TopLeft="190.571431816841,123.117648785502" />
@@ -851,44 +843,6 @@
           Size="134.4,41.6"
           Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimGaranty"
           TopLeft="191.142860398001,192.858826234184" />
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimGaranties_csv"
-          TopLeft="196.71428906431,47.7176477280456" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties.Paths[Flat File Source Output]"
-          TopLeft="277.91428906431,89.3176477280456">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-9.74285724746903,33.8000010574562"
-              Start="0,0"
-              End="-9.74285724746903,26.3000010574562">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.9000005287281" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.9000005287281"
-                    Point2="0,16.9000005287281"
-                    Point3="-4,16.9000005287281" />
-                  <mssgle:LineSegment
-                    End="-5.74285724746903,16.9000005287281" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.74285724746903,16.9000005287281"
-                    Point2="-9.74285724746903,16.9000005287281"
-                    Point3="-9.74285724746903,20.9000005287281" />
-                  <mssgle:LineSegment
-                    End="-9.74285724746903,26.3000010574562" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties.Paths[Data Conversion Output]"
           TopLeft="268.171431816841,164.717648785502">
@@ -915,6 +869,28 @@
                     Point3="-9.82857141884,18.0705887243411" />
                   <mssgle:LineSegment
                     End="-9.82857141884,20.6411774486822" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties.Paths[Flat File Source Output]"
+          TopLeft="269.900003244196,90.5411771569698">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.5764716285322"
+              Start="0,0"
+              End="0,25.0764716285322">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.0764716285322" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
