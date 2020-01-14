@@ -11,26 +11,11 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimGaranties"
   DTS:PackageType="5"
-  DTS:VersionBuild="65"
-  DTS:VersionGUID="{FE5FF2AB-1D9E-4C63-A9DA-52CBA9FA1DEC}">
+  DTS:VersionBuild="67"
+  DTS:VersionGUID="{68E1EFAE-EB4C-415E-B815-C036A0FC6856}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{47D2178F-913D-4065-8D32-7747F396FA13}"
-      DTS:ObjectName="192.168.195.147.TestDBStage.Lv-468.DB">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBStage;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACXeKSlcBUTua7i7JZPQBxhAAAAAASAAACgAAAAEAAAALn3gkh32NN+TmCQ0wXDw58YAAAAHISaq7lF4zBT56jzOo4brVI4VAM8OAZvFAAAAA4Q8gIIV9IdJE2JPwBfg+M4CFOx</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
@@ -125,7 +110,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{47D2178F-913D-4065-8D32-7747F396FA13}"
+          SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
           SQLTask:SqlStatementSource="exec staging.SP_PopulateDimGaranties 7890;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -577,8 +562,8 @@
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimGaranty.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
-                      connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
+                      connectionManagerID="{886EB12D-D24E-4F88-B465-FC068D180E12}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -713,7 +698,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{47D2178F-913D-4065-8D32-7747F396FA13}"
+          SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE staging.DimGaranties;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -749,22 +734,22 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="209,42"
+          Size="208.8,41.6"
           Id="Package\Executing Stored Procedure"
           TopLeft="91.4285729855906,128.470590037046" />
         <NodeLayout
-          Size="263,42"
+          Size="263.2,41.6"
           Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties"
           TopLeft="19.622449220096,28.1352944350988" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="288,125"
+          PanelSize="288,124.8"
           Size="288,168"
           Id="Package\Foreach Loop Container"
           TopLeft="54.4489805190974,202.206725236042" />
         <NodeLayout
-          Size="224,42"
+          Size="224,41.6"
           Id="Package\Truncating Table DimGaranties"
           TopLeft="99.5918384307327,63.3277314356278" />
         <EdgeLayout
@@ -830,7 +815,7 @@
     design-time-name="Package\Foreach Loop Container\Data Loading from csv to DimGaranties">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimGaranties_csv"
@@ -874,9 +859,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -898,9 +881,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

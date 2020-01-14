@@ -11,27 +11,10 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Populate_DimPayments"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{0311ABF4-B719-49ED-8BAD-C05A850D25AD}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{E94CD20F-94E7-4A8A-91CC-4326BE28976B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{9D940BA7-D96B-4F9B-8EB5-DE2CAC89C5B9}"
-      DTS:ObjectName="192.168.195.147.TestDBStage.Lv-468.DB">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBStage;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABjl9jfDJRazOYBbkLrxaJ+AAAAAASAAACgAAAAEAAAAOQE1zQ2Gvy5+KLhAvBAvR0YAAAAfapJZIj3mmyt9BfUlcNRvQW5qZt0zXjhFAAAAB6dofRFzteEdED6yU7yrDdNvx9D</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -79,7 +62,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{9D940BA7-D96B-4F9B-8EB5-DE2CAC89C5B9}"
+              SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
               SQLTask:SqlStatementSource="exec [staging].[SP_PopulateDimPayments] 1000" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -97,7 +80,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9D940BA7-D96B-4F9B-8EB5-DE2CAC89C5B9}"
+          SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[DimPayments]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -125,18 +108,18 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="207,42"
+          Size="207.2,41.6"
           Id="Package\Container for populate table DimPaymets\SP_Populate_DimPayments"
           TopLeft="20.4571463798991,19.4823562100685" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="233,78"
-          Size="233,121"
+          PanelSize="232.8,78.4"
+          Size="232.8,120.8"
           Id="Package\Container for populate table DimPaymets"
           TopLeft="184.571431714662,122.964707606886" />
         <NodeLayout
-          Size="226,42"
+          Size="225.6,41.6"
           Id="Package\Truncating Table DimPayments"
           TopLeft="188.000003201621,16.5176472904773" />
         <EdgeLayout

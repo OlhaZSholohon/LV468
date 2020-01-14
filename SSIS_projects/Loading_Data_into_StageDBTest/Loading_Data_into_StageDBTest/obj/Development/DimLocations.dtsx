@@ -11,26 +11,11 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimLocations"
   DTS:PackageType="5"
-  DTS:VersionBuild="59"
-  DTS:VersionGUID="{EA195076-5BFF-4AD5-9D02-4A0B6789DAFE}">
+  DTS:VersionBuild="62"
+  DTS:VersionGUID="{1FA8A5EB-CDB8-4A82-832A-DC9230EEBD28}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{568C8116-76B8-4940-97E3-FD5A418490B0}"
-      DTS:ObjectName="192.168.195.147.TestDBStage.Lv-468.DB">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBStage;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAn5OWRDbtjlqo4pBi9ZUuRAAAAAASAAACgAAAAEAAAAFaG0OmLj2q2nXLV35zV7O0YAAAA4w7swVSazuhghrLNylHyW+cU3ZmNktJiFAAAAAUnsnSMW2yk4GQBSU0yEuGv1K6b</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
@@ -142,7 +127,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{568C8116-76B8-4940-97E3-FD5A418490B0}"
+          SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
           SQLTask:SqlStatementSource="exec [staging].[SP_PopulateDimLocation]&#xA;@NumberOfRows = 15000" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -245,8 +230,8 @@
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
-                      connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
+                      connectionManagerID="{886EB12D-D24E-4F88-B465-FC068D180E12}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -631,7 +616,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{568C8116-76B8-4940-97E3-FD5A418490B0}"
+          SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
           SQLTask:SqlStatementSource="Truncate table staging.DimLocations" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -667,50 +652,50 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="209,42"
+          Size="208.8,41.6"
           Id="Package\Executing Stored Procedure"
           TopLeft="277.734694979977,121.38487441779" />
         <NodeLayout
-          Size="263,42"
+          Size="263.2,41.6"
           Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties"
           TopLeft="22.3285723043948,20.1331797903329" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="290,117"
-          Size="290,160"
+          PanelSize="289.6,116.8"
+          Size="289.6,160"
           Id="Package\Foreach Loop Container"
           TopLeft="276.734698590315,205.378154140855" />
         <NodeLayout
-          Size="224,42"
+          Size="224,41.6"
           Id="Package\Truncating Table DimLocations"
-          TopLeft="450.632657108085,44.7932778269362" />
+          TopLeft="225.489796131068,44.7932778269362" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="562.632657108085,86.3932778269362">
+          TopLeft="337.489796131068,86.3932778269362">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-180.497962128108,34.9915965908535"
+              EndConnector="44.6448988489093,34.9915965908538"
               Start="0,0"
-              End="-180.497962128108,27.4915965908535">
+              End="44.6448988489093,27.4915965908538">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.4957982954268" />
+                    End="0,13.4957982954269" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.4957982954268"
-                    Point2="0,17.4957982954268"
-                    Point3="-4,17.4957982954268" />
+                    Point1="0,13.4957982954269"
+                    Point2="0,17.4957982954269"
+                    Point3="4,17.4957982954269" />
                   <mssgle:LineSegment
-                    End="-176.497962128108,17.4957982954268" />
+                    End="40.6448988489093,17.4957982954269" />
                   <mssgle:CubicBezierSegment
-                    Point1="-176.497962128108,17.4957982954268"
-                    Point2="-180.497962128108,17.4957982954268"
-                    Point3="-180.497962128108,21.4957982954268" />
+                    Point1="40.6448988489093,17.4957982954269"
+                    Point2="44.6448988489093,17.4957982954269"
+                    Point3="44.6448988489093,21.4957982954269" />
                   <mssgle:LineSegment
-                    End="-180.497962128108,27.4915965908535" />
+                    End="44.6448988489093,27.4915965908538" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -748,7 +733,7 @@
     design-time-name="Package\Foreach Loop Container\Data Loading from csv to DimGaranties">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="161.6,41.6"
           Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv"
@@ -776,9 +761,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -11,27 +11,10 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimDates"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{7AF70E21-094E-49C2-812E-3DBB88646FEC}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{9893C59B-87CC-4D36-95C9-E8E969CE75B4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{3A57FAAB-1DA5-450B-8BBE-04CDE8EE2E94}"
-      DTS:ObjectName="192.168.195.147.TestDBStage.Lv-468.DB">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBStage;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADRlcMHwLfaPUdB8OnGSbKcAAAAAASAAACgAAAAEAAAAE2VwCNVBl/i68+3YQkwnywYAAAAFZ2opSqOqhhYFH1c8Z36KG9TWBRLRB5DFAAAAP0lYjvqbBvHnTQAmTRnTAAe1rn4</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -46,7 +29,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{3A57FAAB-1DA5-450B-8BBE-04CDE8EE2E94}"
+          SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
           SQLTask:SqlStatementSource="EXEC [staging].[SP_Populate_DimDates] @StartDate = '01/01/19', @EndDate = '01/01/20'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -62,7 +45,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{3A57FAAB-1DA5-450B-8BBE-04CDE8EE2E94}"
+          SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE staging.DimDates" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -90,11 +73,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="194,42"
+          Size="193.6,41.6"
           Id="Package\Populate table DimDates"
           TopLeft="236.571432600216,149.270590328758" />
         <NodeLayout
-          Size="206,42"
+          Size="206.4,41.6"
           Id="Package\Truncating Table DimDates"
           TopLeft="233.142861113256,69.1294127342197" />
         <EdgeLayout

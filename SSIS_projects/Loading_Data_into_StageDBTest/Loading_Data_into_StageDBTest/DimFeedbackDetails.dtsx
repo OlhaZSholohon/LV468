@@ -11,27 +11,10 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{A24BA439-03F8-4D9B-B547-50E2FD367146}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{80645CB6-7BF4-4670-B4F7-77F782CFD6B5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{91F46EEF-A42E-449B-BEC7-742780991517}"
-      DTS:ObjectName="192.168.195.147.TestDBStage.Lv-468.DB">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBStage;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAv0NWhpCS8kSGJohWjMmE0AAAAAASAAACgAAAAEAAAAL6TKhNyNQ9c5MQqp6b6UscYAAAAGAG/0VRMHPGF99F+fiZBVLaAc/kyqjbCFAAAAPzHIOWWsDrZkObka7+I6iweS/u2</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -79,7 +62,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{91F46EEF-A42E-449B-BEC7-742780991517}"
+              SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
               SQLTask:SqlStatementSource="exec [staging].[SP_Populate_DimFeedbackDetails] @NumberOfRows = 100" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -97,7 +80,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{91F46EEF-A42E-449B-BEC7-742780991517}"
+          SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE staging.DimFeedbackDetails" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -125,18 +108,18 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="209,42"
+          Size="208.8,41.6"
           Id="Package\For Loop Container\Executing Stored Procedure"
           TopLeft="7.88571711754329,17.0352958936592" />
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="True"
-          PanelSize="222,114"
-          Size="222,157"
+          PanelSize="222.4,113.6"
+          Size="222.4,156.8"
           Id="Package\For Loop Container"
           TopLeft="194.14286044909,129.69411946597" />
         <NodeLayout
-          Size="256,42"
+          Size="256,41.6"
           Id="Package\Truncating Table DimFeedbackDetails"
           TopLeft="170.571431476243,51.2352948362027" />
         <EdgeLayout

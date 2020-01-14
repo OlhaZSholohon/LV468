@@ -11,26 +11,11 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimSuppliers"
   DTS:PackageType="5"
-  DTS:VersionBuild="78"
-  DTS:VersionGUID="{B0B79383-A0A0-4747-9476-2F7A66BDDCCB}">
+  DTS:VersionBuild="85"
+  DTS:VersionGUID="{884ACF74-123B-4F1A-B106-8FBAEA98CAC4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{AF354573-5296-40F3-A7F2-AB9BCF2EA668}"
-      DTS:ObjectName="192.168.195.147.TestDBStage.Lv-468.DB">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBStage;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABYK8YvKn5oYrVZS79m6W0+AAAAAASAAACgAAAAEAAAAOtypIzvSSn4oppgZXnFmakYAAAA5FetEiDDnpcMRhtg6xX2bR2r2tj060OTFAAAALNM3HBKoBBUo7I34dkMv/quIyIc</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
@@ -122,7 +107,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AF354573-5296-40F3-A7F2-AB9BCF2EA668}"
+          SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
           SQLTask:SqlStatementSource="exec staging.SP_PopulateDimSuppliers @NumberOfRows=3000;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -226,8 +211,8 @@
                   <connections>
                     <connection
                       refId="Package\Populate DimSuppliers with foreach container\Data Loading from csv to DimSuppliers\DimSuppliers.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
-                      connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
+                      connectionManagerID="{886EB12D-D24E-4F88-B465-FC068D180E12}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -528,7 +513,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AF354573-5296-40F3-A7F2-AB9BCF2EA668}"
+          SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
           SQLTask:SqlStatementSource="USE TestDBStage;&#xA;&#xA;TRUNCATE TABLE staging.DimSuppliers;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -564,22 +549,22 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="290,42"
+          Size="289.6,41.6"
           Id="Package\Executing Stored Procedure for DimSuppliers"
           TopLeft="221.30158632845,118.26143818019" />
         <NodeLayout
-          Size="262,42"
+          Size="262.4,41.6"
           Id="Package\Populate DimSuppliers with foreach container\Data Loading from csv to DimSuppliers"
           TopLeft="30.1428568217219,32.7764705710757" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="315,131"
-          Size="315,174"
+          PanelSize="315.2,131.2"
+          Size="315.2,174.4"
           Id="Package\Populate DimSuppliers with foreach container"
           TopLeft="235.714285062284,191.317646852909" />
         <NodeLayout
-          Size="226,42"
+          Size="225.6,41.6"
           Id="Package\Truncrating Table DimSuppliers"
           TopLeft="267.904761664721,34.8078432888308" />
         <EdgeLayout
@@ -659,11 +644,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="140,42"
+          Size="140,41.6"
           Id="Package\Populate DimSuppliers with foreach container\Data Loading from csv to DimSuppliers\DimSuppliers"
           TopLeft="267.571428717399,195.423529137212" />
         <NodeLayout
-          Size="161,42"
+          Size="160.8,41.6"
           Id="Package\Populate DimSuppliers with foreach container\Data Loading from csv to DimSuppliers\DimSuppliers_csv"
           TopLeft="259.285714188401,104.341177302826" />
         <EdgeLayout
