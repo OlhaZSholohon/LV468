@@ -11,8 +11,8 @@
   DTS:LocaleID="1058"
   DTS:ObjectName="DimProducts"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{F4CCAF1D-1E2D-4BE5-B7D3-EBBD8A848DB0}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{6E342A37-C96A-4F5A-A665-AB489176F6F0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,13 +27,14 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADg++FXZV+CtaClZfVVMu9nAAAAAASAAACgAAAAEAAAADbUJvRBwbMCSSwnLkVL20kYAAAAbb6+6oe/IAoCJrw7I4bQBiFtD62vboB+FAAAACgOP7PgLfPmw4MSeb093MosT6q8</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABSceEvG3Aa0553ICKCTF3PAAAAAASAAACgAAAAEAAAABx2mylCJGlnhJUvyNyb7LgYAAAAG1kLyRrZ66c+5PX0nwS46dTmFnzznn3NFAAAACyus6yUFuivkmnu9EX5imp2D7tF</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
+      DTS:DelayValidation="True"
       DTS:DTSID="{B01B8F30-0B37-44F8-A4E7-32DFD6523810}"
       DTS:ObjectName="Flat File Connection Manager">
       <DTS:PropertyExpression
@@ -47,7 +48,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1251"
-          DTS:ConnectionString="E:\DimProducts.csv">
+          DTS:ConnectionString="H:\LV468\SourceFiles\DimProducts\DimProducts.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -56,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductID"
-              DTS:DTSID="{3514B0C9-D6FA-4450-BF15-602E51D0C24F}"
+              DTS:DTSID="{B3BCB930-B4D1-4AF9-B883-3F2917540801}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -65,7 +66,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductName"
-              DTS:DTSID="{9FA55713-CB3D-4C6B-BAB8-0D5D3F3FD6A7}"
+              DTS:DTSID="{45A36CDA-DFB5-4F85-BEB9-8AB1B869C327}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -74,7 +75,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CategoryName"
-              DTS:DTSID="{DCE0B6E3-0D9B-424E-84EA-6A425875A1AF}"
+              DTS:DTSID="{B8A5B6FF-ABE9-4660-AC75-17880FE900BB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -83,7 +84,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SubcategoryName"
-              DTS:DTSID="{856886AA-F336-4693-97A8-D0B491F23883}"
+              DTS:DTSID="{99477BE5-B97E-4EE5-9262-419D7EE142CE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -92,7 +93,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="BrandName"
-              DTS:DTSID="{277A7D5D-EDF3-438C-83DD-9E83AC18E55F}"
+              DTS:DTSID="{6DB02C11-8516-4A5C-AECE-98A60BF97054}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -101,7 +102,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Thicknes"
-              DTS:DTSID="{97A5C6EE-2BAF-4DDF-8F55-2C35B1390F66}"
+              DTS:DTSID="{4738021C-2BCA-487B-9EC3-6EA67A2777F5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -110,7 +111,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Weight"
-              DTS:DTSID="{5F4EA537-CEF0-48C3-A57F-101DF84B2AEA}"
+              DTS:DTSID="{FA8641CD-AF46-4306-A71B-3B625CE42549}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -119,7 +120,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductDescription"
-              DTS:DTSID="{1129DD93-7201-431E-B393-3564E2999E50}"
+              DTS:DTSID="{5FDB4EFC-B668-4AE9-A718-304D8716BDBD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -128,7 +129,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DefaultGaranty"
-              DTS:DTSID="{E7CE3C43-4995-47F0-AFDB-802C528180F0}"
+              DTS:DTSID="{3F8E888C-5DB2-431B-B5D9-89AAC5858C27}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -137,7 +138,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DefaultGarantyName"
-              DTS:DTSID="{BEF883EC-4FAD-4CEA-A85A-17F26C0D986E}"
+              DTS:DTSID="{EFC4B0B8-FC78-4323-AF9C-0CEF5A106FA5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -146,7 +147,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Price"
-              DTS:DTSID="{CE2FBAD1-B5D8-4464-9B90-141199508D32}"
+              DTS:DTSID="{41E863FD-F189-4EAE-BE67-36AC2D2380D1}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -161,13 +162,14 @@
       DTS:Namespace="User"
       DTS:ObjectName="FilePath">
       <DTS:VariableValue
-        DTS:DataType="8">E:\DimProducts.csv</DTS:VariableValue>
+        DTS:DataType="8">H:\LV468\SourceFiles\DimProducts\DimProducts.csv</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Execute stored procedure SP_Populate_DimProducts"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{F6D253B7-6799-40C8-B0BF-5A98FAE4C808}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
@@ -177,14 +179,15 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9258E37C-5B14-4F85-A473-9803B27314F4}"
-          SQLTask:SqlStatementSource="use ITASS&#xA;exec dbo.SP_PopulateDimProducts 10000 "
+          SQLTask:Connection="{441F59F9-38F1-495E-8305-0E87224FC74B}"
+          SQLTask:SqlStatementSource="use TestDBStage;&#xA;exec staging.SP_PopulateDimProducts 10000;"
           SQLTask:TypeConversionMode="None" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Foreach Loop Container"
       DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:DelayValidation="True"
       DTS:Description="Foreach Loop Container"
       DTS:DTSID="{FF639FB9-A2AA-4342-869B-FF07F207EC60}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
@@ -197,7 +200,7 @@
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="E:\" />
+              Folder="H:\LV468\SourceFiles\DimProducts\" />
             <FEFEProperty
               FileSpec="*.csv" />
             <FEFEProperty
@@ -212,6 +215,7 @@
         <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\Data loading for DimProducts from file"
           DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{C88FD168-8483-44AD-A961-6FD6F566BB44}"
           DTS:ExecutableType="Microsoft.Pipeline"
@@ -1151,26 +1155,27 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{AEE1AE6D-15A7-47C8-B710-E0958E23D9F3}"
-          DTS:ObjectName="{AEE1AE6D-15A7-47C8-B710-E0958E23D9F3}"
+          DTS:DTSID="{0AE4DD8C-ECEA-44F1-89E5-C999C834B58A}"
+          DTS:ObjectName="{0AE4DD8C-ECEA-44F1-89E5-C999C834B58A}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::FilePath" />
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Truncate Table DimProducts"
+      DTS:refId="Package\Truncating Table DimProducts"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{2D72C025-E360-4867-8A33-9185E9A9208D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Truncate Table DimProducts"
+      DTS:ObjectName="Truncating Table DimProducts"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9258E37C-5B14-4F85-A473-9803B27314F4}"
-          SQLTask:SqlStatementSource="use ITASS&#xA;TRUNCATE TABLE DimProducts&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{441F59F9-38F1-495E-8305-0E87224FC74B}"
+          SQLTask:SqlStatementSource="use TestDBStage;&#xA;TRUNCATE TABLE staging.DimProducts;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1179,7 +1184,7 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{44C02AAC-633D-491D-AF00-E2C784D02607}"
-      DTS:From="Package\Truncate Table DimProducts"
+      DTS:From="Package\Truncating Table DimProducts"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Foreach Loop Container" />
@@ -1207,7 +1212,7 @@
         <NodeLayout
           Size="325.6,41.6"
           Id="Package\Execute stored procedure SP_Populate_DimProducts"
-          TopLeft="320.761910224448,383.09094841659" />
+          TopLeft="150.476193038785,368.408595269499" />
         <NodeLayout
           Size="259.2,41.6"
           Id="Package\Foreach Loop Container\Data loading for DimProducts from file"
@@ -1218,37 +1223,37 @@
           PanelSize="324,127.2"
           Size="324,170.4"
           Id="Package\Foreach Loop Container"
-          TopLeft="333.877556706309,144.605043708247" />
+          TopLeft="149.877553572808,165.405043999959" />
         <NodeLayout
-          Size="172,41.6"
-          Id="Package\Truncate Table DimProducts"
-          TopLeft="344.816332402799,63.3770314206715" />
+          Size="220.8,41.6"
+          Id="Package\Truncating Table DimProducts"
+          TopLeft="221.387758872252,71.9417374231412" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="430.816332402799,104.977031420671">
+          TopLeft="331.787758872252,113.541737423141">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="65.06122430351,39.6280122875755"
+              EndConnector="-19.9102052994439,51.863306576818"
               Start="0,0"
-              End="65.06122430351,32.1280122875755">
+              End="-19.9102052994439,44.363306576818">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.8140061437877" />
+                    End="0,21.931653288409" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.8140061437877"
-                    Point2="0,19.8140061437877"
-                    Point3="4,19.8140061437877" />
+                    Point1="0,21.931653288409"
+                    Point2="0,25.931653288409"
+                    Point3="-4,25.931653288409" />
                   <mssgle:LineSegment
-                    End="61.06122430351,19.8140061437877" />
+                    End="-15.9102052994439,25.931653288409" />
                   <mssgle:CubicBezierSegment
-                    Point1="61.06122430351,19.8140061437877"
-                    Point2="65.06122430351,19.8140061437877"
-                    Point3="65.06122430351,23.8140061437877" />
+                    Point1="-15.9102052994439,25.931653288409"
+                    Point2="-19.9102052994439,25.931653288409"
+                    Point3="-19.9102052994439,29.931653288409" />
                   <mssgle:LineSegment
-                    End="65.06122430351,32.1280122875755" />
+                    End="-19.9102052994439,44.363306576818" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1259,30 +1264,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="495.877556706309,315.005043708247">
+          TopLeft="312.576873305796,335.805043999959">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-12.3156464818614,68.0859047083434"
+              EndConnector="0,32.60355126954"
               Start="0,0"
-              End="-12.3156464818614,60.5859047083434">
+              End="0,25.10355126954">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.0429523541717" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.0429523541717"
-                    Point2="0,34.0429523541717"
-                    Point3="-4,34.0429523541717" />
-                  <mssgle:LineSegment
-                    End="-8.31564648186139,34.0429523541717" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-8.31564648186139,34.0429523541717"
-                    Point2="-12.3156464818614,34.0429523541717"
-                    Point3="-12.3156464818614,38.0429523541717" />
-                  <mssgle:LineSegment
-                    End="-12.3156464818614,60.5859047083434" />
+                    End="0,25.10355126954" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1310,7 +1303,7 @@
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination"
-          TopLeft="297.6,215.2" />
+          TopLeft="297.6,202.352940996295" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\Data loading for DimProducts from file.Paths[Flat File Source Output]"
           TopLeft="382.05714287174,102.447059149561">
@@ -1339,14 +1332,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.8000000000003"
+              EndConnector="0,31.9529409962954"
               Start="0,0"
-              End="0,37.3000000000003">
+              End="0,24.4529409962954">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.3000000000003" />
+                    End="0,24.4529409962954" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
