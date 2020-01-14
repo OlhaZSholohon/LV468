@@ -11,8 +11,8 @@
   DTS:LocaleID="1058"
   DTS:ObjectName="DimProducts"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{6E342A37-C96A-4F5A-A665-AB489176F6F0}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{73074298-D680-48E7-84BD-D83E3C85CD03}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABSceEvG3Aa0553ICKCTF3PAAAAAASAAACgAAAAEAAAABx2mylCJGlnhJUvyNyb7LgYAAAAG1kLyRrZ66c+5PX0nwS46dTmFnzznn3NFAAAACyus6yUFuivkmnu9EX5imp2D7tF</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACAZXx0XxZO5WFYimYj9Ef6AAAAAASAAACgAAAAEAAAANCZOKyHroh5Xpmwtou0CtEYAAAAl8iD7EhTns2JIgK8xsucyrqFliefTt5WFAAAAH19q3E9qfCcCuPofnW/bx3iBJgn</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1210,22 +1210,22 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="325.6,41.6"
+          Size="326,42"
           Id="Package\Execute stored procedure SP_Populate_DimProducts"
           TopLeft="150.476193038785,368.408595269499" />
         <NodeLayout
-          Size="259.2,41.6"
+          Size="259,42"
           Id="Package\Foreach Loop Container\Data loading for DimProducts from file"
           TopLeft="21.6326524078326,30.2857138689827" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="324,127.2"
-          Size="324,170.4"
+          PanelSize="324,127"
+          Size="324,170"
           Id="Package\Foreach Loop Container"
           TopLeft="149.877553572808,165.405043999959" />
         <NodeLayout
-          Size="220.8,41.6"
+          Size="221,42"
           Id="Package\Truncating Table DimProducts"
           TopLeft="221.387758872252,71.9417374231412" />
         <EdgeLayout
@@ -1291,7 +1291,7 @@
     design-time-name="Package\Foreach Loop Container\Data loading for DimProducts from file">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.4,77.6"
           Id="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source"
@@ -1323,7 +1323,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1345,7 +1347,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

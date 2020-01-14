@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Populate_DimPayments"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{2E66AA24-D467-4C47-8BB0-60C350059931}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{0311ABF4-B719-49ED-8BAD-C05A850D25AD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABpjPpfxDJ4VPWExSnlNq9xAAAAAASAAACgAAAAEAAAAE3q25L1ZPzgPJ2wYW+CH6YYAAAAzfhYZolC+ddpUGN8cthMyFQDKgpITU2VFAAAAMkWjivqgUoLXpFImikUOrUJdNln</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABjl9jfDJRazOYBbkLrxaJ+AAAAAASAAACgAAAAEAAAAOQE1zQ2Gvy5+KLhAvBAvR0YAAAAfapJZIj3mmyt9BfUlcNRvQW5qZt0zXjhFAAAAB6dofRFzteEdED6yU7yrDdNvx9D</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -125,18 +125,18 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="207.2,41.6"
+          Size="207,42"
           Id="Package\Container for populate table DimPaymets\SP_Populate_DimPayments"
           TopLeft="20.4571463798991,19.4823562100685" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="232.8,77.6"
-          Size="232.8,120.8"
+          PanelSize="233,78"
+          Size="233,121"
           Id="Package\Container for populate table DimPaymets"
           TopLeft="184.571431714662,122.964707606886" />
         <NodeLayout
-          Size="225.6,41.6"
+          Size="226,42"
           Id="Package\Truncating Table DimPayments"
           TopLeft="188.000003201621,16.5176472904773" />
         <EdgeLayout

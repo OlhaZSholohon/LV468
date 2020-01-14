@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Main_package"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{04B8CEB3-634B-4615-BA4D-0485BC08061C}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{2458EF3E-50C7-456B-8FB6-A7640DEB22E7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -256,56 +256,56 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="207.2,41.6"
+          Size="207,42"
           Id="Package\Loading Data into TestDBStage\Populating table DimClients"
           TopLeft="42.9428602447317,184.58823874962" />
         <NodeLayout
-          Size="226.4,41.6"
+          Size="226,42"
           Id="Package\Loading Data into TestDBStage\Populating table DimDates (SP)"
           TopLeft="323.918374089388,132.726053741764" />
         <NodeLayout
-          Size="268.8,41.6"
+          Size="269,42"
           Id="Package\Loading Data into TestDBStage\Populating table DimDeliveryDetails (SP)"
           TopLeft="308.673478118532,76.2504218405093" />
         <NodeLayout
-          Size="244.8,41.6"
+          Size="245,42"
           Id="Package\Loading Data into TestDBStage\Populating table DimDiscounts (SP)"
           TopLeft="317.714292351081,234.857147066132" />
         <NodeLayout
-          Size="276,41.6"
+          Size="276,42"
           Id="Package\Loading Data into TestDBStage\Populating table DimFeedbackDetails (SP)"
           TopLeft="305.142863565562,290.978156641245" />
         <NodeLayout
-          Size="220.8,41.6"
+          Size="221,42"
           Id="Package\Loading Data into TestDBStage\Populating table DimGaranties"
           TopLeft="41.0571464309891,17.3411781050343" />
         <NodeLayout
-          Size="220,41.6"
+          Size="220,42"
           Id="Package\Loading Data into TestDBStage\Populating table DimLocations"
           TopLeft="40.8000030653819,127.200002917121" />
         <NodeLayout
-          Size="244.8,41.6"
+          Size="245,42"
           Id="Package\Loading Data into TestDBStage\Populating table DimPayments (SP)"
           TopLeft="310.857149377161,179.919331714557" />
         <NodeLayout
-          Size="216.8,41.6"
+          Size="217,42"
           Id="Package\Loading Data into TestDBStage\Populating table DimProducts"
           TopLeft="41.8000030824122,74.5411786155306" />
         <NodeLayout
-          Size="262.4,41.6"
+          Size="262,42"
           Id="Package\Loading Data into TestDBStage\Populating table DimReturnDetails (SP)"
           TopLeft="310.571437334528,17.2823540951555" />
         <NodeLayout
-          Size="219.2,41.6"
+          Size="219,42"
           Id="Package\Loading Data into TestDBStage\Populating table DimSuppliers"
           TopLeft="38.1714316465417,243.764710669864" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="627.2,389.6"
-          Size="627.2,432.8"
+          PanelSize="627,390"
+          Size="627,433"
           Id="Package\Loading Data into TestDBStage"
-          TopLeft="202.013608882447,70.2397761998292" />
+          TopLeft="115.013608882447,51.2397761998292" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

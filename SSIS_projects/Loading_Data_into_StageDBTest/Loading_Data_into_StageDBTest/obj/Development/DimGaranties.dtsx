@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimGaranties"
   DTS:PackageType="5"
-  DTS:VersionBuild="64"
-  DTS:VersionGUID="{2E9415C3-6DFB-404D-8BBC-0C34B06B9200}">
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{FE5FF2AB-1D9E-4C63-A9DA-52CBA9FA1DEC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABSYRHuTxbuDf62wjL4LhX9AAAAAASAAACgAAAAEAAAAL2QTYJsh4LHTurpzISkp5YYAAAAoVGWrK7QmClRwwLbeOR3rOrQ3xqn5LE1FAAAAEZMiQR0B6mh3hdM4xER3fnSduZW</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABD9FcApDoloyH/jpO++QpLAAAAAASAAACgAAAAEAAAAPponSjSVmrsz2wlyopTAzYYAAAA9WqVFmB0XG3PSMNIC//V4zNdUFHWy883FAAAALKz7Zgtf1tL7xnGyAzNaMjJkgo6</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -749,22 +749,22 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="208.8,41.6"
+          Size="209,42"
           Id="Package\Executing Stored Procedure"
           TopLeft="91.4285729855906,128.470590037046" />
         <NodeLayout
-          Size="263.2,41.6"
+          Size="263,42"
           Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties"
           TopLeft="19.622449220096,28.1352944350988" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="288,124.8"
+          PanelSize="288,125"
           Size="288,168"
           Id="Package\Foreach Loop Container"
           TopLeft="54.4489805190974,202.206725236042" />
         <NodeLayout
-          Size="224,41.6"
+          Size="224,42"
           Id="Package\Truncating Table DimGaranties"
           TopLeft="99.5918384307327,63.3277314356278" />
         <EdgeLayout
@@ -830,7 +830,7 @@
     design-time-name="Package\Foreach Loop Container\Data Loading from csv to DimGaranties">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimGaranties_csv"
@@ -874,7 +874,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -896,7 +898,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

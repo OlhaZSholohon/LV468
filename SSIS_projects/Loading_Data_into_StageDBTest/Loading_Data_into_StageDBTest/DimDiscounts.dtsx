@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{19BCB98F-E8D0-4F27-9C0D-DC59AAE1F8AB}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{B979E752-87D1-47E8-BE14-482E248C11E4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAp0SyFJu4Mqk7qdJU6cXNdAAAAAASAAACgAAAAEAAAAIcHBknZDLYBcl7nyeM1iEUYAAAA8r4gMrfgX7EUODuWtrUUJ7S6iDcRqMLSFAAAABkqzNdAvN6cE5v9qU4Rlg1LEper</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAWBal1dRspcNrJk7K+1MlqAAAAAASAAACgAAAAEAAAAA+XnvwvALrzcXGfZL/P9LQYAAAAhPhU1U5LyLcjA4PRbosJAHR2NxW3kQ6vFAAAAP6JzPAOTL8CAwyLgBS5ETxtwrrr</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -125,18 +125,18 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="208.8,41.6"
+          Size="209,42"
           Id="Package\For Loop Container\Executing Stored Procedure"
           TopLeft="14.5142883320245,9.50588461800021" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="228,106.4"
-          Size="228,149.6"
+          PanelSize="228,107"
+          Size="228,150"
           Id="Package\For Loop Container"
           TopLeft="136.000002316066,112.56470746103" />
         <NodeLayout
-          Size="224.8,41.6"
+          Size="225,42"
           Id="Package\Truncating Table DimDiscounts"
           TopLeft="133.142859410267,33.7411765735455" />
         <EdgeLayout

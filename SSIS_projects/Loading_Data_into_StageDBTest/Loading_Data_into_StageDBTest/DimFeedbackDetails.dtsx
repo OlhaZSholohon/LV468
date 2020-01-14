@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{4C4E91BD-1854-4786-A592-C56B9CFBC330}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{A24BA439-03F8-4D9B-B547-50E2FD367146}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAsgsHkz5MjeRkI1vQtkj3YAAAAAASAAACgAAAAEAAAACAe3G8JqzIhdU4kw3FK3rMYAAAA5mKXgl1nvJtZ1bQZqimqoWDBtK0+4BnHFAAAAJdeddXLn0wRyvNsW9PcnVX+D1rP</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAv0NWhpCS8kSGJohWjMmE0AAAAAASAAACgAAAAEAAAAL6TKhNyNQ9c5MQqp6b6UscYAAAAGAG/0VRMHPGF99F+fiZBVLaAc/kyqjbCFAAAAPzHIOWWsDrZkObka7+I6iweS/u2</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -125,18 +125,18 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="208.8,41.6"
+          Size="209,42"
           Id="Package\For Loop Container\Executing Stored Procedure"
           TopLeft="7.88571711754329,17.0352958936592" />
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="True"
-          PanelSize="221.6,113.6"
-          Size="221.6,156.8"
+          PanelSize="222,114"
+          Size="222,157"
           Id="Package\For Loop Container"
           TopLeft="194.14286044909,129.69411946597" />
         <NodeLayout
-          Size="256,41.6"
+          Size="256,42"
           Id="Package\Truncating Table DimFeedbackDetails"
           TopLeft="170.571431476243,51.2352948362027" />
         <EdgeLayout

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimDates"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{C7061DC6-14B5-4165-A123-1B2D3621658A}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{7AF70E21-094E-49C2-812E-3DBB88646FEC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACtrWlrzqff9rzOcNyssz0dAAAAAASAAACgAAAAEAAAANG9GiO6UOgI0kw81n6sEOUYAAAAaGOEMRqQM9xZx8e2vZ5O4rxr4H/upvnXFAAAAFpL1ts44uyyLVldjE54Jt66IeKS</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADy/dnlD9z88D0TRIdY21rxAAAAAASAAACgAAAAEAAAAHlpO7ROWHSvg49b+FizYD8YAAAAXfArJmacu0EzZKwyvFdpVgWqwaHOTBsaFAAAALriA/LtWJFCNYt3izVTqfkdOU67</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -90,11 +90,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="194.4,41.6"
+          Size="194,42"
           Id="Package\Populate table DimDates"
           TopLeft="236.571432600216,149.270590328758" />
         <NodeLayout
-          Size="206.4,41.6"
+          Size="206,42"
           Id="Package\Truncating Table DimDates"
           TopLeft="233.142861113256,69.1294127342197" />
         <EdgeLayout

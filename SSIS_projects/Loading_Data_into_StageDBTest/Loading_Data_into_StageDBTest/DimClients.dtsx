@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{74014190-9AF4-438F-A36F-56FF55AA6DA6}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{71B4A2AC-158D-4521-95FB-41F6CAC978BB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABpNXy93U0BnvtNm3mm4R39AAAAAASAAACgAAAAEAAAAFc+e2CRC3pvUh2e9EN1hVYYAAAACG5qbVxcaiPPRMqQE4/ag8BRP9GPno/JFAAAABdrTrwUABBJLMRt4bfGia2p0CAf</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACIl+kd/Rg100vlVguoqmPuAAAAAASAAACgAAAAEAAAAEOi46oM6F3fsTYi0bsP09sYAAAARhqgoaFj0oWt/qDWI7GOTVOaQqnkPKrUFAAAAHJjrLO4hA+tBrwp1uvPZD2E0f9o</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -801,24 +801,24 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="211.2,41.6"
-          Id="Package\Truncating Table DimClients"
-          TopLeft="116.244899938823,58.4672277107371" />
-        <NodeLayout
-          Size="208.8,41.6"
+          Size="209,42"
           Id="Package\Executing Stored Procedure"
           TopLeft="119.918369389137,142.10420367363" />
         <NodeLayout
-          Size="250.4,41.6"
+          Size="250,42"
           Id="Package\Foreach Loop Container\Data Loading from csv to DimClients"
           TopLeft="23.5265370210477,21.0352969146516" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="292,117.6"
-          Size="292,160.8"
+          PanelSize="292,118"
+          Size="292,161"
           Id="Package\Foreach Loop Container"
           TopLeft="88.0000014986312,217.45882546844" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\Truncating Table DimClients"
+          TopLeft="116.244899938823,58.4672277107371" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="223.08163466398,100.067227710737">
@@ -884,13 +884,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="128,41.6"
-          Id="Package\Foreach Loop Container\Data Loading from csv to DimClients\DimClients"
-          TopLeft="201.1428605683,196.376473342341" />
-        <NodeLayout
-          Size="148.8,41.6"
+          Size="149,42"
           Id="Package\Foreach Loop Container\Data Loading from csv to DimClients\DimClients_csv"
           TopLeft="193.14286043206,106.447060316409" />
+        <NodeLayout
+          Size="128,42"
+          Id="Package\Foreach Loop Container\Data Loading from csv to DimClients\DimClients"
+          TopLeft="201.1428605683,196.376473342341" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\Data Loading from csv to DimClients.Paths[Flat File Source Output]"
           TopLeft="266.34286050018,148.047060316409">

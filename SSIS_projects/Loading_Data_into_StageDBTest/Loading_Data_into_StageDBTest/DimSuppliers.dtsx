@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimSuppliers"
   DTS:PackageType="5"
-  DTS:VersionBuild="76"
-  DTS:VersionGUID="{5C6E52F5-4CC8-445A-A62C-2EF57DD9CD33}">
+  DTS:VersionBuild="78"
+  DTS:VersionGUID="{B0B79383-A0A0-4747-9476-2F7A66BDDCCB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAYqQMOHEOaglllfJ0cy28SAAAAAASAAACgAAAAEAAAADSl7166dEWikT3ycKs9Qf0YAAAA1u0HmaBTnY94CkmwC2Ek0a+ZWbIUwZNWFAAAAFE6fBozeWy74IeiQ3U6KryLja59</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABYK8YvKn5oYrVZS79m6W0+AAAAAASAAACgAAAAEAAAAOtypIzvSSn4oppgZXnFmakYAAAA5FetEiDDnpcMRhtg6xX2bR2r2tj060OTFAAAALNM3HBKoBBUo7I34dkMv/quIyIc</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -564,22 +564,22 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="289.6,41.6"
+          Size="290,42"
           Id="Package\Executing Stored Procedure for DimSuppliers"
           TopLeft="221.30158632845,118.26143818019" />
         <NodeLayout
-          Size="261.6,41.6"
+          Size="262,42"
           Id="Package\Populate DimSuppliers with foreach container\Data Loading from csv to DimSuppliers"
           TopLeft="30.1428568217219,32.7764705710757" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="315.2,131.2"
-          Size="315.2,174.4"
+          PanelSize="315,131"
+          Size="315,174"
           Id="Package\Populate DimSuppliers with foreach container"
           TopLeft="235.714285062284,191.317646852909" />
         <NodeLayout
-          Size="226.4,41.6"
+          Size="226,42"
           Id="Package\Truncrating Table DimSuppliers"
           TopLeft="267.904761664721,34.8078432888308" />
         <EdgeLayout
@@ -659,13 +659,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\Populate DimSuppliers with foreach container\Data Loading from csv to DimSuppliers\DimSuppliers_csv"
-          TopLeft="259.285714188401,104.341177302826" />
-        <NodeLayout
-          Size="140,41.6"
+          Size="140,42"
           Id="Package\Populate DimSuppliers with foreach container\Data Loading from csv to DimSuppliers\DimSuppliers"
           TopLeft="267.571428717399,195.423529137212" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Populate DimSuppliers with foreach container\Data Loading from csv to DimSuppliers\DimSuppliers_csv"
+          TopLeft="259.285714188401,104.341177302826" />
         <EdgeLayout
           Id="Package\Populate DimSuppliers with foreach container\Data Loading from csv to DimSuppliers.Paths[Flat File Source Output]"
           TopLeft="338.6285714529,145.941177302826">

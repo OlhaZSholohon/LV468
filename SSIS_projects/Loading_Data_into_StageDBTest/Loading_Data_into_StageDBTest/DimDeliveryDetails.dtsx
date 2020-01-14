@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{B7FF608A-A1D1-4542-A5F8-AB58C139DD10}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{8FBB247C-F585-4E5C-BE6A-A9312061F61F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADzkRBJLaBFzZRZoUmsFWkzAAAAAASAAACgAAAAEAAAAEJ7X1Q94yQJdeehVnZgevYYAAAAruCBJJRQqzvOshi+MEPGeYHqxazFVvMoFAAAALFgUwZONdqZHaaGqf5/u0X/ZWCn</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADf6nEXtwFcO4l8cF08GAjnAAAAAASAAACgAAAAEAAAAKAiQfA2KDZvC8zWz0vsUc8YAAAA6H7WZrI3ZDDzNcDY2kC7cPOesi8GE2ZZFAAAAAkkoZXn9vxEWKO5F2zwxODI0+tG</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -125,20 +125,20 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="249.6,41.6"
-          Id="Package\Truncating Table DimDeliveryDetails"
-          TopLeft="309.857148133979,37.7647059295417" />
-        <NodeLayout
-          Size="208.8,41.6"
+          Size="209,42"
           Id="Package\For Loop Container\Executing Stored Procedure"
           TopLeft="38.4857191100414,24.7294141198525" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="280,117.6"
-          Size="280,160.8"
+          PanelSize="280,118"
+          Size="280,161"
           Id="Package\For Loop Container"
           TopLeft="300.14286225426,112.56470746103" />
+        <NodeLayout
+          Size="250,42"
+          Id="Package\Truncating Table DimDeliveryDetails"
+          TopLeft="309.857148133979,37.7647059295417" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="437.400005194119,79.3647059295417">
