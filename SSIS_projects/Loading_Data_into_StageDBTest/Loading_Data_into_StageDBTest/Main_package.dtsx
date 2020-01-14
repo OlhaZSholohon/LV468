@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Main_package"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{01E6BB99-BEF1-4700-8584-51557F4CA299}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{BC2B7EBA-D80D-4132-AE68-C11386EC0495}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -239,9 +239,25 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="216.8,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimProducts"
-          TopLeft="41.8000030824122,74.5411786155306" />
+          Size="207.2,41.6"
+          Id="Package\Loading Data into TestDBStage\Populating table DimClients"
+          TopLeft="42.9428602447317,176.02353274715" />
+        <NodeLayout
+          Size="226.4,41.6"
+          Id="Package\Loading Data into TestDBStage\Populating table DimDates (SP)"
+          TopLeft="323.918374089388,132.726053741764" />
+        <NodeLayout
+          Size="268.8,41.6"
+          Id="Package\Loading Data into TestDBStage\Populating table DimDeliveryDetails (SP)"
+          TopLeft="308.673478118532,76.2504218405093" />
+        <NodeLayout
+          Size="244.8,41.6"
+          Id="Package\Loading Data into TestDBStage\Populating table DimDiscounts (SP)"
+          TopLeft="333.714292623559,239.751264781829" />
+        <NodeLayout
+          Size="276,41.6"
+          Id="Package\Loading Data into TestDBStage\Populating table DimFeedbackDetails (SP)"
+          TopLeft="19.4285729855908,235.919332339654" />
         <NodeLayout
           Size="220.8,41.6"
           Id="Package\Loading Data into TestDBStage\Populating table DimGaranties"
@@ -251,40 +267,24 @@
           Id="Package\Loading Data into TestDBStage\Populating table DimLocations"
           TopLeft="40.8000030653819,127.200002917121" />
         <NodeLayout
-          Size="207.2,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimClients"
-          TopLeft="42.9428602447317,176.02353274715" />
-        <NodeLayout
-          Size="262.4,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimReturnDetails (SP)"
-          TopLeft="310.571437334528,17.2823540951555" />
-        <NodeLayout
-          Size="268.8,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimDeliveryDetails (SP)"
-          TopLeft="308.673478118532,76.2504218405093" />
-        <NodeLayout
-          Size="226.4,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimDates (SP)"
-          TopLeft="323.918374089388,132.726053741764" />
-        <NodeLayout
           Size="244.8,41.6"
           Id="Package\Loading Data into TestDBStage\Populating table DimPayments (SP)"
           TopLeft="310.857149377161,179.919331714557" />
         <NodeLayout
-          Size="276,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimFeedbackDetails (SP)"
-          TopLeft="19.4285729855908,235.919332339654" />
+          Size="216.8,41.6"
+          Id="Package\Loading Data into TestDBStage\Populating table DimProducts"
+          TopLeft="41.8000030824122,74.5411786155306" />
         <NodeLayout
-          Size="244.8,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimDiscounts (SP)"
-          TopLeft="333.714292623559,239.751264781829" />
+          Size="262.4,41.6"
+          Id="Package\Loading Data into TestDBStage\Populating table DimReturnDetails (SP)"
+          TopLeft="310.571437334528,17.2823540951555" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="627.2,344"
           Size="627.2,387.2"
           Id="Package\Loading Data into TestDBStage"
-          TopLeft="71.9183685717012,102.867227637809" />
+          TopLeft="298.204086711038,69.8319330568544" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

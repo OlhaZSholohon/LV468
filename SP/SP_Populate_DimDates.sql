@@ -1,4 +1,10 @@
-CREATE PROCEDURE SP_Populate_DimDates
+USE TestDBStage;
+
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'staging.SP_Populate_DimDates') AND type in (N'P', N'PC'))
+  DROP PROCEDURE [staging].[SP_Populate_DimDates]
+GO
+
+CREATE PROCEDURE staging.SP_Populate_DimDates
 
 @StartDate date,
 @EndDate date
@@ -16,7 +22,7 @@ AS
 	  FROM CTE_DateSequence
 	  WHERE DateValue < @EndDate
   )
-  INSERT INTO dbo.DimDates([Date], [Day], [Month], [MonthNum], [Year], [Week], [WeekDay], [Quarter], [IsWeekday])
+  INSERT INTO staging.DimDates([Date], [Day], [Month], [MonthNum], [Year], [Week], [WeekDay], [Quarter], [IsWeekday])
   SELECT DateValue,
 		DATEPART(day,DateValue),
 		DATENAME(month,DateValue),
