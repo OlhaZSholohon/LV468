@@ -1,4 +1,4 @@
-USE TestDBStage;
+
 
 IF OBJECT_ID('staging.DimClients') IS NOT NULL
 	DROP TABLE staging.DimClients
