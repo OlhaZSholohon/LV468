@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Main_package"
   DTS:PackageType="5"
-  DTS:VersionBuild="46"
-  DTS:VersionGUID="{CE6264AC-6CF0-49A5-B1A9-F5E457CE4A52}">
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{39DA2231-6C5B-4C72-8FF1-F27202A1359F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -262,7 +262,7 @@
         <NodeLayout
           Size="225.6,41.6"
           Id="Package\Loading Data into TestDBStage\Populating table DimDates (SP)"
-          TopLeft="323.918374089388,132.726053741764" />
+          TopLeft="313.204088192639,128.137818383298" />
         <NodeLayout
           Size="268.8,41.6"
           Id="Package\Loading Data into TestDBStage\Populating table DimDeliveryDetails (SP)"
@@ -305,7 +305,7 @@
           PanelSize="627.2,390.4"
           Size="627.2,433.6"
           Id="Package\Loading Data into TestDBStage"
-          TopLeft="170.727895545541,68.7430444191621" />
+          TopLeft="102.156465806348,32.8018674445125" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
