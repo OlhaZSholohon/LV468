@@ -1,5 +1,3 @@
-
-
 IF OBJECT_ID('staging.DimDates') IS NOT NULL
 	DROP TABLE staging.DimDates
 

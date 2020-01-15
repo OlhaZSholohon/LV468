@@ -1,5 +1,3 @@
-USE TestDBStage;
-
 IF OBJECT_ID('staging.DimDiscounts') IS NOT NULL
 	DROP TABLE staging.DimDiscounts
 

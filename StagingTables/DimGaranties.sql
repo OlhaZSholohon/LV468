@@ -1,5 +1,3 @@
-USE TestDBStage;
-
 IF OBJECT_ID('staging.DimGaranties') IS NOT NULL
 	DROP TABLE staging.DimGaranties
 

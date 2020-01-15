@@ -1,5 +1,3 @@
-USE TestDBStage;
-
 IF OBJECT_ID('staging.DimReturnDetails') IS NOT NULL
 	DROP TABLE staging.DimReturnDetails
 
