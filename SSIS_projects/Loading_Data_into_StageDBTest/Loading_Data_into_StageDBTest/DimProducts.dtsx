@@ -11,8 +11,8 @@
   DTS:LocaleID="1058"
   DTS:ObjectName="DimProducts"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{7840E3EB-2A3F-48D9-866B-CD7553ACDEDB}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{17292644-05DA-4DE0-96AE-CF85C3A88C48}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -198,14 +198,14 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Foreach Loop Container\Data loading for DimProducts from file"
+          DTS:refId="Package\Foreach Loop Container\Data load for DimProducts from file"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{C88FD168-8483-44AD-A961-6FD6F566BB44}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Data loading for DimProducts from file"
+          DTS:ObjectName="Data load for DimProducts from file"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -213,7 +213,7 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion"
+                  refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion"
                   componentClassID="Microsoft.DataConvert"
                   contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Data Conversion"
@@ -221,97 +221,97 @@
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Inputs[Data Conversion Input]"
+                      refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Inputs[Data Conversion Input]"
                       name="Data Conversion Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[ProductName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[ProductName]"
                           cachedCodepage="1251"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="ProductName"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]" />
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[CategoryName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[CategoryName]"
                           cachedCodepage="1251"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="CategoryName"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[CategoryName]" />
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[CategoryName]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[SubcategoryName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[SubcategoryName]"
                           cachedCodepage="1251"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="SubcategoryName"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[SubcategoryName]" />
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[SubcategoryName]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[BrandName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[BrandName]"
                           cachedCodepage="1251"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="BrandName"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[BrandName]" />
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[BrandName]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[Thicknes]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[Thicknes]"
                           cachedCodepage="1251"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Thicknes"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Thicknes]" />
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Thicknes]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[Weight]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[Weight]"
                           cachedCodepage="1251"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Weight"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Weight]" />
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Weight]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[ProductDescription]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[ProductDescription]"
                           cachedCodepage="1251"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="ProductDescription"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[ProductDescription]" />
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[ProductDescription]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[DefaultGaranty]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[DefaultGaranty]"
                           cachedCodepage="1251"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="DefaultGaranty"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[DefaultGaranty]" />
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[DefaultGaranty]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[DefaultGarantyName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[DefaultGarantyName]"
                           cachedCodepage="1251"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="DefaultGarantyName"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[DefaultGarantyName]" />
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[DefaultGarantyName]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[Price]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Inputs[Data Conversion Input].Columns[Price]"
                           cachedCodepage="1251"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Price"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Price]" />
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Price]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output]"
+                      refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output]"
                       exclusionGroup="1"
                       name="Data Conversion Output"
-                      synchronousInputId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Inputs[Data Conversion Input]">
+                      synchronousInputId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Inputs[Data Conversion Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductName]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductName]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductName]"
                           name="Copy of ProductName"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -319,7 +319,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]}</property>
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -327,12 +327,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CategoryName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CategoryName]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CategoryName]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CategoryName]"
                           name="Copy of CategoryName"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -340,7 +340,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[CategoryName]}</property>
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[CategoryName]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -348,12 +348,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SubcategoryName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SubcategoryName]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SubcategoryName]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SubcategoryName]"
                           name="Copy of SubcategoryName"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -361,7 +361,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[SubcategoryName]}</property>
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[SubcategoryName]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -369,12 +369,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BrandName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BrandName]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BrandName]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BrandName]"
                           name="Copy of BrandName"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -382,7 +382,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[BrandName]}</property>
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[BrandName]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -390,12 +390,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Thicknes]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Thicknes]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Thicknes]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Thicknes]"
                           name="Copy of Thicknes"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -403,7 +403,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Thicknes]}</property>
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Thicknes]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -411,12 +411,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Weight]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Weight]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Weight]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Weight]"
                           name="Copy of Weight"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -424,7 +424,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Weight]}</property>
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Weight]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -432,12 +432,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductDescription]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductDescription]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductDescription]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductDescription]"
                           name="Copy of ProductDescription"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -445,7 +445,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[ProductDescription]}</property>
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[ProductDescription]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -453,12 +453,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DefaultGaranty]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DefaultGaranty]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DefaultGaranty]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DefaultGaranty]"
                           name="Copy of DefaultGaranty"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -466,7 +466,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[DefaultGaranty]}</property>
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[DefaultGaranty]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -474,12 +474,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DefaultGarantyName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DefaultGarantyName]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DefaultGarantyName]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DefaultGarantyName]"
                           name="Copy of DefaultGarantyName"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -487,7 +487,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[DefaultGarantyName]}</property>
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[DefaultGarantyName]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -495,12 +495,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Price]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Price]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Price]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Price]"
                           name="Copy of Price"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -508,7 +508,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Price]}</property>
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Price]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -519,22 +519,22 @@
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Error Output]"
+                      refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Data Conversion Error Output"
-                      synchronousInputId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Inputs[Data Conversion Input]">
+                      synchronousInputId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Inputs[Data Conversion Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -543,7 +543,7 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source"
+                  refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source"
                   componentClassID="Microsoft.FlatFileSource"
                   contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Flat File Source"
@@ -563,25 +563,25 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Connections[FlatFileConnection]"
+                      refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Connections[FlatFileConnection]"
                       connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
                       connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output]"
+                      refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output]"
                       name="Flat File Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]"
                           codePage="1251"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductName]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductName]"
                           length="50"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]"
                           name="ProductName"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -596,14 +596,14 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[CategoryName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[CategoryName]"
                           codePage="1251"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CategoryName]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CategoryName]"
                           length="50"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[CategoryName]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[CategoryName]"
                           name="CategoryName"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -618,14 +618,14 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[SubcategoryName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[SubcategoryName]"
                           codePage="1251"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SubcategoryName]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SubcategoryName]"
                           length="50"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[SubcategoryName]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[SubcategoryName]"
                           name="SubcategoryName"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -640,14 +640,14 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[BrandName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[BrandName]"
                           codePage="1251"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BrandName]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BrandName]"
                           length="50"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[BrandName]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[BrandName]"
                           name="BrandName"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -662,14 +662,14 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Thicknes]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Thicknes]"
                           codePage="1251"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Thicknes]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Thicknes]"
                           length="50"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Thicknes]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Thicknes]"
                           name="Thicknes"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -684,14 +684,14 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Weight]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Weight]"
                           codePage="1251"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weight]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weight]"
                           length="50"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Weight]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Weight]"
                           name="Weight"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -706,14 +706,14 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[ProductDescription]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[ProductDescription]"
                           codePage="1251"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductDescription]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductDescription]"
                           length="50"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[ProductDescription]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[ProductDescription]"
                           name="ProductDescription"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -728,14 +728,14 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[DefaultGaranty]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[DefaultGaranty]"
                           codePage="1251"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DefaultGaranty]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DefaultGaranty]"
                           length="50"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[DefaultGaranty]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[DefaultGaranty]"
                           name="DefaultGaranty"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -750,14 +750,14 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[DefaultGarantyName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[DefaultGarantyName]"
                           codePage="1251"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DefaultGarantyName]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DefaultGarantyName]"
                           length="50"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[DefaultGarantyName]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[DefaultGarantyName]"
                           name="DefaultGarantyName"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -772,14 +772,14 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Price]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Price]"
                           codePage="1251"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Price]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Price]"
                           length="50"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Price]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].Columns[Price]"
                           name="Price"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -797,67 +797,67 @@
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductID]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductID]"
                           codePage="1251"
                           dataType="str"
                           length="50"
                           name="ProductID" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductName]"
                           codePage="1251"
                           dataType="str"
                           length="50"
                           name="ProductName" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CategoryName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CategoryName]"
                           codePage="1251"
                           dataType="str"
                           length="50"
                           name="CategoryName" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SubcategoryName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SubcategoryName]"
                           codePage="1251"
                           dataType="str"
                           length="50"
                           name="SubcategoryName" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BrandName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BrandName]"
                           codePage="1251"
                           dataType="str"
                           length="50"
                           name="BrandName" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Thicknes]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Thicknes]"
                           codePage="1251"
                           dataType="str"
                           length="50"
                           name="Thicknes" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weight]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weight]"
                           codePage="1251"
                           dataType="str"
                           length="50"
                           name="Weight" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductDescription]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductDescription]"
                           codePage="1251"
                           dataType="str"
                           length="50"
                           name="ProductDescription" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DefaultGaranty]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DefaultGaranty]"
                           codePage="1251"
                           dataType="str"
                           length="50"
                           name="DefaultGaranty" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DefaultGarantyName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DefaultGarantyName]"
                           codePage="1251"
                           dataType="str"
                           length="50"
                           name="DefaultGarantyName" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Price]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Price]"
                           codePage="1251"
                           dataType="str"
                           length="50"
@@ -865,27 +865,27 @@
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Error Output]"
+                      refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Error Output]"
                       isErrorOut="true"
                       name="Flat File Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                           codePage="1251"
                           dataType="text"
                           description="Flat File Source Error Output Column"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                           name="Flat File Source Error Output Column" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -894,7 +894,7 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination"
+                  refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
@@ -951,144 +951,144 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Connections[OleDbConnection]"
+                      refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Connections[OleDbConnection]"
                       connectionManagerID="{886EB12D-D24E-4F88-B465-FC068D180E12}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
+                      connectionManagerRefId="Project.ConnectionManagers[StagingDB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ProductName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ProductName]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Copy of ProductName"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductName]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductName]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of CategoryName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of CategoryName]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Copy of CategoryName"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CategoryName]"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CategoryName]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CategoryName]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CategoryName]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of SubcategoryName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of SubcategoryName]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Copy of SubcategoryName"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SubcategoryName]"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SubcategoryName]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SubcategoryName]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SubcategoryName]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of BrandName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of BrandName]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Copy of BrandName"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BrandName]"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BrandName]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BrandName]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BrandName]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Thicknes]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Thicknes]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Copy of Thicknes"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Thicknes]"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Thicknes]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Thicknes]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Thicknes]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Weight]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Weight]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Copy of Weight"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Weight]"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Weight]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Weight]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Weight]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ProductDescription]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ProductDescription]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Copy of ProductDescription"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductDescription]"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductDescription]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductDescription]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductDescription]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of DefaultGaranty]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of DefaultGaranty]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Copy of DefaultGaranty"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DefaultGaranty]"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DefaultGaranty]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DefaultGaranty]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DefaultGaranty]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of DefaultGarantyName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of DefaultGarantyName]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Copy of DefaultGarantyName"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DefaultGarantyName]"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DefaultGarantyName]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DefaultGarantyName]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DefaultGarantyName]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Price]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Price]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Copy of Price"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Price]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Price]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
                           dataType="i4"
                           name="ProductID" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
                           dataType="wstr"
                           length="255"
                           name="ProductName" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CategoryName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CategoryName]"
                           dataType="wstr"
                           length="255"
                           name="CategoryName" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SubcategoryName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SubcategoryName]"
                           dataType="wstr"
                           length="255"
                           name="SubcategoryName" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BrandName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BrandName]"
                           dataType="wstr"
                           length="255"
                           name="BrandName" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Thicknes]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Thicknes]"
                           dataType="wstr"
                           length="255"
                           name="Thicknes" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Weight]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Weight]"
                           dataType="wstr"
                           length="255"
                           name="Weight" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductDescription]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductDescription]"
                           dataType="wstr"
                           length="255"
                           name="ProductDescription" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DefaultGaranty]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DefaultGaranty]"
                           dataType="wstr"
                           length="255"
                           name="DefaultGaranty" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DefaultGarantyName]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DefaultGarantyName]"
                           dataType="wstr"
                           length="255"
                           name="DefaultGarantyName" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
                           dataType="wstr"
                           length="255"
                           name="Price" />
@@ -1097,22 +1097,22 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1123,15 +1123,15 @@
               </components>
               <paths>
                 <path
-                  refId="Package\Foreach Loop Container\Data loading for DimProducts from file.Paths[Data Conversion Output]"
-                  endId="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Foreach Loop Container\Data load for DimProducts from file.Paths[Data Conversion Output]"
+                  endId="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   name="Data Conversion Output"
-                  startId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Outputs[Data Conversion Output]" />
+                  startId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Outputs[Data Conversion Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Data loading for DimProducts from file.Paths[Flat File Source Output]"
-                  endId="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion.Inputs[Data Conversion Input]"
+                  refId="Package\Foreach Loop Container\Data load for DimProducts from file.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source.Outputs[Flat File Source Output]" />
+                  startId="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source.Outputs[Flat File Source Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -1147,14 +1147,14 @@
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Truncating Table DimProducts"
+      DTS:refId="Package\Truncate Table DimProducts"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{2D72C025-E360-4867-8A33-9185E9A9208D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Truncating Table DimProducts"
+      DTS:ObjectName="Truncate Table DimProducts"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -1169,7 +1169,7 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{44C02AAC-633D-491D-AF00-E2C784D02607}"
-      DTS:From="Package\Truncating Table DimProducts"
+      DTS:From="Package\Truncate Table DimProducts"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Foreach Loop Container" />
@@ -1199,46 +1199,46 @@
           Id="Package\Execute stored procedure SP_Populate_DimProducts"
           TopLeft="150.476193038785,368.408595269499" />
         <NodeLayout
-          Size="259.2,41.6"
-          Id="Package\Foreach Loop Container\Data loading for DimProducts from file"
+          Size="244.8,41.6"
+          Id="Package\Foreach Loop Container\Data load for DimProducts from file"
           TopLeft="21.6326524078326,30.2857138689827" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="324,127.2"
-          Size="324,169.6"
+          Size="324,170.4"
           Id="Package\Foreach Loop Container"
           TopLeft="149.877553572808,165.405043999959" />
         <NodeLayout
-          Size="220.8,41.6"
-          Id="Package\Truncating Table DimProducts"
+          Size="212,41.6"
+          Id="Package\Truncate Table DimProducts"
           TopLeft="221.387758872252,71.9417374231412" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="331.787758872252,113.541737423141">
+          TopLeft="327.387758872252,113.541737423141">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-19.9102052994439,51.863306576818"
+              EndConnector="-15.510205299444,51.8633065768178"
               Start="0,0"
-              End="-19.9102052994439,44.363306576818">
+              End="-15.510205299444,44.3633065768178">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.931653288409" />
+                    End="0,21.9316532884089" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.931653288409"
-                    Point2="0,25.931653288409"
-                    Point3="-4,25.931653288409" />
+                    Point1="0,21.9316532884089"
+                    Point2="0,25.9316532884089"
+                    Point3="-4,25.9316532884089" />
                   <mssgle:LineSegment
-                    End="-15.9102052994439,25.931653288409" />
+                    End="-11.510205299444,25.9316532884089" />
                   <mssgle:CubicBezierSegment
-                    Point1="-15.9102052994439,25.931653288409"
-                    Point2="-19.9102052994439,25.931653288409"
-                    Point3="-19.9102052994439,29.931653288409" />
+                    Point1="-11.510205299444,25.9316532884089"
+                    Point2="-15.510205299444,25.9316532884089"
+                    Point3="-15.510205299444,29.9316532884089" />
                   <mssgle:LineSegment
-                    End="-19.9102052994439,44.363306576818" />
+                    End="-15.510205299444,44.3633065768178" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1273,24 +1273,24 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Foreach Loop Container\Data loading for DimProducts from file">
+    design-time-name="Package\Foreach Loop Container\Data load for DimProducts from file">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150.4,77.6"
-          Id="Package\Foreach Loop Container\Data loading for DimProducts from file\Flat File Source"
+          Id="Package\Foreach Loop Container\Data load for DimProducts from file\Flat File Source"
           TopLeft="306.51428574348,24.8470591495606" />
         <NodeLayout
           Size="155.2,41.6"
-          Id="Package\Foreach Loop Container\Data loading for DimProducts from file\Data Conversion"
+          Id="Package\Foreach Loop Container\Data load for DimProducts from file\Data Conversion"
           TopLeft="304.8,128.8" />
         <NodeLayout
           Size="170.4,41.6"
-          Id="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination"
+          Id="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination"
           TopLeft="297.6,202.352940996295" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Data loading for DimProducts from file.Paths[Flat File Source Output]"
+          Id="Package\Foreach Loop Container\Data load for DimProducts from file.Paths[Flat File Source Output]"
           TopLeft="382.05714287174,102.447059149561">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1312,7 +1312,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Data loading for DimProducts from file.Paths[Data Conversion Output]"
+          Id="Package\Foreach Loop Container\Data load for DimProducts from file.Paths[Data Conversion Output]"
           TopLeft="382.6,170.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1337,7 +1337,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Data loading for DimProducts from file\OLE DB Destination">
+    design-time-name="Package\Foreach Loop Container\Data load for DimProducts from file\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

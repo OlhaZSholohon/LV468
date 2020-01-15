@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimDates"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{9893C59B-87CC-4D36-95C9-E8E969CE75B4}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{75278DF6-4CE4-4064-8DEC-D1D2B72C6617}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -34,13 +34,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Truncating Table DimDates"
+      DTS:refId="Package\Truncate Table DimDates"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{C3E665A5-347D-44B7-92F6-EB9DF1B38E88}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Truncating Table DimDates"
+      DTS:ObjectName="Truncate Table DimDates"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -55,7 +55,7 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{C10C6372-C7BE-4984-9940-68BF40ADF769}"
-      DTS:From="Package\Truncating Table DimDates"
+      DTS:From="Package\Truncate Table DimDates"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Populate table DimDates" />
@@ -77,12 +77,12 @@
           Id="Package\Populate table DimDates"
           TopLeft="236.571432600216,149.270590328758" />
         <NodeLayout
-          Size="206.4,41.6"
-          Id="Package\Truncating Table DimDates"
+          Size="197.6,41.6"
+          Id="Package\Truncate Table DimDates"
           TopLeft="233.142861113256,69.1294127342197" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="335.057146856736,110.72941273422">
+          TopLeft="332.657146856736,110.72941273422">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"

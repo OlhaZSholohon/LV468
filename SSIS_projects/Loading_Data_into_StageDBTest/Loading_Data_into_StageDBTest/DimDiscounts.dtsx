@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{AB170ECB-6AA1-480A-BBC2-33A8956DE877}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{2DD712A6-A591-4135-A908-834AEADC5803}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -52,13 +52,13 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\For Loop Container\Executing Stored Procedure"
+          DTS:refId="Package\For Loop Container\Execute Stored Procedure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{4301974A-AE84-4B94-96EB-FEA6EACA034F}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Executing Stored Procedure"
+          DTS:ObjectName="Execute Stored Procedure"
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -70,13 +70,13 @@
       </DTS:Executables>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Truncating Table DimDiscounts"
+      DTS:refId="Package\Truncate Table DimDiscounts"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{2F945877-3847-4D2C-9C13-6CECFD0BAC30}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Truncating Table DimDiscounts"
+      DTS:ObjectName="Truncate Table DimDiscounts"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -91,7 +91,7 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{C681970F-9AFE-4D4B-8B46-47F45E71C4F4}"
-      DTS:From="Package\Truncating Table DimDiscounts"
+      DTS:From="Package\Truncate Table DimDiscounts"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\For Loop Container" />
@@ -109,8 +109,8 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="208.8,41.6"
-          Id="Package\For Loop Container\Executing Stored Procedure"
+          Size="200,41.6"
+          Id="Package\For Loop Container\Execute Stored Procedure"
           TopLeft="14.5142883320245,9.50588461800021" />
         <ContainerLayout
           HeaderHeight="43"
@@ -120,23 +120,35 @@
           Id="Package\For Loop Container"
           TopLeft="136.000002316066,112.56470746103" />
         <NodeLayout
-          Size="224.8,41.6"
-          Id="Package\Truncating Table DimDiscounts"
+          Size="216.8,41.6"
+          Id="Package\Truncate Table DimDiscounts"
           TopLeft="133.142859410267,33.7411765735455" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="247.771430863167,75.3411765735455">
+          TopLeft="241.542859410267,75.3411765735455">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.2235308874846"
+              EndConnector="8.457142905799,37.2235308874845"
               Start="0,0"
-              End="0,29.7235308874846">
+              End="8.457142905799,29.7235308874845">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.7235308874846" />
+                    End="0,14.6117654437423" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.6117654437423"
+                    Point2="0,18.6117654437423"
+                    Point3="4,18.6117654437423" />
+                  <mssgle:LineSegment
+                    End="4.457142905799,18.6117654437423" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.457142905799,18.6117654437423"
+                    Point2="8.457142905799,18.6117654437423"
+                    Point3="8.457142905799,22.6117654437423" />
+                  <mssgle:LineSegment
+                    End="8.457142905799,29.7235308874845" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

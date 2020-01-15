@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimLocations"
   DTS:PackageType="5"
-  DTS:VersionBuild="62"
-  DTS:VersionGUID="{1FA8A5EB-CDB8-4A82-832A-DC9230EEBD28}">
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{EE353F88-7BA5-49CF-B553-1874844ED5CD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -116,13 +116,13 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Executing Stored Procedure"
+      DTS:refId="Package\Execute Stored Procedure"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{3176DB71-A0C4-4F4C-87C7-DFBAF8990020}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Executing Stored Procedure"
+      DTS:ObjectName="Execute Stored Procedure"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -159,20 +159,20 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties"
+          DTS:refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{1387A8F8-7CC2-4A0F-9290-50AAFCC6095E}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Data Loading from csv to DimGaranties">
+          DTS:ObjectName="Data Load from csv to DimGaranties">
           <DTS:Variables />
           <DTS:ObjectData>
             <pipeline
               version="1">
               <components>
                 <component
-                  refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations"
+                  refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
@@ -229,96 +229,96 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Connections[OleDbConnection]"
+                      refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Connections[OleDbConnection]"
                       connectionManagerID="{886EB12D-D24E-4F88-B465-FC068D180E12}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
+                      connectionManagerRefId="Project.ConnectionManagers[StagingDB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input]"
+                      refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].Columns[Country]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].Columns[Country]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Country"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
-                          lineageId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Country]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Country]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].Columns[Region]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].Columns[Region]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Region"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
-                          lineageId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Region]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Region]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].Columns[City]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].Columns[City]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="City"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[City]"
-                          lineageId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[City]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[City]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].Columns[Adress]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].Columns[Adress]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Adress"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[Adress]"
-                          lineageId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Adress]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[Adress]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Adress]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].Columns[PostNumber]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].Columns[PostNumber]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="PostNumber"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[PostNumber]"
-                          lineageId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[PostNumber]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[PostNumber]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[PostNumber]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].Columns[DeliveryService]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].Columns[DeliveryService]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="DeliveryService"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryService]"
-                          lineageId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[DeliveryService]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryService]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[DeliveryService]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[LocationID]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[LocationID]"
                           dataType="i4"
                           name="LocationID" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
                           dataType="wstr"
                           length="255"
                           name="Country" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
                           dataType="wstr"
                           length="255"
                           name="Region" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[City]"
                           dataType="wstr"
                           length="255"
                           name="City" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[Adress]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[Adress]"
                           dataType="wstr"
                           length="255"
                           name="Adress" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[PostNumber]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[PostNumber]"
                           dataType="wstr"
                           length="255"
                           name="PostNumber" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryService]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryService]"
                           dataType="wstr"
                           length="255"
                           name="DeliveryService" />
@@ -327,22 +327,22 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -351,7 +351,7 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv"
+                  refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv"
                   componentClassID="Microsoft.FlatFileSource"
                   contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Flat File Source"
@@ -371,24 +371,24 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Connections[FlatFileConnection]"
+                      refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Connections[FlatFileConnection]"
                       connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
                       connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output]"
+                      refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output]"
                       name="Flat File Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Country]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Country]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[Country]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[Country]"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Country]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Country]"
                           name="Country"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -403,13 +403,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Region]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Region]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[Region]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[Region]"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Region]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Region]"
                           name="Region"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -424,13 +424,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[City]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[City]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[City]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[City]"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[City]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[City]"
                           name="City"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -445,13 +445,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Adress]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Adress]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[Adress]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[Adress]"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Adress]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[Adress]"
                           name="Adress"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -466,13 +466,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[PostNumber]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[PostNumber]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[PostNumber]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[PostNumber]"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[PostNumber]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[PostNumber]"
                           name="PostNumber"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -487,13 +487,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[DeliveryService]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[DeliveryService]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[DeliveryService]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[DeliveryService]"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[DeliveryService]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].Columns[DeliveryService]"
                           name="DeliveryService"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -511,43 +511,43 @@
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[LocationID]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[LocationID]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="LocationID" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[Country]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[Country]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Country" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[Region]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[Region]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Region" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[City]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[City]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="City" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[Adress]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[Adress]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Adress" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[PostNumber]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[PostNumber]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="PostNumber" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[DeliveryService]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output].ExternalColumns[DeliveryService]"
                           codePage="1252"
                           dataType="str"
                           length="50"
@@ -555,27 +555,27 @@
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Error Output]"
+                      refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Error Output]"
                       isErrorOut="true"
                       name="Flat File Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                           codePage="1252"
                           dataType="text"
                           description="Flat File Source Error Output Column"
-                          lineageId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                           name="Flat File Source Error Output Column" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -586,10 +586,10 @@
               </components>
               <paths>
                 <path
-                  refId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties.Paths[Flat File Source Output]"
-                  endId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input]"
+                  refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations.Inputs[OLE DB Destination Input]"
                   name="Flat File Source Output"
-                  startId="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output]" />
+                  startId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv.Outputs[Flat File Source Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -605,13 +605,13 @@
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Truncating Table DimLocations"
+      DTS:refId="Package\Truncate Table DimLocations"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{BB6ACE8D-D122-4CE6-8DD4-B0EF25FC908C}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Truncating Table DimLocations"
+      DTS:ObjectName="Truncate Table DimLocations"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -626,15 +626,15 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{C7F4DC0A-3FC8-4685-9E79-887D525FE0C1}"
-      DTS:From="Package\Truncating Table DimLocations"
+      DTS:From="Package\Truncate Table DimLocations"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Executing Stored Procedure" />
+      DTS:To="Package\Execute Stored Procedure" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
       DTS:DTSID="{831FEE3D-564F-4627-96A2-2E32868810E2}"
-      DTS:From="Package\Executing Stored Procedure"
+      DTS:From="Package\Execute Stored Procedure"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Foreach Loop Container" />
@@ -652,12 +652,12 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="208.8,41.6"
-          Id="Package\Executing Stored Procedure"
+          Size="200,41.6"
+          Id="Package\Execute Stored Procedure"
           TopLeft="277.734694979977,121.38487441779" />
         <NodeLayout
-          Size="263.2,41.6"
-          Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties"
+          Size="248.8,41.6"
+          Id="Package\Foreach Loop Container\Data Load from csv to DimGaranties"
           TopLeft="22.3285723043948,20.1331797903329" />
         <ContainerLayout
           HeaderHeight="43"
@@ -667,18 +667,18 @@
           Id="Package\Foreach Loop Container"
           TopLeft="276.734698590315,205.378154140855" />
         <NodeLayout
-          Size="224,41.6"
-          Id="Package\Truncating Table DimLocations"
+          Size="215.2,41.6"
+          Id="Package\Truncate Table DimLocations"
           TopLeft="225.489796131068,44.7932778269362" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="337.489796131068,86.3932778269362">
+          TopLeft="333.089796131068,86.3932778269362">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="44.6448988489093,34.9915965908538"
+              EndConnector="44.644898848909,34.9915965908538"
               Start="0,0"
-              End="44.6448988489093,27.4915965908538">
+              End="44.644898848909,27.4915965908538">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -689,13 +689,13 @@
                     Point2="0,17.4957982954269"
                     Point3="4,17.4957982954269" />
                   <mssgle:LineSegment
-                    End="40.6448988489093,17.4957982954269" />
+                    End="40.644898848909,17.4957982954269" />
                   <mssgle:CubicBezierSegment
-                    Point1="40.6448988489093,17.4957982954269"
-                    Point2="44.6448988489093,17.4957982954269"
-                    Point3="44.6448988489093,21.4957982954269" />
+                    Point1="40.644898848909,17.4957982954269"
+                    Point2="44.644898848909,17.4957982954269"
+                    Point3="44.644898848909,21.4957982954269" />
                   <mssgle:LineSegment
-                    End="44.6448988489093,27.4915965908538" />
+                    End="44.644898848909,27.4915965908538" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -706,18 +706,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="380.634696785146,162.98487441779">
+          TopLeft="377.734694979977,162.98487441779">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.3932797230656"
+              EndConnector="43.800003610338,42.393279723065"
               Start="0,0"
-              End="0,34.8932797230656">
+              End="43.800003610338,34.893279723065">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.8932797230656" />
+                    End="0,17.1966398615325" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.1966398615325"
+                    Point2="0,21.1966398615325"
+                    Point3="4,21.1966398615325" />
+                  <mssgle:LineSegment
+                    End="39.800003610338,21.1966398615325" />
+                  <mssgle:CubicBezierSegment
+                    Point1="39.800003610338,21.1966398615325"
+                    Point2="43.800003610338,21.1966398615325"
+                    Point3="43.800003610338,25.1966398615325" />
+                  <mssgle:LineSegment
+                    End="43.800003610338,34.893279723065" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -730,20 +742,20 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Foreach Loop Container\Data Loading from csv to DimGaranties">
+    design-time-name="Package\Foreach Loop Container\Data Load from csv to DimGaranties">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="161.6,41.6"
-          Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations_csv"
+          Id="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations_csv"
           TopLeft="235.142856821722,64.1294120049394" />
         <NodeLayout
           Size="140.8,41.6"
-          Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations"
+          Id="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations"
           TopLeft="248,145" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Loading from csv to DimGaranties.Paths[Flat File Source Output]"
+          Id="Package\Foreach Loop Container\Data Load from csv to DimGaranties.Paths[Flat File Source Output]"
           TopLeft="317.171428410861,105.729412004939">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -768,7 +780,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Data Loading from csv to DimGaranties\DimLocations">
+    design-time-name="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimLocations">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

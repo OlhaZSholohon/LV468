@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Main_package"
   DTS:PackageType="5"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{39DA2231-6C5B-4C72-8FF1-F27202A1359F}">
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{99E50FEE-E4DC-493C-81AC-CDE2E86DD75C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -51,13 +51,13 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Loading Data into TestDBStage\Populating table DimClients"
+          DTS:refId="Package\Loading Data into TestDBStage\Populate table DimClients"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{39F79EA8-926F-449A-854D-01E1E2C3D771}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Populating table DimClients"
+          DTS:ObjectName="Populate table DimClients"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -68,13 +68,13 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Loading Data into TestDBStage\Populating table DimDates (SP)"
+          DTS:refId="Package\Loading Data into TestDBStage\Populate table DimDates (SP)"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{328A98BF-F232-45AA-8387-D4EDBF31ACCC}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Populating table DimDates (SP)"
+          DTS:ObjectName="Populate table DimDates (SP)"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -85,13 +85,13 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Loading Data into TestDBStage\Populating table DimDeliveryDetails (SP)"
+          DTS:refId="Package\Loading Data into TestDBStage\Populate table DimDeliveryDetails (SP)"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{7AACE6CF-8B36-4290-A5A2-49F8666F1843}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Populating table DimDeliveryDetails (SP)"
+          DTS:ObjectName="Populate table DimDeliveryDetails (SP)"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -102,13 +102,13 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Loading Data into TestDBStage\Populating table DimDiscounts (SP)"
+          DTS:refId="Package\Loading Data into TestDBStage\Populate table DimDiscounts (SP)"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{6D4CA4BA-CA1D-434E-A4A9-171366722B70}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Populating table DimDiscounts (SP)"
+          DTS:ObjectName="Populate table DimDiscounts (SP)"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -119,13 +119,13 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Loading Data into TestDBStage\Populating table DimFeedbackDetails (SP)"
+          DTS:refId="Package\Loading Data into TestDBStage\Populate table DimFeedbackDetails (SP)"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{D71EFD66-F16C-4A2A-ABEF-B5749CBEAB23}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Populating table DimFeedbackDetails (SP)"
+          DTS:ObjectName="Populate table DimFeedbackDetails (SP)"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -136,14 +136,14 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Loading Data into TestDBStage\Populating table DimGaranties"
+          DTS:refId="Package\Loading Data into TestDBStage\Populate table DimGaranties"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:DelayValidation="True"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{061DEB69-CD41-412F-9D4E-A28701F66695}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Populating table DimGaranties"
+          DTS:ObjectName="Populate table DimGaranties"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -154,14 +154,14 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Loading Data into TestDBStage\Populating table DimLocations"
+          DTS:refId="Package\Loading Data into TestDBStage\Populate table DimLocations"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:DelayValidation="True"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{4ADBB0C4-68B6-4C39-9B66-70391BB0CFF3}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Populating table DimLocations"
+          DTS:ObjectName="Populate table DimLocations"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -172,13 +172,13 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Loading Data into TestDBStage\Populating table DimPayments (SP)"
+          DTS:refId="Package\Loading Data into TestDBStage\Populate table DimPayments (SP)"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{8AA6C4B4-E5F5-46CB-9DE2-412D6840BA34}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Populating table DimPayments (SP)"
+          DTS:ObjectName="Populate table DimPayments (SP)"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -189,14 +189,14 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Loading Data into TestDBStage\Populating table DimProducts"
+          DTS:refId="Package\Loading Data into TestDBStage\Populate table DimProducts"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:DelayValidation="True"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{ED956240-1CAD-4570-B382-C65FAC8391C4}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Populating table DimProducts"
+          DTS:ObjectName="Populate table DimProducts"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -207,13 +207,13 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Loading Data into TestDBStage\Populating table DimReturnDetails (SP)"
+          DTS:refId="Package\Loading Data into TestDBStage\Populate table DimReturnDetails (SP)"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{99CFE835-0893-4A56-81D7-2FA334C17827}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Populating table DimReturnDetails (SP)"
+          DTS:ObjectName="Populate table DimReturnDetails (SP)"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -224,13 +224,13 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Loading Data into TestDBStage\Populating table DimSuppliers"
+          DTS:refId="Package\Loading Data into TestDBStage\Populate table DimSuppliers"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{205B520D-9F69-433E-AB10-739A7549AAF9}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Populating table DimSuppliers"
+          DTS:ObjectName="Populate table DimSuppliers"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -256,48 +256,48 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="207.2,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimClients"
+          Size="198.4,41.6"
+          Id="Package\Loading Data into TestDBStage\Populate table DimClients"
           TopLeft="42.9428602447317,184.58823874962" />
         <NodeLayout
-          Size="225.6,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimDates (SP)"
+          Size="217.6,41.6"
+          Id="Package\Loading Data into TestDBStage\Populate table DimDates (SP)"
           TopLeft="313.204088192639,128.137818383298" />
         <NodeLayout
-          Size="268.8,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimDeliveryDetails (SP)"
+          Size="260,41.6"
+          Id="Package\Loading Data into TestDBStage\Populate table DimDeliveryDetails (SP)"
           TopLeft="308.673478118532,76.2504218405093" />
         <NodeLayout
-          Size="244.8,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimDiscounts (SP)"
+          Size="236,41.6"
+          Id="Package\Loading Data into TestDBStage\Populate table DimDiscounts (SP)"
           TopLeft="317.714292351081,234.857147066132" />
         <NodeLayout
-          Size="276,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimFeedbackDetails (SP)"
+          Size="267.2,41.6"
+          Id="Package\Loading Data into TestDBStage\Populate table DimFeedbackDetails (SP)"
           TopLeft="305.142863565562,290.978156641245" />
         <NodeLayout
-          Size="220.8,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimGaranties"
+          Size="212,41.6"
+          Id="Package\Loading Data into TestDBStage\Populate table DimGaranties"
           TopLeft="41.0571464309891,17.3411781050343" />
         <NodeLayout
-          Size="220,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimLocations"
+          Size="212,41.6"
+          Id="Package\Loading Data into TestDBStage\Populate table DimLocations"
           TopLeft="40.8000030653819,127.200002917121" />
         <NodeLayout
-          Size="244.8,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimPayments (SP)"
+          Size="236.8,41.6"
+          Id="Package\Loading Data into TestDBStage\Populate table DimPayments (SP)"
           TopLeft="310.857149377161,179.919331714557" />
         <NodeLayout
-          Size="216.8,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimProducts"
+          Size="208,41.6"
+          Id="Package\Loading Data into TestDBStage\Populate table DimProducts"
           TopLeft="41.8000030824122,74.5411786155306" />
         <NodeLayout
-          Size="262.4,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimReturnDetails (SP)"
+          Size="254.4,41.6"
+          Id="Package\Loading Data into TestDBStage\Populate table DimReturnDetails (SP)"
           TopLeft="310.571437334528,17.2823540951555" />
         <NodeLayout
-          Size="219.2,41.6"
-          Id="Package\Loading Data into TestDBStage\Populating table DimSuppliers"
+          Size="210.4,41.6"
+          Id="Package\Loading Data into TestDBStage\Populate table DimSuppliers"
           TopLeft="38.1714316465417,243.764710669864" />
         <ContainerLayout
           HeaderHeight="43"
