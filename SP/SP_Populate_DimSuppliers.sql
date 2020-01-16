@@ -1,15 +1,12 @@
 USE [TestDBStage]
 GO
 
-IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'staging.SP_PopulateDimSuppliers') AND type in (N'P', N'PC'))
-  DROP PROCEDURE [staging].[SP_PopulateDimSuppliers]
-
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE staging.SP_PopulateDimSuppliers
+CREATE PROCEDURE [staging].[SP_PopulateDimSuppliers]
 	@NumberOfRows INT
 AS
 
@@ -17,11 +14,14 @@ Declare @Loop INT,
 		@RandValue1 INT,
 		@RandValue2 INT,
 		@InsertedRows INT,
-		@RowsForWhile INT;
+		@RowsForWhile INT,
+		@NumberOfRowsLocal INT;
 
 SET @RandValue1 = round(rand()*843, 0);			--rand value 843
 SET @RandValue2 = round(rand()*943, 0);			--rand value 943
 SET @Loop = 1
+SET @NumberOfRowsLocal = round(@NumberOfRows * 0.5,0)
+	
 
 ;WITH CTE_TempDictionary as (
 SELECT 'Comfy' SupplierName, 'comfy@gmail.com' SupplierEmail, '01234567' SupplierPhone, 'My name is Comfy. I want to be your supplier!' AS SupplierDescription
@@ -36,7 +36,7 @@ SELECT 'foxtrot' SupplierName, 'foxtrot@gmail.com' SupplierEmail, '09666666' Sup
 )
 
 INSERT INTO staging.DimSuppliers (SupplierName, SupplierEmail, SupplierPhone, SupplierDescription)
-SELECT c1.SupplierName + CAST(@RandValue1 as nvarchar(10)),
+SELECT TOP (@NumberOfRowsLocal) c1.SupplierName + CAST(@RandValue1 as nvarchar(10)),
 			c2.SupplierEmail + CAST(@RandValue1 as nvarchar(10)),
 				c3.SupplierPhone + CAST(@RandValue1 as nvarchar(10)) + CAST(@RandValue2 as nvarchar(10)),
 					c4.SupplierDescription + CAST(@RandValue1 as nvarchar(10))
@@ -47,6 +47,7 @@ CROSS JOIN
 CTE_TempDictionary c3
 CROSS JOIN
 CTE_TempDictionary c4
+ 
 
 SELECT @InsertedRows = @@ROWCOUNT
 
