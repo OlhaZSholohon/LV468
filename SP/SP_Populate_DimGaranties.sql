@@ -1,7 +1,9 @@
 
 USE TestDBStage;
 
---exec staging.SP_PopulateDimGaranties 0;
+--exec staging.SP_PopulateDimGaranties 5;
+
+SET NOCOUNT ON
 
 IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'staging.SP_PopulateDimGaranties') AND type in (N'P', N'PC'))
   DROP PROCEDURE [staging].[SP_PopulateDimGaranties]
@@ -41,16 +43,13 @@ FROM CTE_TempDictionary c1
 CROSS JOIN
 CTE_TempDictionary c2
 
+SET @InsertedRows = @@ROWCOUNT
+SET @RowsForWhile = @NumberOfRows - @InsertedRows
 -------------------------------
 SELECT * 
 INTO #TempDimGaranties
 FROM staging.DimGaranties
 -------------------------------
-
-SET @InsertedRows = @@ROWCOUNT
-
-SET @RowsForWhile = @NumberOfRows - @InsertedRows
-
 
 WHILE @Loop <= @RowsForWhile
 BEGIN 
