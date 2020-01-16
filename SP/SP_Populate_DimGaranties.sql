@@ -1,7 +1,7 @@
 
 USE TestDBStage;
 
---exec staging.SP_PopulateDimGaranties 100;
+--exec staging.SP_PopulateDimGaranties 0;
 
 IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'staging.SP_PopulateDimGaranties') AND type in (N'P', N'PC'))
   DROP PROCEDURE [staging].[SP_PopulateDimGaranties]
@@ -32,7 +32,8 @@ SELECT 'Additional reseller''s warranty' AS NameGaranty, 'Some description of wa
 )
 
 INSERT INTO staging.DimGaranties (NameGaranty, Duration, PriceGaranty, DescriptionGaranty)
-SELECT  c1.NameGaranty 
+SELECT TOP (TRY_CAST(0.5*@NumberOfRows as INT))
+		 c1.NameGaranty 
 		, round( rand()*200, 0)
 		, round( rand()*400, 0)
 		, c2.DescriptionGaranty +CAST(@RandValue as nvarchar(10))
