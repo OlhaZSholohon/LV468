@@ -1,16 +1,15 @@
 USE [TestDBStage]
+GO
 
-IF OBJECT_ID('staging.DimSuppliers', 'U') IS NOT NULL 
-DROP TABLE [staging].DimSuppliers;
-CREATE TABLE [staging].DimSuppliers(
-	[SupplierID] [int] IDENTITY(1,1) NOT NULL,
-	[SupplierName] [nvarchar](255) NULL,
-	[SupplierEmail] [nvarchar](255) NULL,
-	[SupplierPhone] [nvarchar](255) NULL,
-	[SupplierDescription] [nvarchar](255) NULL
-) 
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'staging.SP_PopulateDimSuppliers') AND type in (N'P', N'PC'))
+  DROP PROCEDURE [staging].[SP_PopulateDimSuppliers]
 
-CREATE OR ALTER PROCEDURE staging.SP_PopulateDimSuppliers
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE staging.SP_PopulateDimSuppliers
 	@NumberOfRows INT
 AS
 
