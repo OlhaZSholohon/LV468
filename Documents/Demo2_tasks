@@ -32,3 +32,6 @@ Write stored procedure for populating fact tables:
 	*FactFeedbacks from DimProducts, DimFeedbackDetails, DimDates, DimClients
 
 create ssis packages for calling datamart procedures	
+
+--SDC
+https://www.datawarehouse4u.info/SCD-Slowly-Changing-Dimensions.html
