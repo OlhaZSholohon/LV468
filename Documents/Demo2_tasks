@@ -1,0 +1,34 @@
+create datamart database and tables with datamart schema and proper types
+create synonyms  on staging tables
+
+Change staging SSIS packages to take the procedure parameters from variables.
+
+Before data are loaded to datamart tables they should be checked on valid data types. It could be done in procedure or in ssis package	
+https://stackoverflow.com/questions/14051672/how-to-verify-datatype-before-entering-into-the-table
+https://www.sqlshack.com/sql-server-data-type-conversion-methods-performance-comparison/
+
+create procedures for incremental load
+
+SCD 1 - slowly changing dimmention Type 1
+ReturnDetails 
+Payments 
+FeedbackDetails  
+Discounts 
+DeliveryDetails 
+
+SCD 2 - slowly changing dimmention Type 2
+
+DimSuppliers 
+DimProducts 
+DimLocations 
+DimGaranties 
+DimClients  
+
+Write stored procedure for populating fact tables: 
+	*FactDeliveries from DimClients, DimDeliveryDetails, DimProducts, DimDates, DimLocation
+	*FactReturns from DimReturndetails, DimProducts, DimPayments, DimGaranties, DimDates
+	*FactOrders from  DimPayments, DimDeliveryDetails, DimGaranties, DimClients, DimDiscounts, DimReturndetails, DimDates, DimProducts
+	*FactSupplies from DimDates, DimLocation, DimSupliers, DimProducts
+	*FactFeedbacks from DimProducts, DimFeedbackDetails, DimDates, DimClients
+
+create ssis packages for calling datamart procedures	
