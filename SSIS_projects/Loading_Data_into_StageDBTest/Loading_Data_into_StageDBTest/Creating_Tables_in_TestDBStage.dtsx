@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Creating_Tables_in_TestDBStage"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{BBECD30D-22F7-4CD4-B547-8F7806447F88}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{75FB1624-E94C-4190-BE15-BADE597DFB45}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -48,7 +48,7 @@
         <NodeLayout
           Size="310.4,41.6"
           Id="Package\Execute Process to Create Tables in TestDBStage"
-          TopLeft="44.5714293304756,121.1294134635" />
+          TopLeft="194.85714617554,118.682354605652" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

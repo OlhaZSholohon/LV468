@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimGaranties"
   DTS:PackageType="5"
-  DTS:VersionBuild="70"
-  DTS:VersionGUID="{69ED8408-C12B-4690-BA10-CD5AF7D18B82}">
+  DTS:VersionBuild="71"
+  DTS:VersionGUID="{BDFCB122-DE51-4DD3-9586-83FFC71D513A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -736,7 +736,7 @@
         <NodeLayout
           Size="200,41.6"
           Id="Package\Execute Stored Procedure"
-          TopLeft="91.4285729855906,128.470590037046" />
+          TopLeft="177.142860159582,149.117649150143" />
         <NodeLayout
           Size="248.8,41.6"
           Id="Package\Foreach Loop Container\Data Load from csv to DimGaranties"
@@ -747,14 +747,14 @@
           PanelSize="288,124.8"
           Size="288,168"
           Id="Package\Foreach Loop Container"
-          TopLeft="83.0204095770945,201.59496052158" />
+          TopLeft="168.734696751086,222.242019634677" />
         <NodeLayout
           Size="216,41.6"
           Id="Package\Truncate Table DimGaranties"
-          TopLeft="90.4489811321736,47.4218488596126" />
+          TopLeft="176.163268306165,68.0689079727092" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="194.938777058882,89.0218488596126">
+          TopLeft="280.653064232873,109.668907972709">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -776,7 +776,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="191.428572985591,170.070590037046">
+          TopLeft="277.142860159582,190.717649150143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -815,7 +815,7 @@
     design-time-name="Package\Foreach Loop Container\Data Load from csv to DimGaranties">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimGaranties_csv"
@@ -859,9 +859,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -883,9 +881,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

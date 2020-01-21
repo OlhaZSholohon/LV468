@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Main_package"
   DTS:PackageType="5"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{99E50FEE-E4DC-493C-81AC-CDE2E86DD75C}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{FD95103F-F5A7-4294-B133-43810B68D467}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -305,7 +305,7 @@
           PanelSize="627.2,390.4"
           Size="627.2,433.6"
           Id="Package\Loading Data into TestDBStage"
-          TopLeft="102.156465806348,32.8018674445125" />
+          TopLeft="203.108848477938,77.6646131717347" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

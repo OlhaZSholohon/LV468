@@ -11,20 +11,20 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Creating_Tables_in_TestDBStage"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{62588C77-BAB2-4C11-A8C5-CF6667E476D1}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{75FB1624-E94C-4190-BE15-BADE597DFB45}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Execute Process  Creating Tables in TestDBStage"
+      DTS:refId="Package\Execute Process to Create Tables in TestDBStage"
       DTS:CreationName="Microsoft.ExecuteProcess"
       DTS:Description="Execute Process Task"
       DTS:DTSID="{ABE194DF-C0D6-42A4-B0D5-8FC05683B6B2}"
       DTS:ExecutableType="Microsoft.ExecuteProcess"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Process  Creating Tables in TestDBStage"
+      DTS:ObjectName="Execute Process to Create Tables in TestDBStage"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -46,9 +46,9 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="309.6,41.6"
-          Id="Package\Execute Process  Creating Tables in TestDBStage"
-          TopLeft="44.5714293304756,121.1294134635" />
+          Size="310.4,41.6"
+          Id="Package\Execute Process to Create Tables in TestDBStage"
+          TopLeft="194.85714617554,118.682354605652" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
