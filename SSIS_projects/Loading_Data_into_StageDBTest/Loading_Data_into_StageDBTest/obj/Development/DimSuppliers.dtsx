@@ -212,7 +212,7 @@
                     <connection
                       refId="Package\Populate DimSuppliers with foreach container\Data Loading from csv to DimSuppliers\DimSuppliers.Connections[OleDbConnection]"
                       connectionManagerID="{886EB12D-D24E-4F88-B465-FC068D180E12}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
+                      connectionManagerRefId="Project.ConnectionManagers[StagingDB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
