@@ -11,10 +11,21 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Populate_DimPayments"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{8713E085-54F1-444B-AEA9-9858DBC0A09B}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{BD43930E-8672-4751-A2AA-75F04CA6C10A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{3ACA646C-24A6-4117-90A3-264DD16EA14B}"
+      DTS:ObjectName="numRows">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">1000</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -63,7 +74,14 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
-              SQLTask:SqlStatementSource="exec [staging].[SP_PopulateDimPayments] 1000" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="exec [staging].[SP_PopulateDimPayments] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="$Package::numRows"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
