@@ -11,10 +11,21 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{5FCA4BCB-FEAF-40ED-A681-76E59B03B90C}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{8298E6C9-FD8C-49E3-9698-D8FAB076FB37}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{2B5EDBB2-B38A-4019-96C2-B3E899348A91}"
+      DTS:ObjectName="NumberOfRowsDimFeedbackDetails">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">1000</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -63,7 +74,14 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
-              SQLTask:SqlStatementSource="exec [staging].[SP_Populate_DimFeedbackDetails] @NumberOfRows = 100" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="exec [staging].[SP_Populate_DimFeedbackDetails] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="$Package::NumberOfRowsDimFeedbackDetails"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>

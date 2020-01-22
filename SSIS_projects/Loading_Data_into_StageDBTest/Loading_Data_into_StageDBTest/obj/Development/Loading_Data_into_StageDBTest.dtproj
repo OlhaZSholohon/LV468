@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">RD7</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAACAAAAAAADZgAAwAAAABAAAAAmNgiIrLR3Ef+/MllYHHQzAAAAAASAAACgAAAAEAAAAIe0Kwea4IsXZo6jEe2BcQyIAAAAxOydujpw9rTEJpsLb/PlLUml8+XxBv4uUaV1372tVvdBXPSTk6rwYS/K6rhgrn/6ldb6prqhTz8XyPwhYkmtZDRSnhoiOuAxEpGK7h3FA4jLATEXnyK++c9UUt6WQ9BzsnE9koGKswNYfY/TN7VjYqLElTyWqljcnDl6XKY923doiF+gLKRqUxQAAACS6nQXHkAdT+Ws6a02t6s1FkKMlg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2KtgmFAkb0iwZ1gYlE+9IgAAAAACAAAAAAADZgAAwAAAABAAAADDbbxvOVVQjZVNGmosU/voAAAAAASAAACgAAAAEAAAAKo3WbyQBKLJhumQX8ryxcWIAAAAcROvJejUqQIrLB8FDwDUx2BFB8Xx9vX/rjRFFKymal0lIaDKNJ1aPbaG/MUWe/MXfl+p3qB+5vY6YXvfaoVsbmGaqjtTy3lWwxwZvIzefdb43AP6WiQ9Gjccm+ug7H8fU56nT/tgrx9DP0jnN9h2uI3CWhr8pG1PME44NEBUIRBxhJvyHBgE4xQAAAAF/0GkKAMs55w5N9LmESsclqHd3Q==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -193,10 +193,10 @@
                 <SSIS:Property SSIS:Name="Name">DimGaranties</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">88</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">89</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{66157E2A-0D41-4377-BDF3-7591305926AC}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{42124EBE-3A21-4B7A-8F97-7A41616B3DEE}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -213,7 +213,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">500</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2500</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -999,10 +999,10 @@
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">18</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">19</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{70180BE3-86B6-4E7D-B133-998B8B8A85E8}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{01CFF0C5-3C76-4912-B3FD-4031AAB9124D}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1067,16 +1067,31 @@
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">15</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">18</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{5FCA4BCB-FEAF-40ED-A681-76E59B03B90C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{8298E6C9-FD8C-49E3-9698-D8FAB076FB37}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
-              <SSIS:Parameters />
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="NumberOfRowsDimFeedbackDetails">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{2B5EDBB2-B38A-4019-96C2-B3E899348A91}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">1000</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="DimDiscounts.dtsx">
               <SSIS:Properties>
@@ -1084,16 +1099,31 @@
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">14</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">15</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{2DD712A6-A591-4135-A908-834AEADC5803}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{077ABE76-1E36-4F19-998E-92364DCAFF86}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
-              <SSIS:Parameters />
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="NumberOfRowsDimDiscounts">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{E1D5A086-7C1E-4301-BE74-A141C79D9A40}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">1000</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="DimSuppliers.dtsx">
               <SSIS:Properties>

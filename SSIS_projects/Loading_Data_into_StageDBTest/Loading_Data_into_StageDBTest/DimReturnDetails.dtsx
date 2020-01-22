@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{70180BE3-86B6-4E7D-B133-998B8B8A85E8}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{01CFF0C5-3C76-4912-B3FD-4031AAB9124D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -23,7 +23,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="countvar">
       <DTS:VariableValue
-        DTS:DataType="3">10</DTS:VariableValue>
+        DTS:DataType="3">2</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
