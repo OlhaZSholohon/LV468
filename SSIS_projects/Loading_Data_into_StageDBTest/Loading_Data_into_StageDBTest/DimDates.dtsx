@@ -11,11 +11,30 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimDates"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{75278DF6-4CE4-4064-8DEC-D1D2B72C6617}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{657017DA-BC87-496A-B341-DFA57F941E62}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6BEC353E-F9B6-4D95-8E91-891E15CB99E9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="endDate">
+      <DTS:VariableValue
+        DTS:DataType="7">9/1/2020</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ED374D82-968F-41C7-8989-D4EDD183469A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="startDate">
+      <DTS:VariableValue
+        DTS:DataType="7">9/1/2019</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Populate table DimDates"
@@ -30,7 +49,20 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
-          SQLTask:SqlStatementSource="EXEC [staging].[SP_Populate_DimDates] @StartDate = '01/01/19', @EndDate = '01/01/20'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXEC [staging].[SP_Populate_DimDates] ?, ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::startDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::endDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
