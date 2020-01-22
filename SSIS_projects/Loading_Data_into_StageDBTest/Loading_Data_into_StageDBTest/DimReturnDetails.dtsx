@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{CEBF4157-C44F-4C26-B445-7B323A110277}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{70180BE3-86B6-4E7D-B133-998B8B8A85E8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -23,7 +23,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="countvar">
       <DTS:VariableValue
-        DTS:DataType="3">2</DTS:VariableValue>
+        DTS:DataType="3">10</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -63,7 +63,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
-              SQLTask:SqlStatementSource="exec [Staging].[SP_Populate_DimReturnDetails] @NumberOfRows=1000" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="exec [Staging].[SP_Populate_DimReturnDetails] @NumberOfRows=2000" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -110,7 +110,7 @@
         <NodeLayout
           Size="200,41.6"
           Id="Package\For Loop Container\Execute Stored Procedure"
-          TopLeft="27.7714337582495,23.2470613374018" />
+          TopLeft="27.7714337582495,22.6352966229397" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
