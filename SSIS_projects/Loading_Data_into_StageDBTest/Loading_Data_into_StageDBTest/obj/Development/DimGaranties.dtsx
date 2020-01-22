@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimGaranties"
   DTS:PackageType="5"
-  DTS:VersionBuild="71"
-  DTS:VersionGUID="{BDFCB122-DE51-4DD3-9586-83FFC71D513A}">
+  DTS:VersionBuild="88"
+  DTS:VersionGUID="{66157E2A-0D41-4377-BDF3-7591305926AC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -84,6 +84,17 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{BAC874D3-A5ED-473C-9A3B-B2A4AE2E7297}"
+      DTS:ObjectName="NumberOfRowsGaranties">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">500</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -111,7 +122,14 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
-          SQLTask:SqlStatementSource="exec staging.SP_PopulateDimGaranties 7890;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="exec staging.SP_PopulateDimGaranties ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Package::NumberOfRowsGaranties"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -736,7 +754,7 @@
         <NodeLayout
           Size="200,41.6"
           Id="Package\Execute Stored Procedure"
-          TopLeft="177.142860159582,149.117649150143" />
+          TopLeft="200.95238437458,139.941178433211" />
         <NodeLayout
           Size="248.8,41.6"
           Id="Package\Foreach Loop Container\Data Load from csv to DimGaranties"
@@ -747,25 +765,25 @@
           PanelSize="288,124.8"
           Size="288,168"
           Id="Package\Foreach Loop Container"
-          TopLeft="168.734696751086,222.242019634677" />
+          TopLeft="155.020410803247,223.465549063601" />
         <NodeLayout
           Size="216,41.6"
           Id="Package\Truncate Table DimGaranties"
-          TopLeft="176.163268306165,68.0689079727092" />
+          TopLeft="187.591839929364,68.0689079727092" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="280.653064232873,109.668907972709">
+          TopLeft="298.272112151972,109.668907972709">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.4487411774334"
+              EndConnector="0,30.272270460502"
               Start="0,0"
-              End="0,31.9487411774334">
+              End="0,22.772270460502">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.9487411774334" />
+                    End="0,22.772270460502" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -776,30 +794,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="277.142860159582,190.717649150143">
+          TopLeft="299.986397588913,181.541178433211">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="35.5918365915039,31.524370484534"
+              EndConnector="0,41.9243706303901"
               Start="0,0"
-              End="35.5918365915039,24.024370484534">
+              End="0,34.4243706303901">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.762185242267" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.762185242267"
-                    Point2="0,15.762185242267"
-                    Point3="4,15.762185242267" />
-                  <mssgle:LineSegment
-                    End="31.5918365915039,15.762185242267" />
-                  <mssgle:CubicBezierSegment
-                    Point1="31.5918365915039,15.762185242267"
-                    Point2="35.5918365915039,15.762185242267"
-                    Point3="35.5918365915039,19.762185242267" />
-                  <mssgle:LineSegment
-                    End="35.5918365915039,24.024370484534" />
+                    End="0,34.4243706303901" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
