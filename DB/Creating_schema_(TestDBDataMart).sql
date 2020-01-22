@@ -1,0 +1,5 @@
+USE [TestDBDataMart]
+GO
+CREATE SCHEMA [dm]
+GO
+
