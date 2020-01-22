@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{55662D35-E7B6-49CE-BB33-C1AD295817CB}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{CEBF4157-C44F-4C26-B445-7B323A110277}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -23,7 +23,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="countvar">
       <DTS:VariableValue
-        DTS:DataType="3">10</DTS:VariableValue>
+        DTS:DataType="3">2</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -51,31 +51,31 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\For Loop Container\Executing Stored Procedure"
+          DTS:refId="Package\For Loop Container\Execute Stored Procedure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{4F98FB12-7743-4C88-B41A-B49FEC11A29E}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Executing Stored Procedure"
+          DTS:ObjectName="Execute Stored Procedure"
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
-              SQLTask:SqlStatementSource="exec [Staging].[SP_Populate_DimReturnDetails] @NumberOfRows=2000" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="exec [Staging].[SP_Populate_DimReturnDetails] @NumberOfRows=1000" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Truncating Table DimReturnDetails"
+      DTS:refId="Package\Truncate Table DimReturnDetails"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{B583DFD6-F73B-4E44-9D50-2A73F26D94C4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Truncating Table DimReturnDetails"
+      DTS:ObjectName="Truncate Table DimReturnDetails"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -90,7 +90,7 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{5A51F7EE-FDD0-4174-9EB4-0996AA6DEA89}"
-      DTS:From="Package\Truncating Table DimReturnDetails"
+      DTS:From="Package\Truncate Table DimReturnDetails"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\For Loop Container" />
@@ -108,46 +108,46 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="208.8,41.6"
-          Id="Package\For Loop Container\Executing Stored Procedure"
-          TopLeft="27.7714337582495,22.6352966229397" />
+          Size="200,41.6"
+          Id="Package\For Loop Container\Execute Stored Procedure"
+          TopLeft="27.7714337582495,23.2470613374018" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="268,119.2"
-          Size="268,161.6"
+          Size="268,162.4"
           Id="Package\For Loop Container"
           TopLeft="201.71428914946,129.082354751507" />
         <NodeLayout
-          Size="243.2,41.6"
-          Id="Package\Truncating Table DimReturnDetails"
+          Size="234.4,41.6"
+          Id="Package\Truncate Table DimReturnDetails"
           TopLeft="193.877554322123,46.3193283807035" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="315.477554322123,87.9193283807035">
+          TopLeft="311.077554322123,87.9193283807035">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="20.2367348273365,41.1630263708037"
+              EndConnector="24.636734827337,41.1630263708035"
               Start="0,0"
-              End="20.2367348273365,33.6630263708037">
+              End="24.636734827337,33.6630263708035">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.5815131854019" />
+                    End="0,16.5815131854017" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.5815131854019"
-                    Point2="0,20.5815131854019"
-                    Point3="4,20.5815131854019" />
+                    Point1="0,16.5815131854017"
+                    Point2="0,20.5815131854017"
+                    Point3="4,20.5815131854017" />
                   <mssgle:LineSegment
-                    End="16.2367348273365,20.5815131854019" />
+                    End="20.636734827337,20.5815131854017" />
                   <mssgle:CubicBezierSegment
-                    Point1="16.2367348273365,20.5815131854019"
-                    Point2="20.2367348273365,20.5815131854019"
-                    Point3="20.2367348273365,24.5815131854019" />
+                    Point1="20.636734827337,20.5815131854017"
+                    Point2="24.636734827337,20.5815131854017"
+                    Point3="24.636734827337,24.5815131854017" />
                   <mssgle:LineSegment
-                    End="20.2367348273365,33.6630263708037" />
+                    End="24.636734827337,33.6630263708035" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
