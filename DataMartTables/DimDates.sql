@@ -1,5 +1,5 @@
 USE [TestDBDataMart];
-DROP TABLE IF EXISTS [dm].[DimDates];
+DROP TABLE IF EXISTS [datamart].[DimDates];
 
 CREATE TABLE [dm].[DimDates](
 	[DateKey] [int] IDENTITY(1, 1) NOT NULL,
