@@ -1,7 +1,8 @@
 USE [TestDBDataMart];
-DROP TABLE IF EXISTS [datamart].[DimDates];
+IF OBJECT_ID('[datamart].[DimDates]', 'U') IS NOT NULL 
+  DROP TABLE [datamart].[DimDates]; 
 
-CREATE TABLE [dm].[DimDates](
+CREATE TABLE [datamart].[DimDates](
 	[DateKey] [int] IDENTITY(1, 1) NOT NULL,
 	[Date] [datetime] NULL,
 	[Day] [int] NULL,
