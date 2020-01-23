@@ -11,10 +11,21 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Populate_DimPayments"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{E94CD20F-94E7-4A8A-91CC-4326BE28976B}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{BD43930E-8672-4751-A2AA-75F04CA6C10A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{3ACA646C-24A6-4117-90A3-264DD16EA14B}"
+      DTS:ObjectName="numRows">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">1000</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -63,19 +74,26 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
-              SQLTask:SqlStatementSource="exec [staging].[SP_PopulateDimPayments] 1000" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="exec [staging].[SP_PopulateDimPayments] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="$Package::numRows"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Truncating Table DimPayments"
+      DTS:refId="Package\Truncate Table DimPayments"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{824AC36B-EFD2-431A-BD02-BB46CD9B4788}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Truncating Table DimPayments"
+      DTS:ObjectName="Truncate Table DimPayments"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -90,7 +108,7 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{2EA98D16-D233-4731-AB20-FCEDC6EF9EB9}"
-      DTS:From="Package\Truncating Table DimPayments"
+      DTS:From="Package\Truncate Table DimPayments"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Container for populate table DimPaymets" />
@@ -119,8 +137,8 @@
           Id="Package\Container for populate table DimPaymets"
           TopLeft="184.571431714662,122.964707606886" />
         <NodeLayout
-          Size="225.6,41.6"
-          Id="Package\Truncating Table DimPayments"
+          Size="216.8,41.6"
+          Id="Package\Truncate Table DimPayments"
           TopLeft="188.000003201621,16.5176472904773" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
@@ -128,14 +146,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64.8470603164089"
+              EndConnector="0,64.8470603164087"
               Start="0,0"
-              End="0,57.3470603164089">
+              End="0,57.3470603164087">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.3470603164089" />
+                    End="0,57.3470603164087" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
