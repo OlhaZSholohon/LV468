@@ -1,5 +1,5 @@
 USE [TestDBDataMart]
-DROP TABLE IF EXISTS [dm].[DimPayments];
+DROP TABLE IF EXISTS [datamart].[DimPayments];
 
 CREATE TABLE [dm].[DimPayments](
 	[PaymentID] [int] IDENTITY(1,1) NOT NULL,
