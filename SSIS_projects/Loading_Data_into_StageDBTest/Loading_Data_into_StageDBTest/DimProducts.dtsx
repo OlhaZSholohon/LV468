@@ -11,8 +11,8 @@
   DTS:LocaleID="1058"
   DTS:ObjectName="DimProducts"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{17292644-05DA-4DE0-96AE-CF85C3A88C48}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{85744C5C-102A-44F6-B4FE-F7B7BA97027A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -139,6 +139,17 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{C826F121-AA56-4EDD-A6D3-6D491920AD56}"
+      DTS:ObjectName="NumberOfRowsDimProduct">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">10000</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -165,8 +176,15 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{886EB12D-D24E-4F88-B465-FC068D180E12}"
-          SQLTask:SqlStatementSource="use TestDBStage;&#xA;exec staging.SP_PopulateDimProducts 10000;"
-          SQLTask:TypeConversionMode="None" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="use TestDBStage;&#xA;exec staging.SP_PopulateDimProducts ?;"
+          SQLTask:TypeConversionMode="None" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Package::NumberOfRowsDimProduct"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1140,8 +1158,8 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{0AE4DD8C-ECEA-44F1-89E5-C999C834B58A}"
-          DTS:ObjectName="{0AE4DD8C-ECEA-44F1-89E5-C999C834B58A}"
+          DTS:DTSID="{8BA6ACFD-B7B7-4B09-877A-04CDE424A04C}"
+          DTS:ObjectName="{8BA6ACFD-B7B7-4B09-877A-04CDE424A04C}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::FilePath" />
       </DTS:ForEachVariableMappings>
@@ -1249,7 +1267,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="312.576873305796,335.805043999959">
+          TopLeft="312.776873305796,335.805043999959">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
