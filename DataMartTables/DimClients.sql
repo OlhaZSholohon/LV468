@@ -6,7 +6,7 @@ CREATE TABLE [datamart].[DimClients](
 	[ClientID] [int] IDENTITY(1,1) NOT NULL,
 	[FirstName] [nvarchar](50) NULL,
 	[LastName] [nvarchar](50) NULL,
-	[Gender] [nvarchar](10) NULL,
+	[Gender] [nvarchar](11) NULL,
 	[Birthday] [date] NULL,
 	[Email] [nvarchar](20) NULL,
 	[Phone] [nvarchar](14) NULL,
