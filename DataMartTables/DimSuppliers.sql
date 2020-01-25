@@ -19,6 +19,6 @@ CREATE TABLE [datamart].[DimSuppliers](
 	[SupplierPhone] [nvarchar](18) NULL,
 	[SupplierDescription] [nvarchar](255) NULL,
 	[ValidDateFrom] [datetime] NOT NULL,
-	[ValidateTo] [datetime] NULL
+	[ValidDateTo] [datetime] NULL
 ) ON [PRIMARY]
 GO
