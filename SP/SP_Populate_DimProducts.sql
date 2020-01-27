@@ -16,7 +16,7 @@ DECLARE @Loop INT,
 		@InsertedRows INT,
 		@RandValue INT,
 		@RowsForWhile INT
-
+		--testtesteste
 SET @Loop = 1;     
 SET @RandValue = round( rand()*264,0)
 
