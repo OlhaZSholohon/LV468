@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimGaranties"
   DTS:PackageType="5"
-  DTS:VersionBuild="91"
-  DTS:VersionGUID="{04CDE73F-1EC5-4CCA-B6AA-79376E310512}">
+  DTS:VersionBuild="98"
+  DTS:VersionGUID="{D9E521AC-A153-4159-895E-5DA0F027DB61}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -207,8 +207,7 @@
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="PriceGaranty"
-                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimGaranties_csv.Outputs[Flat File Source Output].Columns[PriceGaranty]"
-                          name="PriceGaranty" />
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimGaranties_csv.Outputs[Flat File Source Output].Columns[PriceGaranty]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\Data Conversion.Inputs[Data Conversion Input].Columns[DescriptionGaranty]"
                           cachedCodepage="1252"
@@ -216,6 +215,13 @@
                           cachedLength="50"
                           cachedName="DescriptionGaranty"
                           lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimGaranties_csv.Outputs[Flat File Source Output].Columns[DescriptionGaranty]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\Data Conversion.Inputs[Data Conversion Input].Columns[GarantyID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="GarantyID"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimGaranties_csv.Outputs[Flat File Source Output].Columns[GarantyID]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -305,6 +311,26 @@
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
                               name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimGaranties_csv.Outputs[Flat File Source Output].Columns[DescriptionGaranty]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GarantyID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GarantyID]"
+                          name="Copy of GarantyID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimGaranties_csv.Outputs[Flat File Source Output].Columns[GarantyID]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -457,6 +483,28 @@
                               name="UseBinaryFormat">false</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimGaranties_csv.Outputs[Flat File Source Output].Columns[GarantyID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimGaranties_csv.Outputs[Flat File Source Output].ExternalColumns[GarantyID]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimGaranties_csv.Outputs[Flat File Source Output].Columns[GarantyID]"
+                          name="GarantyID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -593,6 +641,12 @@
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimGaranty.Inputs[OLE DB Destination Input].Columns[Copy of GarantyID]"
+                          cachedDataType="i4"
+                          cachedName="Copy of GarantyID"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimGaranty.Inputs[OLE DB Destination Input].ExternalColumns[GarantyID]"
+                          lineageId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GarantyID]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimGaranty.Inputs[OLE DB Destination Input].Columns[Copy of NameGaranty]"
                           cachedDataType="wstr"
@@ -821,77 +875,73 @@
     design-time-name="Package\Foreach Loop Container\Data Load from csv to DimGaranties">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimGaranties_csv"
-          TopLeft="190.428574671551,48.9411771569698" />
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Foreach Loop Container\Data Load from csv to DimGaranties\Data Conversion"
-          TopLeft="190.571431816841,123.117648785502" />
+          TopLeft="185.285717441112,74.6352951643789" />
         <NodeLayout
           Size="134.4,41.6"
           Id="Package\Foreach Loop Container\Data Load from csv to DimGaranties\DimGaranty"
-          TopLeft="191.142860398001,192.858826234184" />
+          TopLeft="192.857146141481,238.741179818843" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Foreach Loop Container\Data Load from csv to DimGaranties\Data Conversion"
+          TopLeft="192.5714318509,162.211766610591" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Load from csv to DimGaranties.Paths[Data Conversion Output]"
-          TopLeft="268.171431816841,164.717648785502">
+          Id="Package\Foreach Loop Container\Data Load from csv to DimGaranties.Paths[Flat File Source Output]"
+          TopLeft="268.328574646006,116.235295164379">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-9.82857141884,28.1411774486822"
+              EndConnector="0,45.9764714462121"
               Start="0,0"
-              End="-9.82857141884,20.6411774486822">
+              End="0,38.4764714462121">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.0705887243411" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.0705887243411"
-                    Point2="0,14.0705887243411"
-                    Point3="-4,14.0705887243411" />
-                  <mssgle:LineSegment
-                    End="-5.82857141884,14.0705887243411" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.82857141884,14.0705887243411"
-                    Point2="-9.82857141884,14.0705887243411"
-                    Point3="-9.82857141884,18.0705887243411" />
-                  <mssgle:LineSegment
-                    End="-9.82857141884,20.6411774486822" />
+                    End="0,38.4764714462121" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Load from csv to DimGaranties.Paths[Flat File Source Output]"
-          TopLeft="269.900003244196,90.5411771569698">
+          Id="Package\Foreach Loop Container\Data Load from csv to DimGaranties.Paths[Data Conversion Output]"
+          TopLeft="270.1714318509,203.811766610591">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.5764716285322"
+              EndConnector="-10.1142857094196,34.929413208252"
               Start="0,0"
-              End="0,25.0764716285322">
+              End="-10.1142857094196,27.429413208252">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.0764716285322" />
+                    End="0,13.464706604126" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.464706604126"
+                    Point2="0,17.464706604126"
+                    Point3="-4,17.464706604126" />
+                  <mssgle:LineSegment
+                    End="-6.11428570941962,17.464706604126" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.11428570941962,17.464706604126"
+                    Point2="-10.1142857094196,17.464706604126"
+                    Point3="-10.1142857094196,21.464706604126" />
+                  <mssgle:LineSegment
+                    End="-10.1142857094196,27.429413208252" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

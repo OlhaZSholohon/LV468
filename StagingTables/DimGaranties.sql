@@ -4,7 +4,7 @@ IF OBJECT_ID('staging.DimGaranties') IS NOT NULL
 
 
 CREATE TABLE [staging].[DimGaranties](
-	[GarantyID] [int] IDENTITY(1,1) NOT NULL,
+	[GarantyID] [int],
 	[NameGaranty] [nvarchar](255) NULL,
 	[Duration] [nvarchar](255) NULL,
 	[PriceGaranty] [nvarchar](255) NULL,

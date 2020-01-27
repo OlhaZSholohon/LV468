@@ -24,18 +24,19 @@ SET @RandValue = round( rand()*123, 0)
 
 
 ;WITH CTE_TempDictionary as (
-SELECT 'Standard Manufacturer''s warranty' AS NameGaranty, 'Some description of warranty - 1' AS DescriptionGaranty
+SELECT round(rand()*200, 0) AS GarantyID, 'Standard Manufacturer''s warranty' AS NameGaranty, 'Some description of warranty - 1' AS DescriptionGaranty
 union all 
-SELECT 'Full manufacturer''s warranty' AS NameGaranty, 'Some description of warranty - 2' AS DescriptionGaranty
+SELECT round(rand()*250, 0) AS GarantyID, 'Full manufacturer''s warranty' AS NameGaranty, 'Some description of warranty - 2' AS DescriptionGaranty
 union all 
-SELECT 'Manufacturer''s special warranty' AS NameGaranty, 'Some description of warranty - 3' AS DescriptionGaranty
+SELECT round(rand()*230, 0) AS GarantyID, 'Manufacturer''s special warranty' AS NameGaranty, 'Some description of warranty - 3' AS DescriptionGaranty
 union all 
-SELECT 'Additional reseller''s warranty' AS NameGaranty, 'Some description of warranty - 4' AS DescriptionGaranty
+SELECT round(rand()*102, 0) AS GarantyID,'Additional reseller''s warranty' AS NameGaranty, 'Some description of warranty - 4' AS DescriptionGaranty
 )
 
-INSERT INTO staging.DimGaranties (NameGaranty, Duration, PriceGaranty, DescriptionGaranty)
+INSERT INTO staging.DimGaranties (GarantyID, NameGaranty, Duration, PriceGaranty, DescriptionGaranty)
 SELECT TOP (TRY_CAST(0.5*@NumberOfRows as INT))
-		 c1.NameGaranty 
+		c1.GarantyID
+		, c1.NameGaranty 
 		, round( rand()*200, 0)
 		, round( rand()*400, 0)
 		, c2.DescriptionGaranty +CAST(@RandValue as nvarchar(10))
@@ -54,8 +55,9 @@ FROM staging.DimGaranties
 WHILE @Loop <= @RowsForWhile
 BEGIN 
 	SET @WarrantyRandName = (SELECT TOP 1 NameGaranty FROM #TempDimGaranties ORDER BY NEWID())
-  INSERT INTO staging.DimGaranties (NameGaranty, Duration, PriceGaranty, DescriptionGaranty)
+  INSERT INTO staging.DimGaranties (GarantyID, NameGaranty, Duration, PriceGaranty, DescriptionGaranty)
   VALUES (
+		round(rand()*1150, 0),
 		@WarrantyRandName,
 		round(rand()*150, 0),
 		round(rand()*500, 0),
