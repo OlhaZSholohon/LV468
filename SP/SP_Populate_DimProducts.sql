@@ -17,7 +17,7 @@ DECLARE @Loop INT,
 		@RandValue INT,
 		@RowsForWhile INT
 
-SET @Loop = 1;
+SET @Loop = 1;     
 SET @RandValue = round( rand()*264,0)
 
 ;WITH CTE_TempDictionary as (
