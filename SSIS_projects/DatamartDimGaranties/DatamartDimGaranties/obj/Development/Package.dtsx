@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{3D893B3C-BE03-4229-BB98-F3A416A7D2FA}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{962EBAD9-3EB3-47A1-9DB9-671BED48CC04}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD35QXWsYvDXsPH+0ciOejoAAAAAASAAACgAAAAEAAAAD82n6rZiE+/fulTFnhtNH0YAAAAmEaXOYv5mXvWnd2tnRjTNwKY9qkSULQkFAAAAGBjNQVCOJCXHAHz3/On/eS8oY63</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACiBdqo+sRtpowgYPwiv4yGAAAAAASAAACgAAAAEAAAALHnbGVjVkH88PoZqw3hBQMYAAAAyI+rIPhXXAjqwUzlJ8bwflNYuPxk9RUyFAAAAAVyupVoqf9umnsX03lFTEsy3v6I</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -42,13 +42,29 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABA06qCXcZdadRlgl2724yhAAAAAASAAACgAAAAEAAAAJNpoS+MDesPsue2umxqibwYAAAAmsFlqtZoVsMU/KXewcvALgY1mjhM2st2FAAAALhkoHRc13a7tmGh3P02s4L68qJR</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABCVooZ9pJ/zke4LnbgD5noAAAAAASAAACgAAAAEAAAADGE71D8pELVfc0x82y+GogYAAAAB8+Aoi48/6rERyjQ6/QmbhOd/KjHnhXxFAAAAKAEwudpQ01UAKlVhVoDWUUEeVaS</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SP_RedirectDuplicates"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1F1C148E-50B2-4C5B-86D7-8EE72E2F2990}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SP_RedirectDuplicates"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{28C6E68F-9736-4961-8933-0897A18B733D}"
+          SQLTask:SqlStatementSource="EXECUTE datamart.SP_RedirectDuplicates" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\From DimGarantiesCastedData to datamartDimGaranties"
       DTS:CreationName="Microsoft.Pipeline"
@@ -2034,95 +2050,6 @@
           version="1">
           <components>
             <component
-              refId="Package\From stageDimGaranties to DimGarantiesCastedData\Conditional Split"
-              componentClassID="Microsoft.ConditionalSplit"
-              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-              name="Conditional Split"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\From stageDimGaranties to DimGarantiesCastedData\Conditional Split.Inputs[Conditional Split Input]"
-                  description="Input to the Conditional Split Transformation"
-                  name="Conditional Split Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\Conditional Split.Inputs[Conditional Split Input].Columns[Count of IDduplicates]"
-                      cachedDataType="ui8"
-                      cachedName="Count of IDduplicates"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Count of IDduplicates]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\From stageDimGaranties to DimGarantiesCastedData\Conditional Split.Outputs[No duplicates]"
-                  description="Output 1 of the Conditional Split Transformation"
-                  errorOrTruncationOperation="Computation"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="No duplicates"
-                  synchronousInputId="Package\From stageDimGaranties to DimGarantiesCastedData\Conditional Split.Inputs[Conditional Split Input]"
-                  truncationRowDisposition="FailComponent">
-                  <properties>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">#{Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Count of IDduplicates]} == (DT_UI8)1</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the friendly version of the expression. This expression version uses column names."
-                      expressionType="Notify"
-                      name="FriendlyExpression">[Count of IDduplicates] == (DT_UI8)1</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
-                      name="EvaluationOrder">0</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\From stageDimGaranties to DimGarantiesCastedData\Conditional Split.Outputs[Duplicate ID]"
-                  description="Default Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  name="Duplicate ID"
-                  synchronousInputId="Package\From stageDimGaranties to DimGarantiesCastedData\Conditional Split.Inputs[Conditional Split Input]">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      name="IsDefaultOut">true</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\From stageDimGaranties to DimGarantiesCastedData\Conditional Split.Outputs[Conditional Split Error Output]"
-                  description="Error Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Conditional Split Error Output"
-                  synchronousInputId="Package\From stageDimGaranties to DimGarantiesCastedData\Conditional Split.Inputs[Conditional Split Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion"
               componentClassID="Microsoft.DataConvert"
               contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -2382,20 +2309,20 @@
                       cachedDataType="i4"
                       cachedName="Copy of GarantyID"
                       externalMetadataColumnId="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesCastedData.Inputs[OLE DB Destination Input].ExternalColumns[GarantyID]"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of GarantyID]" />
+                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GarantyID]" />
                     <inputColumn
                       refId="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesCastedData.Inputs[OLE DB Destination Input].Columns[Copy of NameGaranty]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Copy of NameGaranty"
                       externalMetadataColumnId="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesCastedData.Inputs[OLE DB Destination Input].ExternalColumns[NameGaranty]"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of NameGaranty]" />
+                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NameGaranty]" />
                     <inputColumn
                       refId="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesCastedData.Inputs[OLE DB Destination Input].Columns[Copy of Duration]"
                       cachedDataType="i4"
                       cachedName="Copy of Duration"
                       externalMetadataColumnId="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesCastedData.Inputs[OLE DB Destination Input].ExternalColumns[Duration]"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of Duration]" />
+                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Duration]" />
                     <inputColumn
                       refId="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesCastedData.Inputs[OLE DB Destination Input].Columns[Copy of PriceGaranty]"
                       cachedDataType="numeric"
@@ -2403,14 +2330,14 @@
                       cachedPrecision="18"
                       cachedScale="2"
                       externalMetadataColumnId="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesCastedData.Inputs[OLE DB Destination Input].ExternalColumns[PriceGaranty]"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of PriceGaranty]" />
+                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PriceGaranty]" />
                     <inputColumn
                       refId="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesCastedData.Inputs[OLE DB Destination Input].Columns[Copy of DescriptionGaranty]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Copy of DescriptionGaranty"
                       externalMetadataColumnId="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesCastedData.Inputs[OLE DB Destination Input].ExternalColumns[DescriptionGaranty]"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of DescriptionGaranty]" />
+                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DescriptionGaranty]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2467,250 +2394,141 @@
               </outputs>
             </component>
             <component
-              refId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows"
-              componentClassID="Microsoft.Aggregate"
-              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
-              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
-              name="Find duplicate Rows"
-              version="3">
+              refId="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
               <properties>
                 <property
-                  dataType="System.Int32"
-                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
-                  name="KeyScale"
-                  typeConverter="KeyScaleType">0</property>
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [datamart].[DimGarantiesCastedData]</property>
                 <property
-                  dataType="System.Null"
-                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
-                  name="Keys" />
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
-                  name="CountDistinctScale"
-                  typeConverter="KeyScaleType">0</property>
-                <property
-                  dataType="System.Null"
-                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
-                  name="CountDistinctKeys" />
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [datamart].[DimGarantiesCastedData]) [refTable]
+where [refTable].[GarantyID] = ?</property>
                 <property
                   dataType="System.Int32"
-                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
-                  name="AutoExtendFactor">25</property>
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="GarantyID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NameGaranty" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Duration" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PriceGaranty" dataType="DT_NUMERIC" length="0" precision="18" scale="2" codePage="0"/&gt;&lt;referenceColumn name="DescriptionGaranty" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GarantyID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
               </properties>
+              <connections>
+                <connection
+                  refId="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
               <inputs>
                 <input
-                  refId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Inputs[Aggregate Input 1]"
-                  name="Aggregate Input 1">
+                  refId="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Inputs[Aggregate Input 1].Columns[Copy of GarantyID]"
+                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup.Inputs[Lookup Input].Columns[Copy of GarantyID]"
                       cachedDataType="i4"
                       cachedName="Copy of GarantyID"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GarantyID]" />
-                    <inputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Inputs[Aggregate Input 1].Columns[Copy of NameGaranty]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of NameGaranty"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NameGaranty]" />
-                    <inputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Inputs[Aggregate Input 1].Columns[Copy of Duration]"
-                      cachedDataType="i4"
-                      cachedName="Copy of Duration"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Duration]" />
-                    <inputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Inputs[Aggregate Input 1].Columns[Copy of PriceGaranty]"
-                      cachedDataType="numeric"
-                      cachedName="Copy of PriceGaranty"
-                      cachedPrecision="18"
-                      cachedScale="2"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PriceGaranty]" />
-                    <inputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Inputs[Aggregate Input 1].Columns[Copy of DescriptionGaranty]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Copy of DescriptionGaranty"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DescriptionGaranty]" />
+                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GarantyID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">GarantyID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1]"
-                  name="Aggregate Output 1">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
-                      name="KeyScale"
-                      typeConverter="KeyScaleType">0</property>
-                    <property
-                      dataType="System.Null"
-                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
-                      name="Keys" />
-                  </properties>
+                  refId="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Count of IDduplicates]"
-                      dataType="ui8"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Count of IDduplicates]"
-                      name="Count of IDduplicates">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\From stageDimGaranties to DimGarantiesCastedData\0:invalid}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the type of aggregation."
-                          name="AggregationType"
-                          typeConverter="AggregationType">2</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
-                          name="IsBig">1</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the string comparison options."
-                          name="AggregationComparisonFlags">0</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of GarantyID]"
+                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of GarantyID]"
-                      name="Copy of GarantyID">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GarantyID]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the type of aggregation."
-                          name="AggregationType"
-                          typeConverter="AggregationType">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
-                          name="IsBig">1</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the string comparison options."
-                          name="AggregationComparisonFlags">0</property>
-                      </properties>
-                    </outputColumn>
+                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
                     <outputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of NameGaranty]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of NameGaranty]"
-                      name="Copy of NameGaranty">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NameGaranty]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the type of aggregation."
-                          name="AggregationType"
-                          typeConverter="AggregationType">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
-                          name="IsBig">1</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the string comparison options."
-                          name="AggregationComparisonFlags">0</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of Duration]"
+                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of Duration]"
-                      name="Copy of Duration">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Duration]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the type of aggregation."
-                          name="AggregationType"
-                          typeConverter="AggregationType">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
-                          name="IsBig">1</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the string comparison options."
-                          name="AggregationComparisonFlags">0</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of PriceGaranty]"
-                      dataType="numeric"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of PriceGaranty]"
-                      name="Copy of PriceGaranty"
-                      precision="18"
-                      scale="2">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PriceGaranty]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the type of aggregation."
-                          name="AggregationType"
-                          typeConverter="AggregationType">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
-                          name="IsBig">1</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the string comparison options."
-                          name="AggregationComparisonFlags">0</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of DescriptionGaranty]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of DescriptionGaranty]"
-                      name="Copy of DescriptionGaranty">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DescriptionGaranty]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the type of aggregation."
-                          name="AggregationType"
-                          typeConverter="AggregationType">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
-                          name="IsBig">1</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the string comparison options."
-                          name="AggregationComparisonFlags">0</property>
-                      </properties>
-                    </outputColumn>
+                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -3140,39 +2958,39 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].Columns[Copy of GarantyID]"
+                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].Columns[GarantyID]"
                       cachedDataType="i4"
-                      cachedName="Copy of GarantyID"
+                      cachedName="GarantyID"
                       externalMetadataColumnId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].ExternalColumns[GarantyID]"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of GarantyID]" />
+                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[GarantyID]" />
                     <inputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].Columns[Copy of NameGaranty]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of NameGaranty"
-                      externalMetadataColumnId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].ExternalColumns[NameGaranty]"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of NameGaranty]" />
-                    <inputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].Columns[Copy of Duration]"
-                      cachedDataType="i4"
-                      cachedName="Copy of Duration"
-                      externalMetadataColumnId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].ExternalColumns[Duration]"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of Duration]" />
-                    <inputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].Columns[Copy of PriceGaranty]"
-                      cachedDataType="numeric"
-                      cachedName="Copy of PriceGaranty"
-                      cachedPrecision="18"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].ExternalColumns[PriceGaranty]"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of PriceGaranty]" />
-                    <inputColumn
-                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].Columns[Copy of DescriptionGaranty]"
+                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].Columns[NameGaranty]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Copy of DescriptionGaranty"
+                      cachedName="NameGaranty"
+                      externalMetadataColumnId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].ExternalColumns[NameGaranty]"
+                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[NameGaranty]" />
+                    <inputColumn
+                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].Columns[Duration]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Duration"
+                      externalMetadataColumnId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].ExternalColumns[Duration]"
+                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[Duration]" />
+                    <inputColumn
+                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].Columns[PriceGaranty]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PriceGaranty"
+                      externalMetadataColumnId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].ExternalColumns[PriceGaranty]"
+                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[PriceGaranty]" />
+                    <inputColumn
+                      refId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].Columns[DescriptionGaranty]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DescriptionGaranty"
                       externalMetadataColumnId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input].ExternalColumns[DescriptionGaranty]"
-                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1].Columns[Copy of DescriptionGaranty]" />
+                      lineageId="Package\From stageDimGaranties to DimGarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[DescriptionGaranty]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3231,30 +3049,25 @@
           </components>
           <paths>
             <path
-              refId="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Aggregate Output 1]"
-              endId="Package\From stageDimGaranties to DimGarantiesCastedData\Conditional Split.Inputs[Conditional Split Input]"
-              name="Aggregate Output 1"
-              startId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Outputs[Aggregate Output 1]" />
-            <path
               refId="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Data Conversion Error Output]"
               endId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_1.Inputs[OLE DB Destination Input]"
               name="Data Conversion Error Output"
               startId="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Error Output]" />
             <path
               refId="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Data Conversion Output]"
-              endId="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows.Inputs[Aggregate Input 1]"
+              endId="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup.Inputs[Lookup Input]"
               name="Data Conversion Output"
               startId="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Duplicate ID]"
+              refId="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Lookup Match Output]"
               endId="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2.Inputs[OLE DB Destination Input]"
-              name="Duplicate ID"
-              startId="Package\From stageDimGaranties to DimGarantiesCastedData\Conditional Split.Outputs[Duplicate ID]" />
+              name="Lookup Match Output"
+              startId="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[No duplicates]"
+              refId="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Lookup No Match Output]"
               endId="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesCastedData.Inputs[OLE DB Destination Input]"
-              name="No duplicates"
-              startId="Package\From stageDimGaranties to DimGarantiesCastedData\Conditional Split.Outputs[No duplicates]" />
+              name="Lookup No Match Output"
+              startId="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[OLE DB Source Output]"
               endId="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion.Inputs[Data Conversion Input]"
@@ -3265,13 +3078,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Trunkate table with casted data"
+      DTS:refId="Package\Truncate table with casted data"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{1B4E78E5-54AB-4D7A-81E2-16B90B58129A}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Trunkate table with casted data"
+      DTS:ObjectName="Truncate table with casted data"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -3286,17 +3099,25 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{314BA1EF-BEB9-4889-A066-76B8B287204F}"
-      DTS:From="Package\Trunkate table with casted data"
+      DTS:From="Package\Truncate table with casted data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\From stageDimGaranties to DimGarantiesCastedData" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{F8549AED-D7E4-4FB3-A43E-B9A3E0695BBE}"
+      DTS:DTSID="{C187361E-0F16-43D4-AE1E-7FD5BA2C1286}"
       DTS:From="Package\From stageDimGaranties to DimGarantiesCastedData"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Execute SP_RedirectDuplicates" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{136C89FB-E1BB-42E5-BFE8-C23FA7B9D919}"
+      DTS:From="Package\Execute SP_RedirectDuplicates"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
       DTS:To="Package\From DimGarantiesCastedData to datamartDimGaranties" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -3312,31 +3133,35 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="223.2,41.6"
+          Id="Package\Execute SP_RedirectDuplicates"
+          TopLeft="73.7777790342061,161.490197748626" />
+        <NodeLayout
           Size="344.8,41.6"
           Id="Package\From DimGarantiesCastedData to datamartDimGaranties"
-          TopLeft="108.163267148132,213.156305510445" />
-        <NodeLayout
-          Size="228,41.6"
-          Id="Package\Trunkate table with casted data"
-          TopLeft="165.714288536383,36.7058828677274" />
+          TopLeft="30.7029483686728,235.315782945407" />
         <NodeLayout
           Size="327.2,41.6"
           Id="Package\From stageDimGaranties to DimGarantiesCastedData"
-          TopLeft="119.785716231989,113.782354459796" />
+          TopLeft="32.7380953689285,92.4385633107841" />
+        <NodeLayout
+          Size="227.2,41.6"
+          Id="Package\Truncate table with casted data"
+          TopLeft="74.8571441319523,23.0431375780733" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="281.550002384186,78.3058828677274">
+          TopLeft="192.39761975044,64.6431375780733">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.4764715920682"
+              EndConnector="0,27.7954257327108"
               Start="0,0"
-              End="0,27.9764715920682">
+              End="0,20.2954257327108">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.9764715920682" />
+                    End="0,20.2954257327108" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3347,18 +3172,64 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="281.97449169006,155.382354459796">
+          TopLeft="196.338095368929,134.038563310784">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57.7739510506494"
+              EndConnector="-10.9603163347224,27.4516344378419"
               Start="0,0"
-              End="0,50.2739510506494">
+              End="-10.9603163347224,19.9516344378419">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.2739510506494" />
+                    End="0,9.72581721892095" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.72581721892095"
+                    Point2="0,13.725817218921"
+                    Point3="-4,13.725817218921" />
+                  <mssgle:LineSegment
+                    End="-6.96031633472245,13.725817218921" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.96031633472245,13.725817218921"
+                    Point2="-10.9603163347224,13.725817218921"
+                    Point3="-10.9603163347224,17.725817218921" />
+                  <mssgle:LineSegment
+                    End="-10.9603163347224,19.9516344378419" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="185.377779034206,203.090197748626">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.7251693344667,32.2255851967809"
+              Start="0,0"
+              End="17.7251693344667,24.7255851967809">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.1127925983904" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.1127925983904"
+                    Point2="0,16.1127925983904"
+                    Point3="4,16.1127925983904" />
+                  <mssgle:LineSegment
+                    End="13.7251693344667,16.1127925983904" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.7251693344667,16.1127925983904"
+                    Point2="17.7251693344667,16.1127925983904"
+                    Point3="17.7251693344667,20.1127925983904" />
+                  <mssgle:LineSegment
+                    End="17.7251693344667,24.7255851967809" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3376,329 +3247,101 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Conditional Split"
-          TopLeft="294.7,108.7875" />
+          Size="164.8,41.6"
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\OLE DB Command"
+          TopLeft="10.0714286492796,388.061764276893" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\OLE DB Destination"
+          TopLeft="671.811111111111,219.3625" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Derived Column 1"
+          TopLeft="149.7,625.224999999999" />
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\From DimGarantiesCastedData to datamartDimGaranties\OLE DB Source"
-          TopLeft="297.1,5.49999999999995" />
-        <EdgeLayout
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[OLE DB Source Output]"
-          TopLeft="371.9,47.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61.6874999999999"
-              Start="0,0"
-              End="0,54.1874999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.1874999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="298.7,31.0999999999999" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Union All 1"
+          TopLeft="465.011111111111,220.608333333333" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Union All"
+          TopLeft="170.9,521.9375" />
         <NodeLayout
           Size="208,41.6"
           Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Slowly Changing Dimension"
           TopLeft="64.9,204.733823426454" />
-        <EdgeLayout
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[Conditional Split Default Output]"
-          TopLeft="347.5,150.3875">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-178.6,54.3463234264544"
-              Start="0,0"
-              End="-178.6,46.8463234264544">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.0729682839753" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.0729682839753"
-                    Point2="0,22.0729682839753"
-                    Point3="-4,22.0729682839753" />
-                  <mssgle:LineSegment
-                    End="-174.6,22.0729682839753" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-174.6,22.0729682839753"
-                    Point2="-178.6,22.0729682839753"
-                    Point3="-178.6,26.0729682839753" />
-                  <mssgle:LineSegment
-                    End="-178.6,46.8463234264544" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-159.91390625,27.0729682839753,141.2278125,11.658203125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Union All 1"
-          TopLeft="333.1,212.075" />
-        <EdgeLayout
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[DescriptionGaranty]"
-          TopLeft="397.1,150.3875">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61.6874999999999"
-              Start="0,0"
-              End="0,54.1874999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.1874999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-42.53693359375,21.3867187499999,85.0738671875,11.4140625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[Duration]"
-          TopLeft="397.1,150.3875">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61.6874999999999"
-              Start="0,0"
-              End="0,54.1874999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.1874999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-19.24193359375,22.3583984374999,38.4838671875,9.470703125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[GarantyID]"
-          TopLeft="397.1,150.3875">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61.6874999999999"
-              Start="0,0"
-              End="0,54.1874999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.1874999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-23.27373046875,21.3867187499999,46.5474609375,11.4140625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[NameGaranty]"
-          TopLeft="397.1,150.3875">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61.6874999999999"
-              Start="0,0"
-              End="0,54.1874999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.1874999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-30.74193359375,21.3867187499999,61.4838671875,11.4140625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[PriceGaranty]"
-          TopLeft="397.1,150.3875">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61.6874999999999"
-              Start="0,0"
-              End="0,54.1874999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.1874999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-28.58693359375,21.3867187499999,57.1738671875,11.4140625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="154.4,41.6"
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Conditional Split"
+          TopLeft="294.7,108.7875" />
         <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\OLE DB Destination"
-          TopLeft="312.7,315.3625" />
-        <EdgeLayout
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[Union All Output 1]"
-          TopLeft="397.9,253.675">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61.6874999999999"
-              Start="0,0"
-              End="0,54.1874999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.1874999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="162.4,41.6"
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Insert Destination"
+          TopLeft="149.7,728.512499999999" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Derived Column"
           TopLeft="17.5,315.3625" />
         <EdgeLayout
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[Historical Attribute Inserts Output]"
-          TopLeft="135.566666666667,246.333823426454">
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[PriceGaranty]"
+          TopLeft="396.3,150.3875">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-41.6666666666667,69.0286765735454"
+              EndConnector="133.511111111111,70.2208333333333"
               Start="0,0"
-              End="-41.6666666666667,61.5286765735454">
+              End="133.511111111111,62.7208333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.9276325068542" />
+                    End="0,24.5204615384615" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.9276325068542"
-                    Point2="0,27.9276325068542"
-                    Point3="-4,27.9276325068542" />
+                    Point1="0,24.5204615384615"
+                    Point2="0,28.5204615384615"
+                    Point3="4,28.5204615384615" />
                   <mssgle:LineSegment
-                    End="-37.6666666666667,27.9276325068542" />
+                    End="129.511111111111,28.5204615384615" />
                   <mssgle:CubicBezierSegment
-                    Point1="-37.6666666666667,27.9276325068542"
-                    Point2="-41.6666666666667,27.9276325068542"
-                    Point3="-41.6666666666667,31.9276325068542" />
+                    Point1="129.511111111111,28.5204615384615"
+                    Point2="133.511111111111,28.5204615384615"
+                    Point3="133.511111111111,32.5204615384615" />
                   <mssgle:LineSegment
-                    End="-41.6666666666667,61.5286765735454" />
+                    End="133.511111111111,62.7208333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-95.8897200520833,32.9276325068542,150.1127734375,11.609375"
+              BoundingBox="38.1686219618055,33.5204615384615,57.1738671875,11.4140625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\OLE DB Command"
-          TopLeft="10.0714286492796,388.061764276893" />
         <EdgeLayout
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[Derived Column Output]"
-          TopLeft="93.1857143246398,356.9625">
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[OLE DB Source Output]"
+          TopLeft="372.7,72.6999999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.0992642768938"
+              EndConnector="0,36.0875000000001"
               Start="0,0"
-              End="0,23.5992642768938">
+              End="0,28.5875000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.5992642768938" />
+                    End="0,28.5875000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Union All"
-          TopLeft="170.9,521.9375" />
-        <EdgeLayout
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[New Output]"
-          TopLeft="202.233333333333,246.333823426454">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="47.3333333333333,275.603676573545"
-              Start="0,0"
-              End="47.3333333333333,268.103676573545">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,132.855042395983" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,132.855042395983"
-                    Point2="0,136.855042395983"
-                    Point3="4,136.855042395983" />
-                  <mssgle:LineSegment
-                    End="43.3333333333333,136.855042395983" />
-                  <mssgle:CubicBezierSegment
-                    Point1="43.3333333333333,136.855042395983"
-                    Point2="47.3333333333333,136.855042395983"
-                    Point3="47.3333333333333,140.855042395983" />
-                  <mssgle:LineSegment
-                    End="47.3333333333333,268.103676573545" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-3.42472005208333,141.855042395983,54.1827734375,11.43359375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3735,36 +3378,222 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Derived Column 1"
-          TopLeft="149.7,625.224999999999" />
         <EdgeLayout
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[Union All Output 11]"
-          TopLeft="230.9,563.5375">
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[New Output]"
+          TopLeft="202.233333333333,246.333823426454">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61.6874999999999"
+              EndConnector="47.3333333333333,275.603676573546"
               Start="0,0"
-              End="0,54.1874999999999">
+              End="47.3333333333333,268.103676573546">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.1874999999999" />
+                    End="0,132.855042395983" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,132.855042395983"
+                    Point2="0,136.855042395983"
+                    Point3="4,136.855042395983" />
+                  <mssgle:LineSegment
+                    End="43.3333333333333,136.855042395983" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.3333333333333,136.855042395983"
+                    Point2="47.3333333333333,136.855042395983"
+                    Point3="47.3333333333333,140.855042395983" />
+                  <mssgle:LineSegment
+                    End="47.3333333333333,268.103676573546" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-3.42472005208335,141.855042395983,54.1827734375,11.43359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Insert Destination"
-          TopLeft="149.7,728.512499999999" />
+        <EdgeLayout
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[NameGaranty]"
+          TopLeft="396.3,150.3875">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="133.511111111111,70.2208333333333"
+              Start="0,0"
+              End="133.511111111111,62.7208333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5204615384615" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5204615384615"
+                    Point2="0,28.5204615384615"
+                    Point3="4,28.5204615384615" />
+                  <mssgle:LineSegment
+                    End="129.511111111111,28.5204615384615" />
+                  <mssgle:CubicBezierSegment
+                    Point1="129.511111111111,28.5204615384615"
+                    Point2="133.511111111111,28.5204615384615"
+                    Point3="133.511111111111,32.5204615384615" />
+                  <mssgle:LineSegment
+                    End="133.511111111111,62.7208333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="36.0136219618055,33.5204615384615,61.4838671875,11.4140625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[Historical Attribute Inserts Output]"
+          TopLeft="135.566666666667,246.333823426454">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-41.6666666666667,69.028676573546"
+              Start="0,0"
+              End="-41.6666666666667,61.528676573546">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.9276325068545" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.9276325068545"
+                    Point2="0,27.9276325068545"
+                    Point3="-4,27.9276325068545" />
+                  <mssgle:LineSegment
+                    End="-37.6666666666667,27.9276325068545" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-37.6666666666667,27.9276325068545"
+                    Point2="-41.6666666666667,27.9276325068545"
+                    Point3="-41.6666666666667,31.9276325068545" />
+                  <mssgle:LineSegment
+                    End="-41.6666666666667,61.528676573546" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-95.8897200520834,32.9276325068545,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[GarantyID]"
+          TopLeft="396.3,150.3875">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="133.511111111111,70.2208333333333"
+              Start="0,0"
+              End="133.511111111111,62.7208333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5204615384615" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5204615384615"
+                    Point2="0,28.5204615384615"
+                    Point3="4,28.5204615384615" />
+                  <mssgle:LineSegment
+                    End="129.511111111111,28.5204615384615" />
+                  <mssgle:CubicBezierSegment
+                    Point1="129.511111111111,28.5204615384615"
+                    Point2="133.511111111111,28.5204615384615"
+                    Point3="133.511111111111,32.5204615384615" />
+                  <mssgle:LineSegment
+                    End="133.511111111111,62.7208333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="43.4818250868055,33.5204615384615,46.5474609375,11.4140625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[Duration]"
+          TopLeft="396.3,150.3875">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="133.511111111111,70.2208333333333"
+              Start="0,0"
+              End="133.511111111111,62.7208333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5204615384615" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5204615384615"
+                    Point2="0,28.5204615384615"
+                    Point3="4,28.5204615384615" />
+                  <mssgle:LineSegment
+                    End="129.511111111111,28.5204615384615" />
+                  <mssgle:CubicBezierSegment
+                    Point1="129.511111111111,28.5204615384615"
+                    Point2="133.511111111111,28.5204615384615"
+                    Point3="133.511111111111,32.5204615384615" />
+                  <mssgle:LineSegment
+                    End="133.511111111111,62.7208333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="47.5136219618055,33.5204615384615,38.4838671875,9.470703125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[DescriptionGaranty]"
+          TopLeft="396.3,150.3875">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="133.511111111111,70.2208333333333"
+              Start="0,0"
+              End="133.511111111111,62.7208333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5204615384615" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5204615384615"
+                    Point2="0,28.5204615384615"
+                    Point3="4,28.5204615384615" />
+                  <mssgle:LineSegment
+                    End="129.511111111111,28.5204615384615" />
+                  <mssgle:CubicBezierSegment
+                    Point1="129.511111111111,28.5204615384615"
+                    Point2="133.511111111111,28.5204615384615"
+                    Point3="133.511111111111,32.5204615384615" />
+                  <mssgle:LineSegment
+                    End="133.511111111111,62.7208333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="24.2186219618055,33.5204615384615,85.0738671875,11.4140625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[Derived Column Output1]"
           TopLeft="230.9,666.824999999999">
@@ -3787,150 +3616,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\From stageDimGaranties to DimGarantiesCastedData">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\From stageDimGaranties to DimGarantiesCastedData\stageDimGaranties"
-          TopLeft="199.2,51.2" />
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion"
-          TopLeft="197.6,123.2" />
         <EdgeLayout
-          Id="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[OLE DB Source Output]"
-          TopLeft="279,92.8">
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[Derived Column Output]"
+          TopLeft="93.1857143246398,356.9625">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30.4"
+              EndConnector="0,31.0992642768938"
               Start="0,0"
-              End="0,22.9">
+              End="0,23.5992642768938">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="195.2,41.6"
-          Id="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesCastedData"
-          TopLeft="174.4,356.8" />
-        <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_1"
-          TopLeft="446.4,117.6" />
-        <EdgeLayout
-          Id="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Data Conversion Error Output]"
-          TopLeft="352.8,141.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="93.6000000000001,0"
-              Start="0,0"
-              End="86.1000000000001,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="86.1000000000001,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-23.03638671875,5,132.1727734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="172,41.6"
-          Id="Package\From stageDimGaranties to DimGarantiesCastedData\Find duplicate Rows"
-          TopLeft="188.8,198.4" />
-        <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\From stageDimGaranties to DimGarantiesCastedData\Conditional Split"
-          TopLeft="196,276" />
-        <EdgeLayout
-          Id="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[No duplicates]"
-          TopLeft="272.6,317.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.1999999999999"
-              Start="0,0"
-              End="0,31.6999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.6999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-30.222578125,10.0453125,60.44515625,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2"
-          TopLeft="459.2,273.6" />
-        <EdgeLayout
-          Id="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Duplicate ID]"
-          TopLeft="350.4,295.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="108.8,0"
-              Start="0,0"
-              End="101.3,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="101.3,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="22.8887890625,5,55.522421875,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Aggregate Output 1]"
-          TopLeft="274,240">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.0000000000001"
-              Start="0,0"
-              End="0,28.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5000000000001" />
+                    End="0,23.5992642768938" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3940,58 +3639,92 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Data Conversion Output]"
-          TopLeft="275,164.8">
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[Conditional Split Default Output]"
+          TopLeft="347.5,150.3875">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.5999999999999"
+              EndConnector="-178.6,54.346323426454"
               Start="0,0"
-              End="0,26.0999999999999">
+              End="-178.6,46.846323426454">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.0999999999999" />
+                    End="0,18.0729682839752" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.0729682839752"
+                    Point2="0,22.0729682839752"
+                    Point3="-4,22.0729682839752" />
+                  <mssgle:LineSegment
+                    End="-174.6,22.0729682839752" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-174.6,22.0729682839752"
+                    Point2="-178.6,22.0729682839752"
+                    Point3="-178.6,26.0729682839752" />
+                  <mssgle:LineSegment
+                    End="-178.6,46.846323426454" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-159.91390625,27.0729682839752,141.2278125,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[Union All Output 11]"
+          TopLeft="230.9,563.5375">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.6874999999999"
+              Start="0,0"
+              End="0,54.1874999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.1874999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[Union All Output 1]"
+          TopLeft="594.611111111111,240.785416666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.2,0"
+              Start="0,0"
+              End="69.7,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="69.7,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="26.85,5,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\From stageDimGaranties to DimGarantiesCastedData\stageDimGaranties">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesCastedData">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_1">
+    design-time-name="Package\From DimGarantiesCastedData to datamartDimGaranties\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4080,8 +3813,192 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\From stageDimGaranties to DimGarantiesCastedData">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2"
+          TopLeft="294.942861947721,283.529415505485" />
+        <NodeLayout
+          Size="195.2,41.6"
+          Id="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesCastedData"
+          TopLeft="37.9918344116766,282.230251055027" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\From stageDimGaranties to DimGarantiesCastedData\stageDimGaranties"
+          TopLeft="199.2,51.2" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_1"
+          TopLeft="446.4,117.6" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup"
+          TopLeft="180.000003065382,190.164708482023" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion"
+          TopLeft="197.6,123.2" />
+        <EdgeLayout
+          Id="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[OLE DB Source Output]"
+          TopLeft="279,92.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.4"
+              Start="0,0"
+              End="0,22.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Lookup No Match Output]"
+          TopLeft="218.933336398715,231.764708482023">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-83.3415019870386,50.4655425730045"
+              Start="0,0"
+              End="-83.3415019870386,42.9655425730045">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.6097040997445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.6097040997445"
+                    Point2="0,20.6097040997445"
+                    Point3="-4,20.6097040997445" />
+                  <mssgle:LineSegment
+                    End="-79.3415019870386,20.6097040997445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-79.3415019870386,20.6097040997445"
+                    Point2="-83.3415019870386,20.6097040997445"
+                    Point3="-83.3415019870386,24.6097040997445" />
+                  <mssgle:LineSegment
+                    End="-83.3415019870386,42.9655425730045" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-97.4771377122693,25.6097040997445,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Lookup Match Output]"
+          TopLeft="253.866669732048,231.764708482023">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118.276192215673,51.7647070234622"
+              Start="0,0"
+              End="118.276192215673,44.2647070234622">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.1402719592321" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.1402719592321"
+                    Point2="0,21.1402719592321"
+                    Point3="4,21.1402719592321" />
+                  <mssgle:LineSegment
+                    End="114.276192215673,21.1402719592321" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114.276192215673,21.1402719592321"
+                    Point2="118.276192215673,21.1402719592321"
+                    Point3="118.276192215673,25.1402719592321" />
+                  <mssgle:LineSegment
+                    End="118.276192215673,44.2647070234622" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="2.07805704533641,26.1402719592321,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Data Conversion Output]"
+          TopLeft="275.2,164.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-38.7999969346182,25.3647084820229"
+              Start="0,0"
+              End="-38.7999969346182,17.8647084820229">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.68235424101147" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.68235424101147"
+                    Point2="0,12.6823542410115"
+                    Point3="-4,12.6823542410115" />
+                  <mssgle:LineSegment
+                    End="-34.7999969346182,12.6823542410115" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-34.7999969346182,12.6823542410115"
+                    Point2="-38.7999969346182,12.6823542410115"
+                    Point3="-38.7999969346182,16.6823542410115" />
+                  <mssgle:LineSegment
+                    End="-38.7999969346182,17.8647084820229" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Data Conversion Error Output]"
+          TopLeft="352.8,141.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="93.6000000000001,0"
+              Start="0,0"
+              End="86.1000000000001,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="86.1000000000001,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-23.0363867187499,5,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\From DimGarantiesCastedData to datamartDimGaranties\OLE DB Destination">
+    design-time-name="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4094,7 +4011,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_2">
+    design-time-name="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesCastedData">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4103,6 +4020,55 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\From stageDimGaranties to DimGarantiesCastedData\stageDimGaranties">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\From stageDimGaranties to DimGarantiesCastedData\To ErrorTable_1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\From stageDimGaranties to DimGarantiesCastedData\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[datamart].[DimGarantiesCastedData]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
