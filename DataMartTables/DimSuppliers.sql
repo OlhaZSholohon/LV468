@@ -13,7 +13,7 @@ GO
 
 CREATE TABLE [datamart].[DimSuppliers](
 	[SupplierID] [int] IDENTITY(1,1) NOT NULL,
-	[SupplierKey] [int] NOT NULL,
+	[SupplierKey] [int] NULL,
 	[SupplierName] [nvarchar](20) NULL,
 	[SupplierEmail] [nvarchar](40) NULL,
 	[SupplierPhone] [nvarchar](18) NULL,

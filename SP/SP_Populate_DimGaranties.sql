@@ -24,19 +24,18 @@ SET @RandValue = round( rand()*123, 0)
 
 
 ;WITH CTE_TempDictionary as (
-SELECT round(rand()*27090, 0) AS GarantyID, 'Standard Manufacturer''s warranty' AS NameGaranty, 'Some description of warranty - 1' AS DescriptionGaranty
+SELECT 'Standard Manufacturer''s warranty' AS NameGaranty, 'Some description of warranty - 1' AS DescriptionGaranty
 union all 
-SELECT round(rand()*24507, 0) AS GarantyID, 'Full manufacturer''s warranty' AS NameGaranty, 'Some description of warranty - 2' AS DescriptionGaranty
+SELECT 'Full manufacturer''s warranty' AS NameGaranty, 'Some description of warranty - 2' AS DescriptionGaranty
 union all 
-SELECT round(rand()*79230, 0) AS GarantyID, 'Manufacturer''s special warranty' AS NameGaranty, 'Some description of warranty - 3' AS DescriptionGaranty
+SELECT 'Manufacturer''s special warranty' AS NameGaranty, 'Some description of warranty - 3' AS DescriptionGaranty
 union all 
-SELECT round(rand()*98102, 0) AS GarantyID,'Additional reseller''s warranty' AS NameGaranty, 'Some description of warranty - 4' AS DescriptionGaranty
+SELECT 'Additional reseller''s warranty' AS NameGaranty, 'Some description of warranty - 4' AS DescriptionGaranty
 )
 
-INSERT INTO staging.DimGaranties (GarantyID, NameGaranty, Duration, PriceGaranty, DescriptionGaranty)
+INSERT INTO staging.DimGaranties (NameGaranty, Duration, PriceGaranty, DescriptionGaranty)
 SELECT TOP (TRY_CAST(0.5*@NumberOfRows as INT))
-		c1.GarantyID
-		, c1.NameGaranty 
+		 c1.NameGaranty 
 		, round( rand()*200, 0)
 		, round( rand()*400, 0)
 		, c2.DescriptionGaranty +CAST(@RandValue as nvarchar(10))
@@ -55,9 +54,8 @@ FROM staging.DimGaranties
 WHILE @Loop <= @RowsForWhile
 BEGIN 
 	SET @WarrantyRandName = (SELECT TOP 1 NameGaranty FROM #TempDimGaranties ORDER BY NEWID())
-  INSERT INTO staging.DimGaranties (GarantyID, NameGaranty, Duration, PriceGaranty, DescriptionGaranty)
+  INSERT INTO staging.DimGaranties (NameGaranty, Duration, PriceGaranty, DescriptionGaranty)
   VALUES (
-		round(rand()*90157, 0),
 		@WarrantyRandName,
 		round(rand()*150, 0),
 		round(rand()*500, 0),
