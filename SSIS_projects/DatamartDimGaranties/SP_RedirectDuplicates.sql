@@ -8,7 +8,7 @@ IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'datamart.SP_R
 GO
 CREATE PROCEDURE datamart.SP_RedirectDuplicates
 AS
--------INSERT--------
+-------INSERT------------
 ;WITH GarantyDuplicates
 AS
 (
