@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SCH2"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{E0DD2671-F839-469E-A1A2-33BAA4210C12}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{BBAC78DF-6337-4C86-A055-F03BB0DB4304}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADKNCTN9yg6qhDOKvGbGIbWAAAAAASAAACgAAAAEAAAAKxIa0FpxNEgCkYrlFMGGd8YAAAAbTkASgxVtTJBE8GFHzBRuZ9nG8exsjyyFAAAAGMiQecTh30ZGizVtLXL5Ho4bs08</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADmL2+RNA8h4u2VLuD9GeVnAAAAAASAAACgAAAAEAAAAKGU/eNy8VomGV0vI7PaczwYAAAAmdQj/B/81FpuUnxKwwlZci8VUbMrAv4JFAAAAHlERje0BXqBc67+AZK2SCVKcXgY</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -42,7 +42,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACmCD/JtRTAkBa2HPkJvwuaAAAAAASAAACgAAAAEAAAAF51LZWcoWxEdpY25KG3VyQYAAAAtOD6AkisWJWzUTU1LSBm9gOpBUaI1CwDFAAAAAsxMvVqmjZ/060M+1H6afXzS1xn</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACjmJDb/DMVop784cSaiHSIAAAAAASAAACgAAAAEAAAABFkSk58I/bUUfAmhYZ1tAwYAAAAFFOLxa7y73zTb7PQul0+DiJehFyc9MreFAAAAHLozPoYy5V6rfF24ChLjtT1R/eR</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -50,35 +50,15 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\drop global temporary table"
+      DTS:refId="Package\drop global temporary tables"
       DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:Description="Execute T-SQL Statement Task"
       DTS:Disabled="True"
       DTS:DTSID="{0419AFF5-58D2-4865-88E1-D74DA9A1398F}"
       DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="drop global temporary table"
-      DTS:ThreadHint="3">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:ServerVersion="9"
-          SQLTask:ExtendedLogging="True"
-          SQLTask:LocalConnectionForLogging=""
-          SQLTask:TaskName=""
-          SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Drop temporary table"
-      DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
-      DTS:Description="Execute T-SQL Statement Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{3232B2B3-FF8C-4678-84C7-9F0BA9B0D018}"
-      DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Drop temporary table"
-      DTS:ThreadHint="1">
+      DTS:ObjectName="drop global temporary tables"
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -97,89 +77,12 @@
       DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute T-SQL Statement Task"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{80D01116-1102-4C61-B8BA-921A6203CCE5}"
           SQLTask:SqlStatementSource="SELECT SupplierID, SupplierName, SupplierEmail, SupplierPhone, SupplierDescription,  &#xA;&#x9;[datamart].[EmailFormat](SupplierEmail) AS ValidEmail, &#xA;&#x9;[datamart].[NumPhoneFormat](SupplierPhone) AS ValidPhone&#xA;INTO ##SupplierValidData2&#xA;FROM ##SupplierValidData"
-          SQLTask:ServerVersion="9"
-          SQLTask:ExtendedLogging="True"
-          SQLTask:LocalConnectionForLogging=""
-          SQLTask:TaskName=""
-          SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Report about duplicated rows"
-      DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
-      DTS:Description="Execute T-SQL Statement Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{7FAE4B7A-995A-438A-987A-360493B36091}"
-      DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Report about duplicated rows"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:ServerVersion="9"
-          SQLTask:ExtendedLogging="True"
-          SQLTask:LocalConnectionForLogging=""
-          SQLTask:TaskName=""
-          SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Slow Changing Dimention (type 2)"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{AFC07A75-4DF7-4AC6-AC4A-2CB3416668B5}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Slow Changing Dimention (type 2)">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Transformation Error, insert data into Error table"
-      DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
-      DTS:Description="Execute T-SQL Statement Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{570A7D01-3CC7-4EA0-B5BB-F164794B6920}"
-      DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Transformation Error, insert data into Error table"
-      DTS:ThreadHint="2">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{80D01116-1102-4C61-B8BA-921A6203CCE5}"
-          SQLTask:SqlStatementSource="USE [TestDBDataMart];&#xA;GO&#xA;&#xA;INSERT INTO [datamart].[DimSupplierErrors] (SupplierKey, SupplierName, SupplierEmail,SupplierPhone, SupplierDescription)&#xA;SELECT v.SupplierID, v.SupplierName, v.SupplierEmail, v.SupplierPhone, v.SupplierDescription&#xA;FROM ##SupplierValidData  AS v&#xA;LEFT JOIN ##SupplierValidData2 AS t&#xA;&#x9;&#x9;  ON v.SupplierID = t.SupplierID&#xA;WHERE t.SupplierID is NULL"
-          SQLTask:ServerVersion="9"
-          SQLTask:ExtendedLogging="True"
-          SQLTask:LocalConnectionForLogging=""
-          SQLTask:TaskName=""
-          SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Transformation OK, remove duplicated and NULL rows"
-      DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
-      DTS:Description="Execute T-SQL Statement Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{479E2B45-8B6C-472A-9C50-FF54CA0E8853}"
-      DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Transformation OK, remove duplicated and NULL rows"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
           SQLTask:ServerVersion="9"
           SQLTask:ExtendedLogging="True"
           SQLTask:LocalConnectionForLogging=""
@@ -2789,34 +2692,12 @@ FROM ##SupplierValidData2</property>
       DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Validation Error, insert data into Error table"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{80D01116-1102-4C61-B8BA-921A6203CCE5}"
-          SQLTask:SqlStatementSource="USE [TestDBDataMart];&#xA;GO&#xA;&#xA;INSERT INTO [datamart].[DimSupplierErrors] (SupplierKey, SupplierName, SupplierEmail,SupplierPhone, SupplierDescription)&#xA;SELECT s.SupplierID, s.SupplierName, s.SupplierEmail, s.SupplierPhone, s.SupplierDescription&#xA;FROM [dbo].[Suppliers] AS s&#xA;LEFT JOIN ##SupplierValidData AS v&#xA;&#x9;&#x9;  ON s.SupplierID = v.SupplierID&#xA;WHERE v.SupplierID is NULL"
-          SQLTask:ServerVersion="9"
-          SQLTask:ExtendedLogging="True"
-          SQLTask:LocalConnectionForLogging=""
-          SQLTask:TaskName=""
-          SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Validation OK, transform data"
-      DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
-      DTS:Description="Execute T-SQL Statement Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{BCB4802C-58C6-40A0-9DAA-617495C3E493}"
-      DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Validation OK, transform data"
       DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{80D01116-1102-4C61-B8BA-921A6203CCE5}"
-          SQLTask:SqlStatementSource="USE [TestDBDataMart];&#xA;GO&#xA;&#xA;SELECT * INTO ##SupplierValidData2&#xA;FROM ##SupplierValidData&#xA;WHERE [datamart].[EmailFormat](SupplierName) IS NOT NULL&#xA;&#x9;[datamart].[NumPhoneFormat](SupplierPhone) IS NOT NULL"
+          SQLTask:SqlStatementSource="USE [TestDBDataMart];&#xA;GO&#xA;&#xA;INSERT INTO [datamart].[DimSupplierErrors] (SupplierKey, SupplierName, SupplierEmail,SupplierPhone, SupplierDescription)&#xA;SELECT s.SupplierID, s.SupplierName, s.SupplierEmail, s.SupplierPhone, s.SupplierDescription&#xA;FROM [dbo].[Suppliers] AS s&#xA;LEFT JOIN ##SupplierValidData AS v&#xA;&#x9;&#x9;  ON s.SupplierID = v.SupplierID&#xA;WHERE v.SupplierID is NULL"
           SQLTask:ServerVersion="9"
           SQLTask:ExtendedLogging="True"
           SQLTask:LocalConnectionForLogging=""
@@ -2849,23 +2730,7 @@ FROM ##SupplierValidData2</property>
       DTS:From="Package\Transormation data and SCD2"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\drop global temporary table" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
-      DTS:CreationName=""
-      DTS:DTSID="{3E50C12F-8E6F-44BD-97F9-4CA5B39D5CAB}"
-      DTS:From="Package\Validation OK, transform data"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 3"
-      DTS:To="Package\Transformation OK, remove duplicated and NULL rows" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
-      DTS:CreationName=""
-      DTS:DTSID="{8A12B692-DBF5-49AC-A453-CC6EA5E691C6}"
-      DTS:From="Package\Validation OK, transform data"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 4"
-      DTS:To="Package\Transformation Error, insert data into Error table" />
+      DTS:To="Package\drop global temporary tables" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
@@ -2874,30 +2739,6 @@ FROM ##SupplierValidData2</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
       DTS:To="Package\Transormation data and SCD2" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
-      DTS:CreationName=""
-      DTS:DTSID="{EE66B55F-0253-4703-A431-A6D55ADF2D20}"
-      DTS:From="Package\Transformation OK, remove duplicated and NULL rows"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 6"
-      DTS:To="Package\Slow Changing Dimention (type 2)" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
-      DTS:CreationName=""
-      DTS:DTSID="{82E01892-14D9-4B18-87BA-A380B0815FC1}"
-      DTS:From="Package\Slow Changing Dimention (type 2)"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 7"
-      DTS:To="Package\Drop temporary table" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
-      DTS:CreationName=""
-      DTS:DTSID="{16728E61-F008-4590-9646-3589F4F9DD81}"
-      DTS:From="Package\Transformation OK, remove duplicated and NULL rows"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 8"
-      DTS:To="Package\Report about duplicated rows" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2910,27 +2751,19 @@ FROM ##SupplierValidData2</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="180,42"
-          Id="Package\Drop temporary table"
-          TopLeft="921.333333333333,856.166666666667" />
+          Size="215,42"
+          Id="Package\drop global temporary tables"
+          TopLeft="355,454.5" />
         <NodeLayout
-          Size="218,42"
-          Id="Package\Report about duplicated rows"
-          TopLeft="1192.33333333333,753.666666666667" />
+          Size="225,42"
+          Id="Package\Execute T-SQL Statement Task"
+          TopLeft="334,214" />
         <NodeLayout
-          Size="241,42"
-          Id="Package\Slow Changing Dimention (type 2)"
-          TopLeft="890.833333333333,753.666666666667" />
-        <NodeLayout
-          Size="236,53"
-          Id="Package\Transformation Error, insert data into Error table"
-          TopLeft="1177.33333333333,639.666666666667" />
-        <NodeLayout
-          Size="210,54"
-          Id="Package\Transformation OK, remove duplicated and NULL rows"
-          TopLeft="906.333333333333,639.166666666667" />
+          Size="221,42"
+          Id="Package\Transormation data and SCD2"
+          TopLeft="347,297" />
         <NodeLayout
           Size="161,42"
           Id="Package\Validate datatype"
@@ -2939,219 +2772,6 @@ FROM ##SupplierValidData2</property>
           Size="283,42"
           Id="Package\Validation Error, insert data into Error table"
           TopLeft="604.583333333333,110.583333333333" />
-        <NodeLayout
-          Size="218,42"
-          Id="Package\Validation OK, transform data"
-          TopLeft="932.333333333333,540.166666666667" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="518.5,133.041666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="86.0833333333334,0"
-              Start="0,0"
-              End="78.5833333333334,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="78.5833333333334,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="1008.83333333333,582.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57"
-              Start="0,0"
-              End="0,49.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="1076.33333333333,582.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="219,57.5"
-              Start="0,0"
-              End="219,50">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.2513661202186" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.2513661202186"
-                    Point2="0,23.2513661202186"
-                    Point3="4,23.2513661202186" />
-                  <mssgle:LineSegment
-                    End="215,23.2513661202186" />
-                  <mssgle:CubicBezierSegment
-                    Point1="215,23.2513661202186"
-                    Point2="219,23.2513661202186"
-                    Point3="219,27.2513661202186" />
-                  <mssgle:LineSegment
-                    End="219,50" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="977.666666666667,693.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="33.6666666666666,60.5"
-              Start="0,0"
-              End="33.6666666666666,53">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.4744801512287" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.4744801512287"
-                    Point2="0,24.4744801512287"
-                    Point3="4,24.4744801512287" />
-                  <mssgle:LineSegment
-                    End="29.6666666666666,24.4744801512287" />
-                  <mssgle:CubicBezierSegment
-                    Point1="29.6666666666666,24.4744801512287"
-                    Point2="33.6666666666666,24.4744801512287"
-                    Point3="33.6666666666666,28.4744801512287" />
-                  <mssgle:LineSegment
-                    End="33.6666666666666,53" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="1011.33333333333,795.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.5"
-              Start="0,0"
-              End="0,53">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="1045,693.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="256.333333333333,60.5"
-              Start="0,0"
-              End="256.333333333333,53">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.4744801512287" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.4744801512287"
-                    Point2="0,24.4744801512287"
-                    Point3="4,24.4744801512287" />
-                  <mssgle:LineSegment
-                    End="252.333333333333,24.4744801512287" />
-                  <mssgle:CubicBezierSegment
-                    Point1="252.333333333333,24.4744801512287"
-                    Point2="256.333333333333,24.4744801512287"
-                    Point3="256.333333333333,28.4744801512287" />
-                  <mssgle:LineSegment
-                    End="256.333333333333,53" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <AnnotationLayout
-          Text="Drop ##1?"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="200,40"
-          Id="dff337e4-6393-416e-a558-e728f07e825f"
-          TopLeft="1162.33333333333,857.166666666667" />
-        <NodeLayout
-          Size="210,42"
-          Id="Package\drop global temporary table"
-          TopLeft="355,503.5" />
-        <NodeLayout
-          Size="221,42"
-          Id="Package\Transormation data and SCD2"
-          TopLeft="347,297" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="458.75,339">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,164.5"
-              Start="0,0"
-              End="0,157">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,157" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="225,42"
-          Id="Package\Execute T-SQL Statement Task"
-          TopLeft="334,214" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="438,155.5">
@@ -3178,6 +2798,50 @@ FROM ##SupplierValidData2</property>
                     Point3="8.5,33.25" />
                   <mssgle:LineSegment
                     End="8.5,51" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="518.5,133.041666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="86.0833333333334,0"
+              Start="0,0"
+              End="78.5833333333334,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="78.5833333333334,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="460,339">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,115.5"
+              Start="0,0"
+              End="0,108">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,108" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3229,6 +2893,30 @@ FROM ##SupplierValidData2</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="163,42"
+          Id="Package\Transormation data and SCD2\Insert Destination"
+          TopLeft="265,845.5" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Transormation data and SCD2\OLE DB Command 2"
+          TopLeft="636,461.5" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Transormation data and SCD2\OLE DB Destination 2"
+          TopLeft="633.5,338.5" />
+        <NodeLayout
+          Size="216,42"
+          Id="Package\Transormation data and SCD2\Check on some empty values"
+          TopLeft="242.5,170.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Transormation data and SCD2\OLE DB Command"
+          TopLeft="77.5000000000001,674.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Transormation data and SCD2\GROUP BY rows"
+          TopLeft="266,253.5" />
+        <NodeLayout
           Size="150,42"
           Id="Package\Transormation data and SCD2\OLE DB Source"
           TopLeft="275.5,5.5" />
@@ -3237,39 +2925,29 @@ FROM ##SupplierValidData2</property>
           Id="Package\Transormation data and SCD2\Slowly Changing Dimension"
           TopLeft="246,454.5" />
         <NodeLayout
+          Size="121,42"
+          Id="Package\Transormation data and SCD2\Union All"
+          TopLeft="294,673.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Transormation data and SCD2\Derived Column 1"
+          TopLeft="270,767.5" />
+        <NodeLayout
           Size="181,42"
           Id="Package\Transormation data and SCD2\Check on empty rows"
           TopLeft="258,83.5" />
-        <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[OLE DB Source Output]"
-          TopLeft="349.5,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36"
-              Start="0,0"
-              End="0,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="171,42"
           Id="Package\Transormation data and SCD2\OLE DB Destination"
           TopLeft="625,84.5" />
         <NodeLayout
-          Size="216,42"
-          Id="Package\Transormation data and SCD2\Check on some empty values"
-          TopLeft="242.5,170.5" />
+          Size="154,42"
+          Id="Package\Transormation data and SCD2\Derived Column"
+          TopLeft="87.5000000000001,584.5" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Transormation data and SCD2\OLE DB Command 1"
+          TopLeft="646,602.5" />
         <NodeLayout
           Size="180,42"
           Id="Package\Transormation data and SCD2\OLE DB Destination 1"
@@ -3278,24 +2956,20 @@ FROM ##SupplierValidData2</property>
           Size="158,42"
           Id="Package\Transormation data and SCD2\Check dublicates"
           TopLeft="266.5,337.5" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Transormation data and SCD2\GROUP BY rows"
-          TopLeft="266,253.5" />
         <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[Aggregate Output 1]"
-          TopLeft="344.5,295.5">
+          Id="Package\Transormation data and SCD2.Paths[Union All Output 1]"
+          TopLeft="353,715.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42"
+              EndConnector="0,52"
               Start="0,0"
-              End="0,34.5">
+              End="0,44.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.5" />
+                    End="0,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3304,103 +2978,27 @@ FROM ##SupplierValidData2</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Transormation data and SCD2\OLE DB Destination 2"
-          TopLeft="633.5,338.5" />
         <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[Duplicate records]"
-          TopLeft="424.5,359">
+          Id="Package\Transormation data and SCD2.Paths[Rows without empty values]"
+          TopLeft="347,212.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="209,0"
+              EndConnector="0,41"
               Start="0,0"
-              End="201.5,0">
+              End="0,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="201.5,0" />
+                    End="0,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="61.937421875,5,77.62515625,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[Data without duplicates]"
-          TopLeft="348,379.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,75"
-              Start="0,0"
-              End="0,67.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,67.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-52.537578125,27.9453125,105.07515625,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[Empty Rows]"
-          TopLeft="439,105">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="186,0"
-              Start="0,0"
-              End="178.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="178.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="61.457421875,5,55.58515625,11.2822265625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[Not empty rows]"
-          TopLeft="349.5,125.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45"
-              Start="0,0"
-              End="0,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-35.597578125,13.10888671875,71.19515625,11.2822265625"
+              BoundingBox="-61.147578125,10.9453125,122.29515625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3429,121 +3027,25 @@ FROM ##SupplierValidData2</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[Rows without empty values]"
-          TopLeft="347,212.5">
+          Id="Package\Transormation data and SCD2.Paths[OLE DB Source Output]"
+          TopLeft="349.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41"
+              EndConnector="0,36"
               Start="0,0"
-              End="0,33.5">
+              End="0,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-61.147578125,10.9453125,122.29515625,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Transormation data and SCD2\Derived Column"
-          TopLeft="87.5000000000001,584.5" />
-        <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[Historical Attribute Inserts Output]"
-          TopLeft="290.2,496.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-125.7,88.0000000000001"
-              Start="0,0"
-              End="-125.7,80.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.1573638197714" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.1573638197714"
-                    Point2="0,26.1573638197714"
-                    Point3="-4,26.1573638197714" />
-                  <mssgle:LineSegment
-                    End="-121.7,26.1573638197714" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-121.7,26.1573638197714"
-                    Point2="-125.7,26.1573638197714"
-                    Point3="-125.7,30.1573638197714" />
-                  <mssgle:LineSegment
-                    End="-125.7,80.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-137.90638671875,31.1573638197714,150.1127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Transormation data and SCD2\OLE DB Command"
-          TopLeft="77.5000000000001,674.5" />
-        <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[Derived Column Output]"
-          TopLeft="162.5,626.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48"
-              Start="0,0"
-              End="0,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5" />
+                    End="0,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Transormation data and SCD2\Union All"
-          TopLeft="294,673.5" />
-        <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[New Output]"
-          TopLeft="352.5,496.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,177"
-              Start="0,0"
-              End="0,169.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,169.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-27.09138671875,79.033203125,54.1827734375,11.43359375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3568,62 +3070,54 @@ FROM ##SupplierValidData2</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Transormation data and SCD2\Derived Column 1"
-          TopLeft="270,767.5" />
         <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[Union All Output 1]"
-          TopLeft="353,715.5">
+          Id="Package\Transormation data and SCD2.Paths[Not empty rows]"
+          TopLeft="349.5,125.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,52"
+              EndConnector="0,45"
               Start="0,0"
-              End="0,44.5">
+              End="0,37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.5" />
+                    End="0,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-35.597578125,13.10888671875,71.19515625,11.2822265625"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Transormation data and SCD2\Insert Destination"
-          TopLeft="265,845.5" />
         <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[Derived Column Output1]"
-          TopLeft="349,809.5">
+          Id="Package\Transormation data and SCD2.Paths[New Output]"
+          TopLeft="352.5,496.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36"
+              EndConnector="0,177"
               Start="0,0"
-              End="0,28.5">
+              End="0,169.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.5" />
+                    End="0,169.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-27.09138671875,79.033203125,54.1827734375,11.43359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Transormation data and SCD2\OLE DB Command 1"
-          TopLeft="646,602.5" />
         <EdgeLayout
           Id="Package\Transormation data and SCD2.Paths[Inferred Member Updates Output]"
           TopLeft="400.75,496.5">
@@ -3660,10 +3154,158 @@ FROM ##SupplierValidData2</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Transormation data and SCD2\OLE DB Command 2"
-          TopLeft="636,461.5" />
+        <EdgeLayout
+          Id="Package\Transormation data and SCD2.Paths[Historical Attribute Inserts Output]"
+          TopLeft="290.2,496.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-125.7,88.0000000000001"
+              Start="0,0"
+              End="-125.7,80.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1573638197714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.1573638197714"
+                    Point2="0,26.1573638197714"
+                    Point3="-4,26.1573638197714" />
+                  <mssgle:LineSegment
+                    End="-121.7,26.1573638197714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-121.7,26.1573638197714"
+                    Point2="-125.7,26.1573638197714"
+                    Point3="-125.7,30.1573638197714" />
+                  <mssgle:LineSegment
+                    End="-125.7,80.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-137.90638671875,31.1573638197714,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transormation data and SCD2.Paths[Empty Rows]"
+          TopLeft="439,105">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="186,0"
+              Start="0,0"
+              End="178.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="178.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="61.457421875,5,55.58515625,11.2822265625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transormation data and SCD2.Paths[Duplicate records]"
+          TopLeft="424.5,359">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="209,0"
+              Start="0,0"
+              End="201.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="201.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="61.937421875,5,77.62515625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transormation data and SCD2.Paths[Derived Column Output1]"
+          TopLeft="349,809.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transormation data and SCD2.Paths[Derived Column Output]"
+          TopLeft="162.5,626.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transormation data and SCD2.Paths[Data without duplicates]"
+          TopLeft="348,379.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,75"
+              Start="0,0"
+              End="0,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-52.537578125,27.9453125,105.07515625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Transormation data and SCD2.Paths[Changing Attribute Updates Output]"
           TopLeft="455,479">
@@ -3688,9 +3330,57 @@ FROM ##SupplierValidData2</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transormation data and SCD2.Paths[Aggregate Output 1]"
+          TopLeft="344.5,295.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transormation data and SCD2\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transormation data and SCD2\OLE DB Destination 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Transormation data and SCD2\OLE DB Source">
     <Properties>
@@ -3778,32 +3468,6 @@ FROM ##SupplierValidData2</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Transormation data and SCD2\OLE DB Destination 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Transormation data and SCD2\OLE DB Destination 2">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Transormation data and SCD2\Insert Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
