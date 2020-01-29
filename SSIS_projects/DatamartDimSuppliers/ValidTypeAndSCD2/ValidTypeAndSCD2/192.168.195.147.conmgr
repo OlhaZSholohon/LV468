@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="192.168.195.147"
+  DTS:DTSID="{80D01116-1102-4C61-B8BA-921A6203CCE5}"
+  DTS:CreationName="ADO.NET:SQL">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Persist Security Info=True;Connect Timeout=30;Application Name=SSIS-SCH2-{80D01116-1102-4C61-B8BA-921A6203CCE5}192.168.195.147;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAACAAAAAAADZgAAwAAAABAAAAB4C7sVLmFABJrCWZ6oPlr3AAAAAASAAACgAAAAEAAAAOBVlfR3hJcH7FNKbM27axR4AAAAyg4ijw0yZFupH0jlEkKDC/tJs+fnCfkZePhav8JTYIJ8u/gvIR2AebGGWLwfn7WvMD6iOW2O+QnZ67ejg+zrf+nkLN03/D+5XvfATu47wc85Oq15YcTVpVCvllMVnsfxI7XHB0Y7+OsldxbGDiJA3zC3xRhOuO58FAAAAJFLvVpwaCZfPq4Dd4Vak+m9izZf</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
