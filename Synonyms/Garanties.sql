@@ -1,5 +1,5 @@
 USE TestDBDataMart
 GO
 
-CREATE SYNONYM datamart.StagingGaranties FOR TestDBStage.staging.DimGaranties
+CREATE SYNONYM dbo.Garanties FOR TestDBStage.staging.DimGaranties
 GO

@@ -18,8 +18,8 @@ WHERE (SELECT COUNT(*)
        WHERE T1.GarantyID = T2.GarantyID) > 1
 )
 
-INSERT INTO errors.DimGarantiesErrors(GarantyID, NameGaranty, Duration, PriceGaranty, DescriptionGaranty)
-SELECT GarantyID, NameGaranty, Duration, PriceGaranty, DescriptionGaranty FROM GarantyDuplicates;
+INSERT INTO errors.DimGarantiesErrors(GarantyID, NameGaranty, Duration, PriceGaranty, DescriptionGaranty, ErrorDescription)
+SELECT GarantyID, NameGaranty, Duration, PriceGaranty, DescriptionGaranty, 'Error: duplicates in source file(s)' FROM GarantyDuplicates;
 -----------DELETE------
 ;WITH GarantyDuplicatesDEL
 AS

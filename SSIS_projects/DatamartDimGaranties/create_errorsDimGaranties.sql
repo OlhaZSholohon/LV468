@@ -9,4 +9,5 @@ CREATE TABLE errors.DimGarantiesErrors(
  , Duration NVARCHAR(255)
  , PriceGaranty NVARCHAR(255)
  , DescriptionGaranty NVARCHAR(255)
+ , ErrorDescription NVARCHAR(255)
 )

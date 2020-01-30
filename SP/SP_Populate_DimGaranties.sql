@@ -38,7 +38,7 @@ SELECT TOP (TRY_CAST(0.5*@NumberOfRows as INT))
 		c1.GarantyID
 		, c1.NameGaranty 
 		, round( rand()*200, 0)
-		, round( rand()*400, 0)
+		, round( rand()*400, 2)
 		, c2.DescriptionGaranty +CAST(@RandValue as nvarchar(10))
 FROM CTE_TempDictionary c1
 CROSS JOIN
@@ -60,7 +60,7 @@ BEGIN
 		round(rand()*90157, 0),
 		@WarrantyRandName,
 		round(rand()*150, 0),
-		round(rand()*500, 0),
+		round(rand()*505, 2),
 		'Some description of warranty - '+ CAST(round(rand()*150, 0) as nvarchar(10))
 		)
   SET @Loop = @Loop + 1
