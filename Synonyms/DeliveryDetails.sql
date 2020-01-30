@@ -1,5 +1,5 @@
 USE [TestDBDataMart]
 GO
 
-CREATE SYNONYM [datamart].[StagingDeliveryDetails] FOR [TestDBStage].[staging].[DimDeliveryDetails]
+CREATE SYNONYM [dbo].[DimDeliveryDetails] FOR [TestDBStage].[staging].[DimDeliveryDetails]
 GO
