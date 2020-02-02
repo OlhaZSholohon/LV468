@@ -7,15 +7,13 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-IF OBJECT_ID('[datamart].[DimSupplierErrors]', 'U') IS NOT NULL 
-  DROP TABLE [datamart].[DimSupplierErrors]; 
-
-CREATE TABLE [datamart].[DimSupplierErrors](
+CREATE TABLE [datamart].[ErrorDimSuppliers](
 	[SupplierID] [int] IDENTITY(1,1) NOT NULL
 	,[SupplierKey] [int] NOT NULL
 	,[SupplierName] [nvarchar](255) NULL
 	,[SupplierEmail] [nvarchar](255) NULL
 	,[SupplierPhone] [nvarchar](255) NULL
 	,[SupplierDescription] [nvarchar](255) NULL
+	,[ErrorComment] nvarchar(50) NULL
 ) ON [PRIMARY]
 GO

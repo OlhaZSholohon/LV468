@@ -23,6 +23,7 @@ BEGIN
 		AND @Email NOT LIKE '%@%@%'								--Can't include two @ symbol in a row
 		AND @Email NOT LIKE '%.@%'								--Can't include '.@' pattern 
 		AND @Email NOT LIKE '%@.%'								--Can't include '@.' pattern
+		AND @Email NOT LIKE '%[0-9]'							--Can't end on numbers
 		)						
 		BEGIN
 
