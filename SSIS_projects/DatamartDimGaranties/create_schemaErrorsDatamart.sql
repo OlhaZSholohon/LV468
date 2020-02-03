@@ -1,6 +1,6 @@
 USE TestDBDataMart;
 
 GO
-CREATE SCHEMA errors
+CREATE SCHEMA error
 GO
 ---

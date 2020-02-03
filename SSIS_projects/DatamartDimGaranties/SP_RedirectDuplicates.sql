@@ -9,30 +9,21 @@ GO
 CREATE PROCEDURE datamart.SP_RedirectDuplicates
 AS
 -------INSERT------------
-;WITH GarantyDuplicates
-AS
-(
-SELECT GarantyID, NameGaranty, Duration, PriceGaranty, DescriptionGaranty FROM datamart.DimGarantiesCastedData T1
+SELECT GarantyID, NameGaranty, Duration, PriceGaranty, DescriptionGaranty
+INTO #GarantyDuplicates
+FROM datamart.DimGarantiesCastedData cd1
 WHERE (SELECT COUNT(*)
-       FROM datamart.DimGarantiesCastedData T2
-       WHERE T1.GarantyID = T2.GarantyID) > 1
-)
+       FROM datamart.DimGarantiesCastedData cd2
+       WHERE cd1.GarantyID = cd2.GarantyID) > 1
+--------------------------
 
-INSERT INTO errors.DimGarantiesErrors(GarantyID, NameGaranty, Duration, PriceGaranty, DescriptionGaranty, ErrorDescription)
-SELECT GarantyID, NameGaranty, Duration, PriceGaranty, DescriptionGaranty, 'Error: duplicates in source file(s)' FROM GarantyDuplicates;
+INSERT INTO error.DimGarantyErrors(GarantyID, NameGaranty, Duration, PriceGaranty, DescriptionGaranty, ErrorDescription, ErrorDate)
+SELECT GarantyID, NameGaranty, Duration, PriceGaranty, DescriptionGaranty, 'Error: duplicates in source file(s)', GETDATE() FROM #GarantyDuplicates;
+
 -----------DELETE------
-;WITH GarantyDuplicatesDEL
-AS
-(
-SELECT GarantyID, NameGaranty, Duration, PriceGaranty, DescriptionGaranty FROM datamart.DimGarantiesCastedData T1
-WHERE (SELECT COUNT(*)
-       FROM datamart.DimGarantiesCastedData T2
-       WHERE T1.GarantyID = T2.GarantyID) > 1
-)
-
-DELETE A1 
-	FROM datamart.DimGarantiesCastedData A1
-	INNER JOIN GarantyDuplicatesDEL cte
-	ON A1.GarantyID = cte.GarantyID
+DELETE cd 
+	FROM datamart.DimGarantiesCastedData cd
+	INNER JOIN #GarantyDuplicates td
+	ON cd.GarantyID = td.GarantyID
 
 GO
