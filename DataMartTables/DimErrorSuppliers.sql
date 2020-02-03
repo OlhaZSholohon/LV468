@@ -7,9 +7,9 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [datamart].[ErrorDimSuppliers](
+CREATE TABLE [error].[ErrorDimSuppliers](
 	[SupplierID] [int] IDENTITY(1,1) NOT NULL
-	,[SupplierKey] [int] NOT NULL
+	,[SupplierKey] [nvarchar](20) NULL
 	,[SupplierName] [nvarchar](255) NULL
 	,[SupplierEmail] [nvarchar](255) NULL
 	,[SupplierPhone] [nvarchar](255) NULL
