@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "FactOrders", "FactOrders\FactOrders.dtproj", "{55E18EB5-0A6B-48E6-B062-28AA9A73098A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55E18EB5-0A6B-48E6-B062-28AA9A73098A}.Development|Default.ActiveCfg = Development
+		{55E18EB5-0A6B-48E6-B062-28AA9A73098A}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {477BD568-FA30-44DA-8148-0CC7BAC9ADA1}
+	EndGlobalSection
+EndGlobal

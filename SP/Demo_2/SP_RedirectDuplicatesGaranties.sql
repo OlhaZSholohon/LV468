@@ -1,12 +1,12 @@
-﻿USE TestDBDataMart;
+﻿--USE TestDBDataMart;
 
 SET NOCOUNT ON
 
-IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'datamart.SP_RedirectDuplicates') AND type in (N'P', N'PC'))
-  DROP PROCEDURE datamart.SP_RedirectDuplicates
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'datamart.SP_RedirectDuplicatesGaranties') AND type in (N'P', N'PC'))
+  DROP PROCEDURE datamart.SP_RedirectDuplicatesGaranties
 
 GO
-CREATE PROCEDURE datamart.SP_RedirectDuplicates
+CREATE PROCEDURE datamart.SP_RedirectDuplicatesGaranties
 AS
 -------INSERT------------
 SELECT GarantyID, NameGaranty, Duration, PriceGaranty, DescriptionGaranty

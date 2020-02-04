@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RD7"
   DTS:CreatorName="TRAINING\atybintc"
-  DTS:DTSID="{E757D42A-C201-4BB1-91C5-892F26C6E80C}"
+  DTS:DTSID="{504F94DD-DFD4-48A0-BAF7-D5E58C8BBF28}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.1301.433"
   DTS:LocaleID="1033"
-  DTS:ObjectName="DimGarantiesSCD"
+  DTS:ObjectName="DatamartDimGaranties"
   DTS:PackageType="5"
-  DTS:VersionBuild="77"
-  DTS:VersionGUID="{64FB8766-405A-4553-BE97-98F71DE564DC}">
+  DTS:VersionBuild="145"
+  DTS:VersionGUID="{A8C084A6-C283-45F1-9496-340418DF1A66}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACZlyu/jjg5F4UojmpUWLbaAAAAAASAAACgAAAAEAAAAF3Qiorq8am+WQxpIViqJcAYAAAAJnNaECsFtfY9qLnq91IcUP2SKDlki+M1FAAAAAxWjY3TTq9atokwYb+Q0mAxzoSF</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADLafzWDnZ+tDkIPMo7Ie79AAAAAASAAACgAAAAEAAAAP/zoI7CbDS1vyQ5v+3Y2kMYAAAAGmcHODnh5mAFDHWFxest/wCZY4aRAcx/FAAAAJtAN/d+8SeZdyQTaQI6nqWvm95l</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -42,7 +42,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACoXedc8+m84TP0MyD6zuoMAAAAAASAAACgAAAAEAAAANBc7BmAOVgMfXJ1ym1GjXoYAAAAx+Dmbsojyn93gtc1ynoA8W7fvJtAn6JNFAAAAMeF+oigW+ziT401oyhmB2TDasJ+</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAADZZ+5qSKjX0Pv0m3E1rC1AAAAAASAAACgAAAAEAAAACmbOVwAuaatx0HSlFAoXqkYAAAA8VPpT6XhlF0b0/lK7BBUQPcpBhqx8L4rFAAAAIaoPS9KsTb3qJ+nw1kezwn9BfO8</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -62,7 +62,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{28C6E68F-9736-4961-8933-0897A18B733D}"
-          SQLTask:SqlStatementSource="EXECUTE datamart.SP_RedirectDuplicates" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXECUTE datamart.SP_RedirectDuplicatesGaranties" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -77,17 +77,17 @@
       <DTS:Variables />
       <DTS:EventHandlers>
         <DTS:EventHandler
-          DTS:refId="Package\From DimGarantiesCastedData to datamartDimGaranties.EventHandlers[OnInformation]"
-          DTS:CreationName="OnInformation"
-          DTS:DTSID="{2321AE96-026F-4644-AEF5-751D467A79E3}"
-          DTS:EventID="1074393513"
-          DTS:EventName="OnInformation"
+          DTS:refId="Package\From DimGarantiesCastedData to datamartDimGaranties.EventHandlers[OnPostExecute]"
+          DTS:CreationName="OnPostExecute"
+          DTS:DTSID="{FA201B35-C3F7-414C-9252-4529B5E7A1A1}"
+          DTS:EventID="0"
+          DTS:EventName="OnPostExecute"
           DTS:LocaleID="-1">
           <DTS:Variables>
             <DTS:Variable
               DTS:CreationName=""
               DTS:Description="The propagate property of the event"
-              DTS:DTSID="{8A5CCCC7-7694-4624-A71A-BC3F03911C7B}"
+              DTS:DTSID="{E544A2BF-902B-4F14-80AF-1A2AE3A423B8}"
               DTS:IncludeInDebugDump="6789"
               DTS:Namespace="System"
               DTS:ObjectName="Propagate">
@@ -95,7 +95,30 @@
                 DTS:DataType="11">-1</DTS:VariableValue>
             </DTS:Variable>
           </DTS:Variables>
-          <DTS:Executables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\From DimGarantiesCastedData to datamartDimGaranties.EventHandlers[OnPostExecute]\OnPostExecute"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{5f04897f-c45b-43c7-a629-9d03ff05baf4}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="OnPostExecute">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{28C6E68F-9736-4961-8933-0897A18B733D}"
+                  SQLTask:SqlStatementSource="UPDATE datamart.PackageInfo&#xA;SET PackageStatus = 'Finished', EndTime = GETDATE()&#xA;WHERE PackageInfoID = (select max(PackageInfoID) from datamart.PackageInfo&#xA;where PackageName =?) AND PackageStatus= 'In Progress'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="System::PackageName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
         </DTS:EventHandler>
       </DTS:EventHandlers>
       <DTS:ObjectData>
@@ -3602,6 +3625,53 @@
       DTS:ObjectName="Truncate table with casted data"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Truncate table with casted data.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{945DAB04-F29E-4D71-8076-D8F8D802AB1D}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{1FF4D9DE-28AD-417F-9B72-DC3E96FAE4D9}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Truncate table with casted data.EventHandlers[OnPreExecute]\OnPreExecute"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:DelayValidation="True"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{323e2b3f-8644-41ad-b299-c23caddbf3c8}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="OnPreExecute">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{28C6E68F-9736-4961-8933-0897A18B733D}"
+                  SQLTask:SqlStatementSource="INSERT INTO datamart.PackageInfo(PackageName,  StartTime, EndTime, PackageStatus)&#xA; VALUES(?, getDate(), null, 'In Progress')&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="System::PackageName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{28C6E68F-9736-4961-8933-0897A18B733D}"
@@ -3637,17 +3707,18 @@
   </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
-      DTS:refId="Package.EventHandlers[OnInformation]"
-      DTS:CreationName="OnInformation"
-      DTS:DTSID="{8966EA3E-1E0C-45EC-97B1-AA0BEF93F09C}"
-      DTS:EventID="0"
-      DTS:EventName="OnInformation"
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{675629B8-1023-4601-9C71-96D9945FA67E}"
+      DTS:EventID="1072693248"
+      DTS:EventName="OnError"
       DTS:LocaleID="-1">
       <DTS:Variables>
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{2AE41295-1B6D-486D-B23E-A4039940AB19}"
+          DTS:DTSID="{AC4A2C32-FBE9-4E90-9026-14BA59034D94}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -3657,33 +3728,21 @@
       </DTS:Variables>
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package.EventHandlers[OnInformation]\Execute SQL Task"
+          DTS:refId="Package.EventHandlers[OnError]\OnError"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{A0979FAB-5518-4FD3-ACE2-A3858FAABA0A}"
+          DTS:DTSID="{4624146C-72BC-4A5F-BFDC-6367593D6496}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Execute SQL Task">
+          DTS:ObjectName="OnError">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{28C6E68F-9736-4961-8933-0897A18B733D}"
-              SQLTask:SqlStatementSource="INSERT INTO datamart.DimGarantyHandlerInfo(&#xA;   PackageName, StartTime, ErrorCode, IDescription)&#xA;&#x9;VALUES(?, getDate(), ?, ?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="UPDATE datamart.PackageInfo&#xA;SET PackageStatus = 'FAILED', EndTime = GETDATE()&#xA;WHERE PackageInfoID = (select max(PackageInfoID) from datamart.PackageInfo&#xA;WHERE PackageName =?)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="System::PackageName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="System::CancelEvent"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
-                SQLTask:DtsVariableName="System::ErrorDescription"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="130"
                 SQLTask:ParameterSize="-1" />
@@ -3693,17 +3752,38 @@
       </DTS:Executables>
     </DTS:EventHandler>
     <DTS:EventHandler
-      DTS:refId="Package.EventHandlers[OnProgress]"
-      DTS:CreationName="OnProgress"
-      DTS:DTSID="{35CAE4F2-77CB-4D22-B10B-A83D2B683759}"
-      DTS:EventID="3014702"
-      DTS:EventName="OnProgress"
+      DTS:refId="Package.EventHandlers[OnPostExecute]"
+      DTS:CreationName="OnPostExecute"
+      DTS:DTSID="{E76BA863-377C-4E03-AA73-EEF7F28A7FF1}"
+      DTS:EventID="0"
+      DTS:EventName="OnPostExecute"
       DTS:LocaleID="-1">
       <DTS:Variables>
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{A11A6B14-8DBB-4A0B-B88D-25DC3066CDF9}"
+          DTS:DTSID="{EDF372E5-B593-4DEB-BF91-FAAFF4B06D6A}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables />
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPreExecute]"
+      DTS:CreationName="OnPreExecute"
+      DTS:DTSID="{58F1D8FD-F9E6-474B-AE2B-3D05E929DFCD}"
+      DTS:EventID="3014702"
+      DTS:EventName="OnPreExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{87F00AE9-9F84-4FEA-9C69-DAAC7BF74900}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -3733,7 +3813,7 @@
         <NodeLayout
           Size="344.8,41.6"
           Id="Package\From DimGarantiesCastedData to datamartDimGaranties"
-          TopLeft="19.274376745474,225.527547514013" />
+          TopLeft="20.4172339077939,227.362841657399" />
         <NodeLayout
           Size="327.2,41.6"
           Id="Package\From stageDimGaranties to DimGarantiesCastedData"
@@ -3788,18 +3868,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="190.24036363332,199.419609461853">
+          TopLeft="190.81179221448,199.419609461853">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26.1079380521598"
+              EndConnector="0,27.943232195546"
               Start="0,0"
-              End="0,18.6079380521598">
+              End="0,20.443232195546">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.6079380521598" />
+                    End="0,20.443232195546" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3812,14 +3892,30 @@
     </LayoutInfo>
   </Package>
   <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnInformation]">
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="115.2,41.6"
+          Id="Package.EventHandlers[OnError]\OnError"
+          TopLeft="355.085713370965,120.047058711992" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPreExecute]">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="162.4,41.6"
-          Id="Package.EventHandlers[OnInformation]\Execute SQL Task"
-          TopLeft="140,76" />
+          Id="{BF318812-6C0E-432F-9AE3-BECF984C5079}"
+          TopLeft="584,121.6" />
+        <NodeLayout
+          Size="144,41.6"
+          Id="{61F899A4-56A2-42F8-8916-6B8BA6AE6D72}"
+          TopLeft="333.6,131.2" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
@@ -3829,6 +3925,10 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="208,41.6"
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Slowly Changing Dimension"
+          TopLeft="85.667348137124,174.974719405036" />
+        <NodeLayout
           Size="152.8,41.6"
           Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Derived Column"
           TopLeft="76.324490994267,276.881827130509" />
@@ -3837,53 +3937,49 @@
           Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Incorect data in DescriptionGaranty"
           TopLeft="1209.06666666667,170.4" />
         <NodeLayout
-          Size="216,41.6"
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Incorect data in PriceGaranty"
-          TopLeft="982.133333333333,170.133333333333" />
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\OLE DB Command"
-          TopLeft="104.438776786404,363.792856101027" />
-        <NodeLayout
           Size="220,41.6"
           Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Incorect data in NameGaranty"
           TopLeft="543.733333333333,168.266666666667" />
-        <NodeLayout
-          Size="208,41.6"
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Slowly Changing Dimension"
-          TopLeft="85.667348137124,174.974719405036" />
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Union All"
-          TopLeft="258.165308085406,277.780633737197" />
-        <NodeLayout
-          Size="141.6,41.6"
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\DimGaranties"
-          TopLeft="474.265990976644,361.753951625977" />
-        <NodeLayout
-          Size="204,41.6"
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Incorect data in GarantyID"
-          TopLeft="330.666666666667,168.533333333333" />
-        <NodeLayout
-          Size="195.2,41.6"
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\DimGarantiesCastedData"
-          TopLeft="405.671429194236,11.4764699876515" />
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Derived Column 1"
-          TopLeft="283.920412642477,364.104547405823" />
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Union All 1"
           TopLeft="702.856008733866,321.213374707883" />
         <NodeLayout
-          Size="203.2,41.6"
-          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\DimGarantiesError Table 2"
-          TopLeft="935.190699013591,318.693592657598" />
+          Size="204,41.6"
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Incorect data in GarantyID"
+          TopLeft="330.666666666667,168.533333333333" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\OLE DB Command"
+          TopLeft="104.438776786404,363.792856101027" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\DimGaranties"
+          TopLeft="474.265990976644,361.753951625977" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Union All"
+          TopLeft="258.165308085406,277.780633737197" />
+        <NodeLayout
+          Size="195.2,41.6"
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\DimGarantiesCastedData"
+          TopLeft="405.671429194236,11.4764699876515" />
         <NodeLayout
           Size="196.8,41.6"
           Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Incorect data in Duration"
           TopLeft="771.733333333333,170.133333333333" />
+        <NodeLayout
+          Size="216,41.6"
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Incorect data in PriceGaranty"
+          TopLeft="982.133333333333,170.133333333333" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Derived Column 1"
+          TopLeft="283.920412642477,364.104547405823" />
+        <NodeLayout
+          Size="203.2,41.6"
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties\DimGarantiesError Table 2"
+          TopLeft="935.190699013591,318.693592657598" />
         <NodeLayout
           Size="154.4,41.6"
           Id="Package\From DimGarantiesCastedData to datamartDimGaranties\Conditional Split"
@@ -3924,25 +4020,25 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\From DimGarantiesCastedData to datamartDimGaranties.Paths[Union All Output 1]"
-          TopLeft="832.456008733866,340.75348368274">
+          TopLeft="832.456008733866,340.753483682741">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
               EndConnector="102.734690279725,0"
               Start="0,0"
-              End="95.2346902797254,0">
+              End="95.2346902797249,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="95.2346902797254,0" />
+                    End="95.2346902797249,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="39.6173451398627,5,16,16"
+              BoundingBox="39.6173451398624,5,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4084,7 +4180,7 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="11.6222742449743,29.7626981649201,71.920078125,16"
+              BoundingBox="20.4909265887243,29.7626981649201,71.920078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4120,7 +4216,7 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-3.28241105903596,20.9499715976791,61.4838671875,11.4140625"
+              BoundingBox="-3.28241105903595,20.9499715976791,61.4838671875,11.4140625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4502,13 +4598,25 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-261.244519170533,16.2181107094579,141.2278125,11.658203125"
+              BoundingBox="-261.244519170534,16.2181107094579,141.2278125,11.658203125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\From DimGarantiesCastedData to datamartDimGaranties.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="148.8,41.6"
+          Id="Package\From DimGarantiesCastedData to datamartDimGaranties.EventHandlers[OnPostExecute]\OnPostExecute"
+          TopLeft="369.6,132.8" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <PipelineComponentMetadata
     design-time-name="Package\From DimGarantiesCastedData to datamartDimGaranties\Slowly Changing Dimension">
     <Properties>
@@ -4605,85 +4713,39 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="203.2,41.6"
-          Id="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesError Table 0"
-          TopLeft="384.114284653566,199.329412843612" />
+          Size="167.2,41.6"
+          Id="Package\From stageDimGaranties to DimGarantiesCastedData\stageDimGaranties"
+          TopLeft="171.257142599262,50.4" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\From stageDimGaranties to DimGarantiesCastedData\Derived Column"
           TopLeft="405.428576834348,118.400001312705" />
         <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\From stageDimGaranties to DimGarantiesCastedData\stageDimGaranties"
-          TopLeft="179.257142735501,50.4" />
-        <NodeLayout
           Size="195.2,41.6"
           Id="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesCastedData"
-          TopLeft="163.391834258408,201.218486121781" />
+          TopLeft="152.534691216369,201.830250836243" />
         <NodeLayout
           Size="155.2,41.6"
           Id="Package\From stageDimGaranties to DimGarantiesCastedData\Data Conversion"
-          TopLeft="185.57142853007,122.84705878492" />
-        <EdgeLayout
-          Id="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Data Conversion Output]"
-          TopLeft="262.081631394239,164.447058784921">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.7714273368603"
-              Start="0,0"
-              End="0,29.2714273368603">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.2714273368603" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Data Conversion Error Output]"
-          TopLeft="340.77142853007,141.423530048813">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="64.6571483042779,0"
-              Start="0,0"
-              End="57.1571483042779,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="57.1571483042779,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-37.507812566611,5,132.1727734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="174.142856906871,122.84705878492" />
+        <NodeLayout
+          Size="203.2,41.6"
+          Id="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesError Table 0"
+          TopLeft="384.114284653566,199.941177558074" />
         <EdgeLayout
           Id="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[OLE DB Source Output]"
-          TopLeft="263.014285632785,92">
+          TopLeft="253.299999753066,92">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30.8470587849205"
+              EndConnector="0,30.84705878492"
               Start="0,0"
-              End="0,23.3470587849205">
+              End="0,23.34705878492">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.3470587849205" />
+                    End="0,23.34705878492" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4698,14 +4760,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.3294115309072"
+              EndConnector="0,39.9411762453691"
               Start="0,0"
-              End="0,31.8294115309072">
+              End="0,32.4411762453691">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.8294115309072" />
+                    End="0,32.4411762453691" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4714,11 +4776,57 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Data Conversion Output]"
+          TopLeft="250.93877406162,164.44705878492">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.3831920513231"
+              Start="0,0"
+              End="0,29.8831920513231">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.8831920513231" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From stageDimGaranties to DimGarantiesCastedData.Paths[Data Conversion Error Output]"
+          TopLeft="329.342856906871,141.423530048812">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="76.0857199274769,0"
+              Start="0,0"
+              End="68.5857199274769,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="68.5857199274769,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-31.7935267550115,5,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\From stageDimGaranties to DimGarantiesCastedData\stageDimGaranties">
+    design-time-name="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesCastedData">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4744,7 +4852,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\From stageDimGaranties to DimGarantiesCastedData\DimGarantiesCastedData">
+    design-time-name="Package\From stageDimGaranties to DimGarantiesCastedData\stageDimGaranties">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4756,5 +4864,17 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\Truncate table with casted data.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="144,41.6"
+          Id="Package\Truncate table with casted data.EventHandlers[OnPreExecute]\OnPreExecute"
+          TopLeft="373.6,71.2" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
