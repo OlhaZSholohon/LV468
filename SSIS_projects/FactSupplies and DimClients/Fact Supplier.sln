@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Fact Supplies", "Fact Supplies\Fact Supplies.dtproj", "{89E7D9C0-2269-4B48-821A-2F6CF85DB832}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89E7D9C0-2269-4B48-821A-2F6CF85DB832}.Development|Default.ActiveCfg = Development
+		{89E7D9C0-2269-4B48-821A-2F6CF85DB832}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6EB83CC8-0ECC-43FC-88B1-7D84604E5C76}
+	EndGlobalSection
+EndGlobal
