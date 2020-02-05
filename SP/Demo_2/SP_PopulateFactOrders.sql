@@ -8,18 +8,44 @@ GO
 CREATE PROCEDURE datamart.SP_PopulateFactOrders 
   @NumberOfRows INT
 AS
-
-DECLARE @Loop INT,
-        @RandValue INT,
-		@TotalPriceDiscount DECIMAL(18, 2);
+--------- Main variables --------------------
+DECLARE @Loop INT
+		, @Date DATE
+		, @PaymentID INT
+		, @GarantyID INT
+		, @ClientID INT
+		, @DiscountID INT
+		, @ProductID INT
+		, @AmountProducts INT
+		
+--------- Addition variables -----------------
+		, @GarantyPrice DECIMAL (18, 2)
+		, @ProductPrice DECIMAL (18, 2)
+		, @Discount INT
+		, @GarantyDuration INT
+		;
 
 SET @Loop = 1;
 
 WHILE @Loop <= @NumberOfRows
 BEGIN 
-	SET @TotalPriceDiscount = TRY_CAST (round(rand()*190, 2) AS decimal (18,2))
+	--------- Main variables --------------------
+	SET @Date = (SELECT TOP 1 [Date] FROM [TestDBDataMart].[datamart].[DimDates] ORDER BY NEWID())
+	SET @PaymentID = (SELECT TOP 1 [PaymentTypeID] FROM [TestDBDataMart].[datamart].[DimPayments] ORDER BY NEWID())
+	SET @GarantyID = (SELECT TOP 1 [GarantyID] FROM [TestDBStage].[staging].[DimGaranties] g ORDER BY NEWID())
+	SET @ClientID = (SELECT TOP 1 [ClientID] FROM [TestDBStage].[staging].[DimClients] ORDER BY NEWID())
+	SET @DiscountID = (SELECT TOP 1 [DiscountID] FROM [TestDBStage].[staging].[DimDiscounts] ORDER BY NEWID())
+	SET @ProductID = (SELECT TOP 1 [ProductID] FROM [TestDBStage].[staging].[DimProducts] ORDER BY NEWID())
+	SET @AmountProducts = round(rand()*120, 0)
+	
+	--------- Addition variables -----------------
+	SET @GarantyPrice = (SELECT g.PriceGaranty  FROM [TestDBDataMart].[datamart].[DimGaranties] g WHERE g.GarantyID = @GarantyID AND g.EndDate IS NULL)
+	SET @ProductPrice = (SELECT TOP 1 p.Price FROM [TestDBStage].[staging].[DimProducts] p WHERE p.ProductID = @ProductID)
+	SET @Discount = (SELECT TOP 1 d.PercentDiscount FROM [TestDBStage].[staging].[DimDiscounts] d WHERE d.DiscountID = @DiscountID)
+	SET @GarantyDuration = (SELECT g.Duration  FROM [TestDBDataMart].[datamart].[DimGaranties] g WHERE g.GarantyID = @GarantyID AND g.EndDate IS NULL)
+
 	INSERT INTO datamart.FactOrders (OrderID
-									, DateKey
+									, [Date]
 									, PaymentID
 									, GarantyID
 									, ClientID
@@ -29,21 +55,21 @@ BEGIN
 									, TotalPrice
 									, TotalPriceDiscount
 									, EndGaranty)
-  VALUES (
+	VALUES (
 		round(rand()*70157, 0)
-		, (SELECT TOP 1 [DateKey] FROM [TestDBStage].[staging].[DimDates] ORDER BY NEWID())
-		, (SELECT TOP 1 [PaymentID] FROM [TestDBStage].[staging].[DimPayments] ORDER BY NEWID())
-		, (SELECT TOP 1 [GarantyID] FROM [TestDBStage].[staging].[DimGaranties] ORDER BY NEWID())
-		, (SELECT TOP 1 [ClientID] FROM [TestDBStage].[staging].[DimClients] ORDER BY NEWID())
-		, (SELECT TOP 1 [DiscountID] FROM [TestDBStage].[staging].[DimDiscounts] ORDER BY NEWID())
-		, (SELECT TOP 1 [ProductID] FROM [TestDBStage].[staging].[DimProducts] ORDER BY NEWID())
-		, round(rand()*120, 0)
-		, TRY_CAST(round(rand()*8700, 2) AS decimal (18,2)) + @TotalPriceDiscount
-		, @TotalPriceDiscount
-		, DATEADD (YEAR, 3, TRY_CAST((SELECT TOP 1 [Date] FROM [TestDBStage].[staging].[DimDates] ORDER BY NEWID()) AS date))
+		, @Date
+		, @PaymentID
+		, @GarantyID
+		, @ClientID
+		, @DiscountID
+		, @ProductID
+		, @AmountProducts
+		, @AmountProducts * @ProductPrice + @GarantyPrice
+		, TRY_CAST(((@AmountProducts * @ProductPrice + @GarantyPrice) * @Discount)/100 as decimal (18, 2))
+		, DATEADD (DAY, @GarantyDuration, @Date)
 		)
-  SET @Loop = @Loop + 1
 
+	SET @Loop = @Loop + 1
 END
 
---execute datamart.SP_PopulateFactOrders 200
+--execute datamart.SP_PopulateFactOrders 2000
