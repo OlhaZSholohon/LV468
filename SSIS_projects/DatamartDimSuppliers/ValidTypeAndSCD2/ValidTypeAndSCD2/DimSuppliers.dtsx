@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimSuppliers"
   DTS:PackageType="5"
-  DTS:VersionBuild="117"
-  DTS:VersionGUID="{2513A61C-79AA-41D4-8987-DB56B9D10F40}">
+  DTS:VersionBuild="120"
+  DTS:VersionGUID="{2B46293A-9EF4-4C63-919F-4FA413899F12}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,7 +28,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAVeXmN+DklJxkqsaD7vRvqAAAAAASAAACgAAAAEAAAABfSXuF+nEUGybl6GuHMfNcYAAAAy3NLzDFRXmtCqYLqorNvowjdH8ud3LaiFAAAAGrsDljjDafZZDMwDHdWC4yHo7Hs</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADeMP5qBgRIJ63xPESkqyKKAAAAAASAAACgAAAAEAAAAFgMW1xNI1RW1CBT183tCq4YAAAAS9zaLexjDro7DkbvU0YglvXkUZMwPJYLFAAAALOa4vgAY7bJlZUC/pNKLfMLSyVZ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2708,13 +2708,13 @@ FROM ##SupplierValidData2</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[LEN](#{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierName]}) &gt; 0 ? #{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierName]} : NULL(DT_WSTR,20)</property>
+                          name="Expression">[LEN]([LTRIM](#{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierName]})) &gt; 0 ? #{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierName]} : NULL(DT_WSTR,20)</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">LEN(SupplierName) &gt; 0 ? SupplierName : NULL(DT_WSTR,20)</property>
+                          name="FriendlyExpression">LEN(LTRIM(SupplierName)) &gt; 0 ? SupplierName : NULL(DT_WSTR,20)</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2732,13 +2732,13 @@ FROM ##SupplierValidData2</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[LEN](#{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierEmail]}) &gt; 0 ? #{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierEmail]} : NULL(DT_WSTR,40)</property>
+                          name="Expression">[LEN]([LTRIM](#{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierEmail]})) &gt; 0 ? #{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierEmail]} : NULL(DT_WSTR,40)</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">LEN(SupplierEmail) &gt; 0 ? SupplierEmail : NULL(DT_WSTR,40)</property>
+                          name="FriendlyExpression">LEN(LTRIM(SupplierEmail)) &gt; 0 ? SupplierEmail : NULL(DT_WSTR,40)</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2756,13 +2756,13 @@ FROM ##SupplierValidData2</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[LEN](#{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierPhone]}) &gt; 0 ? #{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierPhone]} : NULL(DT_WSTR,18)</property>
+                          name="Expression">[LEN]([LTRIM](#{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierPhone]})) &gt; 0 ? #{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierPhone]} : NULL(DT_WSTR,18)</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">LEN(SupplierPhone) &gt; 0 ? SupplierPhone : NULL(DT_WSTR,18)</property>
+                          name="FriendlyExpression">LEN(LTRIM(SupplierPhone)) &gt; 0 ? SupplierPhone : NULL(DT_WSTR,18)</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2780,13 +2780,13 @@ FROM ##SupplierValidData2</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[LEN](#{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierDescription]}) &gt; 0 ? #{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierDescription]} : NULL(DT_WSTR,255)</property>
+                          name="Expression">[LEN]([LTRIM](#{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierDescription]})) &gt; 0 ? #{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierDescription]} : NULL(DT_WSTR,255)</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">LEN(SupplierDescription) &gt; 0 ? SupplierDescription : NULL(DT_WSTR,255)</property>
+                          name="FriendlyExpression">LEN(LTRIM(SupplierDescription)) &gt; 0 ? SupplierDescription : NULL(DT_WSTR,255)</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -3375,6 +3375,10 @@ FROM ##SupplierValidData2</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="275,42"
+          Id="Package\Check the validation into correct datatype"
+          TopLeft="228,93" />
+        <NodeLayout
           Size="273,46"
           Id="Package\Insert Valid data and add new column for ValidEmail and ValidPhone"
           TopLeft="230,182" />
@@ -3382,10 +3386,6 @@ FROM ##SupplierValidData2</property>
           Size="272,42"
           Id="Package\Transormation data and SCD2"
           TopLeft="230,276" />
-        <NodeLayout
-          Size="275,42"
-          Id="Package\Check the validation into correct datatype"
-          TopLeft="228,93" />
         <NodeLayout
           Size="283,42"
           Id="Package\Validation Error, insert data into Error table"
@@ -3471,27 +3471,43 @@ FROM ##SupplierValidData2</property>
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Check the validation into correct datatype.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="290,42"
+          Id="Package\Check the validation into correct datatype.EventHandlers[OnPreExecute]\Start Execution Package (INSERT statement)"
+          TopLeft="338,133" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\Transormation data and SCD2">
     <LayoutInfo>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="253,42"
-          Id="Package\Transormation data and SCD2\Source - temp table (SQL statement)"
-          TopLeft="507.333333333333,5.5" />
-        <NodeLayout
-          Size="226,42"
-          Id="Package\Transormation data and SCD2\Insert Destination"
-          TopLeft="525.333333333333,858.25" />
+          Size="244,42"
+          Id="Package\Transormation data and SCD2\Check on NULL rows"
+          TopLeft="513.833333333333,230.5" />
         <NodeLayout
           Size="269,42"
           Id="Package\Transormation data and SCD2\Insert data into Error table"
           TopLeft="866.746031746031,319.261904761905" />
         <NodeLayout
-          Size="232,42"
-          Id="Package\Transormation data and SCD2\Union All"
-          TopLeft="527.583333333333,686.75" />
+          Size="244,42"
+          Id="Package\Transormation data and SCD2\Check on some NULLs values"
+          TopLeft="515.333333333333,320.388888888889" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\Transormation data and SCD2\Insert Destination"
+          TopLeft="525.333333333333,858.25" />
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Transormation data and SCD2\Source - temp table (SQL statement)"
+          TopLeft="507.333333333333,5.5" />
         <NodeLayout
           Size="320,42"
           Id="Package\Transormation data and SCD2\Insert column with comment SomeValuesAreEmpty"
@@ -3525,13 +3541,13 @@ FROM ##SupplierValidData2</property>
           Id="Package\Transormation data and SCD2\Insert3 into Error table"
           TopLeft="865,598.833333333333" />
         <NodeLayout
-          Size="244,42"
-          Id="Package\Transormation data and SCD2\Check on NULL rows"
-          TopLeft="513.833333333333,230.5" />
+          Size="232,42"
+          Id="Package\Transormation data and SCD2\Union All"
+          TopLeft="527.583333333333,686.75" />
         <NodeLayout
-          Size="296,42"
-          Id="Package\Transormation data and SCD2\OLE DB Command"
-          TopLeft="27.3333333333334,683.5" />
+          Size="248,42"
+          Id="Package\Transormation data and SCD2\Convert data in correct datatype"
+          TopLeft="510.333333333333,79" />
         <NodeLayout
           Size="292,42"
           Id="Package\Transormation data and SCD2\Insert column with comment DuplicatedRows"
@@ -3541,9 +3557,9 @@ FROM ##SupplierValidData2</property>
           Id="Package\Transormation data and SCD2\Derived Column"
           TopLeft="25.5833333333334,586.5" />
         <NodeLayout
-          Size="244,42"
-          Id="Package\Transormation data and SCD2\Check on some NULLs values"
-          TopLeft="515.333333333333,320.388888888889" />
+          Size="296,42"
+          Id="Package\Transormation data and SCD2\OLE DB Command"
+          TopLeft="27.3333333333334,683.5" />
         <NodeLayout
           Size="239,42"
           Id="Package\Transormation data and SCD2\Check dublicates"
@@ -3619,6 +3635,28 @@ FROM ##SupplierValidData2</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Transormation data and SCD2.Paths[OLE DB Source Output]"
+          TopLeft="634.083333333333,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.5"
+              Start="0,0"
+              End="0,24">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Transormation data and SCD2.Paths[OLE DB Command Output]"
           TopLeft="323.333333333333,706.125">
           <EdgeLayout.Curve>
@@ -3660,7 +3698,7 @@ FROM ##SupplierValidData2</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="22.6257552083334,5,50.91515625,9.421875"
+              BoundingBox="22.6257552083333,5,50.91515625,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3684,7 +3722,7 @@ FROM ##SupplierValidData2</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-33.437578125,15.4835069444444,66.87515625,9.421875"
+              BoundingBox="-33.437578125,15.4835069444445,66.87515625,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3732,7 +3770,7 @@ FROM ##SupplierValidData2</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-167.473053385416,5,150.1127734375,11.609375"
+              BoundingBox="-167.473053385417,5,150.1127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3756,7 +3794,7 @@ FROM ##SupplierValidData2</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="9.43742187500006,5,77.62515625,11.609375"
+              BoundingBox="9.43742187500005,5,77.62515625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3917,54 +3955,6 @@ FROM ##SupplierValidData2</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[Aggregate Output 1]"
-          TopLeft="637.25,458.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.6666666666666"
-              Start="0,0"
-              End="0,34.1666666666666">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.1666666666666" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="248,42"
-          Id="Package\Transormation data and SCD2\Convert data in correct datatype"
-          TopLeft="510.333333333333,79" />
-        <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[OLE DB Source Output]"
-          TopLeft="634.083333333333,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.5"
-              Start="0,0"
-              End="0,24">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Transormation data and SCD2.Paths[Data Conversion Output]"
           TopLeft="635.083333333333,121">
           <EdgeLayout.Curve>
@@ -3978,6 +3968,28 @@ FROM ##SupplierValidData2</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,28" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transormation data and SCD2.Paths[Aggregate Output 1]"
+          TopLeft="637.25,458.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.6666666666666"
+              Start="0,0"
+              End="0,34.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.1666666666666" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4002,14 +4014,6 @@ FROM ##SupplierValidData2</property>
     </LayoutInfo>
   </DtsEventHandler>
   <PipelineComponentMetadata
-    design-time-name="Package\Transormation data and SCD2\Source - temp table (SQL statement)">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Transormation data and SCD2\Insert data into Error table">
     <Properties>
       <Property>
@@ -4019,6 +4023,14 @@ FROM ##SupplierValidData2</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transormation data and SCD2\Source - temp table (SQL statement)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -4112,17 +4124,5 @@ FROM ##SupplierValidData2</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <DtsEventHandler
-    design-time-name="Package\Check the validation into correct datatype.EventHandlers[OnPreExecute]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="290,42"
-          Id="Package\Check the validation into correct datatype.EventHandlers[OnPreExecute]\Start Execution Package (INSERT statement)"
-          TopLeft="338,133" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
