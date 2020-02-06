@@ -12,7 +12,7 @@
   DTS:ObjectName="DatamartFactOrders"
   DTS:PackageType="5"
   DTS:VersionBuild="31"
-  DTS:VersionGUID="{413C5B3F-2535-4B7D-84C1-9545DA43F4D9}">
+  DTS:VersionGUID="{5BB0AED6-B8FE-41E5-B9FC-03104EB83088}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABLKvdqAA9STVkEtgyE5dHEAAAAAASAAACgAAAAEAAAAOkNmVZ9mDbl5Ge38HBMGGYYAAAA2vM9Acf8SuduIGEs0hRJhJDwxpwabSbnFAAAAOr75qgVu7dEhg+iOM8gn4gHxWA3</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADxFTchPcqS9br0wXp1QNHrAAAAAASAAACgAAAAEAAAAJpHFmDeHm75DPgBjWlcCxAYAAAAYFpKyDYvE9rfRl6ricuAW0M7AGyZHIszFAAAAGB3vwYlbuBmiYWpXdwYbxQLw9uX</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
