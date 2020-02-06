@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="1/27/2020 11:31:55 AM"
@@ -12,7 +12,7 @@
   DTS:ObjectName="DatamartDimGaranties"
   DTS:PackageType="5"
   DTS:VersionBuild="152"
-  DTS:VersionGUID="{26A7853F-74BE-4C4D-99B8-DFEE979DBEF6}">
+  DTS:VersionGUID="{9357054E-8F1C-441A-BEA7-66236474095D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADwCnEobbJBNkrCM09fXb2VAAAAAASAAACgAAAAEAAAAH9oIBo0VNVetGWfPJWAUZ8YAAAAd1avlWM3aap8kHMpKjMzhKnTzX+QqUVGFAAAAONneHuxWmvIL9UFkS9knZhO4r6H</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADP1ap1R/F+QlIBhseoPP04AAAAAASAAACgAAAAEAAAAO4agBvOwFBztGGXxIJg6v0YAAAA54wbwWufLZ2gqRy6mUl3rN0D2Kqa+VY+FAAAAG16HzBVYfkoZgKj/RNAwTRP3bLc</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -4151,7 +4151,7 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="3.67051885085864,20.4026031231356,54.1827734375,11.43359375"
+              BoundingBox="3.67051885085865,20.4026031231356,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4187,7 +4187,7 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-263.199076129758,27.3502090106828,61.4838671875,11.4140625"
+              BoundingBox="-263.199076129757,27.3502090106828,61.4838671875,11.4140625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4734,7 +4734,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4756,7 +4758,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4778,7 +4782,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
