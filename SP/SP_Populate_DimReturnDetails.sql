@@ -9,7 +9,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
- CREATE PROCEDURE [staging].SP_Populate_DimReturnDetails
+ CREATE PROCEDURE [staging].[SP_Populate_DimReturnDetails]   
  @NumberOfRows INT
 AS
 
@@ -24,44 +24,45 @@ SET @Loop = 1;
 SET @RandValue = round( rand()*123,0)
 
 ;WITH CTE_TempDictionary as (
-SELECT 'Repair' [ReturnKind], 'Item arrives damaged, does not match the listing description, or is the wrong item - 1' AS [ReturnDescription]
+SELECT '1' [ReturnDetailID], 'Repair' [ReturnKind], 'Item arrives damaged, does not match the listing description, or is the wrong item - 1' AS [ReturnDescription]
 union all 
-SELECT 'Change product' [ReturnKind], 'Item arrives damaged, does not match the listing description, or is the wrong item - 2' AS [ReturnDescription]
+SELECT '2' [ReturnDetailID], 'Change product' [ReturnKind], 'Item arrives damaged, does not match the listing description, or is the wrong item - 2' AS [ReturnDescription]
 union all 
-SELECT 'Return money' [ReturnKind], 'Item arrives damaged, does not match the listing description, or is the wrong item - 3' AS [ReturnDescription]
+SELECT '3' [ReturnDetailID], 'Return money' [ReturnKind], 'Item arrives damaged, does not match the listing description, or is the wrong item - 3' AS [ReturnDescription]
+union all 
+SELECT '4' [ReturnDetailID], 'Return money' [ReturnKind], 'Item arrives damaged, does not match the listing description, or is the wrong item - 3' AS [ReturnDescription]
 )
 
-INSERT INTO [staging].[DimReturnDetails] ([ReturnKind], [ReturnDescription])
+INSERT INTO [staging].[DimReturnDetails] ([ReturnDetailID], [ReturnKind], [ReturnDescription])
 SELECT   
-       c1.[ReturnKind],
+       c1.[ReturnDetailID],
+	   c1.[ReturnKind],
 	   c2.[ReturnDescription]+CAST(@RandValue as nvarchar(10))
 FROM CTE_TempDictionary c1
 CROSS JOIN
 CTE_TempDictionary c2
 
-
 SELECT @InsertedRows = @@ROWCOUNT
 
 SET @RowsForWhile = @NumberOfRows - @InsertedRows
 
+SELECT * 
+INTO #TempTable
+FROM staging.DimReturnDetails
+
 WHILE @Loop <= @RowsForWhile
 BEGIN 
  
-SET @RandReturnKind = (
-SELECT c1--AS [text()]
-FROM( SELECT TOP (1) c1 FROM (VALUES ('Repair'), ('Change product'), ('Return money') ) AS S1(c1)
-	ORDER BY ABS(CHECKSUM(NEWID()))
-	) AS S2
---FOR XML PATH('')
-);
+SET @RandReturnKind = (SELECT TOP 1 [ReturnKind] FROM #TempTable ORDER BY NEWID())
 
- 
-INSERT INTO [staging].[DimReturnDetails] ([ReturnKind], [ReturnDescription])
-VALUES ( 
+INSERT INTO [staging].[DimReturnDetails] ([ReturnDetailID], [ReturnKind], [ReturnDescription])
+VALUES (  CAST(round(rand()*5000, 0) as nvarchar(255)),
           @RandReturnKind,
-          'Item arrives damaged, does not match the listing description, or is the wrong item - ' + CAST(round(rand()*300, 0) as nvarchar(10))
+          'Item arrives damaged, does not match the listing description, or is the wrong item - ' + CAST(round(rand()*300, 0) as nvarchar(30))
        )
 SET @Loop = @Loop + 1 
 END
+
+ 
 
  
