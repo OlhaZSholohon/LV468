@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "FactFeedbacks", "FactFeedbacks\FactFeedbacks.dtproj", "{6FA74964-370A-4AD9-A73F-8145457963ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FA74964-370A-4AD9-A73F-8145457963ED}.Development|Default.ActiveCfg = Development
+		{6FA74964-370A-4AD9-A73F-8145457963ED}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D9FC4A7-60D3-462E-A0E6-1A14F415579F}
+	EndGlobalSection
+EndGlobal
