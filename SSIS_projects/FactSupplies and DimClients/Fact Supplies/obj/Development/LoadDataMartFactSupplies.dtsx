@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadDataMartFactSupplies"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{9F5D7D95-BC12-4AB6-890A-F15D27A15A1E}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{2FEF1CD1-C4ED-425F-AD9A-DCFFA546932D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA51PMrgCP1hOJXmaNNv5scAAAAAASAAACgAAAAEAAAAPUKb0I2elom/ba+vIqVF8UYAAAAVvzSch9Eygd8jaHsWiwQa5C7kSVtVRNKFAAAAGRpTYAACcqllb6SfQogfoH7Plgk</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABxFEY0D7Qg0zBmAzi35IHVAAAAAASAAACgAAAAEAAAADAk8pbl5cDIm8mZ6KezeXAYAAAA97BBNUehExLVNxA+Hd0pJxIzPtAMglufFAAAAOJkub7tbUHK+CKRHi+o3fV1p0Ww</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -42,7 +42,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACiObyGDSsHRlYnEs602UHnAAAAAASAAACgAAAAEAAAALWeCZiaU6nc3kGQY7NefLQYAAAA/Rz23zUGs0OQAbEcaHiM99w2GOXtt+pDFAAAAIg6mCWPSYfNVKxjcqlaq/mB8LtU</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABX4dQEUZ09GMYp1Z7uduKZAAAAAASAAACgAAAAEAAAAFSTut07YYRgZjmbY1Qj6McYAAAAx+xWMsj5Gf4JLAd18inVe7Rrk3VwEQijFAAAANBMDGRou/wp6LgJ19Iil+zANsME</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -57,7 +57,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD6vr8gVUYPe7HoWJdp7lFIAAAAAASAAACgAAAAEAAAANEENqxyzkOfMEGH1Ke9WkoYAAAAJGqu98OiT6Tbaflls8KBEYfkAfRi99ukFAAAAK9g+6u4VHwCNFyN+vgWydAVyV6q</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD9aV05JX1VwfnyHYaVaNJjAAAAAASAAACgAAAAEAAAAIa7bqG+DoJ3kwqNeRa/EeEYAAAAsFzVr16hiDI2CeHlAKk+jSSqtQA9+cpJFAAAAF6UwS7WeK2LVhZ/7qh9VY7dX5NY</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -72,7 +72,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADqLGnGn0KRTmWSIxUYcTQYAAAAAASAAACgAAAAEAAAAI873ue2TURZ3Jco9VbPLoYYAAAAvCUwbUUNY9rgszMWq5F4OhsnExqmRa/9FAAAAEvk7R90JuCVQnGqnmfHWQY95DMf</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACm6ymluLtq5s1HTHxzFMXzAAAAAASAAACgAAAAEAAAAEZpgZ3DZDiMgXpiS6uO+vkYAAAANmCm7x3Hfh1g/WQSa4WII+zjI+SJGeGrFAAAAAoj+hDN1l2sY69luBGQLPoB029g</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1611,7 +1611,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[staging].[FactSupplies]</property>
+                  name="OpenRowset">[dbo].[FactSupplies]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1656,8 +1656,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               <connections>
                 <connection
                   refId="Package\Data Convert\StagingFactSupplies.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
-                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2137,13 +2137,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="248.8,41.6"
-          Id="Package\Truncate Table ValidateFactSupplies"
-          TopLeft="182.857145971181,24.4705885784849" />
-        <NodeLayout
           Size="140,41.6"
           Id="Package\Data Convert"
           TopLeft="246.857147061095,106.447060316409" />
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\Execute SP_DublicateFactSupplies"
+          TopLeft="194.85714617554,172.517649478318" />
+        <NodeLayout
+          Size="236,41.6"
+          Id="Package\Execute SP_PopulateFactSupplies"
+          TopLeft="240.571432668336,246.541179928235" />
+        <NodeLayout
+          Size="248.8,41.6"
+          Id="Package\Truncate Table ValidateFactSupplies"
+          TopLeft="182.857145971181,24.4705885784849" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="307.257145971182,66.0705885784849">
@@ -2178,10 +2186,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="238.4,41.6"
-          Id="Package\Execute SP_DublicateFactSupplies"
-          TopLeft="194.85714617554,172.517649478318" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="315.457146618318,148.047060316409">
@@ -2204,10 +2208,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="236,41.6"
-          Id="Package\Execute SP_PopulateFactSupplies"
-          TopLeft="240.571432668336,246.541179928235" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="314.05714617554,214.117649478318">
@@ -2245,18 +2245,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <DtsEventHandler
-    design-time-name="Package\Truncate Table ValidateFactSupplies.EventHandlers[OnPreExecute]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Truncate Table ValidateFactSupplies.EventHandlers[OnPreExecute]\Execute SQL Task"
-          TopLeft="346.4,35.2" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\Data Convert">
     <LayoutInfo>
@@ -2267,21 +2255,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           Id="Package\Data Convert\ErrorFactSupplies"
           TopLeft="406.122455895815,212.369750877565" />
         <NodeLayout
-          Size="172,41.6"
-          Id="Package\Data Convert\StagingFactSupplies"
-          TopLeft="221.142860908898,31.8117651520303" />
+          Size="162.4,41.6"
+          Id="Package\Data Convert\Script Component"
+          TopLeft="435.918374770585,117.378152473929" />
         <NodeLayout
           Size="155.2,41.6"
           Id="Package\Data Convert\Data Conversion"
           TopLeft="211.102044411372,119.449488136485" />
         <NodeLayout
+          Size="172,41.6"
+          Id="Package\Data Convert\StagingFactSupplies"
+          TopLeft="221.142860908898,31.8117651520303" />
+        <NodeLayout
           Size="174.4,41.6"
           Id="Package\Data Convert\ValidateFactSupplies"
           TopLeft="122.775512294936,204.24201967114" />
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Data Convert\Script Component"
-          TopLeft="435.918374770585,117.378152473929" />
         <EdgeLayout
           Id="Package\Data Convert.Paths[Output 0]"
           TopLeft="517.118374770585,158.978152473929">
@@ -2425,19 +2413,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Convert\StagingFactSupplies">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Convert\ValidateFactSupplies">
     <Properties>
       <Property>
@@ -2450,5 +2425,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Convert\StagingFactSupplies">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Synonym</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\Truncate Table ValidateFactSupplies.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Truncate Table ValidateFactSupplies.EventHandlers[OnPreExecute]\Execute SQL Task"
+          TopLeft="346.4,35.2" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

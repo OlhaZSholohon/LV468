@@ -11,10 +11,72 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadDataMartFactSupplies"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{66C51683-B207-48AB-9D0F-B7826A188139}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{956A5D7C-09A4-4C5B-AFF9-772958FC8CC2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{924BFA74-CF0D-465A-87B5-3994FC686713}"
+      DTS:ObjectName="192.168.195.147.TestDBDataMart.Lv-468.DB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBDataMart;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADKxvaSlV/CrEouMJntA/vBAAAAAASAAACgAAAAEAAAAJdskhrhUc5cLa7S3d4IWYgYAAAA5WkpHKSMezu+uW1COJmqeRbTVJm4W2VTFAAAAKbCQFtoZlTGDbAzyuPHwBWKjyhr</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{66725A7F-1341-4775-88A8-01CE26B2F723}"
+      DTS:ObjectName="192.168.195.147.TestDBDataMart.Lv-468.DB 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBDataMart;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACNsiR9MTIcQD2+kXO3xmhxAAAAAASAAACgAAAAEAAAACIQs+cJvlhr2JeVEmoVwYUYAAAAqnEw7DVbUozsp7Y4D5a8yTgpUIQSF8TSFAAAAB25+CFZizy9tKP9OvkYBnGZV6tD</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9A9A787F-1A98-4B01-AB67-4C8C72DD4FF7}"
+      DTS:ObjectName="192.168.195.147.TestDBDataMart.Lv-468.DB 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBDataMart;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAzGYZw5v+5nW8K325exI09AAAAAASAAACgAAAAEAAAABo4ncdxBlruMdBabr/04TkYAAAAHTwvo2lAA85WBHZ6qR4SEyK3Lld7uC39FAAAALHU+Vi98ERoEyOEyJIxI0tvoBnq</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7D5DDC5B-8F26-4B94-BCB5-E7F599AE509E}"
+      DTS:ObjectName="192.168.195.147.TestDBStage.Lv-468.DB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBStage;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABtSdoT756B2jBtKKlqc+6oAAAAAASAAACgAAAAEAAAAB/pZ1qrYl/p7Fs2VhuiCkIYAAAA+blI2CLl252hlx4F3y8gIPcTN/e0lCbLFAAAADv7axUXnjQLNcBNQfpMsQEPG2ip</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -341,8 +403,8 @@
               <connections>
                 <connection
                   refId="Package\Data Convert\ErrorFactSupplies.Connections[OleDbConnection]"
-                  connectionManagerID="{78B6B1A7-E5D2-4C2F-9E26-0464144005EF}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -616,7 +678,7 @@ public class ScriptMain : UserComponent
     /// </summary>
     /// <param name="Row">The row that is currently passing through the component</param>
     public override void Input0_ProcessInputRow(Input0Buffer Row)
-    { 
+    {
         IDTSComponentMetaData130 componentMetaData = this.ComponentMetaData as IDTSComponentMetaData130;
         Row.errorDescription = this.ComponentMetaData.GetErrorDescription(Row.ErrorCode);
     }
@@ -1131,7 +1193,7 @@ public class Variables
     <msb:CodeName>SC_8a263114173b40848a984ef644860488</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>SC_8a263114173b40848a984ef644860488</msb:DisplayName>
-    <msb:ProjectId>{B13E753A-9045-480A-BE60-7FB5A1B69C22}</msb:ProjectId>
+    <msb:ProjectId>{BFC44452-01AC-41A7-BB59-5623AED3D37D}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="SC_8a263114173b40848a984ef644860488.csproj" />
@@ -1278,7 +1340,7 @@ namespace SC_8a263114173b40848a984ef644860488.Properties {
                     <arrayElement
                       dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAN9wPV4AAAAAAAAAAOAAIiALATAAABYAAAAIAAAAAAAAxjUA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDABnaOl4AAAAAAAAAAOAAIiALATAAABYAAAAIAAAAAAAAxjUA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAHQ1AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1370,7 +1432,7 @@ AGUAIABzAGUAdAAgAHQAbwAgAEYAYQBsAHMAZQAuACAAQQBzAHMAaQBnAG4AIABhACAAdgBhAGwA
 dQBlACAAdABvACAAdABoAGUAIABjAG8AbAB1AG0AbgAgAGkAbgBzAHQAZQBhAGQALgAAD0kAbgBw
 AHUAdAAgADAAAHFTAEMAXwA4AGEAMgA2ADMAMQAxADQAMQA3ADMAYgA0ADAAOAA0ADgAYQA5ADgA
 NABlAGYANgA0ADQAOAA2ADAANAA4ADgALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1
-AHIAYwBlAHMAANqy4rij8UlClXuhQBBEnF0ABCABAQgDIAABBSABARERBCABAQ4FIAEBEVkEIAAS
+AHIAYwBlAHMAAAWGanSozxBMgR754Vh6VsIABCABAQgDIAABBSABARERBCABAQ4FIAEBEVkEIAAS
 aQQgAQ4ICSADARI9HQgSQQMGEj0DBh0IBCABCAgEIAECCAUgAgEIHAMgAAIGIAICDhF1BSABHQgI
 BgABEnkRfQUgABKAgQcgAgEOEoCBCLd6XFYZNOCJCImEXc2AgMyRAwYSFAMGEhgDBhJFAwYSUQMG
 ElUDBhIgBSABARIMAyAACAMgAA4EIAEBAgkgBAEIDhI9EkEFIAEBEkUEAAASUQQAABJVBQABARJV
@@ -1594,8 +1656,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               <connections>
                 <connection
                   refId="Package\Data Convert\StagingFactSupplies.Connections[OleDbConnection]"
-                  connectionManagerID="{78B6B1A7-E5D2-4C2F-9E26-0464144005EF}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1816,8 +1878,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               <connections>
                 <connection
                   refId="Package\Data Convert\ValidateFactSupplies.Connections[OleDbConnection]"
-                  connectionManagerID="{78B6B1A7-E5D2-4C2F-9E26-0464144005EF}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB 2]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1960,7 +2022,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{78B6B1A7-E5D2-4C2F-9E26-0464144005EF}"
+          SQLTask:Connection="{9A9A787F-1A98-4B01-AB67-4C8C72DD4FF7}"
           SQLTask:SqlStatementSource="exec [datamart].[SP_FindDublicateFactSupplies]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1976,7 +2038,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{78B6B1A7-E5D2-4C2F-9E26-0464144005EF}"
+          SQLTask:Connection="{924BFA74-CF0D-465A-87B5-3994FC686713}"
           SQLTask:SqlStatementSource="exec [datamart].[SP_PopulateFactSupplies]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -2022,7 +2084,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{78B6B1A7-E5D2-4C2F-9E26-0464144005EF}"
+                  SQLTask:Connection="{9A9A787F-1A98-4B01-AB67-4C8C72DD4FF7}"
                   SQLTask:SqlStatementSource="INSERT INTO [datamart].[PackageInfo](&#xA;       [PackageName]&#xA;      ,[StartTime]&#xA;      ,[EndTime]&#xA;      ,[PackageStatus]&#xA;   )&#xA;  VALUES ('DatamartDimClients', getdate(), NULL, 'Started')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -2031,7 +2093,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       </DTS:EventHandlers>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{78B6B1A7-E5D2-4C2F-9E26-0464144005EF}"
+          SQLTask:Connection="{924BFA74-CF0D-465A-87B5-3994FC686713}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE [datamart].[ValidateFactSupplies]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>

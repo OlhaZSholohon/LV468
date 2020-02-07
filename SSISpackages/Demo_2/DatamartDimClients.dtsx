@@ -11,15 +11,15 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadDataMartDimClients"
   DTS:PackageType="5"
-  DTS:VersionBuild="65"
-  DTS:VersionGUID="{6FAEAFBF-FAA2-4C4E-8B22-3A8F58F5A477}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{3C2DA1E7-0157-4B5D-81D2-CA1AD586AA66}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{4B26A9FC-9EEC-4CA1-8E7E-744010E5AD91}"
+      DTS:DTSID="{9A9A787F-1A98-4B01-AB67-4C8C72DD4FF7}"
       DTS:ObjectName="192.168.195.147.TestDBDataMart.Lv-468.DB">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -27,7 +27,52 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADcFSGLvvoTdvaDnva2aJfcAAAAAASAAACgAAAAEAAAAADCQ64n4L1uz8wYT/TttL0YAAAATwwpM7kooUemSs3/Z53cDFK5W1L7mXNWFAAAAA4ZVpNr4k3QUFLrony1YWtDWvHG</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACeVG4zFleNBhq4FE48/JxAAAAAAASAAACgAAAAEAAAAKq9sa6su3gLuUIP9ygH29wYAAAAa1BzCWnHST1LO8ejmUtbG51bX3alX2ehFAAAAO+DcJy9L7nICpSxnV6GM8GmKBfZ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{66725A7F-1341-4775-88A8-01CE26B2F723}"
+      DTS:ObjectName="192.168.195.147.TestDBDataMart.Lv-468.DB 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBDataMart;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAFOiUr4y1CTHwZNHzjDHFAAAAAAASAAACgAAAAEAAAANxPCYvijBptZnDHY5js9y0YAAAAfy5XyT53upaYOMoCyjz/aZeT+zgj51u3FAAAADmYwygEe3DZ8jl2lg1bQtZni5X7</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7D5DDC5B-8F26-4B94-BCB5-E7F599AE509E}"
+      DTS:ObjectName="192.168.195.147.TestDBStage.Lv-468.DB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBStage;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACsVdd7QOh/yNOoKAAGZsboAAAAAASAAACgAAAAEAAAAMdj/pzoM7p5QhHb7To5EFIYAAAA2klv84OfJgmgS+ohQsXrhTgaDa3xaWxAFAAAACpuavXY/fCgWmVVDh3sLIpcUqcF</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C825D019-F31F-4216-A448-149A01A4D31D}"
+      DTS:ObjectName="192.168.195.147.TestDBStage.Lv-468.DB 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBStage;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAcUt5cM87veHiJldKu1rEYAAAAAASAAACgAAAAEAAAAGt4fuQOEKBzXBhzQwR+L78YAAAA0IBI3DA5tDAYPjBIf49XOcF5eU2roLA9FAAAAHrQgMFgukNyG/rsbiooQMd1dWRJ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -467,8 +512,8 @@
               <connections>
                 <connection
                   refId="Package\Data Convert\ErrorDimClients.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
-                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -797,7 +842,7 @@ public class ScriptMain : UserComponent
     /// </summary>
     /// <param name="Row">The row that is currently passing through the component</param>
     public override void Input0_ProcessInputRow(Input0Buffer Row)
-    { 
+    {
         IDTSComponentMetaData130 componentMetaData = this.ComponentMetaData as IDTSComponentMetaData130;
         Row.errorDescription = this.ComponentMetaData.GetErrorDescription(Row.ErrorCode);
     }
@@ -1372,7 +1417,7 @@ public class Variables
     <msb:CodeName>SC_8a263114173b40848a984ef644860488</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>SC_8a263114173b40848a984ef644860488</msb:DisplayName>
-    <msb:ProjectId>{862F0B45-BC0A-4E19-B612-BD8212D4253F}</msb:ProjectId>
+    <msb:ProjectId>{3DF30CA0-FD65-470A-ACEB-CEADB09ADB4D}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="SC_8a263114173b40848a984ef644860488.csproj" />
@@ -1519,7 +1564,7 @@ namespace SC_8a263114173b40848a984ef644860488.Properties {
                     <arrayElement
                       dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAJVqPV4AAAAAAAAAAOAAIiALATAAABgAAAAIAAAAAAAAmjcA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHRINF4AAAAAAAAAAOAAIiALATAAABgAAAAIAAAAAAAAmjcA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAEg3AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1619,7 +1664,7 @@ AG4AbgBvAHQAIABiAGUAIABzAGUAdAAgAHQAbwAgAEYAYQBsAHMAZQAuACAAQQBzAHMAaQBnAG4A
 IABhACAAdgBhAGwAdQBlACAAdABvACAAdABoAGUAIABjAG8AbAB1AG0AbgAgAGkAbgBzAHQAZQBh
 AGQALgAAD0kAbgBwAHUAdAAgADAAAHFTAEMAXwA4AGEAMgA2ADMAMQAxADQAMQA3ADMAYgA0ADAA
 OAA0ADgAYQA5ADgANABlAGYANgA0ADQAOAA2ADAANAA4ADgALgBQAHIAbwBwAGUAcgB0AGkAZQBz
-AC4AUgBlAHMAbwB1AHIAYwBlAHMAAJzlkfV/+nJJhDOFjAv0sT8ABCABAQgDIAABBSABARERBCAB
+AC4AUgBlAHMAbwB1AHIAYwBlAHMAAI8jvT44dABBg1CZiLltB6oABCABAQgDIAABBSABARERBCAB
 AQ4FIAEBEVkEIAASaQQgAQ4ICSADARI9HQgSQQMGEj0DBh0IBCABAggEIAEICAUgAgEIHAMgAAIG
 IAICDhF1BSABHQgIBgABEnkRfQUgABKAgQcgAgEOEoCBCLd6XFYZNOCJCImEXc2AgMyRAwYSFAMG
 EhgDBhJFAwYSUQMGElUDBhIgBSABARIMAyAADgMgAAgEIAEBAgkgBAEIDhI9EkEFIAEBEkUEAAAS
@@ -2366,7 +2411,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{4B26A9FC-9EEC-4CA1-8E7E-744010E5AD91}"
+          SQLTask:Connection="{9A9A787F-1A98-4B01-AB67-4C8C72DD4FF7}"
           SQLTask:SqlStatementSource="exec [datamart].[SP_FindDublicateClients]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -2412,7 +2457,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{4B26A9FC-9EEC-4CA1-8E7E-744010E5AD91}"
+                  SQLTask:Connection="{9A9A787F-1A98-4B01-AB67-4C8C72DD4FF7}"
                   SQLTask:SqlStatementSource="Update p&#xA;  set endtime = GETDATE(), PackageStatus = 'Finished'&#xA;  FROM [datamart].[PackageInfo] p&#xA;  where PackageName = 'DatamartDimClients' and PackageStatus = 'Started'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -4028,7 +4073,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{4B26A9FC-9EEC-4CA1-8E7E-744010E5AD91}"
+                  SQLTask:Connection="{9A9A787F-1A98-4B01-AB67-4C8C72DD4FF7}"
                   SQLTask:SqlStatementSource="INSERT INTO [datamart].[PackageInfo](&#xA;       [PackageName]&#xA;      ,[StartTime]&#xA;      ,[EndTime]&#xA;      ,[PackageStatus]&#xA;&#x9;  )&#xA;  VALUES ('DatamartDimClients', getdate(), NULL, 'Started')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -4037,7 +4082,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       </DTS:EventHandlers>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{4B26A9FC-9EEC-4CA1-8E7E-744010E5AD91}"
+          SQLTask:Connection="{9A9A787F-1A98-4B01-AB67-4C8C72DD4FF7}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE [datamart].[ValidateDimClients]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -4100,7 +4145,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{4B26A9FC-9EEC-4CA1-8E7E-744010E5AD91}"
+              SQLTask:Connection="{9A9A787F-1A98-4B01-AB67-4C8C72DD4FF7}"
               SQLTask:SqlStatementSource="Update p&#xA;  set endtime = GETDATE(), PackageStatus = 'Error'&#xA;  FROM [datamart].[PackageInfo] p&#xA;  where PackageName = 'DatamartDimClients' and PackageStatus = 'Started'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -4143,45 +4188,45 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         <NodeLayout
           Size="140,41.6"
           Id="Package\Data Convert"
-          TopLeft="425.571435818867,93.2941189554727" />
+          TopLeft="392.714292402171,107.211766209486" />
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\Execute SQL Task"
-          TopLeft="132.285716538527,131.835295966587" />
+          TopLeft="181.714288808862,159.670590474614" />
         <NodeLayout
           Size="248.8,41.6"
           Id="Package\Slowly changing dimmention Type 2"
-          TopLeft="333.285719961536,191.482355626644" />
+          TopLeft="382.428577941291,240.729415140845" />
         <NodeLayout
           Size="148.8,41.6"
           Id="Package\Truncate Table"
-          TopLeft="176.714288723712,22.0235297206365" />
+          TopLeft="199.28571767953,20.3411767558656" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="251.114288723712,63.6235297206365">
+          TopLeft="273.68571767953,61.9411767558656">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="244.457147095155,29.6705892348363"
+              EndConnector="189.028574722641,45.2705894536204"
               Start="0,0"
-              End="244.457147095155,22.1705892348363">
+              End="189.028574722641,37.7705894536204">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.8352946174181" />
+                    End="0,18.6352947268102" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.8352946174181"
-                    Point2="0,14.8352946174181"
-                    Point3="4,14.8352946174181" />
+                    Point1="0,18.6352947268102"
+                    Point2="0,22.6352947268102"
+                    Point3="4,22.6352947268102" />
                   <mssgle:LineSegment
-                    End="240.457147095155,14.8352946174181" />
+                    End="185.028574722641,22.6352947268102" />
                   <mssgle:CubicBezierSegment
-                    Point1="240.457147095155,14.8352946174181"
-                    Point2="244.457147095155,14.8352946174181"
-                    Point3="244.457147095155,18.8352946174181" />
+                    Point1="185.028574722641,22.6352947268102"
+                    Point2="189.028574722641,22.6352947268102"
+                    Point3="189.028574722641,26.6352947268102" />
                   <mssgle:LineSegment
-                    End="244.457147095155,22.1705892348363" />
+                    End="189.028574722641,37.7705894536204" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4192,30 +4237,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="425.571435818867,114.094118955473">
+          TopLeft="392.714292402171,128.011766209486">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-130.88571928034,38.5411770111146"
+              EndConnector="-48.600003593309,52.458824265128"
               Start="0,0"
-              End="-123.38571928034,38.5411770111146">
+              End="-41.100003593309,52.458824265128">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-61.44285964017,0" />
+                    End="-20.3000017966545,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-61.44285964017,0"
-                    Point2="-65.44285964017,0"
-                    Point3="-65.44285964017,4" />
+                    Point1="-20.3000017966545,0"
+                    Point2="-24.3000017966545,0"
+                    Point3="-24.3000017966545,4" />
                   <mssgle:LineSegment
-                    End="-65.44285964017,34.5411770111146" />
+                    End="-24.3000017966545,48.458824265128" />
                   <mssgle:CubicBezierSegment
-                    Point1="-65.44285964017,34.5411770111146"
-                    Point2="-65.44285964017,38.5411770111146"
-                    Point3="-69.44285964017,38.5411770111146" />
+                    Point1="-24.3000017966545,48.458824265128"
+                    Point2="-24.3000017966545,52.458824265128"
+                    Point3="-28.3000017966545,52.458824265128" />
                   <mssgle:LineSegment
-                    End="-123.38571928034,38.5411770111146" />
+                    End="-41.100003593309,52.458824265128" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4226,30 +4271,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="294.685716538527,158.235295966587">
+          TopLeft="262.914288808862,201.270590474614">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="38.6000034230085,54.0470596600566"
+              EndConnector="243.91428913243,39.4588246662313"
               Start="0,0"
-              End="31.1000034230085,54.0470596600566">
+              End="243.91428913243,31.9588246662313">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="12.297779223048,0" />
+                    End="0,15.7294123331156" />
                   <mssgle:CubicBezierSegment
-                    Point1="12.297779223048,0"
-                    Point2="16.297779223048,0"
-                    Point3="16.297779223048,4" />
+                    Point1="0,15.7294123331156"
+                    Point2="0,19.7294123331156"
+                    Point3="4,19.7294123331156" />
                   <mssgle:LineSegment
-                    End="16.297779223048,50.0470596600566" />
+                    End="239.91428913243,19.7294123331156" />
                   <mssgle:CubicBezierSegment
-                    Point1="16.297779223048,50.0470596600566"
-                    Point2="16.297779223048,54.0470596600566"
-                    Point3="20.297779223048,54.0470596600566" />
+                    Point1="239.91428913243,19.7294123331156"
+                    Point2="243.91428913243,19.7294123331156"
+                    Point3="243.91428913243,23.7294123331156" />
                   <mssgle:LineSegment
-                    End="31.1000034230085,54.0470596600566" />
+                    End="243.91428913243,31.9588246662313" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4269,7 +4314,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         <NodeLayout
           Size="162.4,41.6"
           Id="Package.EventHandlers[OnError]\Execute SQL Task"
-          TopLeft="238.857146924856,84.4235305957728" />
+          TopLeft="244.571432736455,25.082353292947" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
@@ -4304,9 +4349,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-35.39591887477,53.391598403636"
+              EndConnector="-35.3959188747695,53.3915984036361"
               Start="0,0"
-              End="-35.39591887477,45.891598403636">
+              End="-35.3959188747695,45.8915984036361">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -4317,13 +4362,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                     Point2="0,26.695799201818"
                     Point3="-4,26.695799201818" />
                   <mssgle:LineSegment
-                    End="-31.39591887477,26.695799201818" />
+                    End="-31.3959188747695,26.695799201818" />
                   <mssgle:CubicBezierSegment
-                    Point1="-31.39591887477,26.695799201818"
-                    Point2="-35.39591887477,26.695799201818"
-                    Point3="-35.39591887477,30.695799201818" />
+                    Point1="-31.3959188747695,26.695799201818"
+                    Point2="-35.3959188747695,26.695799201818"
+                    Point3="-35.3959188747695,30.695799201818" />
                   <mssgle:LineSegment
-                    End="-35.39591887477,45.891598403636" />
+                    End="-35.3959188747695,45.8915984036361" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4372,26 +4417,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-83.126532116436,43.192531534655"
+              EndConnector="-83.126532116436,43.1925315346554"
               Start="0,0"
-              End="-83.126532116436,35.692531534655">
+              End="-83.126532116436,35.6925315346554">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.5962657673275" />
+                    End="0,17.5962657673277" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.5962657673275"
-                    Point2="0,21.5962657673275"
-                    Point3="-4,21.5962657673275" />
+                    Point1="0,17.5962657673277"
+                    Point2="0,21.5962657673277"
+                    Point3="-4,21.5962657673277" />
                   <mssgle:LineSegment
-                    End="-79.126532116436,21.5962657673275" />
+                    End="-79.126532116436,21.5962657673277" />
                   <mssgle:CubicBezierSegment
-                    Point1="-79.126532116436,21.5962657673275"
-                    Point2="-83.126532116436,21.5962657673275"
-                    Point3="-83.126532116436,25.5962657673275" />
+                    Point1="-79.126532116436,21.5962657673277"
+                    Point2="-83.126532116436,21.5962657673277"
+                    Point3="-83.126532116436,25.5962657673277" />
                   <mssgle:LineSegment
-                    End="-83.126532116436,35.692531534655" />
+                    End="-83.126532116436,35.6925315346554" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4474,34 +4519,34 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         <NodeLayout
           Size="208,41.6"
           Id="Package\Slowly changing dimmention Type 2\Slowly Changing Dimension"
-          TopLeft="126.9,107.1" />
+          TopLeft="630.1,167.9" />
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\Slowly changing dimmention Type 2\Derived Column 1"
-          TopLeft="149.7,513.5" />
+          TopLeft="652.9,574.3" />
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\Slowly changing dimmention Type 2\OLE DB Command"
-          TopLeft="5.50000000000003,310.3" />
+          TopLeft="508.7,371.1" />
         <NodeLayout
           Size="120,41.6"
           Id="Package\Slowly changing dimmention Type 2\Union All"
-          TopLeft="170.9,411.9" />
+          TopLeft="674.1,472.7" />
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\Slowly changing dimmention Type 2\Insert Destination"
-          TopLeft="149.7,615.099999999999" />
+          TopLeft="652.9,675.899999999999" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\Slowly changing dimmention Type 2\Derived Column"
-          TopLeft="17.5,208.7" />
+          TopLeft="520.7,269.5" />
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Slowly changing dimmention Type 2\OLE DB Source"
-          TopLeft="156.1,5.49999999999995" />
+          TopLeft="659.3,66.2999999999999" />
         <EdgeLayout
           Id="Package\Slowly changing dimmention Type 2.Paths[Derived Column Output1]"
-          TopLeft="230.9,555.1">
+          TopLeft="734.1,615.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4525,7 +4570,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Slowly changing dimmention Type 2.Paths[Derived Column Output]"
-          TopLeft="90.9,250.3">
+          TopLeft="594.1,311.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4549,7 +4594,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Slowly changing dimmention Type 2.Paths[Union All Output 1]"
-          TopLeft="230.9,453.5">
+          TopLeft="734.1,514.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4573,7 +4618,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Slowly changing dimmention Type 2.Paths[OLE DB Source Output]"
-          TopLeft="230.9,47.1">
+          TopLeft="734.1,107.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4597,7 +4642,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Slowly changing dimmention Type 2.Paths[OLE DB Command Output]"
-          TopLeft="87.9,351.9">
+          TopLeft="591.1,412.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4633,13 +4678,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Slowly changing dimmention Type 2.Paths[New Output]"
-          TopLeft="264.233333333333,148.7">
+          TopLeft="767.433333333333,209.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-14.6666666666666,263.2"
+              EndConnector="-14.6666666666665,263.2"
               Start="0,0"
-              End="-14.6666666666666,255.7">
+              End="-14.6666666666665,255.7">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -4650,13 +4695,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                     Point2="0,130.695815115553"
                     Point3="-4,130.695815115553" />
                   <mssgle:LineSegment
-                    End="-10.6666666666666,130.695815115553" />
+                    End="-10.6666666666665,130.695815115553" />
                   <mssgle:CubicBezierSegment
-                    Point1="-10.6666666666666,130.695815115553"
-                    Point2="-14.6666666666666,130.695815115553"
-                    Point3="-14.6666666666666,134.695815115553" />
+                    Point1="-10.6666666666665,130.695815115553"
+                    Point2="-14.6666666666665,130.695815115553"
+                    Point3="-14.6666666666665,134.695815115553" />
                   <mssgle:LineSegment
-                    End="-14.6666666666666,255.7" />
+                    End="-14.6666666666665,255.7" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4669,7 +4714,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Slowly changing dimmention Type 2.Paths[Historical Attribute Inserts Output]"
-          TopLeft="197.566666666667,148.7">
+          TopLeft="700.766666666667,209.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4686,9 +4731,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                     Point2="0,24.2748091603053"
                     Point3="-4,24.2748091603053" />
                   <mssgle:LineSegment
-                    End="-99.6666666666667,24.2748091603053" />
+                    End="-99.666666666667,24.2748091603053" />
                   <mssgle:CubicBezierSegment
-                    Point1="-99.6666666666667,24.2748091603053"
+                    Point1="-99.666666666667,24.2748091603053"
                     Point2="-103.666666666667,24.2748091603053"
                     Point3="-103.666666666667,28.2748091603053" />
                   <mssgle:LineSegment
@@ -4726,7 +4771,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         <Value
           type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{4B26A9FC-9EEC-4CA1-8E7E-744010E5AD91}&lt;/ConnectionID&gt;
+  &lt;ConnectionID&gt;{9A9A787F-1A98-4B01-AB67-4C8C72DD4FF7}&lt;/ConnectionID&gt;
   &lt;TableName&gt;[datamart].[DimClients]&lt;/TableName&gt;
   &lt;InputToColumnsCollection&gt;
     &lt;InputColumnToDBColumn&gt;

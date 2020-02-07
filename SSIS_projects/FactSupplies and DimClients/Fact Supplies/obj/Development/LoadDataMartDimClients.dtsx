@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadDataMartDimClients"
   DTS:PackageType="5"
-  DTS:VersionBuild="53"
-  DTS:VersionGUID="{116839C9-33A5-4EF1-A7DB-DDF5C4D8EA8D}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{8377B7ED-5E9F-4C05-A247-3F077A85DF1E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABiv4N8YUMRRIuf6BTVfGlOAAAAAASAAACgAAAAEAAAAPfuog3MCpQpsM5qavDRX0IYAAAAl120H8ksI30mRrjVVMskxa4la9hyoIVsFAAAAIOqdqOMH/x9ZbwTGt6fasgusj6M</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACbcLHLzVC4uORH1KXbTiJOAAAAAASAAACgAAAAEAAAAILdPFNfnq9H7PJdwCefZSsYAAAA5cYPrHVp34TXTOVTDDf/4nZKjg2GDe8hFAAAAP1tS3koph+LILpxKeIXtPdqGyHi</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -42,7 +42,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADGIpeuo1nJb/UglGqiT0K4AAAAAASAAACgAAAAEAAAAI4HfDdB24cMrW2mSB2+RVkYAAAABxdNwsIjwaBoMGtYNSeMX8BmLBc9oggWFAAAAFcx7Q48pywBgiijrJ59rH4Ftafh</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC+/2lJRrhDZPUQSAZKpmH/AAAAAASAAACgAAAAEAAAANADrnA5vFhLKuMPdEjg9moYAAAAmeEjse9ppKwD3tI63cN++NwW6NIupPj/FAAAABhpx1jn5ZVwXIlKkRpnNeQPMe5B</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -57,7 +57,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC5UGK5nAQfTn4phaWzoltzAAAAAASAAACgAAAAEAAAAHmZRfkfKv/qyr0uwiTzaVMYAAAApyCUAAnSizjVAyFUGB5TnggUInaUTKMsFAAAAMuzED+0960Bs4qUfG5zp9zOt+xs</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADoXiU9yCpTbPsKSbbvcXKzAAAAAASAAACgAAAAEAAAAIRiXAjOp+6iwKASgFKrmvgYAAAAqjorZHfIAQUWLuKluFj6O0Wl5DVgFKUlFAAAACjznqcLJj46/Fl1OEaWGyXTBfQ+</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -72,7 +72,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABdl5pSuRS4s05n1KXXialUAAAAAASAAACgAAAAEAAAABwJuKwOUQlFiBw4YniesosYAAAAtxGO1rvOBIK2qMI0RN6TpitufXtnLc6tFAAAAIVroS1yQkIBOPWPT37zMUFohrMG</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABaq17Rmlh8Sf+YDuTYkFujAAAAAASAAACgAAAAEAAAAEke8NsnYdRKoIB9yHsqC8gYAAAArxMDiVz371oEUrr5xvKTxBCWt8sv3PVuFAAAAMVRcf4MhBZCmnGOQcUxZa/i6aif</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1886,7 +1886,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       ,[UserLogin]
       ,[LoginPassword]
       ,[RegistrationDate]
-  FROM [staging].[DimClients]</property>
+  FROM [dbo].[DimClients]</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1912,8 +1912,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               <connections>
                 <connection
                   refId="Package\Data Convert\StagingDimClients.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
-                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBStage.Lv-468.DB]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>

@@ -11,26 +11,11 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadStagingFactSupplies"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{D11A0371-7B94-479E-B01C-E9F8996B7606}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{E23028A3-5C1E-43C8-9518-AB886ED12F94}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBstaging.Lv-468.DB]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{345E85AA-ABA5-4993-98B2-0754B472FFA0}"
-      DTS:ObjectName="192.168.195.147.TestDBstaging.Lv-468.DB">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBStage;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaUERY7K5vUmSvNQHIgZWTwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADNnc6JlVQ9K2w1nlSnbjbbAAAAAASAAACgAAAAEAAAAMUgc6EwJTrZ+RYwdgxshMMYAAAAt3x6NxYwHlFiYFSkoDNYCYSmhPosUQ14FAAAAON0sTFjVfHpLXfAQKT5cY1TjJE4</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
@@ -440,8 +425,8 @@
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Data Flow Task\Loed data to StagingFactSupplies.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBstaging.Lv-468.DB]"
-                      connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBstaging.Lv-468.DB]"
+                      connectionManagerID="{345E85AA-ABA5-4993-98B2-0754B472FFA0}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[192.168.195.147.TestDBstaging.Lv-468.DB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -626,37 +611,25 @@
           PanelSize="204.8,125.6"
           Size="204.8,168.8"
           Id="Package\Foreach Loop Container"
-          TopLeft="363.5510265994,96.26311993082" />
+          TopLeft="185.836737858658,98.0984140742064" />
         <NodeLayout
           Size="244,41.6"
           Id="Package\Truncate table StagingFactSupplies"
-          TopLeft="286.040821197777,6.46722698145672" />
+          TopLeft="159.75510476143,15.6436976983885" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="408.040821197777,48.0672269814567">
+          TopLeft="284.995921310044,57.2436976983885">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="57.9102054016225,48.1958929493633"
+              EndConnector="0,40.8547163758178"
               Start="0,0"
-              End="57.9102054016225,40.6958929493633">
+              End="0,33.3547163758178">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.0979464746816" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.0979464746816"
-                    Point2="0,24.0979464746816"
-                    Point3="4,24.0979464746816" />
-                  <mssgle:LineSegment
-                    End="53.9102054016225,24.0979464746816" />
-                  <mssgle:CubicBezierSegment
-                    Point1="53.9102054016225,24.0979464746816"
-                    Point2="57.9102054016225,24.0979464746816"
-                    Point3="57.9102054016225,28.0979464746816" />
-                  <mssgle:LineSegment
-                    End="57.9102054016225,40.6958929493633" />
+                    End="0,33.3547163758178" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
