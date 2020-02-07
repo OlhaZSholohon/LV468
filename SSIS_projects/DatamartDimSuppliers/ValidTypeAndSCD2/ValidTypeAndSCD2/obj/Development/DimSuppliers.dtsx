@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimSuppliers"
   DTS:PackageType="5"
-  DTS:VersionBuild="120"
-  DTS:VersionGUID="{2B46293A-9EF4-4C63-919F-4FA413899F12}">
+  DTS:VersionBuild="121"
+  DTS:VersionGUID="{C2026617-648E-4F83-9A0E-98223AE2115B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,7 +28,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADl4Q7X0QWtN11oYATBiYu2AAAAAASAAACgAAAAEAAAAP85f2suVxcP8P66tzLUb4wYAAAA4GkQEBArO8NKALRXA76wEg+sVhX85ZQeFAAAADC2yc1Z9qpLb6LQuxcOMjdRyLFs</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAIkp0qcZdkWD9T/03ZUpSHAAAAAASAAACgAAAAEAAAAF7kV+SaGs2Yzd5kq9WINhUYAAAAHoEjbus5YbBg8uOJ7DtsTgGsw25xrWOGFAAAAGyfwbm2LUdasOVcjm+oxpahx1Ra</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -87,7 +87,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{DDF8B122-E598-4FC1-97B9-08B1C59A9927}"
-          SQLTask:SqlStatementSource="SELECT * INTO ##SupplierValidData&#xA;FROM [dbo].[DimSuppliers]&#xA;WHERE LEN(SupplierName) &lt; 20&#xA;              AND&#xA;              LEN(SupplierEmail) &lt; 40&#xA;              AND&#xA;              LEN(SupplierPhone) &lt; 18" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="IF OBJECT_ID('dbo.##SupplierValidData', 'U') IS NOT NULL &#xA;  DROP TABLE dbo.##SupplierValidData; &#xA;&#xA;IF OBJECT_ID('dbo.##SupplierValidData2', 'U') IS NOT NULL &#xA;  DROP TABLE dbo.##SupplierValidData2; &#xA;&#xA;SELECT * INTO ##SupplierValidData&#xA;FROM [dbo].[DimSuppliers]&#xA;WHERE LEN(SupplierName) &lt; 20&#xA;              AND&#xA;              LEN(SupplierEmail) &lt; 40&#xA;              AND&#xA;              LEN(SupplierPhone) &lt; 18" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -98,7 +98,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert Valid data and add new column for ValidEmail and ValidPhone"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3246,12 +3246,12 @@ FROM ##SupplierValidData2</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Validation Error, insert data into Error table"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{DDF8B122-E598-4FC1-97B9-08B1C59A9927}"
-          SQLTask:SqlStatementSource="USE [TestDBDataMart];&#xA;GO&#xA;&#xA;INSERT INTO [error].[ErrorDimSuppliers] (SupplierKey, SupplierName, SupplierEmail,SupplierPhone, SupplierDescription, ErrorComment)&#xA;SELECT NULL, s.SupplierName, s.SupplierEmail, s.SupplierPhone, s.SupplierDescription, 'Error datatype'&#xA;FROM [dbo].[DimSuppliers] AS s&#xA;LEFT JOIN ##SupplierValidData AS v&#xA;&#x9;&#x9;  ON s.SupplierID = v.SupplierID&#xA;WHERE v.SupplierID IS NULL&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="INSERT INTO [error].[ErrorDimSuppliers] (SupplierKey, SupplierName, SupplierEmail,SupplierPhone, SupplierDescription, ErrorComment)&#xA;SELECT NULL, s.SupplierName, s.SupplierEmail, s.SupplierPhone, s.SupplierDescription, 'Error datatype'&#xA;FROM [dbo].[DimSuppliers] AS s&#xA;LEFT JOIN ##SupplierValidData AS v&#xA;&#x9;&#x9;  ON s.SupplierID = v.SupplierID&#xA;WHERE v.SupplierID IS NULL&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
