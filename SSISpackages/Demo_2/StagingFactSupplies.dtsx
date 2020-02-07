@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="2/3/2020 3:16:09 PM"
@@ -12,7 +12,7 @@
   DTS:ObjectName="LoadStagingFactSupplies"
   DTS:PackageType="5"
   DTS:VersionBuild="10"
-  DTS:VersionGUID="{E23028A3-5C1E-43C8-9518-AB886ED12F94}">
+  DTS:VersionGUID="{3862B213-A43C-4009-9E29-7E0157A80C80}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
