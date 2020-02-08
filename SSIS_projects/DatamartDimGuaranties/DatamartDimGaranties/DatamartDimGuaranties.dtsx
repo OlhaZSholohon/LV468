@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DatamartDimGuaranties"
   DTS:PackageType="5"
-  DTS:VersionBuild="155"
-  DTS:VersionGUID="{9B3B713D-4E50-41E9-8C3B-2DD9DA81B235}">
+  DTS:VersionBuild="158"
+  DTS:VersionGUID="{E63E776D-AF1F-4AC3-AEE0-F9ECC0DAED5F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABWSmT7PaiBc7l6gdN0lGK7AAAAAASAAACgAAAAEAAAAD51Qs2D3+1714K3eTtYlzEYAAAAagfLUFqOoAdnMdJfyliBSgTCZF5jZL41FAAAAAfakopml4PJ0jR7GP1OGpeO61JA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADq/3N/e1RizJPZQmAwVOV4AAAAAASAAACgAAAAEAAAAGbKfeBf7EcoUto5KJUtvWUYAAAAvX/ktDHGqSI0WL11b/vVXeP5Lgi5ZZ2xFAAAAD+d08yT6+zPN9H5j844BBzWc3RE</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -127,31 +127,31 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Conditional Split.Inputs[Conditional Split Input].Columns[Duration]"
                       cachedDataType="i4"
                       cachedName="Duration"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]" />
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]" />
                     <inputColumn
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Conditional Split.Inputs[Conditional Split Input].Columns[GuarantyID]"
                       cachedDataType="i4"
                       cachedName="GuarantyID"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]" />
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]" />
                     <inputColumn
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Conditional Split.Inputs[Conditional Split Input].Columns[NameGuaranty]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="NameGuaranty"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]" />
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]" />
                     <inputColumn
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Conditional Split.Inputs[Conditional Split Input].Columns[PriceGuaranty]"
                       cachedDataType="numeric"
                       cachedName="PriceGuaranty"
                       cachedPrecision="18"
                       cachedScale="2"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]" />
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]" />
                     <inputColumn
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Conditional Split.Inputs[Conditional Split Input].Columns[DescriptionGuaranty]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="DescriptionGuaranty"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]" />
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -171,7 +171,7 @@
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">(#{Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]} &lt; 0)</property>
+                      name="Expression">(#{Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]} &lt; 0)</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -199,7 +199,7 @@
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">((#{Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]}) == "")</property>
+                      name="Expression">((#{Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]}) == "")</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -227,7 +227,7 @@
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">((#{Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]}) == "")</property>
+                      name="Expression">((#{Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]}) == "")</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -255,7 +255,7 @@
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">(#{Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]} &lt; 0) || (#{Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]} &gt; 300000.00)</property>
+                      name="Expression">(#{Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]} &lt; 0) || (#{Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]} &gt; 300000.00)</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -283,7 +283,7 @@
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">(#{Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]} &lt; 0) || (#{Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]} &gt; 3650)</property>
+                      name="Expression">(#{Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]} &lt; 0) || (#{Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]} &gt; 3650)</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -663,11 +663,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData"
+              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="DimGarantiesCastedData"
+              name="DimGuarantiesCastedData"
               usesDispositions="true"
               version="7">
               <properties>
@@ -712,7 +712,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Connections[OleDbConnection]"
+                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
                   connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
                   description="The OLE DB runtime connection used to access the database."
@@ -720,131 +720,131 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output]"
+                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[Duration]"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]"
+                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[Duration]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]"
                       name="Duration"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[GuarantyID]"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]"
+                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[GuarantyID]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]"
                       name="GuarantyID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[NameGuaranty]"
+                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[NameGuaranty]"
                       length="50"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]"
                       name="NameGuaranty"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[PriceGuaranty]"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]"
+                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[PriceGuaranty]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]"
                       name="PriceGuaranty"
                       precision="18"
                       scale="2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[DescriptionGuaranty]"
+                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[DescriptionGuaranty]"
                       length="255"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]"
                       name="DescriptionGuaranty"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[Duration]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[Duration]"
                       dataType="i4"
                       name="Duration" />
                     <externalMetadataColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[GuarantyID]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[GuarantyID]"
                       dataType="i4"
                       name="GuarantyID" />
                     <externalMetadataColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[NameGuaranty]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[NameGuaranty]"
                       dataType="wstr"
                       length="50"
                       name="NameGuaranty" />
                     <externalMetadataColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[PriceGuaranty]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[PriceGuaranty]"
                       dataType="numeric"
                       name="PriceGuaranty"
                       precision="18"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[DescriptionGuaranty]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].ExternalColumns[DescriptionGuaranty]"
                       dataType="wstr"
                       length="255"
                       name="DescriptionGuaranty" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Error Output]"
+                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[GuarantyID]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[GuarantyID]"
                       dataType="i4"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[GuarantyID]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[GuarantyID]"
                       name="GuarantyID" />
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[NameGuaranty]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[NameGuaranty]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[NameGuaranty]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[NameGuaranty]"
                       name="NameGuaranty" />
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[Duration]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[Duration]"
                       dataType="i4"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[Duration]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[Duration]"
                       name="Duration" />
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[PriceGuaranty]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[PriceGuaranty]"
                       dataType="numeric"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[PriceGuaranty]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[PriceGuaranty]"
                       name="PriceGuaranty"
                       precision="18"
                       scale="2" />
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[DescriptionGuaranty]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[DescriptionGuaranty]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[DescriptionGuaranty]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[DescriptionGuaranty]"
                       name="DescriptionGuaranty" />
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -853,11 +853,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2"
+              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="DimGarantiesError Table 2"
+              name="DimGuarantiesError Table 2"
               usesDispositions="true"
               version="4">
               <properties>
@@ -910,7 +910,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Connections[OleDbConnection]"
+                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
                   connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
                   description="The OLE DB runtime connection used to access the database."
@@ -918,92 +918,92 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input]"
+                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].Columns[Duration]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].Columns[Duration]"
                       cachedDataType="i4"
                       cachedName="Duration"
-                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[Duration]"
+                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[Duration]"
                       lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Outputs[Union All Output 1].Columns[Duration]" />
                     <inputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].Columns[CErrorDescription]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].Columns[CErrorDescription]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="CErrorDescription"
-                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
+                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
                       lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Outputs[Union All Output 1].Columns[CErrorDescription]" />
                     <inputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].Columns[CErrorDate]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].Columns[CErrorDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CErrorDate"
-                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDate]"
+                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDate]"
                       lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Outputs[Union All Output 1].Columns[CErrorDate]" />
                     <inputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].Columns[GuarantyID]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].Columns[GuarantyID]"
                       cachedDataType="i4"
                       cachedName="GuarantyID"
-                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[GuarantyID]"
+                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[GuarantyID]"
                       lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Outputs[Union All Output 1].Columns[GuarantyID]" />
                     <inputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].Columns[NameGuaranty]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].Columns[NameGuaranty]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="NameGuaranty"
-                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[NameGuaranty]"
+                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[NameGuaranty]"
                       lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Outputs[Union All Output 1].Columns[NameGuaranty]" />
                     <inputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].Columns[PriceGuaranty]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].Columns[PriceGuaranty]"
                       cachedDataType="numeric"
                       cachedName="PriceGuaranty"
                       cachedPrecision="18"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[PriceGuaranty]"
+                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[PriceGuaranty]"
                       lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Outputs[Union All Output 1].Columns[PriceGuaranty]" />
                     <inputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].Columns[DescriptionGuaranty]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].Columns[DescriptionGuaranty]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="DescriptionGuaranty"
-                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[DescriptionGuaranty]"
+                      externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[DescriptionGuaranty]"
                       lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Outputs[Union All Output 1].Columns[DescriptionGuaranty]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[Duration]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[Duration]"
                       dataType="wstr"
                       length="255"
                       name="Duration" />
                     <externalMetadataColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
                       dataType="wstr"
                       length="255"
                       name="ErrorDescription" />
                     <externalMetadataColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDate]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDate]"
                       dataType="dbTimeStamp"
                       name="ErrorDate" />
                     <externalMetadataColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[GuarantyID]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[GuarantyID]"
                       dataType="i4"
                       name="GuarantyID" />
                     <externalMetadataColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[NameGuaranty]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[NameGuaranty]"
                       dataType="wstr"
                       length="255"
                       name="NameGuaranty" />
                     <externalMetadataColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[PriceGuaranty]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[PriceGuaranty]"
                       dataType="wstr"
                       length="255"
                       name="PriceGuaranty" />
                     <externalMetadataColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[DescriptionGuaranty]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input].ExternalColumns[DescriptionGuaranty]"
                       dataType="wstr"
                       length="255"
                       name="DescriptionGuaranty" />
@@ -1012,22 +1012,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1228,15 +1228,15 @@
               </outputs>
             </component>
             <component
-              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID"
+              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Incorect data in GarantyID"
+              name="Incorect data in GuarantyID"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Inputs[Derived Column Input]"
+                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <externalMetadataColumns />
@@ -1244,19 +1244,19 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Outputs[Derived Column Output]"
+                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Outputs[Derived Column Output].Columns[CErrorDescription]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID.Outputs[Derived Column Output].Columns[CErrorDescription]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="41"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Outputs[Derived Column Output].Columns[CErrorDescription]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID.Outputs[Derived Column Output].Columns[CErrorDescription]"
                       name="CErrorDescription"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1274,11 +1274,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Outputs[Derived Column Output].Columns[CErrorDate]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID.Outputs[Derived Column Output].Columns[CErrorDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Outputs[Derived Column Output].Columns[CErrorDate]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID.Outputs[Derived Column Output].Columns[CErrorDate]"
                       name="CErrorDate"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1299,23 +1299,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Outputs[Derived Column Error Output]"
+                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1324,15 +1324,15 @@
               </outputs>
             </component>
             <component
-              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty"
+              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Incorect data in NameGaranty"
+              name="Incorect data in NameGuaranty"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Inputs[Derived Column Input]"
+                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <externalMetadataColumns />
@@ -1340,19 +1340,19 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Outputs[Derived Column Output]"
+                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Outputs[Derived Column Output].Columns[CErrorDescription]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty.Outputs[Derived Column Output].Columns[CErrorDescription]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="43"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Outputs[Derived Column Output].Columns[CErrorDescription]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty.Outputs[Derived Column Output].Columns[CErrorDescription]"
                       name="CErrorDescription"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1370,11 +1370,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Outputs[Derived Column Output].Columns[CErrorDate]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty.Outputs[Derived Column Output].Columns[CErrorDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Outputs[Derived Column Output].Columns[CErrorDate]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty.Outputs[Derived Column Output].Columns[CErrorDate]"
                       name="CErrorDate"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1395,23 +1395,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Outputs[Derived Column Error Output]"
+                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1420,15 +1420,15 @@
               </outputs>
             </component>
             <component
-              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty"
+              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Incorect data in PriceGaranty"
+              name="Incorect data in PriceGuaranty"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Inputs[Derived Column Input]"
+                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <externalMetadataColumns />
@@ -1436,19 +1436,19 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Outputs[Derived Column Output]"
+                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Outputs[Derived Column Output].Columns[CErrorDescription]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty.Outputs[Derived Column Output].Columns[CErrorDescription]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="44"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Outputs[Derived Column Output].Columns[CErrorDescription]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty.Outputs[Derived Column Output].Columns[CErrorDescription]"
                       name="CErrorDescription"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1466,11 +1466,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Outputs[Derived Column Output].Columns[CErrorDate]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty.Outputs[Derived Column Output].Columns[CErrorDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Outputs[Derived Column Output].Columns[CErrorDate]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty.Outputs[Derived Column Output].Columns[CErrorDate]"
                       name="CErrorDate"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1491,23 +1491,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Outputs[Derived Column Error Output]"
+                  refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1560,7 +1560,7 @@
                       cachedDataType="i4"
                       cachedName="GuarantyID"
                       externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]" />
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]" />
                     <inputColumn
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\OLE DB Command.Inputs[OLE DB Command Input].Columns[EndDate]"
                       cachedDataType="dbTimeStamp"
@@ -1693,7 +1693,7 @@
                       cachedLength="255"
                       cachedName="DescriptionGuaranty"
                       externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[DescriptionGuaranty]"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1706,7 +1706,7 @@
                       cachedDataType="i4"
                       cachedName="Duration"
                       externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Duration]"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1719,7 +1719,7 @@
                       cachedDataType="i4"
                       cachedName="GuarantyID"
                       externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[GuarantyID]"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1733,7 +1733,7 @@
                       cachedLength="50"
                       cachedName="NameGuaranty"
                       externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[NameGuaranty]"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1748,7 +1748,7 @@
                       cachedPrecision="18"
                       cachedScale="2"
                       externalMetadataColumnId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PriceGuaranty]"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1861,7 +1861,7 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All.Inputs[Union All Input 1].Columns[Duration]"
                       cachedDataType="i4"
                       cachedName="Duration"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]">
                       <properties>
                         <property
                           containsID="true"
@@ -1874,7 +1874,7 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All.Inputs[Union All Input 1].Columns[GuarantyID]"
                       cachedDataType="i4"
                       cachedName="GuarantyID"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]">
                       <properties>
                         <property
                           containsID="true"
@@ -1888,7 +1888,7 @@
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="NameGuaranty"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -1903,7 +1903,7 @@
                       cachedName="PriceGuaranty"
                       cachedPrecision="18"
                       cachedScale="2"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -1917,7 +1917,7 @@
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="DescriptionGuaranty"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -1938,7 +1938,7 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All.Inputs[Union All Input 2].Columns[Duration]"
                       cachedDataType="i4"
                       cachedName="Duration"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]">
                       <properties>
                         <property
                           containsID="true"
@@ -1951,7 +1951,7 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All.Inputs[Union All Input 2].Columns[GuarantyID]"
                       cachedDataType="i4"
                       cachedName="GuarantyID"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]">
                       <properties>
                         <property
                           containsID="true"
@@ -1965,7 +1965,7 @@
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="NameGuaranty"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -1980,7 +1980,7 @@
                       cachedName="PriceGuaranty"
                       cachedPrecision="18"
                       cachedScale="2"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -1994,7 +1994,7 @@
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="DescriptionGuaranty"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -2070,7 +2070,7 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 6].Columns[Duration]"
                       cachedDataType="i4"
                       cachedName="Duration"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]">
                       <properties>
                         <property
                           containsID="true"
@@ -2084,7 +2084,7 @@
                       cachedDataType="wstr"
                       cachedLength="41"
                       cachedName="CErrorDescription"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Outputs[Derived Column Output].Columns[CErrorDescription]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID.Outputs[Derived Column Output].Columns[CErrorDescription]">
                       <properties>
                         <property
                           containsID="true"
@@ -2097,7 +2097,7 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 6].Columns[CErrorDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CErrorDate"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Outputs[Derived Column Output].Columns[CErrorDate]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID.Outputs[Derived Column Output].Columns[CErrorDate]">
                       <properties>
                         <property
                           containsID="true"
@@ -2110,7 +2110,7 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 6].Columns[GuarantyID]"
                       cachedDataType="i4"
                       cachedName="GuarantyID"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]">
                       <properties>
                         <property
                           containsID="true"
@@ -2124,7 +2124,7 @@
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="NameGuaranty"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -2139,7 +2139,7 @@
                       cachedName="PriceGuaranty"
                       cachedPrecision="18"
                       cachedScale="2"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -2153,7 +2153,7 @@
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="DescriptionGuaranty"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -2174,7 +2174,7 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 1].Columns[Duration]"
                       cachedDataType="i4"
                       cachedName="Duration"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]">
                       <properties>
                         <property
                           containsID="true"
@@ -2188,7 +2188,7 @@
                       cachedDataType="wstr"
                       cachedLength="43"
                       cachedName="CErrorDescription"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Outputs[Derived Column Output].Columns[CErrorDescription]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty.Outputs[Derived Column Output].Columns[CErrorDescription]">
                       <properties>
                         <property
                           containsID="true"
@@ -2201,7 +2201,7 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 1].Columns[CErrorDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CErrorDate"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Outputs[Derived Column Output].Columns[CErrorDate]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty.Outputs[Derived Column Output].Columns[CErrorDate]">
                       <properties>
                         <property
                           containsID="true"
@@ -2214,7 +2214,7 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 1].Columns[GuarantyID]"
                       cachedDataType="i4"
                       cachedName="GuarantyID"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]">
                       <properties>
                         <property
                           containsID="true"
@@ -2228,7 +2228,7 @@
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="NameGuaranty"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -2243,7 +2243,7 @@
                       cachedName="PriceGuaranty"
                       cachedPrecision="18"
                       cachedScale="2"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -2257,7 +2257,7 @@
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="DescriptionGuaranty"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -2278,7 +2278,7 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 3].Columns[Duration]"
                       cachedDataType="i4"
                       cachedName="Duration"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]">
                       <properties>
                         <property
                           containsID="true"
@@ -2318,7 +2318,7 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 3].Columns[GuarantyID]"
                       cachedDataType="i4"
                       cachedName="GuarantyID"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]">
                       <properties>
                         <property
                           containsID="true"
@@ -2332,7 +2332,7 @@
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="NameGuaranty"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -2347,7 +2347,7 @@
                       cachedName="PriceGuaranty"
                       cachedPrecision="18"
                       cachedScale="2"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -2361,7 +2361,7 @@
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="DescriptionGuaranty"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -2382,7 +2382,7 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 2].Columns[Duration]"
                       cachedDataType="i4"
                       cachedName="Duration"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]">
                       <properties>
                         <property
                           containsID="true"
@@ -2396,7 +2396,7 @@
                       cachedDataType="wstr"
                       cachedLength="44"
                       cachedName="CErrorDescription"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Outputs[Derived Column Output].Columns[CErrorDescription]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty.Outputs[Derived Column Output].Columns[CErrorDescription]">
                       <properties>
                         <property
                           containsID="true"
@@ -2409,7 +2409,7 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 2].Columns[CErrorDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CErrorDate"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Outputs[Derived Column Output].Columns[CErrorDate]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty.Outputs[Derived Column Output].Columns[CErrorDate]">
                       <properties>
                         <property
                           containsID="true"
@@ -2422,7 +2422,7 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 2].Columns[GuarantyID]"
                       cachedDataType="i4"
                       cachedName="GuarantyID"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]">
                       <properties>
                         <property
                           containsID="true"
@@ -2436,7 +2436,7 @@
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="NameGuaranty"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -2451,7 +2451,7 @@
                       cachedName="PriceGuaranty"
                       cachedPrecision="18"
                       cachedScale="2"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -2465,7 +2465,7 @@
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="DescriptionGuaranty"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -2486,7 +2486,7 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 4].Columns[Duration]"
                       cachedDataType="i4"
                       cachedName="Duration"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[Duration]">
                       <properties>
                         <property
                           containsID="true"
@@ -2526,7 +2526,7 @@
                       refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 4].Columns[GuarantyID]"
                       cachedDataType="i4"
                       cachedName="GuarantyID"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[GuarantyID]">
                       <properties>
                         <property
                           containsID="true"
@@ -2540,7 +2540,7 @@
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="NameGuaranty"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[NameGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -2555,7 +2555,7 @@
                       cachedName="PriceGuaranty"
                       cachedPrecision="18"
                       cachedScale="2"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[PriceGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -2569,7 +2569,7 @@
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="DescriptionGuaranty"
-                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]">
+                      lineageId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]">
                       <properties>
                         <property
                           containsID="true"
@@ -2655,12 +2655,12 @@
               refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output1]"
               endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 1]"
               name="Derived Column Output"
-              startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Outputs[Derived Column Output]" />
+              startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty.Outputs[Derived Column Output]" />
             <path
               refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output2]"
               endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 2]"
               name="Derived Column Output"
-              startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Outputs[Derived Column Output]" />
+              startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty.Outputs[Derived Column Output]" />
             <path
               refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output3]"
               endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\datamartDimGuaranties.Inputs[OLE DB Destination Input]"
@@ -2675,7 +2675,7 @@
               refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output5]"
               endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 6]"
               name="Derived Column Output"
-              startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Outputs[Derived Column Output]" />
+              startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID.Outputs[Derived Column Output]" />
             <path
               refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output6]"
               endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 3]"
@@ -2693,7 +2693,7 @@
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Conditional Split.Outputs[Duration]" />
             <path
               refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[GarantyID]"
-              endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Inputs[Derived Column Input]"
+              endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID.Inputs[Derived Column Input]"
               name="GarantyID"
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Conditional Split.Outputs[GuarantyID]" />
             <path
@@ -2703,7 +2703,7 @@
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
             <path
               refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[NameGaranty]"
-              endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Inputs[Derived Column Input]"
+              endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty.Inputs[Derived Column Input]"
               name="NameGaranty"
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Conditional Split.Outputs[NameGuaranty]" />
             <path
@@ -2720,10 +2720,10 @@
               refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[OLE DB Source Output]"
               endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Conditional Split.Inputs[Conditional Split Input]"
               name="OLE DB Source Output"
-              startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData.Outputs[OLE DB Source Output]" />
+              startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[PriceGaranty]"
-              endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Inputs[Derived Column Input]"
+              endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty.Inputs[Derived Column Input]"
               name="PriceGaranty"
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Conditional Split.Outputs[PriceGuaranty]" />
             <path
@@ -2733,7 +2733,7 @@
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All.Outputs[Union All Output 1]" />
             <path
               refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Union All Output 11]"
-              endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input]"
+              endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2.Inputs[OLE DB Destination Input]"
               name="Union All Output 1"
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Outputs[Union All Output 1]" />
           </paths>
@@ -2771,30 +2771,30 @@
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Duration"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[Duration]" />
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[Duration]" />
                     <inputColumn
                       refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\Data Conversion.Inputs[Data Conversion Input].Columns[GuarantyID]"
                       cachedDataType="i4"
                       cachedName="GuarantyID"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[GuarantyID]" />
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[GuarantyID]" />
                     <inputColumn
                       refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\Data Conversion.Inputs[Data Conversion Input].Columns[NameGuaranty]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="NameGuaranty"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[NameGuaranty]" />
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[NameGuaranty]" />
                     <inputColumn
                       refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\Data Conversion.Inputs[Data Conversion Input].Columns[PriceGuaranty]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="PriceGuaranty"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[PriceGuaranty]" />
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[PriceGuaranty]" />
                     <inputColumn
                       refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\Data Conversion.Inputs[Data Conversion Input].Columns[DescriptionGuaranty]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="DescriptionGuaranty"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]" />
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -2819,7 +2819,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[GuarantyID]}</property>
+                          name="SourceInputColumnLineageID">#{Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[GuarantyID]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -2840,7 +2840,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[NameGuaranty]}</property>
+                          name="SourceInputColumnLineageID">#{Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[NameGuaranty]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -2860,7 +2860,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[Duration]}</property>
+                          name="SourceInputColumnLineageID">#{Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[Duration]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -2882,7 +2882,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[PriceGuaranty]}</property>
+                          name="SourceInputColumnLineageID">#{Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[PriceGuaranty]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -2903,7 +2903,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]}</property>
+                          name="SourceInputColumnLineageID">#{Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -3279,7 +3279,7 @@
                       cachedLength="255"
                       cachedName="Duration"
                       externalMetadataColumnId="Package\From stageDimGuaranties to DimGuarantiesCastedData\DimGuarantiesError Table 0.Inputs[OLE DB Destination Input].ExternalColumns[Duration]"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[Duration]" />
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[Duration]" />
                     <inputColumn
                       refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\DimGuarantiesError Table 0.Inputs[OLE DB Destination Input].Columns[CErrorDescription]"
                       cachedDataType="wstr"
@@ -3298,28 +3298,28 @@
                       cachedDataType="i4"
                       cachedName="GuarantyID"
                       externalMetadataColumnId="Package\From stageDimGuaranties to DimGuarantiesCastedData\DimGuarantiesError Table 0.Inputs[OLE DB Destination Input].ExternalColumns[GuarantyID]"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[GuarantyID]" />
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[GuarantyID]" />
                     <inputColumn
                       refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\DimGuarantiesError Table 0.Inputs[OLE DB Destination Input].Columns[NameGuaranty]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="NameGuaranty"
                       externalMetadataColumnId="Package\From stageDimGuaranties to DimGuarantiesCastedData\DimGuarantiesError Table 0.Inputs[OLE DB Destination Input].ExternalColumns[NameGuaranty]"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[NameGuaranty]" />
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[NameGuaranty]" />
                     <inputColumn
                       refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\DimGuarantiesError Table 0.Inputs[OLE DB Destination Input].Columns[PriceGuaranty]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="PriceGuaranty"
                       externalMetadataColumnId="Package\From stageDimGuaranties to DimGuarantiesCastedData\DimGuarantiesError Table 0.Inputs[OLE DB Destination Input].ExternalColumns[PriceGuaranty]"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[PriceGuaranty]" />
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[PriceGuaranty]" />
                     <inputColumn
                       refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\DimGuarantiesError Table 0.Inputs[OLE DB Destination Input].Columns[DescriptionGuaranty]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="DescriptionGuaranty"
                       externalMetadataColumnId="Package\From stageDimGuaranties to DimGuarantiesCastedData\DimGuarantiesError Table 0.Inputs[OLE DB Destination Input].ExternalColumns[DescriptionGuaranty]"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]" />
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3385,11 +3385,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties"
+              refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="stageDimGaranties"
+              name="stageDimGuaranties"
               usesDispositions="true"
               version="7">
               <properties>
@@ -3434,7 +3434,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Connections[OleDbConnection]"
+                  refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
                   connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
                   description="The OLE DB runtime connection used to access the database."
@@ -3442,131 +3442,131 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output]"
+                  refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[Duration]"
+                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[Duration]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].ExternalColumns[Duration]"
+                      externalMetadataColumnId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].ExternalColumns[Duration]"
                       length="255"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[Duration]"
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[Duration]"
                       name="Duration"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[GuarantyID]"
+                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[GuarantyID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].ExternalColumns[GuarantyID]"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[GuarantyID]"
+                      externalMetadataColumnId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].ExternalColumns[GuarantyID]"
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[GuarantyID]"
                       name="GuarantyID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[NameGuaranty]"
+                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[NameGuaranty]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].ExternalColumns[NameGuaranty]"
+                      externalMetadataColumnId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].ExternalColumns[NameGuaranty]"
                       length="255"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[NameGuaranty]"
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[NameGuaranty]"
                       name="NameGuaranty"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[PriceGuaranty]"
+                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[PriceGuaranty]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].ExternalColumns[PriceGuaranty]"
+                      externalMetadataColumnId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].ExternalColumns[PriceGuaranty]"
                       length="255"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[PriceGuaranty]"
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[PriceGuaranty]"
                       name="PriceGuaranty"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]"
+                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].ExternalColumns[DescriptionGuaranty]"
+                      externalMetadataColumnId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].ExternalColumns[DescriptionGuaranty]"
                       length="255"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]"
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].Columns[DescriptionGuaranty]"
                       name="DescriptionGuaranty"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].ExternalColumns[Duration]"
+                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].ExternalColumns[Duration]"
                       dataType="wstr"
                       length="255"
                       name="Duration" />
                     <externalMetadataColumn
-                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].ExternalColumns[GuarantyID]"
+                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].ExternalColumns[GuarantyID]"
                       dataType="i4"
                       name="GuarantyID" />
                     <externalMetadataColumn
-                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].ExternalColumns[NameGuaranty]"
+                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].ExternalColumns[NameGuaranty]"
                       dataType="wstr"
                       length="255"
                       name="NameGuaranty" />
                     <externalMetadataColumn
-                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].ExternalColumns[PriceGuaranty]"
+                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].ExternalColumns[PriceGuaranty]"
                       dataType="wstr"
                       length="255"
                       name="PriceGuaranty" />
                     <externalMetadataColumn
-                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output].ExternalColumns[DescriptionGuaranty]"
+                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output].ExternalColumns[DescriptionGuaranty]"
                       dataType="wstr"
                       length="255"
                       name="DescriptionGuaranty" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Error Output]"
+                  refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Error Output].Columns[GuarantyID]"
+                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Error Output].Columns[GuarantyID]"
                       dataType="i4"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Error Output].Columns[GuarantyID]"
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Error Output].Columns[GuarantyID]"
                       name="GuarantyID" />
                     <outputColumn
-                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Error Output].Columns[NameGuaranty]"
+                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Error Output].Columns[NameGuaranty]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Error Output].Columns[NameGuaranty]"
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Error Output].Columns[NameGuaranty]"
                       name="NameGuaranty" />
                     <outputColumn
-                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Error Output].Columns[Duration]"
+                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Error Output].Columns[Duration]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Error Output].Columns[Duration]"
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Error Output].Columns[Duration]"
                       name="Duration" />
                     <outputColumn
-                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Error Output].Columns[PriceGuaranty]"
+                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Error Output].Columns[PriceGuaranty]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Error Output].Columns[PriceGuaranty]"
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Error Output].Columns[PriceGuaranty]"
                       name="PriceGuaranty" />
                     <outputColumn
-                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Error Output].Columns[DescriptionGuaranty]"
+                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Error Output].Columns[DescriptionGuaranty]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Error Output].Columns[DescriptionGuaranty]"
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Error Output].Columns[DescriptionGuaranty]"
                       name="DescriptionGuaranty" />
                     <outputColumn
-                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3595,7 +3595,7 @@
               refId="Package\From stageDimGuaranties to DimGuarantiesCastedData.Paths[OLE DB Source Output]"
               endId="Package\From stageDimGuaranties to DimGuarantiesCastedData\Data Conversion.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
-              startId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties.Outputs[OLE DB Source Output]" />
+              startId="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -3952,14 +3952,14 @@
         <NodeLayout
           Size="190.4,41.6"
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\datamartDimGuaranties"
-          TopLeft="1449.4428567536,451.523530012348" />
+          TopLeft="1450.8714282065,431.641176792329" />
         <NodeLayout
           Size="251.2,41.6"
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in DescriptionGuaranty"
           TopLeft="1085.9,208.7" />
         <NodeLayout
-          Size="220,41.6"
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty"
+          Size="226.4,41.6"
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGuaranty"
           TopLeft="282.5,208.7" />
         <NodeLayout
           Size="152.8,41.6"
@@ -3970,8 +3970,8 @@
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1"
           TopLeft="600.7,310.3" />
         <NodeLayout
-          Size="204,41.6"
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID"
+          Size="210.4,41.6"
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GuarantyID"
           TopLeft="563.5,208.7" />
         <NodeLayout
           Size="164.8,41.6"
@@ -3982,21 +3982,21 @@
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All"
           TopLeft="1467.5,265.5" />
         <NodeLayout
-          Size="195.2,41.6"
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData"
+          Size="201.6,41.6"
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData"
           TopLeft="828.9,5.49999999999973" />
         <NodeLayout
           Size="196.8,41.6"
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in Duration"
           TopLeft="828.1,208.7" />
         <NodeLayout
-          Size="216,41.6"
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty"
+          Size="221.6,41.6"
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGuaranty"
           TopLeft="5.5,208.7" />
         <NodeLayout
-          Size="203.2,41.6"
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2"
-          TopLeft="563.9,398.135293924602" />
+          Size="208.8,41.6"
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2"
+          TopLeft="566.7571429058,381.311764276894" />
         <NodeLayout
           Size="154.4,41.6"
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Conditional Split"
@@ -4007,25 +4007,25 @@
           TopLeft="1472.3,349.099999999999" />
         <EdgeLayout
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Union All Output 11]"
-          TopLeft="665.5,351.9">
+          TopLeft="668.3285714529,351.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46.2352939246022"
+              EndConnector="0,29.4117642768936"
               Start="0,0"
-              End="0,38.7352939246022">
+              End="0,21.9117642768936">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.7352939246022" />
+                    End="0,21.9117642768936" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-8,11.3676469623011,16,16"
+              BoundingBox="-8,2.95588213844681,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4057,50 +4057,50 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-760.714285714286,60.0000000000001"
+              EndConnector="-757.914285714286,60"
               Start="0,0"
-              End="-760.714285714286,52.5000000000001">
+              End="-757.914285714286,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.6390598768887" />
+                    End="0,10.6390598768886" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.6390598768887"
-                    Point2="0,14.6390598768887"
-                    Point3="-4,14.6390598768887" />
+                    Point1="0,10.6390598768886"
+                    Point2="0,14.6390598768886"
+                    Point3="-4,14.6390598768886" />
                   <mssgle:LineSegment
-                    End="-756.714285714286,14.6390598768887" />
+                    End="-753.914285714286,14.6390598768886" />
                   <mssgle:CubicBezierSegment
-                    Point1="-756.714285714286,14.6390598768887"
-                    Point2="-760.714285714286,14.6390598768887"
-                    Point3="-760.714285714286,18.6390598768887" />
+                    Point1="-753.914285714286,14.6390598768886"
+                    Point2="-757.914285714286,14.6390598768886"
+                    Point3="-757.914285714286,18.6390598768886" />
                   <mssgle:LineSegment
-                    End="-760.714285714286,52.5000000000001" />
+                    End="-757.914285714286,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-411.734076450893,19.6390598768887,62.7538671875,11.4140625"
+              BoundingBox="-410.334076450893,19.6390598768886,62.7538671875,11.4140625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[OLE DB Source Output]"
-          TopLeft="926.5,47.0999999999997">
+          TopLeft="928.1,47.0999999999997">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
+              EndConnector="0,60.0000000000003"
               Start="0,0"
-              End="0,52.4999999999999">
+              End="0,52.5000000000003">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4999999999999" />
+                    End="0,52.5000000000003" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4179,9 +4179,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-502.628571428571,60.0000000000001"
+              EndConnector="-499.428571428571,60"
               Start="0,0"
-              End="-502.628571428571,52.5000000000001">
+              End="-499.428571428571,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -4192,20 +4192,20 @@
                     Point2="0,22.3502090106828"
                     Point3="-4,22.3502090106828" />
                   <mssgle:LineSegment
-                    End="-498.628571428571,22.3502090106828" />
+                    End="-495.428571428571,22.3502090106828" />
                   <mssgle:CubicBezierSegment
-                    Point1="-498.628571428571,22.3502090106828"
-                    Point2="-502.628571428571,22.3502090106828"
-                    Point3="-502.628571428571,26.3502090106828" />
+                    Point1="-495.428571428571,22.3502090106828"
+                    Point2="-499.428571428571,22.3502090106828"
+                    Point3="-499.428571428571,26.3502090106828" />
                   <mssgle:LineSegment
-                    End="-502.628571428571,52.5000000000001" />
+                    End="-499.428571428571,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-284.846219308036,27.3502090106828,67.0638671875,11.4140625"
+              BoundingBox="-283.246219308036,27.3502090106828,67.0638671875,11.4140625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4251,9 +4251,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-250.542857142857,59.9999999999999"
+              EndConnector="-247.342857142857,60"
               Start="0,0"
-              End="-250.542857142857,52.4999999999999">
+              End="-247.342857142857,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -4264,20 +4264,20 @@
                     Point2="0,27.8205637157602"
                     Point3="-4,27.8205637157602" />
                   <mssgle:LineSegment
-                    End="-246.542857142857,27.8205637157602" />
+                    End="-243.342857142857,27.8205637157602" />
                   <mssgle:CubicBezierSegment
-                    Point1="-246.542857142857,27.8205637157602"
-                    Point2="-250.542857142857,27.8205637157602"
-                    Point3="-250.542857142857,31.8205637157602" />
+                    Point1="-243.342857142857,27.8205637157602"
+                    Point2="-247.342857142857,27.8205637157602"
+                    Point3="-247.342857142857,31.8205637157602" />
                   <mssgle:LineSegment
-                    End="-250.542857142857,52.4999999999999" />
+                    End="-247.342857142857,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-151.335159040179,32.8205637157602,52.1274609375,11.4140625"
+              BoundingBox="-149.735159040179,32.8205637157602,52.1274609375,11.4140625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4389,7 +4389,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output5]"
-          TopLeft="665.5,250.3">
+          TopLeft="667.1,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4445,30 +4445,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output3]"
-          TopLeft="1553.5,390.699999999999">
+          TopLeft="1549.78571410325,390.699999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-8.8571432463973,60.8235300123485"
+              EndConnector="0,40.94117679233"
               Start="0,0"
-              End="-8.8571432463973,53.3235300123485">
+              End="0,33.44117679233">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.4117650061742" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.4117650061742"
-                    Point2="0,30.4117650061742"
-                    Point3="-4,30.4117650061742" />
-                  <mssgle:LineSegment
-                    End="-4.8571432463973,30.4117650061742" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-4.8571432463973,30.4117650061742"
-                    Point2="-8.8571432463973,30.4117650061742"
-                    Point3="-8.8571432463973,34.4117650061742" />
-                  <mssgle:LineSegment
-                    End="-8.8571432463973,53.3235300123485" />
+                    End="0,33.44117679233" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4479,30 +4467,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output2]"
-          TopLeft="113.5,250.3">
+          TopLeft="116.3,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="511.466666666667,59.9999999999998"
+              EndConnector="508.666666666667,60"
               Start="0,0"
-              End="511.466666666667,52.4999999999998">
+              End="508.666666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.6526946107783" />
+                    End="0,39.6526946107785" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.6526946107783"
-                    Point2="0,43.6526946107783"
-                    Point3="4,43.6526946107783" />
+                    Point1="0,39.6526946107785"
+                    Point2="0,43.6526946107785"
+                    Point3="4,43.6526946107785" />
                   <mssgle:LineSegment
-                    End="507.466666666667,43.6526946107783" />
+                    End="504.666666666667,43.6526946107785" />
                   <mssgle:CubicBezierSegment
-                    Point1="507.466666666667,43.6526946107783"
-                    Point2="511.466666666667,43.6526946107783"
-                    Point3="511.466666666667,47.6526946107783" />
+                    Point1="504.666666666667,43.6526946107785"
+                    Point2="508.666666666667,43.6526946107785"
+                    Point3="508.666666666667,47.6526946107785" />
                   <mssgle:LineSegment
-                    End="511.466666666667,52.4999999999998" />
+                    End="508.666666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4513,30 +4501,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output1]"
-          TopLeft="392.5,250.3">
+          TopLeft="395.7,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="252.733333333333,59.9999999999998"
+              EndConnector="249.533333333333,60"
               Start="0,0"
-              End="252.733333333333,52.4999999999998">
+              End="249.533333333333,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.560975609756" />
+                    End="0,31.5609756097561" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.560975609756"
-                    Point2="0,35.560975609756"
-                    Point3="4,35.560975609756" />
+                    Point1="0,31.5609756097561"
+                    Point2="0,35.5609756097561"
+                    Point3="4,35.5609756097561" />
                   <mssgle:LineSegment
-                    End="248.733333333333,35.560975609756" />
+                    End="245.533333333333,35.5609756097561" />
                   <mssgle:CubicBezierSegment
-                    Point1="248.733333333333,35.560975609756"
-                    Point2="252.733333333333,35.560975609756"
-                    Point3="252.733333333333,39.560975609756" />
+                    Point1="245.533333333333,35.5609756097561"
+                    Point2="249.533333333333,35.5609756097561"
+                    Point3="249.533333333333,39.5609756097561" />
                   <mssgle:LineSegment
-                    End="252.733333333333,52.4999999999998" />
+                    End="249.533333333333,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4695,7 +4683,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData">
+    design-time-name="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesCastedData">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4708,7 +4696,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2">
+    design-time-name="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGuarantiesError Table 2">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4726,8 +4714,8 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties"
+          Size="172.8,41.6"
+          Id="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties"
           TopLeft="159.214288468264,43.4567338748266" />
         <NodeLayout
           Size="152.8,41.6"
@@ -4747,7 +4735,7 @@
           TopLeft="406.971427899964,201.164706986998" />
         <EdgeLayout
           Id="Package\From stageDimGuaranties to DimGuarantiesCastedData.Paths[OLE DB Source Output]"
-          TopLeft="240.992858294808,85.0567338748266">
+          TopLeft="242.392858294808,85.0567338748266">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4865,7 +4853,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties">
+    design-time-name="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGuaranties">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
