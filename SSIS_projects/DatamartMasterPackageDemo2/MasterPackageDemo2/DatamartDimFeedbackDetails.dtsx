@@ -1,0 +1,3260 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/2/2020 11:58:40 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="RD7"
+  DTS:CreatorName="TRAINING\zfeshtc"
+  DTS:DTSID="{9CFC2CB8-8A20-4D23-B55B-E4C48B655946}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="DatamartDimFeedbackDetails"
+  DTS:PackageType="5"
+  DTS:VersionBuild="75"
+  DTS:VersionGUID="{5B21CDD0-2F59-46F6-A3B7-1604877DE523}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Checking for valid data"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F817DD64-52E9-462E-A83E-1EC2A5417121}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Checking for valid data"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Checking for valid data\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Checking for valid data\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Checking for valid data\Data Conversion.Inputs[Data Conversion Input].Columns[FeedbackDetailID]"
+                      cachedDataType="i4"
+                      cachedName="FeedbackDetailID"
+                      lineageId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].Columns[FeedbackDetailID]" />
+                    <inputColumn
+                      refId="Package\Checking for valid data\Data Conversion.Inputs[Data Conversion Input].Columns[Comment]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Comment"
+                      lineageId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].Columns[Comment]" />
+                    <inputColumn
+                      refId="Package\Checking for valid data\Data Conversion.Inputs[Data Conversion Input].Columns[Rating]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Rating"
+                      lineageId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].Columns[Rating]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Checking for valid data\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Checking for valid data\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Checking for valid data\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FeedbackDetailID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Checking for valid data\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FeedbackDetailID]"
+                      name="Copy of FeedbackDetailID"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].Columns[FeedbackDetailID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Checking for valid data\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Comment]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="255"
+                      lineageId="Package\Checking for valid data\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Comment]"
+                      name="Copy of Comment"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].Columns[Comment]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Checking for valid data\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Rating]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Checking for valid data\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Rating]"
+                      name="Copy of Rating"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].Columns[Rating]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Checking for valid data\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Checking for valid data\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Checking for valid data\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Checking for valid data\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Checking for valid data\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Checking for valid data\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Checking for valid data\DimFeedbackDetailsCastedData"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DimFeedbackDetailsCastedData"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[datamart].[DimFeedbackDetailsCastedData]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Connections[OleDbConnection]"
+                  connectionManagerID="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DatamartDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Inputs[OLE DB Destination Input].Columns[Copy of Comment]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Comment"
+                      externalMetadataColumnId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Inputs[OLE DB Destination Input].ExternalColumns[Comment]"
+                      lineageId="Package\Checking for valid data\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Comment]" />
+                    <inputColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Inputs[OLE DB Destination Input].Columns[Copy of Rating]"
+                      cachedDataType="i4"
+                      cachedName="Copy of Rating"
+                      externalMetadataColumnId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
+                      lineageId="Package\Checking for valid data\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Rating]" />
+                    <inputColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Inputs[OLE DB Destination Input].Columns[Copy of FeedbackDetailID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of FeedbackDetailID"
+                      externalMetadataColumnId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Inputs[OLE DB Destination Input].ExternalColumns[FeedbackDetailID]"
+                      lineageId="Package\Checking for valid data\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FeedbackDetailID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Inputs[OLE DB Destination Input].ExternalColumns[FeedbackDetailID]"
+                      dataType="i4"
+                      name="FeedbackDetailID" />
+                    <externalMetadataColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Inputs[OLE DB Destination Input].ExternalColumns[Comment]"
+                      dataType="wstr"
+                      length="255"
+                      name="Comment" />
+                    <externalMetadataColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
+                      dataType="i4"
+                      name="Rating" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Checking for valid data\DimFeedbackDetailsErrors"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DimFeedbackDetailsErrors"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[error].[DimFeedbackDetailsErrors]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Checking for valid data\DimFeedbackDetailsErrors.Connections[OleDbConnection]"
+                  connectionManagerID="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DatamartDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Checking for valid data\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].Columns[Comment]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Comment"
+                      externalMetadataColumnId="Package\Checking for valid data\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[Comment]"
+                      lineageId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].Columns[Comment]" />
+                    <inputColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].Columns[Rating]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Rating"
+                      externalMetadataColumnId="Package\Checking for valid data\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
+                      lineageId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].Columns[Rating]" />
+                    <inputColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].Columns[FeedbackDetailID]"
+                      cachedDataType="i4"
+                      cachedName="FeedbackDetailID"
+                      externalMetadataColumnId="Package\Checking for valid data\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[FeedbackDetailID]"
+                      lineageId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].Columns[FeedbackDetailID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[FeedbackDetailID]"
+                      dataType="i4"
+                      name="FeedbackDetailID" />
+                    <externalMetadataColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[Comment]"
+                      dataType="wstr"
+                      length="255"
+                      name="Comment" />
+                    <externalMetadataColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
+                      dataType="wstr"
+                      length="255"
+                      name="Rating" />
+                    <externalMetadataColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
+                      dataType="wstr"
+                      length="255"
+                      name="ErrorDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[ErrorTime]"
+                      dataType="dbTimeStamp"
+                      name="ErrorTime" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Checking for valid data\DimFeedbackDetailsErrors.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Checking for valid data\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsErrors.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Checking for valid data\DimFeedbackDetailsErrors.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Checking for valid data\DimFeedbackDetailsErrors.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Checking for valid data\DimFeedbackDetailsErrors.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Checking for valid data\Error"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Error"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Checking for valid data\Error.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Checking for valid data\Error.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Checking for valid data\Error.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Checking for valid data\Error.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="47"
+                      lineageId="Package\Checking for valid data\Error.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      name="ErrorDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Error in data coversion for description is NULL"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Error in data coversion for description is NULL"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Checking for valid data\Error.Outputs[Derived Column Output].Columns[ErrorDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Checking for valid data\Error.Outputs[Derived Column Output].Columns[ErrorDate]"
+                      name="ErrorDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Checking for valid data\Error.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Checking for valid data\Error.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Checking for valid data\Error.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Checking for valid data\Error.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Checking for valid data\Error.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Checking for valid data\Error.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Checking for valid data\TakingDataFromStagingTable"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="TakingDataFromStagingTable"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimFeedbackDetails]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM [dbo].[DimFeedbackDetails]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Checking for valid data\TakingDataFromStagingTable.Connections[OleDbConnection]"
+                  connectionManagerID="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DatamartDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].Columns[FeedbackDetailID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].ExternalColumns[FeedbackDetailID]"
+                      lineageId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].Columns[FeedbackDetailID]"
+                      name="FeedbackDetailID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].Columns[Comment]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].ExternalColumns[Comment]"
+                      length="255"
+                      lineageId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].Columns[Comment]"
+                      name="Comment"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].Columns[Rating]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].ExternalColumns[Rating]"
+                      length="255"
+                      lineageId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].Columns[Rating]"
+                      name="Rating"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].ExternalColumns[FeedbackDetailID]"
+                      dataType="i4"
+                      name="FeedbackDetailID" />
+                    <externalMetadataColumn
+                      refId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].ExternalColumns[Comment]"
+                      dataType="wstr"
+                      length="255"
+                      name="Comment" />
+                    <externalMetadataColumn
+                      refId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output].ExternalColumns[Rating]"
+                      dataType="wstr"
+                      length="255"
+                      name="Rating" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Error Output].Columns[FeedbackDetailID]"
+                      dataType="i4"
+                      lineageId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Error Output].Columns[FeedbackDetailID]"
+                      name="FeedbackDetailID" />
+                    <outputColumn
+                      refId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Error Output].Columns[Comment]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Error Output].Columns[Comment]"
+                      name="Comment" />
+                    <outputColumn
+                      refId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Error Output].Columns[Rating]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Error Output].Columns[Rating]"
+                      name="Rating" />
+                    <outputColumn
+                      refId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Checking for valid data.Paths[Data Conversion Error Output]"
+              endId="Package\Checking for valid data\Error.Inputs[Derived Column Input]"
+              name="Data Conversion Error Output"
+              startId="Package\Checking for valid data\Data Conversion.Outputs[Data Conversion Error Output]" />
+            <path
+              refId="Package\Checking for valid data.Paths[Data Conversion Output]"
+              endId="Package\Checking for valid data\DimFeedbackDetailsCastedData.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Checking for valid data\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Checking for valid data.Paths[Derived Column Output]"
+              endId="Package\Checking for valid data\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Checking for valid data\Error.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Checking for valid data.Paths[OLE DB Source Output]"
+              endId="Package\Checking for valid data\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Checking for valid data\TakingDataFromStagingTable.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DatamartDimFeedbackDetails"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F62408A4-1E46-4221-9154-73F313129885}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DatamartDimFeedbackDetails"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\DatamartDimFeedbackDetails.EventHandlers[OnPostExecute]"
+          DTS:CreationName="OnPostExecute"
+          DTS:DTSID="{BFAC6A8F-DDE0-4911-A95C-B7F44C20D257}"
+          DTS:EventID="-1"
+          DTS:EventName="OnPostExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{2F2D514D-EEB1-4E4C-B540-E2BDCC96B773}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\DatamartDimFeedbackDetails.EventHandlers[OnPostExecute]\Execute SQL Task"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{343FCC20-46D1-4DF0-BD42-A6AFFFBA4879}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute SQL Task">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+                  SQLTask:SqlStatementSource="Update p&#xA;  set endtime = GETDATE(), PackageStatus = 'Finished'&#xA;  FROM [datamart].[PackageInfo] p&#xA;  where PackageName = 'DatamartDimFeedbackDetails' and PackageStatus = 'Started'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DatamartDimFeedbackDetails\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DatamartDimFeedbackDetails\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Conditional Split.Inputs[Conditional Split Input].Columns[FeedbackDetailID]"
+                      cachedDataType="i4"
+                      cachedName="FeedbackDetailID"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[FeedbackDetailID]" />
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Conditional Split.Inputs[Conditional Split Input].Columns[Rating]"
+                      cachedDataType="i4"
+                      cachedName="Rating"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Rating]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Conditional Split.Outputs[&quot;Error rating is greater than 5&quot;]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="&quot;Error rating is greater than 5&quot;"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Rating]} &gt; 5</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">Rating &gt; 5</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Conditional Split.Outputs[&quot;Error rating is lower than 1&quot;]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="&quot;Error rating is lower than 1&quot;"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Rating]} &lt; 1</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">Rating &lt; 1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Conditional Split.Outputs[&quot;Error feedbackdetailID is NULL&quot;]"
+                  description="Output 4 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="&quot;Error feedbackdetailID is NULL&quot;"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[FeedbackDetailID]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(FeedbackDetailID)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">2</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Conditional Split.Outputs[Good Rows]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Good Rows"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DatamartDimFeedbackDetailsCastedData"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[datamart].[DimFeedbackDetailsCastedData]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Connections[OleDbConnection]"
+                  connectionManagerID="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DatamartDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[FeedbackDetailID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].ExternalColumns[FeedbackDetailID]"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[FeedbackDetailID]"
+                      name="FeedbackDetailID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Comment]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].ExternalColumns[Comment]"
+                      length="255"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Comment]"
+                      name="Comment"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Rating]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].ExternalColumns[Rating]"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Rating]"
+                      name="Rating"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].ExternalColumns[FeedbackDetailID]"
+                      dataType="i4"
+                      name="FeedbackDetailID" />
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].ExternalColumns[Comment]"
+                      dataType="wstr"
+                      length="255"
+                      name="Comment" />
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].ExternalColumns[Rating]"
+                      dataType="i4"
+                      name="Rating" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Error Output].Columns[FeedbackDetailID]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Error Output].Columns[FeedbackDetailID]"
+                      name="FeedbackDetailID" />
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Error Output].Columns[Comment]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Error Output].Columns[Comment]"
+                      name="Comment" />
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Error Output].Columns[Rating]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Error Output].Columns[Rating]"
+                      name="Rating" />
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DimFeedbackDetailsErrors"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[error].[DimFeedbackDetailsErrors]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Connections[OleDbConnection]"
+                  connectionManagerID="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DatamartDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].Columns[Comment]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Comment"
+                      externalMetadataColumnId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[Comment]"
+                      lineageId="Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[Comment]" />
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].Columns[Rating]"
+                      cachedDataType="i4"
+                      cachedName="Rating"
+                      externalMetadataColumnId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
+                      lineageId="Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[Rating]" />
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].Columns[FeedbackDetailID]"
+                      cachedDataType="i4"
+                      cachedName="FeedbackDetailID"
+                      externalMetadataColumnId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[FeedbackDetailID]"
+                      lineageId="Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[FeedbackDetailID]" />
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].Columns[ErrorDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="ErrorDescription"
+                      externalMetadataColumnId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
+                      lineageId="Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]" />
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].Columns[ErrorDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ErrorDate"
+                      externalMetadataColumnId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[ErrorTime]"
+                      lineageId="Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[ErrorDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[FeedbackDetailID]"
+                      dataType="i4"
+                      name="FeedbackDetailID" />
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[Comment]"
+                      dataType="wstr"
+                      length="255"
+                      name="Comment" />
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
+                      dataType="wstr"
+                      length="255"
+                      name="Rating" />
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
+                      dataType="wstr"
+                      length="255"
+                      name="ErrorDescription" />
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input].ExternalColumns[ErrorTime]"
+                      dataType="dbTimeStamp"
+                      name="ErrorTime" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DatamartDimFeedbackDetails\Error1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Error1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DatamartDimFeedbackDetails\Error1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Error1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Error1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Error1.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="28"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error1.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      name="ErrorDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Error rating is lower than 1"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Error rating is lower than 1"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Error1.Outputs[Derived Column Output].Columns[ErrorDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error1.Outputs[Derived Column Output].Columns[ErrorDate]"
+                      name="ErrorDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Error1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Error1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Error1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Error1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DatamartDimFeedbackDetails\Error2"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Error2"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DatamartDimFeedbackDetails\Error2.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Error2.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Error2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Error2.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="30"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error2.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      name="ErrorDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Error rating is greater than 5"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Error rating is greater than 5"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Error2.Outputs[Derived Column Output].Columns[ErrorDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error2.Outputs[Derived Column Output].Columns[ErrorDate]"
+                      name="ErrorDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Error2.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Error2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Error2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Error2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DatamartDimFeedbackDetails\Error3"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Error3"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DatamartDimFeedbackDetails\Error3.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Error3.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Error3.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Error3.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="24"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error3.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      name="ErrorDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Error feedbackID is NULL"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Error feedbackID is NULL"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Error3.Outputs[Derived Column Output].Columns[ErrorDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error3.Outputs[Derived Column Output].Columns[ErrorDate]"
+                      name="ErrorDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Error3.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Error3.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Error3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Error3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DatamartDimFeedbackDetails\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[datamart].[DimFeedbackDetails]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DatamartDimFeedbackDetails\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DatamartDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DatamartDimFeedbackDetails\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Insert Destination.Inputs[OLE DB Destination Input].Columns[FeedbackDetailID]"
+                      cachedDataType="i4"
+                      cachedName="FeedbackDetailID"
+                      externalMetadataColumnId="Package\DatamartDimFeedbackDetails\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FeedbackDetailID]"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[FeedbackDetailID]" />
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Insert Destination.Inputs[OLE DB Destination Input].Columns[Comment]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Comment"
+                      externalMetadataColumnId="Package\DatamartDimFeedbackDetails\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Comment]"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Comment]" />
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Insert Destination.Inputs[OLE DB Destination Input].Columns[Rating]"
+                      cachedDataType="i4"
+                      cachedName="Rating"
+                      externalMetadataColumnId="Package\DatamartDimFeedbackDetails\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Rating]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FeedbackKey]"
+                      dataType="i4"
+                      name="FeedbackKey" />
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FeedbackDetailID]"
+                      dataType="i4"
+                      name="FeedbackDetailID" />
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Comment]"
+                      dataType="wstr"
+                      length="255"
+                      name="Comment" />
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
+                      dataType="i4"
+                      name="Rating" />
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreateDate]"
+                      dataType="dbTimeStamp"
+                      name="CreateDate" />
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DatamartDimFeedbackDetails\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [datamart].[DimFeedbackDetails] SET [Comment] = ?,[Rating] = ? WHERE [FeedbackDetailID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DatamartDimFeedbackDetails\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DatamartDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DatamartDimFeedbackDetails\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\OLE DB Command.Inputs[OLE DB Command Input].Columns[Comment]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Comment"
+                      externalMetadataColumnId="Package\DatamartDimFeedbackDetails\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Comment]" />
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\OLE DB Command.Inputs[OLE DB Command Input].Columns[FeedbackDetailID]"
+                      cachedDataType="i4"
+                      cachedName="FeedbackDetailID"
+                      externalMetadataColumnId="Package\DatamartDimFeedbackDetails\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[FeedbackDetailID]" />
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\OLE DB Command.Inputs[OLE DB Command Input].Columns[Rating]"
+                      cachedDataType="i4"
+                      cachedName="Rating"
+                      externalMetadataColumnId="Package\DatamartDimFeedbackDetails\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Rating]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Comment], [FeedbackDetailID], [Rating] FROM [datamart].[DimFeedbackDetails]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DatamartDB]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Comment]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Comment"
+                      externalMetadataColumnId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Comment]"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Comment]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[FeedbackDetailID]"
+                      cachedDataType="i4"
+                      cachedName="FeedbackDetailID"
+                      externalMetadataColumnId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[FeedbackDetailID]"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[FeedbackDetailID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Rating]"
+                      cachedDataType="i4"
+                      cachedName="Rating"
+                      externalMetadataColumnId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Rating]"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Rating]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Comment]"
+                      dataType="wstr"
+                      length="255"
+                      name="Comment" />
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[FeedbackDetailID]"
+                      dataType="i4"
+                      name="FeedbackDetailID" />
+                    <externalMetadataColumn
+                      refId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Rating]"
+                      dataType="i4"
+                      name="Rating" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DatamartDimFeedbackDetails\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 1].Columns[FeedbackDetailID]"
+                      cachedDataType="i4"
+                      cachedName="FeedbackDetailID"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[FeedbackDetailID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[FeedbackDetailID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 1].Columns[Comment]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Comment"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Comment]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[Comment]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 1].Columns[Rating]"
+                      cachedDataType="i4"
+                      cachedName="Rating"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Rating]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[Rating]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 1].Columns[ErrorDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="ErrorDescription"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error2.Outputs[Derived Column Output].Columns[ErrorDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 1].Columns[ErrorDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ErrorDate"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error2.Outputs[Derived Column Output].Columns[ErrorDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[ErrorDate]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 2].Columns[FeedbackDetailID]"
+                      cachedDataType="i4"
+                      cachedName="FeedbackDetailID"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[FeedbackDetailID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[FeedbackDetailID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 2].Columns[Comment]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Comment"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Comment]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[Comment]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 2].Columns[Rating]"
+                      cachedDataType="i4"
+                      cachedName="Rating"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Rating]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[Rating]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 2].Columns[ErrorDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="28"
+                      cachedName="ErrorDescription"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error1.Outputs[Derived Column Output].Columns[ErrorDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 2].Columns[ErrorDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ErrorDate"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error1.Outputs[Derived Column Output].Columns[ErrorDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[ErrorDate]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 3].Columns[FeedbackDetailID]"
+                      cachedDataType="i4"
+                      cachedName="FeedbackDetailID"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[FeedbackDetailID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[FeedbackDetailID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 3].Columns[Comment]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Comment"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Comment]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[Comment]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 3].Columns[Rating]"
+                      cachedDataType="i4"
+                      cachedName="Rating"
+                      lineageId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Rating]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[Rating]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 3].Columns[ErrorDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ErrorDate"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error3.Outputs[Derived Column Output].Columns[ErrorDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[ErrorDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 3].Columns[ErrorDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="24"
+                      cachedName="ErrorDescription"
+                      lineageId="Package\DatamartDimFeedbackDetails\Error3.Outputs[Derived Column Output].Columns[ErrorDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 4]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 4">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[FeedbackDetailID]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[FeedbackDetailID]"
+                      name="FeedbackDetailID" />
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[Comment]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[Comment]"
+                      name="Comment" />
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[Rating]"
+                      dataType="i4"
+                      lineageId="Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[Rating]"
+                      name="Rating" />
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]"
+                      name="ErrorDescription" />
+                    <outputColumn
+                      refId="Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[ErrorDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1].Columns[ErrorDate]"
+                      name="ErrorDate" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DatamartDimFeedbackDetails.Paths[&quot;Error feedbackdetailID is NULL&quot;]"
+              endId="Package\DatamartDimFeedbackDetails\Error3.Inputs[Derived Column Input]"
+              name="&quot;Error feedbackdetailID is NULL&quot;"
+              startId="Package\DatamartDimFeedbackDetails\Conditional Split.Outputs[&quot;Error feedbackdetailID is NULL&quot;]" />
+            <path
+              refId="Package\DatamartDimFeedbackDetails.Paths[&quot;Error rating is greater than 5&quot;]"
+              endId="Package\DatamartDimFeedbackDetails\Error2.Inputs[Derived Column Input]"
+              name="&quot;Error rating is greater than 5&quot;"
+              startId="Package\DatamartDimFeedbackDetails\Conditional Split.Outputs[&quot;Error rating is greater than 5&quot;]" />
+            <path
+              refId="Package\DatamartDimFeedbackDetails.Paths[&quot;Error rating is lower than 1&quot;]"
+              endId="Package\DatamartDimFeedbackDetails\Error1.Inputs[Derived Column Input]"
+              name="&quot;Error rating is lower than 1&quot;"
+              startId="Package\DatamartDimFeedbackDetails\Conditional Split.Outputs[&quot;Error rating is lower than 1&quot;]" />
+            <path
+              refId="Package\DatamartDimFeedbackDetails.Paths[Changing Attribute Updates Output]"
+              endId="Package\DatamartDimFeedbackDetails\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\DatamartDimFeedbackDetails.Paths[Derived Column Output]"
+              endId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\DatamartDimFeedbackDetails\Error2.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DatamartDimFeedbackDetails.Paths[Derived Column Output1]"
+              endId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\DatamartDimFeedbackDetails\Error1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DatamartDimFeedbackDetails.Paths[Derived Column Output2]"
+              endId="Package\DatamartDimFeedbackDetails\Union All.Inputs[Union All Input 3]"
+              name="Derived Column Output"
+              startId="Package\DatamartDimFeedbackDetails\Error3.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DatamartDimFeedbackDetails.Paths[Good Rows]"
+              endId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Good Rows"
+              startId="Package\DatamartDimFeedbackDetails\Conditional Split.Outputs[Good Rows]" />
+            <path
+              refId="Package\DatamartDimFeedbackDetails.Paths[New Output]"
+              endId="Package\DatamartDimFeedbackDetails\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="New Output"
+              startId="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\DatamartDimFeedbackDetails.Paths[OLE DB Source Output]"
+              endId="Package\DatamartDimFeedbackDetails\Conditional Split.Inputs[Conditional Split Input]"
+              name="OLE DB Source Output"
+              startId="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DatamartDimFeedbackDetails.Paths[Union All Output 1]"
+              endId="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors.Inputs[OLE DB Destination Input]"
+              name="Union All Output 1"
+              startId="Package\DatamartDimFeedbackDetails\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B03861F5-1495-45FB-A8E8-9096D19A037B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+          SQLTask:SqlStatementSource="exec [datamart].[SP_RedirectDuplicatesDiscounts]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCATE TABLE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E1593704-29A6-4238-ABE1-2D8DD241FEBF}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCATE TABLE"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\TRUNCATE TABLE.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{8E1068A9-04F1-4629-9591-53E1CF6E05C4}"
+          DTS:EventID="286"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{099278A9-6A28-4F3B-B307-35F621B3D702}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\TRUNCATE TABLE.EventHandlers[OnPreExecute]\Execute SQL Task"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{A140EF32-AA97-4442-AD69-12A6875A8BFF}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute SQL Task">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+                  SQLTask:SqlStatementSource="INSERT INTO [datamart].[PackageInfo](&#xA;       [PackageName]&#xA;      ,[StartTime]&#xA;      ,[EndTime]&#xA;      ,[PackageStatus]&#xA;    )&#xA;  VALUES ('DatamartDimFeedbackDetails', getdate(), NULL, 'Started')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE datamart.DimFeedbackDetailsCastedData" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{2DDDF51D-4FAF-4698-92DE-51F1D71CF96D}"
+      DTS:From="Package\Checking for valid data"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Execute SQL Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{5730F2FE-0B7A-4373-BF89-1FB61314B0F3}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DatamartDimFeedbackDetails" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{6D8BE730-E9C5-49C7-A9BD-70CFE08DB0D7}"
+      DTS:From="Package\TRUNCATE TABLE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Checking for valid data" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{6003AF4B-4DAF-409A-9881-9E0106AF8EE3}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{0F05548E-6791-40F8-B23E-4C618A49B891}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6CB2F9C1-C1E0-47A4-BF06-96E85C639023}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+              SQLTask:SqlStatementSource="Update p&#xA;  set EndTime = GETDATE(), PackageStatus = 'Error'&#xA;  FROM [datamart].[PackageInfo] p&#xA;  where PackageName = 'DatamartDimFeedbackDetails' and PackageStatus = 'Started'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Checking for valid data"
+          TopLeft="225.922906341775,138.482168141973" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\DatamartDimFeedbackDetails"
+          TopLeft="198.764175720535,305.122506613495" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="249.285718531025,219.941179162491" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\TRUNCATE TABLE"
+          TopLeft="229.024947210929,57.0009345062327" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="319.122906341775,180.082168141973">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.36281218925,39.859011020518"
+              Start="0,0"
+              End="11.36281218925,32.359011020518">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.929505510259" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.929505510259"
+                    Point2="0,19.929505510259"
+                    Point3="4,19.929505510259" />
+                  <mssgle:LineSegment
+                    End="7.36281218925001,19.929505510259" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.36281218925001,19.929505510259"
+                    Point2="11.36281218925,19.929505510259"
+                    Point3="11.36281218925,23.929505510259" />
+                  <mssgle:LineSegment
+                    End="11.36281218925,32.359011020518" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="330.485718531025,261.541179162491">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-23.32154281049,43.581327451004"
+              Start="0,0"
+              End="-23.32154281049,36.081327451004">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.790663725502" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.790663725502"
+                    Point2="0,21.790663725502"
+                    Point3="-4,21.790663725502" />
+                  <mssgle:LineSegment
+                    End="-19.32154281049,21.790663725502" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19.32154281049,21.790663725502"
+                    Point2="-23.32154281049,21.790663725502"
+                    Point3="-23.32154281049,25.790663725502" />
+                  <mssgle:LineSegment
+                    End="-23.32154281049,36.081327451004" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="311.024947210929,98.6009345062327">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.09795913084599,39.8812336357403"
+              Start="0,0"
+              End="8.09795913084599,32.3812336357403">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.9406168178702" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.9406168178702"
+                    Point2="0,19.9406168178702"
+                    Point3="4,19.9406168178702" />
+                  <mssgle:LineSegment
+                    End="4.09795913084599,19.9406168178702" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.09795913084599,19.9406168178702"
+                    Point2="8.09795913084599,19.9406168178702"
+                    Point3="8.09795913084599,23.9406168178702" />
+                  <mssgle:LineSegment
+                    End="8.09795913084599,32.3812336357403" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package.EventHandlers[OnError]\Execute SQL Task"
+          TopLeft="462.4,123.2" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Checking for valid data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="217,42"
+          Id="Package\Checking for valid data\TakingDataFromStagingTable"
+          TopLeft="325.714291261167,22.7226893943074" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\Checking for valid data\DimFeedbackDetailsErrors"
+          TopLeft="759.200011103494,174.188237327523" />
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Checking for valid data\DimFeedbackDetailsCastedData"
+          TopLeft="308.673475478898,248.983196755182" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Checking for valid data\Data Conversion"
+          TopLeft="337.240822900767,159.178713677746" />
+        <NodeLayout
+          Size="102,42"
+          Id="Package\Checking for valid data\Error"
+          TopLeft="581,75" />
+        <EdgeLayout
+          Id="Package\Checking for valid data.Paths[Data Conversion Error Output]"
+          TopLeft="439.3741562341,159.178713677746">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="176.8258437659,-42.578713677746"
+              Start="0,0"
+              End="176.8258437659,-35.078713677746">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-17.1491879243268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-17.1491879243268"
+                    Point2="0,-21.1491879243268"
+                    Point3="4,-21.1491879243268" />
+                  <mssgle:LineSegment
+                    End="172.8258437659,-21.1491879243268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="172.8258437659,-21.1491879243268"
+                    Point2="176.8258437659,-21.1491879243268"
+                    Point3="176.8258437659,-25.1491879243268" />
+                  <mssgle:LineSegment
+                    End="176.8258437659,-35.078713677746" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="22.3265351642,-16.1491879243268,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Checking for valid data.Paths[OLE DB Source Output]"
+          TopLeft="434.114291261167,64.3226893943074">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-43.8068016937333,94.8560242834386"
+              Start="0,0"
+              End="-43.8068016937333,87.3560242834386">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.3328634009809" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.3328634009809"
+                    Point2="0,56.3328634009809"
+                    Point3="-4,56.3328634009809" />
+                  <mssgle:LineSegment
+                    End="-39.8068016937333,56.3328634009809" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-39.8068016937333,56.3328634009809"
+                    Point2="-43.8068016937333,56.3328634009809"
+                    Point3="-43.8068016937333,60.3328634009809" />
+                  <mssgle:LineSegment
+                    End="-43.8068016937333,87.3560242834386" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Checking for valid data.Paths[Derived Column Output]"
+          TopLeft="647.4,116.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="212.200011103494,57.588237327523"
+              Start="0,0"
+              End="212.200011103494,50.088237327523">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5709994642885" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5709994642885"
+                    Point2="0,23.5709994642885"
+                    Point3="4,23.5709994642885" />
+                  <mssgle:LineSegment
+                    End="208.200011103494,23.5709994642885" />
+                  <mssgle:CubicBezierSegment
+                    Point1="208.200011103494,23.5709994642885"
+                    Point2="212.200011103494,23.5709994642885"
+                    Point3="212.200011103494,27.5709994642885" />
+                  <mssgle:LineSegment
+                    End="212.200011103494,50.088237327523" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Checking for valid data.Paths[Data Conversion Output]"
+          TopLeft="418.557149189833,200.778713677746">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.204483077436"
+              Start="0,0"
+              End="0,40.704483077436">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.704483077436" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Checking for valid data\DimFeedbackDetailsCastedData">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Checking for valid data\TakingDataFromStagingTable">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Synonym</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Checking for valid data\DimFeedbackDetailsErrors">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DatamartDimFeedbackDetails">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="201,42"
+          Id="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors"
+          TopLeft="415.5,413.5" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\DatamartDimFeedbackDetails\Union All"
+          TopLeft="456,311.5" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension"
+          TopLeft="26,209.5" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\DatamartDimFeedbackDetails\Error1"
+          TopLeft="294.5,209.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\DatamartDimFeedbackDetails\Insert Destination"
+          TopLeft="13.5,347.5" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\DatamartDimFeedbackDetails\Error3"
+          TopLeft="630.5,209.5" />
+        <NodeLayout
+          Size="271,42"
+          Id="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData"
+          TopLeft="380.5,5.49999999999989" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DatamartDimFeedbackDetails\Conditional Split"
+          TopLeft="439,107.5" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\DatamartDimFeedbackDetails\Error2"
+          TopLeft="462.5,209.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\DatamartDimFeedbackDetails\OLE DB Command"
+          TopLeft="132,416.5" />
+        <EdgeLayout
+          Id="Package\DatamartDimFeedbackDetails.Paths[Union All Output 1]"
+          TopLeft="516,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DatamartDimFeedbackDetails.Paths[OLE DB Source Output]"
+          TopLeft="516,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DatamartDimFeedbackDetails.Paths[New Output]"
+          TopLeft="95.8333333333333,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,96"
+              Start="0,0"
+              End="0,88.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,88.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.09138671875,38.533203125,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DatamartDimFeedbackDetails.Paths[Good Rows]"
+          TopLeft="472.2,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-342.2,60.0000000000001"
+              Start="0,0"
+              End="-342.2,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.0762250453721" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.0762250453721"
+                    Point2="0,18.0762250453721"
+                    Point3="-4,18.0762250453721" />
+                  <mssgle:LineSegment
+                    End="-338.2,18.0762250453721" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-338.2,18.0762250453721"
+                    Point2="-342.2,18.0762250453721"
+                    Point3="-342.2,22.0762250453721" />
+                  <mssgle:LineSegment
+                    End="-342.2,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-196.70009765625,23.0762250453721,51.2001953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DatamartDimFeedbackDetails.Paths[Derived Column Output2]"
+          TopLeft="684,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-140,60"
+              Start="0,0"
+              End="-140,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1304347826087" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.1304347826087"
+                    Point2="0,39.1304347826087"
+                    Point3="-4,39.1304347826087" />
+                  <mssgle:LineSegment
+                    End="-136,39.1304347826087" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-136,39.1304347826087"
+                    Point2="-140,39.1304347826087"
+                    Point3="-140,43.1304347826087" />
+                  <mssgle:LineSegment
+                    End="-140,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DatamartDimFeedbackDetails.Paths[Derived Column Output1]"
+          TopLeft="348,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="140,60"
+              Start="0,0"
+              End="140,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1304347826087" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.1304347826087"
+                    Point2="0,39.1304347826087"
+                    Point3="4,39.1304347826087" />
+                  <mssgle:LineSegment
+                    End="136,39.1304347826087" />
+                  <mssgle:CubicBezierSegment
+                    Point1="136,39.1304347826087"
+                    Point2="140,39.1304347826087"
+                    Point3="140,43.1304347826087" />
+                  <mssgle:LineSegment
+                    End="140,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DatamartDimFeedbackDetails.Paths[Derived Column Output]"
+          TopLeft="516,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DatamartDimFeedbackDetails.Paths[Changing Attribute Updates Output]"
+          TopLeft="163.333333333333,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.6666666666667,165"
+              Start="0,0"
+              End="51.6666666666667,157.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.7557251908397" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,62.7557251908397"
+                    Point2="0,66.7557251908397"
+                    Point3="4,66.7557251908397" />
+                  <mssgle:LineSegment
+                    End="47.6666666666667,66.7557251908397" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.6666666666667,66.7557251908397"
+                    Point2="51.6666666666667,66.7557251908397"
+                    Point3="51.6666666666667,70.7557251908397" />
+                  <mssgle:LineSegment
+                    End="51.6666666666667,157.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-52.7005729166667,71.7557251908397,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DatamartDimFeedbackDetails.Paths[&quot;Error rating is lower than 1&quot;]"
+          TopLeft="501.4,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-153.4,60"
+              Start="0,0"
+              End="-153.4,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.857962697274" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.857962697274"
+                    Point2="0,26.857962697274"
+                    Point3="-4,26.857962697274" />
+                  <mssgle:LineSegment
+                    End="-149.4,26.857962697274" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-149.4,26.857962697274"
+                    Point2="-153.4,26.857962697274"
+                    Point3="-153.4,30.857962697274" />
+                  <mssgle:LineSegment
+                    End="-153.4,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-140.6751953125,31.857962697274,127.950390625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DatamartDimFeedbackDetails.Paths[&quot;Error rating is greater than 5&quot;]"
+          TopLeft="530.6,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.6,60"
+              Start="0,0"
+              End="-14.6,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.857962697274" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.857962697274"
+                    Point2="0,26.857962697274"
+                    Point3="-4,26.857962697274" />
+                  <mssgle:LineSegment
+                    End="-10.6,26.857962697274" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.6,26.857962697274"
+                    Point2="-14.6,26.857962697274"
+                    Point3="-14.6,30.857962697274" />
+                  <mssgle:LineSegment
+                    End="-14.6,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-75.1951953125,31.857962697274,135.790390625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DatamartDimFeedbackDetails.Paths[&quot;Error feedbackdetailID is NULL&quot;]"
+          TopLeft="559.8,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124.2,60"
+              Start="0,0"
+              End="124.2,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.0762250453721" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.0762250453721"
+                    Point2="0,18.0762250453721"
+                    Point3="4,18.0762250453721" />
+                  <mssgle:LineSegment
+                    End="120.2,18.0762250453721" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120.2,18.0762250453721"
+                    Point2="124.2,18.0762250453721"
+                    Point3="124.2,22.0762250453721" />
+                  <mssgle:LineSegment
+                    End="124.2,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-9.9751953125,23.0762250453721,144.150390625,9.7978515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\DatamartDimFeedbackDetails.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\DatamartDimFeedbackDetails.EventHandlers[OnPostExecute]\Execute SQL Task"
+          TopLeft="426.4,88.8" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\DatamartDimFeedbackDetails\DimFeedbackDetailsErrors">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DatamartDimFeedbackDetails\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[datamart].[DimFeedbackDetails]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Comment]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Comment&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[FeedbackDetailID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FeedbackDetailID&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DatamartDimFeedbackDetailsCastedData.Outputs[OLE DB Source Output].Columns[Rating]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Rating&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DatamartDimFeedbackDetails\DatamartDimFeedbackDetailsCastedData">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\TRUNCATE TABLE.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\TRUNCATE TABLE.EventHandlers[OnPreExecute]\Execute SQL Task"
+          TopLeft="439.2,70.4" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

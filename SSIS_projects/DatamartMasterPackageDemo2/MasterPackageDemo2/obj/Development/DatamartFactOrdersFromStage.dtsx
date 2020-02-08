@@ -1,0 +1,2022 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/6/2020 6:27:32 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="RD7"
+  DTS:CreatorName="TRAINING\nbryntc"
+  DTS:DTSID="{0F23684E-D958-4BA5-8C42-BCB44F15AD5B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="FactOrdersFromStage"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{C0D03F73-3A61-4151-BB1E-76D34DB89273}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute procedure PopulateFactOrders"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4C1CF5C1-7F4A-452C-9FC5-03A3BFE7227A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute procedure PopulateFactOrders"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Execute procedure PopulateFactOrders.EventHandlers[OnPostExecute]"
+          DTS:CreationName="OnPostExecute"
+          DTS:DTSID="{311CCCE1-7830-4294-B88B-1AC40FF6A7D9}"
+          DTS:EventID="0"
+          DTS:EventName="OnPostExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{577AD346-3871-4397-804D-B50A876532A2}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Execute procedure PopulateFactOrders.EventHandlers[OnPostExecute]\Execute SQL Task"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{5B8D7755-B0BA-414A-A641-05A9A4917FFF}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute SQL Task">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+                  SQLTask:SqlStatementSource="UPDATE [datamart].[PackageInfo]&#xA;SET [EndTime] = GETDATE(), [PackageStatus] = 'Finished'&#xA;WHERE [PackageName]= 'FactOrdersFromStage' AND [PackageStatus] = 'Started'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+        <DTS:EventHandler
+          DTS:refId="Package\Execute procedure PopulateFactOrders.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{941B44A2-375E-4B0F-9B79-B407E6ED7E0F}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{77B03ED2-DBC4-4471-A739-D2550BF3C6B0}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables />
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+          SQLTask:SqlStatementSource="EXEC [datamart].[SP_Populate_datamartFactOrders_fromStage]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\form Stage to DataMart"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B32F4738-EACE-4AF4-A188-3D8B480AC1FE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="form Stage to DataMart"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\form Stage to DataMart.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{C9111713-F541-4077-A2DF-78D65D31A976}"
+          DTS:EventID="6881377"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{5B04C843-C2A7-4633-A170-EBC33E7B24CA}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\form Stage to DataMart.EventHandlers[OnPreExecute]\Execute SQL Task"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{D898FFF3-B134-452C-A303-895977389925}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute SQL Task">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+                  SQLTask:SqlStatementSource="INSERT INTO [datamart].[PackageInfo] ([PackageName], [StartTime], [PackageStatus])&#xA;VALUES ('FactOrdersFromStage', GETDATE(), 'Started')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\form Stage to DataMart\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\form Stage to DataMart\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Inputs[Data Conversion Input].Columns[OrderID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OrderID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[OrderID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Inputs[Data Conversion Input].Columns[Date]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Date"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Inputs[Data Conversion Input].Columns[PaymentID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PaymentID"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[PaymentID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Inputs[Data Conversion Input].Columns[GarantyID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="GarantyID"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[GarantyID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Inputs[Data Conversion Input].Columns[ClientID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ClientID"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[ClientID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Inputs[Data Conversion Input].Columns[DiscountID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DiscountID"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[DiscountID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Inputs[Data Conversion Input].Columns[ProductID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ProductID"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Inputs[Data Conversion Input].Columns[AmountProducts]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="AmountProducts"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[AmountProducts]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Inputs[Data Conversion Input].Columns[TotalPrice]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TotalPrice"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[TotalPrice]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Inputs[Data Conversion Input].Columns[TotalPriceDiscount]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TotalPriceDiscount"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[TotalPriceDiscount]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Inputs[Data Conversion Input].Columns[EndGaranty]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="EndGaranty"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[EndGaranty]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\form Stage to DataMart\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of OrderID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of OrderID]"
+                      name="Copy of OrderID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[OrderID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Date]"
+                      name="Copy of Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[Date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PaymentID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PaymentID]"
+                      name="Copy of PaymentID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[PaymentID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GarantyID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GarantyID]"
+                      name="Copy of GarantyID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[GarantyID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ClientID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ClientID]"
+                      name="Copy of ClientID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[ClientID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DiscountID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DiscountID]"
+                      name="Copy of DiscountID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[DiscountID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductID]"
+                      name="Copy of ProductID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[ProductID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of AmountProducts]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of AmountProducts]"
+                      name="Copy of AmountProducts"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[AmountProducts]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TotalPrice]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TotalPrice]"
+                      name="Copy of TotalPrice"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[TotalPrice]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TotalPriceDiscount]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TotalPriceDiscount]"
+                      name="Copy of TotalPriceDiscount"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[TotalPriceDiscount]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of EndGaranty]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of EndGaranty]"
+                      name="Copy of EndGaranty"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[EndGaranty]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\form Stage to DataMart\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\form Stage to DataMart\datamartOrders"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="datamartOrders"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[datamart].[Orders]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\form Stage to DataMart\datamartOrders.Connections[OleDbConnection]"
+                  connectionManagerID="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DatamartDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].Columns[Copy of OrderID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of OrderID"
+                      externalMetadataColumnId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of OrderID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].Columns[Copy of Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Copy of Date"
+                      externalMetadataColumnId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Date]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].Columns[Copy of PaymentID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of PaymentID"
+                      externalMetadataColumnId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[PaymentID]"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PaymentID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].Columns[Copy of GarantyID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of GarantyID"
+                      externalMetadataColumnId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[GarantyID]"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GarantyID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].Columns[Copy of ClientID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of ClientID"
+                      externalMetadataColumnId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[ClientID]"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ClientID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].Columns[Copy of DiscountID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of DiscountID"
+                      externalMetadataColumnId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[DiscountID]"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DiscountID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].Columns[Copy of ProductID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of ProductID"
+                      externalMetadataColumnId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].Columns[Copy of AmountProducts]"
+                      cachedDataType="i4"
+                      cachedName="Copy of AmountProducts"
+                      externalMetadataColumnId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[AmountProducts]"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of AmountProducts]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].Columns[Copy of TotalPrice]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of TotalPrice"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[TotalPrice]"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TotalPrice]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].Columns[Copy of TotalPriceDiscount]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of TotalPriceDiscount"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[TotalPriceDiscount]"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TotalPriceDiscount]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].Columns[Copy of EndGaranty]"
+                      cachedDataType="dbDate"
+                      cachedName="Copy of EndGaranty"
+                      externalMetadataColumnId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[EndGaranty]"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of EndGaranty]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
+                      dataType="i4"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      dataType="dbDate"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[PaymentID]"
+                      dataType="i4"
+                      name="PaymentID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[GarantyID]"
+                      dataType="i4"
+                      name="GarantyID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[ClientID]"
+                      dataType="i4"
+                      name="ClientID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[DiscountID]"
+                      dataType="i4"
+                      name="DiscountID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[AmountProducts]"
+                      dataType="i4"
+                      name="AmountProducts" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[TotalPrice]"
+                      dataType="numeric"
+                      name="TotalPrice"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[TotalPriceDiscount]"
+                      dataType="numeric"
+                      name="TotalPriceDiscount"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input].ExternalColumns[EndGaranty]"
+                      dataType="dbDate"
+                      name="EndGaranty" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\form Stage to DataMart\datamartOrders.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\form Stage to DataMart\datamartOrders.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\datamartOrders.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\form Stage to DataMart\datamartOrders.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\form Stage to DataMart\Delete dublicate"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Delete dublicate"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\form Stage to DataMart\Delete dublicate.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Inputs[Sort Input].Columns[OrderID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OrderID"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[OrderID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Inputs[Sort Input].Columns[Date]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Date"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[Date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Inputs[Sort Input].Columns[PaymentID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PaymentID"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[PaymentID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Inputs[Sort Input].Columns[GarantyID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="GarantyID"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[GarantyID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Inputs[Sort Input].Columns[ClientID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ClientID"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[ClientID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Inputs[Sort Input].Columns[DiscountID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DiscountID"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[DiscountID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Inputs[Sort Input].Columns[ProductID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ProductID"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[ProductID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Inputs[Sort Input].Columns[AmountProducts]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="AmountProducts"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[AmountProducts]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Inputs[Sort Input].Columns[TotalPrice]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TotalPrice"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[TotalPrice]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Inputs[Sort Input].Columns[TotalPriceDiscount]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TotalPriceDiscount"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[TotalPriceDiscount]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Inputs[Sort Input].Columns[EndGaranty]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="EndGaranty"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[EndGaranty]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[OrderID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[OrderID]"
+                      name="OrderID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[OrderID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[Date]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[Date]"
+                      name="Date">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[Date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[PaymentID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[PaymentID]"
+                      name="PaymentID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[PaymentID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[GarantyID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[GarantyID]"
+                      name="GarantyID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[GarantyID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[ClientID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[ClientID]"
+                      name="ClientID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[ClientID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[DiscountID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[DiscountID]"
+                      name="DiscountID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[DiscountID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[ProductID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[ProductID]"
+                      name="ProductID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[ProductID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[AmountProducts]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[AmountProducts]"
+                      name="AmountProducts">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[AmountProducts]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[TotalPrice]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[TotalPrice]"
+                      name="TotalPrice">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[TotalPrice]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[TotalPriceDiscount]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[TotalPriceDiscount]"
+                      name="TotalPriceDiscount">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[TotalPriceDiscount]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[EndGaranty]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[EndGaranty]"
+                      name="EndGaranty">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[EndGaranty]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\form Stage to DataMart\errorFactOrders"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="errorFactOrders"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[error].[Orders]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\form Stage to DataMart\errorFactOrders.Connections[OleDbConnection]"
+                  connectionManagerID="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DatamartDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].Columns[OrderID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OrderID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[OrderID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].Columns[Date]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].Columns[PaymentID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PaymentID"
+                      externalMetadataColumnId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[PaymentID]"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[PaymentID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].Columns[GarantyID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="GarantyID"
+                      externalMetadataColumnId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[GarantyID]"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[GarantyID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].Columns[ClientID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ClientID"
+                      externalMetadataColumnId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[ClientID]"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[ClientID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].Columns[DiscountID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DiscountID"
+                      externalMetadataColumnId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[DiscountID]"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[DiscountID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].Columns[ProductID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ProductID"
+                      externalMetadataColumnId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].Columns[AmountProducts]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="AmountProducts"
+                      externalMetadataColumnId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[AmountProducts]"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[AmountProducts]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].Columns[TotalPrice]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TotalPrice"
+                      externalMetadataColumnId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[TotalPrice]"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[TotalPrice]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].Columns[TotalPriceDiscount]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TotalPriceDiscount"
+                      externalMetadataColumnId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[TotalPriceDiscount]"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[TotalPriceDiscount]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].Columns[EndGaranty]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="EndGaranty"
+                      externalMetadataColumnId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[EndGaranty]"
+                      lineageId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output].Columns[EndGaranty]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[CodeError]"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
+                      dataType="i4"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      dataType="dbDate"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[PaymentID]"
+                      dataType="i4"
+                      name="PaymentID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[GarantyID]"
+                      dataType="i4"
+                      name="GarantyID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[ClientID]"
+                      dataType="i4"
+                      name="ClientID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[DiscountID]"
+                      dataType="i4"
+                      name="DiscountID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[AmountProducts]"
+                      dataType="i4"
+                      name="AmountProducts" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[TotalPrice]"
+                      dataType="numeric"
+                      name="TotalPrice"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[TotalPriceDiscount]"
+                      dataType="numeric"
+                      name="TotalPriceDiscount"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[EndGaranty]"
+                      dataType="dbDate"
+                      name="EndGaranty" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[CodeError]"
+                      dataType="i4"
+                      name="CodeError" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\form Stage to DataMart\errorFactOrders.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\form Stage to DataMart\errorFactOrders.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\errorFactOrders.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\form Stage to DataMart\errorFactOrders.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\form Stage to DataMart\synonym FactOrders"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="synonym FactOrders"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactOrders]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\form Stage to DataMart\synonym FactOrders.Connections[OleDbConnection]"
+                  connectionManagerID="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DatamartDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[OrderID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[OrderID]"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[OrderID]"
+                      name="OrderID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[Date]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[PaymentID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[PaymentID]"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[PaymentID]"
+                      name="PaymentID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[GarantyID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[GarantyID]"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[GarantyID]"
+                      name="GarantyID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[ClientID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[ClientID]"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[ClientID]"
+                      name="ClientID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[DiscountID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[DiscountID]"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[DiscountID]"
+                      name="DiscountID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      name="ProductID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[AmountProducts]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[AmountProducts]"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[AmountProducts]"
+                      name="AmountProducts"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[TotalPrice]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[TotalPrice]"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[TotalPrice]"
+                      name="TotalPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[TotalPriceDiscount]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[TotalPriceDiscount]"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[TotalPriceDiscount]"
+                      name="TotalPriceDiscount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[EndGaranty]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[EndGaranty]"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].Columns[EndGaranty]"
+                      name="EndGaranty"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[OrderID]"
+                      dataType="wstr"
+                      length="255"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      dataType="wstr"
+                      length="255"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[PaymentID]"
+                      dataType="wstr"
+                      length="255"
+                      name="PaymentID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[GarantyID]"
+                      dataType="wstr"
+                      length="255"
+                      name="GarantyID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[ClientID]"
+                      dataType="wstr"
+                      length="255"
+                      name="ClientID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[DiscountID]"
+                      dataType="wstr"
+                      length="255"
+                      name="DiscountID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      dataType="wstr"
+                      length="255"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[AmountProducts]"
+                      dataType="wstr"
+                      length="255"
+                      name="AmountProducts" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[TotalPrice]"
+                      dataType="wstr"
+                      length="255"
+                      name="TotalPrice" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[TotalPriceDiscount]"
+                      dataType="wstr"
+                      length="255"
+                      name="TotalPriceDiscount" />
+                    <externalMetadataColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output].ExternalColumns[EndGaranty]"
+                      dataType="wstr"
+                      length="255"
+                      name="EndGaranty" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[OrderID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[OrderID]"
+                      name="OrderID" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[PaymentID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[PaymentID]"
+                      name="PaymentID" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[GarantyID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[GarantyID]"
+                      name="GarantyID" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[ClientID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[ClientID]"
+                      name="ClientID" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[DiscountID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[DiscountID]"
+                      name="DiscountID" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      name="ProductID" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[AmountProducts]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[AmountProducts]"
+                      name="AmountProducts" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[TotalPrice]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[TotalPrice]"
+                      name="TotalPrice" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[TotalPriceDiscount]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[TotalPriceDiscount]"
+                      name="TotalPriceDiscount" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[EndGaranty]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[EndGaranty]"
+                      name="EndGaranty" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\form Stage to DataMart.Paths[Data Conversion Error Output]"
+              endId="Package\form Stage to DataMart\errorFactOrders.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Error Output"
+              startId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Error Output]" />
+            <path
+              refId="Package\form Stage to DataMart.Paths[Data Conversion Output]"
+              endId="Package\form Stage to DataMart\datamartOrders.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\form Stage to DataMart\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\form Stage to DataMart.Paths[OLE DB Source Output]"
+              endId="Package\form Stage to DataMart\Delete dublicate.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\form Stage to DataMart\synonym FactOrders.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\form Stage to DataMart.Paths[Sort Output]"
+              endId="Package\form Stage to DataMart\Data Conversion.Inputs[Data Conversion Input]"
+              name="Sort Output"
+              startId="Package\form Stage to DataMart\Delete dublicate.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{B9CAD3A4-CC86-439F-98B5-2C680D126637}"
+      DTS:From="Package\form Stage to DataMart"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Execute procedure PopulateFactOrders" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{D16755AA-F527-49C9-83CF-70A2973EE652}"
+      DTS:EventID="1072693248"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{5B72A5E3-FB75-47A7-8589-EECAFDC3DD6D}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{D3D24D99-0CCF-42A6-9CE4-82A453717BC7}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+              SQLTask:SqlStatementSource="UPDATE [datamart].[PackageInfo]&#xA;SET [PackageStatus] = 'Error'&#xA;WHERE [PackageName]= 'FactOrdersFromStage' AND [PackageStatus] = 'Started'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="262,42"
+          Id="Package\Execute procedure PopulateFactOrders"
+          TopLeft="93.1428587290702,127.247060608122" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\form Stage to DataMart"
+          TopLeft="122.285716368227,34.8705887243409" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="220.514287548649,76.470588724341">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.7764718837807"
+              Start="0,0"
+              End="0,43.2764718837807">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.2764718837807" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package.EventHandlers[OnError]\Execute SQL Task"
+          TopLeft="443.6,126.6" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Execute procedure PopulateFactOrders.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Execute procedure PopulateFactOrders.EventHandlers[OnPostExecute]\Execute SQL Task"
+          TopLeft="377.6,64" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\form Stage to DataMart">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="153,42"
+          Id="Package\form Stage to DataMart\errorFactOrders"
+          TopLeft="434.285720659762,231.294120049394" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\form Stage to DataMart\synonym FactOrders"
+          TopLeft="205.714288195785,60" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\form Stage to DataMart\Delete dublicate"
+          TopLeft="446.285720864121,99.7647064400379" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\form Stage to DataMart\Data Conversion"
+          TopLeft="204.000002452305,132.18823630653" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\form Stage to DataMart\datamartOrders"
+          TopLeft="60,214.776472758917" />
+        <EdgeLayout
+          Id="Package\form Stage to DataMart.Paths[OLE DB Source Output]"
+          TopLeft="380.914288195785,80.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="65.371432668336,34.1647064400379"
+              Start="0,0"
+              End="57.871432668336,34.1647064400379">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="33.7701610972608,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33.7701610972608,0"
+                    Point2="37.7701610972608,0"
+                    Point3="37.7701610972608,4" />
+                  <mssgle:LineSegment
+                    End="37.7701610972608,30.1647064400379" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.7701610972608,30.1647064400379"
+                    Point2="37.7701610972608,34.1647064400379"
+                    Point3="41.7701610972608,34.1647064400379" />
+                  <mssgle:LineSegment
+                    End="57.871432668336,34.1647064400379" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\form Stage to DataMart.Paths[Data Conversion Output]"
+          TopLeft="257.066669118972,173.78823630653">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-120.666669118972,40.988236452387"
+              Start="0,0"
+              End="-120.666669118972,33.488236452387">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.646242967398" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.646242967398"
+                    Point2="0,16.646242967398"
+                    Point3="-4,16.646242967398" />
+                  <mssgle:LineSegment
+                    End="-116.666669118972,16.646242967398" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-116.666669118972,16.646242967398"
+                    Point2="-120.666669118972,16.646242967398"
+                    Point3="-120.666669118972,20.646242967398" />
+                  <mssgle:LineSegment
+                    End="-120.666669118972,33.488236452387" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\form Stage to DataMart.Paths[Data Conversion Error Output]"
+          TopLeft="306.133335785638,173.78823630653">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="204.552384874124,57.505883742864"
+              Start="0,0"
+              End="204.552384874124,50.005883742864">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.3544303363876" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.3544303363876"
+                    Point2="0,23.3544303363876"
+                    Point3="4,23.3544303363876" />
+                  <mssgle:LineSegment
+                    End="200.552384874124,23.3544303363876" />
+                  <mssgle:CubicBezierSegment
+                    Point1="200.552384874124,23.3544303363876"
+                    Point2="204.552384874124,23.3544303363876"
+                    Point3="204.552384874124,27.3544303363876" />
+                  <mssgle:LineSegment
+                    End="204.552384874124,50.005883742864" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="36.1898057183118,28.3544303363876,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\form Stage to DataMart.Paths[Sort Output]"
+          TopLeft="446.285720864121,126.164706440038">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-87.085718411816,26.8235298664921"
+              Start="0,0"
+              End="-79.585718411816,26.8235298664921">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-32.7695255516557,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-32.7695255516557,0"
+                    Point2="-36.7695255516557,0"
+                    Point3="-36.7695255516557,4" />
+                  <mssgle:LineSegment
+                    End="-36.7695255516557,22.8235298664921" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-36.7695255516557,22.8235298664921"
+                    Point2="-36.7695255516557,26.8235298664921"
+                    Point3="-40.7695255516557,26.8235298664921" />
+                  <mssgle:LineSegment
+                    End="-79.585718411816,26.8235298664921" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\form Stage to DataMart.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\form Stage to DataMart.EventHandlers[OnPreExecute]\Execute SQL Task"
+          TopLeft="404.8,91.2" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\form Stage to DataMart\synonym FactOrders">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Synonym</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\form Stage to DataMart\errorFactOrders">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\form Stage to DataMart\datamartOrders">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

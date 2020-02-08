@@ -1,0 +1,827 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/7/2020 10:59:21 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="RD7"
+  DTS:CreatorName="TRAINING\ishvytc"
+  DTS:DTSID="{24E510BE-1558-4C1E-A912-B49EE55AC5D7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="MasterDimDatamart"
+  DTS:PackageType="5"
+  DTS:VersionBuild="96"
+  DTS:VersionGUID="{5FA29CC6-3F9F-47DF-A94D-EFE188721FE6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Populate Dimention Tables"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DelayValidation="True"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{C7D008B1-A006-41E6-8CCC-32242D3E4710}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate Dimention Tables">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Populate Dimention Tables\DimClients"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{A9BAAA89-37D6-4078-B8D5-D987D91AE649}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimClients"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartDimClients.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Dimention Tables\DimDates"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{46E18896-0F12-4581-8B48-052FF3CC2082}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimDates"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartDimDates.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Dimention Tables\DimDeliveryDetails"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{0E14B53C-6802-4D63-9790-34418D2F1843}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimDeliveryDetails"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Dimention Tables\DimDiscounts"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{A62457DD-F68F-42BD-B7D0-F35F47F6D1F1}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimDiscounts"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartDimDiscounts.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Dimention Tables\DimFeedbackDetails"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{727B9BBD-E5F5-4E22-A35F-6C24D418E35C}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimFeedbackDetails"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartDimFeedbackDetails.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Dimention Tables\DimGuaranties"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{889F09D4-3E5D-4932-992B-725FC9DC0D73}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimGuaranties"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartDimGuaranties.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Dimention Tables\DimLocations"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{7EA8BB75-ACBC-441C-9C37-923852F2CC44}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimLocations"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartDimLocations.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Dimention Tables\DimPayments"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{FCF3532E-7B09-46A6-A07F-95DEE8F4C374}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimPayments"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartDimPayments.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Dimention Tables\DimProducts"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{2D332F31-B53C-44B8-B0D0-9316A9D8F9BB}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimProducts"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartDimProducts.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Dimention Tables\DimReturnDetails"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{A67BCD95-2021-4DC9-B42C-3F99FF1AB7DC}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimReturnDetails"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Dimention Tables\DimSuppliers"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{5CD4BBC7-7F1E-4128-9D37-A3500F23108D}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimSuppliers"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartDimSuppliers.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{7B82C790-D33C-4837-AF29-8F72CE7C2D8F}"
+          DTS:From="Package\Populate Dimention Tables\DimSuppliers"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Populate Dimention Tables\DimClients" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{4CD56BC5-E74F-4101-91BF-51CC6F95A1EE}"
+          DTS:From="Package\Populate Dimention Tables\DimClients"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Populate Dimention Tables\DimDates" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{3B17884B-029D-4279-9766-DD25BC7E43D0}"
+          DTS:From="Package\Populate Dimention Tables\DimDates"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Populate Dimention Tables\DimPayments" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{89B11599-8294-4538-B0D3-8AA018FF34BE}"
+          DTS:From="Package\Populate Dimention Tables\DimPayments"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Populate Dimention Tables\DimDiscounts" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{80A53922-1E6E-4D16-9439-E498B6939A19}"
+          DTS:From="Package\Populate Dimention Tables\DimDiscounts"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Populate Dimention Tables\DimGuaranties" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{CEF683D4-FBBD-4ACF-9B1A-B517B610C6BB}"
+          DTS:From="Package\Populate Dimention Tables\DimGuaranties"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Populate Dimention Tables\DimFeedbackDetails" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{0D7F52DE-7C9A-4D9B-98DF-0881A5254641}"
+          DTS:From="Package\Populate Dimention Tables\DimFeedbackDetails"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\Populate Dimention Tables\DimLocations" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate Fact Tables"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DelayValidation="True"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{3E9672E0-E4B4-4664-A648-BB298F4625B1}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate Fact Tables">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Populate Fact Tables\Fact Returns (from FlarFiles)"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{3DE92B40-5518-4CE7-8868-7AF02678EB39}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Fact Returns (from FlarFiles)"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Fact Tables\FactDeliveries (from flatFiles)"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{619CD408-DD02-47CA-AD7C-EDEF34389527}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FactDeliveries (from flatFiles)"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartFactDeliveryValidationM.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Fact Tables\FactDeliveries (SELECT statement)"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{9A48055D-284B-4032-8EB3-1BC6E827035B}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FactDeliveries (SELECT statement)"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartFactDelivery.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Fact Tables\FactFeedbacks (from flatFiles)"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{BC736292-4D37-471E-9585-94995F3D543B}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FactFeedbacks (from flatFiles)"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartFactFeedbacks.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Fact Tables\FactOrders(from flatFiles)"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{0E05A890-C39F-48F6-A384-27F12ABD3F39}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FactOrders(from flatFiles)"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartFactOrdersFromStage.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Fact Tables\FactOrders(SELECT statement)"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{268FB7F3-E753-4D53-876C-BBDA45B68E2A}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FactOrders(SELECT statement)"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartFactOrders.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Fact Tables\FactSupplies (from flatFiles)"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{EA5CEC11-AF91-4038-A3CC-EE3A426B75FC}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FactSupplies (from flatFiles)"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartFactSupplies.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Fact Tables\FactSupplies (SELECT statement)"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{9A1796F6-C943-436B-9AAB-D6C170B8D8DB}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FactSupplies (SELECT statement)"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartFactSuppliesSelect.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{48CDDB32-587B-4C72-AB14-D1179D6AE67B}"
+      DTS:From="Package\Populate Dimention Tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Populate Fact Tables" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="213,42"
+          Id="Package\Populate Fact Tables\Fact Returns (from FlarFiles)"
+          TopLeft="294.25,77.25" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Populate Fact Tables\FactFeedbacks (from flatFiles)"
+          TopLeft="298.5,149" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\Populate Fact Tables\FactOrders(from flatFiles)"
+          TopLeft="15.75,87.75" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\Populate Fact Tables\FactOrders(SELECT statement)"
+          TopLeft="11.75,19.5" />
+        <GroupLayout
+          Text="Fact Orders"
+          ParentId="Package\Populate Fact Tables"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="250,159"
+          Size="250,202"
+          Id="ac13eb16-7410-425e-8afc-1837ee75cda8"
+          TopLeft="13.5,15.5">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\Populate Fact Tables\FactOrders(from flatFiles)</s:String>
+            <s:String>Package\Populate Fact Tables\FactOrders(SELECT statement)</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+        <NodeLayout
+          Size="242,42"
+          Id="Package\Populate Fact Tables\FactDeliveries (SELECT statement)"
+          TopLeft="1.75,11.75" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\Populate Fact Tables\FactDeliveries (from flatFiles)"
+          TopLeft="9.5,78.75" />
+        <GroupLayout
+          Text="Fact Deliveries"
+          ParentId="Package\Populate Fact Tables"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="253,142"
+          Size="253,185"
+          Id="4c1aaa61-16f3-431e-97ca-9ed22a8d8a62"
+          TopLeft="19,283">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\Populate Fact Tables\FactDeliveries (SELECT statement)</s:String>
+            <s:String>Package\Populate Fact Tables\FactDeliveries (from flatFiles)</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Populate Fact Tables\FactSupplies (from flatFiles)"
+          TopLeft="18.25,74.5" />
+        <NodeLayout
+          Size="239,42"
+          Id="Package\Populate Fact Tables\FactSupplies (SELECT statement)"
+          TopLeft="16.75,9.25" />
+        <GroupLayout
+          Text="Fact Supplies"
+          ParentId="Package\Populate Fact Tables"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="271,145"
+          Size="271,188"
+          Id="45f4042b-f677-45b4-81b1-0582b21d1618"
+          TopLeft="279,280.666666666667">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\Populate Fact Tables\FactSupplies (from flatFiles)</s:String>
+            <s:String>Package\Populate Fact Tables\FactSupplies (SELECT statement)</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="576,524"
+          Size="576,567"
+          Id="Package\Populate Fact Tables"
+          TopLeft="792.666666666667,177.166666666667" />
+        <NodeLayout
+          Size="165,44"
+          Id="Package\Populate Dimention Tables\DimClients"
+          TopLeft="40,65" />
+        <NodeLayout
+          Size="166,43"
+          Id="Package\Populate Dimention Tables\DimDates"
+          TopLeft="39.5714285714285,123.857142857143" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Populate Dimention Tables\DimDeliveryDetails"
+          TopLeft="333,16" />
+        <NodeLayout
+          Size="160,43"
+          Id="Package\Populate Dimention Tables\DimDiscounts"
+          TopLeft="42,226" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Populate Dimention Tables\DimFeedbackDetails"
+          TopLeft="337.142857142857,282.571428571429" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Populate Dimention Tables\DimGuaranties"
+          TopLeft="32,282.428571428571" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Populate Dimention Tables\DimLocations"
+          TopLeft="331.111111111111,215.666666666667" />
+        <NodeLayout
+          Size="163,44"
+          Id="Package\Populate Dimention Tables\DimPayments"
+          TopLeft="38,174" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Populate Dimention Tables\DimProducts"
+          TopLeft="329,143" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Populate Dimention Tables\DimReturnDetails"
+          TopLeft="333.444444444444,75.111111111111" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Populate Dimention Tables\DimSuppliers"
+          TopLeft="46.1428571428571,15" />
+        <EdgeLayout
+          Id="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint]"
+          TopLeft="206.142857142857,36">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-1.14285714285711,51"
+              Start="0,0"
+              End="6.35714285714289,51">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,47" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,47"
+                    Point2="22.5,51"
+                    Point3="18.5,51" />
+                  <mssgle:LineSegment
+                    End="6.35714285714289,51" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint 1]"
+          TopLeft="40,87">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-0.428571428571502,58.357142857143"
+              Start="0,0"
+              End="-7.9285714285715,58.357142857143">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.9285714285715,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.9285714285715,0"
+                    Point2="-22.9285714285715,0"
+                    Point3="-22.9285714285715,4" />
+                  <mssgle:LineSegment
+                    End="-22.9285714285715,54.357142857143" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.9285714285715,54.357142857143"
+                    Point2="-22.9285714285715,58.357142857143"
+                    Point3="-18.9285714285715,58.357142857143" />
+                  <mssgle:LineSegment
+                    End="-7.9285714285715,58.357142857143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint 2]"
+          TopLeft="205.571428571428,145.357142857143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-4.5714285714285,50.642857142857"
+              Start="0,0"
+              End="2.9285714285715,50.642857142857">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,46.642857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,46.642857142857"
+                    Point2="22.5,50.642857142857"
+                    Point3="18.5,50.642857142857" />
+                  <mssgle:LineSegment
+                    End="2.9285714285715,50.642857142857" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint 3]"
+          TopLeft="38,196">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="4,51.5"
+              Start="0,0"
+              End="-3.5,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,47.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,47.5"
+                    Point2="-22.5,51.5"
+                    Point3="-18.5,51.5" />
+                  <mssgle:LineSegment
+                    End="-3.5,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint 4]"
+          TopLeft="202,247.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="2,55.928571428571"
+              Start="0,0"
+              End="9.5,55.928571428571">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="20.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.5,0"
+                    Point2="24.5,0"
+                    Point3="24.5,4" />
+                  <mssgle:LineSegment
+                    End="24.5,51.928571428571" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.5,51.928571428571"
+                    Point2="24.5,55.928571428571"
+                    Point3="20.5,55.928571428571" />
+                  <mssgle:LineSegment
+                    End="9.5,55.928571428571" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint 5]"
+          TopLeft="204,306.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="133.142857142857,0"
+              Start="0,0"
+              End="125.642857142857,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="125.642857142857,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint 6]"
+          TopLeft="426.126984126984,282.571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-24.904761904762"
+              Start="0,0"
+              End="0,-17.404761904762">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-17.404761904762" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="611,380"
+          Size="611,423"
+          Id="Package\Populate Dimention Tables"
+          TopLeft="71.7142857142856,249.357142857143" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="682.714285714286,460.761904761905">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="109.952380952381,0"
+              Start="0,0"
+              End="102.452380952381,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="102.452380952381,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

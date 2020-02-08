@@ -1,0 +1,1202 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/7/2020 1:53:39 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="RD7"
+  DTS:CreatorName="TRAINING\nbryntc"
+  DTS:DTSID="{7F42756A-6724-42DA-9DD0-3F9819C0E8DE}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="DataMartDimDates"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{D626F5EE-08DD-4522-8EC6-F6B5102E6F8B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B15DEFBA-54C7-4E25-BF82-CC632B585114}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Data Flow Task.EventHandlers[OnPostExecute]"
+          DTS:CreationName="OnPostExecute"
+          DTS:DTSID="{208EC286-F419-40F3-BC18-BB84E4B67862}"
+          DTS:EventID="1457752124"
+          DTS:EventName="OnPostExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{A13551C3-8923-4253-BFDC-94BE455A6568}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Data Flow Task.EventHandlers[OnPostExecute]\Execute SQL Task"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{2129B87E-1057-4627-931F-F1A0BF1FE42F}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute SQL Task">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+                  SQLTask:SqlStatementSource="UPDATE [datamart].[PackageInfo]&#xA;SET [EndTime] = GETDATE(), [PackageStatus] = 'Finished'&#xA;WHERE [PackageName]= 'DatamartDimDates' AND [PackageStatus] = 'Started'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+        <DTS:EventHandler
+          DTS:refId="Package\Data Flow Task.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{D4F9DB35-5974-44F0-8F95-E706A1AD1908}"
+          DTS:EventID="1892913896"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{3AF6EB2F-78DA-4E87-9186-58119DDE7BA5}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables />
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Date]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Date"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Day]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Day"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Month]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Month"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[MonthNum]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MonthNum"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MonthNum]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Year]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Year"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Year]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Week]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Week"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Week]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[WeekDay]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="WeekDay"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeekDay]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Quarter]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Quarter"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quarter]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[IsWeekday]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="IsWeekday"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsWeekday]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DateKey]"
+                      name="Copy of DateKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateKey]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Date]"
+                      name="Copy of Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Day]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Day]"
+                      name="Copy of Day"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Month]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Month]"
+                      name="Copy of Month"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of MonthNum]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of MonthNum]"
+                      name="Copy of MonthNum"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MonthNum]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Year]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Year]"
+                      name="Copy of Year"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Year]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Week]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Week]"
+                      name="Copy of Week"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Week]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of WeekDay]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of WeekDay]"
+                      name="Copy of WeekDay"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeekDay]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Quarter]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Quarter]"
+                      name="Copy of Quarter"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quarter]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IsWeekday]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IsWeekday]"
+                      name="Copy of IsWeekday"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsWeekday]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[datamart].[DimDates]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DatamartDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Copy of Date"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Day]"
+                      cachedDataType="i4"
+                      cachedName="Copy of Day"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Day]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Day]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Month]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Copy of Month"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Month]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of MonthNum]"
+                      cachedDataType="i4"
+                      cachedName="Copy of MonthNum"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MonthNum]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of MonthNum]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Year]"
+                      cachedDataType="i4"
+                      cachedName="Copy of Year"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Year]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Week]"
+                      cachedDataType="i4"
+                      cachedName="Copy of Week"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Week]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Week]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of WeekDay]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Copy of WeekDay"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WeekDay]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of WeekDay]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Quarter]"
+                      cachedDataType="i4"
+                      cachedName="Copy of Quarter"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quarter]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Quarter]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of IsWeekday]"
+                      cachedDataType="bool"
+                      cachedName="Copy of IsWeekday"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsWeekday]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IsWeekday]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      dataType="dbDate"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Day]"
+                      dataType="i4"
+                      name="Day" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                      dataType="wstr"
+                      length="10"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MonthNum]"
+                      dataType="i4"
+                      name="MonthNum" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      dataType="i4"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Week]"
+                      dataType="i4"
+                      name="Week" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WeekDay]"
+                      dataType="wstr"
+                      length="10"
+                      name="WeekDay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quarter]"
+                      dataType="i4"
+                      name="Quarter" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsWeekday]"
+                      dataType="bool"
+                      name="IsWeekday" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dates]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DatamartDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateKey]"
+                      name="DateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Day]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]"
+                      name="Day"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Month]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]"
+                      name="Month"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MonthNum]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MonthNum]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MonthNum]"
+                      name="MonthNum"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Year]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Year]"
+                      name="Year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Week]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Week]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Week]"
+                      name="Week"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeekDay]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeekDay]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeekDay]"
+                      name="WeekDay"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quarter]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quarter]"
+                      name="Quarter"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsWeekday]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IsWeekday]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsWeekday]"
+                      name="IsWeekday"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
+                      dataType="i4"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      dataType="wstr"
+                      length="255"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Day]"
+                      dataType="wstr"
+                      length="255"
+                      name="Day" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Month]"
+                      dataType="wstr"
+                      length="255"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MonthNum]"
+                      dataType="wstr"
+                      length="255"
+                      name="MonthNum" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      dataType="wstr"
+                      length="255"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Week]"
+                      dataType="wstr"
+                      length="255"
+                      name="Week" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeekDay]"
+                      dataType="wstr"
+                      length="255"
+                      name="WeekDay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
+                      dataType="wstr"
+                      length="255"
+                      name="Quarter" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IsWeekday]"
+                      dataType="wstr"
+                      length="255"
+                      name="IsWeekday" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                      name="DateKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Day]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Day]"
+                      name="Day" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Month]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Month]"
+                      name="Month" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MonthNum]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MonthNum]"
+                      name="MonthNum" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      name="Year" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Week]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Week]"
+                      name="Week" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeekDay]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeekDay]"
+                      name="WeekDay" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quarter]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quarter]"
+                      name="Quarter" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IsWeekday]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IsWeekday]"
+                      name="IsWeekday" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D4180DDB-F85E-48E8-95D0-C7F11B6C9BF8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Execute SQL Task.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{B406676C-3FCF-4113-A6B4-C378E9F7E079}"
+          DTS:EventID="9"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{0F6C6D36-7DDE-48A7-8476-99530F55B329}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Execute SQL Task.EventHandlers[OnPreExecute]\Execute SQL Task"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{59838426-4ca4-4b46-b66f-cb62310b3588}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute SQL Task">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+                  SQLTask:SqlStatementSource="INSERT INTO [datamart].[PackageInfo] ([PackageName], [StartTime], [PackageStatus])&#xA;VALUES ('DatamartDimDates', GETDATE(), 'Started')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [datamart].[DimDates]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{26AFEC5E-9052-4A7B-A0E8-38A4FAB0C518}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{F1358EE1-AC24-4382-9CFE-B82FC7383A98}"
+      DTS:EventID="1818308276"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{04B741D8-AD56-4385-96BF-0FD9F398B780}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{59EC8AFC-3771-4E50-B31B-4728B438F917}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+              SQLTask:SqlStatementSource="UPDATE [datamart].[PackageInfo]&#xA;SET [PackageStatus] = 'Error'&#xA;WHERE [PackageName]= 'DatamartDimDates' AND [PackageStatus] = 'Started'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task"
+          TopLeft="93.7142873102306,100.329413171788" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="86.8571443363112,29.976471008644" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="168.485715823271,71.576471008644">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.7529421631441"
+              Start="0,0"
+              End="0,21.2529421631441">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.2529421631441" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package.EventHandlers[OnError]\Execute SQL Task"
+          TopLeft="414.4,79.2" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="125.714287855187,192.094120341106" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Task\Data Conversion"
+          TopLeft="132.571430829107,111.341178032106" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="132.000002247947,36.7058828677273" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="208.485716538527,78.3058828677273">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.035295164379"
+              Start="0,0"
+              End="0,25.535295164379">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.535295164379" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="210.542859342147,152.941178032106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.1529423090001"
+              Start="0,0"
+              End="0,31.6529423090001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.6529423090001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Data Flow Task.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="{EDA65E98-4358-4AE9-A10E-5ACDBD8D9D91}"
+          TopLeft="395.2,95.2" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Data Flow Task.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Data Flow Task.EventHandlers[OnPostExecute]\Execute SQL Task"
+          TopLeft="434.4,114.4" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Synonym</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\Execute SQL Task.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Execute SQL Task.EventHandlers[OnPreExecute]\Execute SQL Task"
+          TopLeft="259,97" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
