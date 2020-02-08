@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DatamartDimGuaranties"
   DTS:PackageType="5"
-  DTS:VersionBuild="154"
-  DTS:VersionGUID="{4DABFFCC-46C5-454D-8FCF-1E6FA0164A92}">
+  DTS:VersionBuild="155"
+  DTS:VersionGUID="{F0108F67-F5AA-4ADE-8F64-35BFB1BD0E65}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADWKLdi5u9frdT+KOubGm4PAAAAAASAAACgAAAAEAAAAOn4Tk4uy3DyIUvq2sTVEJAYAAAA17B418FPh1+oPsfjYgXC7ZSTNS8SEjMBFAAAAL4TJ4bXIUwohF4NvB678VlGU91O</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACBJyvnzI+GEaihgxK0416XAAAAAASAAACgAAAAEAAAAAN1HSVTwN0urJFprLeNJU4YAAAA6+SvJy/PUVQRapgCc9hoSAHcM0S11p6CFAAAADrvXNd8FMWE2JTHkrxqgLnnlwhb</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2647,37 +2647,37 @@
               name="Conditional Split Default Output"
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Conditional Split.Outputs[Conditional Split Default Output]" />
             <path
-              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output5]"
+              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output]"
               endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\OLE DB Command.Inputs[OLE DB Command Input]"
               name="Derived Column Output"
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output4]"
+              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output1]"
               endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 1]"
               name="Derived Column Output"
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty.Outputs[Derived Column Output]" />
             <path
-              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output3]"
+              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output2]"
               endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 2]"
               name="Derived Column Output"
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in PriceGaranty.Outputs[Derived Column Output]" />
             <path
-              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output6]"
+              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output3]"
               endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\datamartDimGuaranties.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Derived Column 1.Outputs[Derived Column Output]" />
             <path
-              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output1]"
+              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output4]"
               endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 4]"
               name="Derived Column Output"
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in DescriptionGuaranty.Outputs[Derived Column Output]" />
             <path
-              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output]"
+              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output5]"
               endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 6]"
               name="Derived Column Output"
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID.Outputs[Derived Column Output]" />
             <path
-              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output2]"
+              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output6]"
               endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Inputs[Union All Input 3]"
               name="Derived Column Output"
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in Duration.Outputs[Derived Column Output]" />
@@ -2727,12 +2727,12 @@
               name="PriceGaranty"
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Conditional Split.Outputs[PriceGuaranty]" />
             <path
-              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Union All Output 11]"
+              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Union All Output 1]"
               endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Derived Column 1.Inputs[Derived Column Input]"
               name="Union All Output 1"
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All.Outputs[Union All Output 1]" />
             <path
-              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Union All Output 1]"
+              refId="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Union All Output 11]"
               endId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2.Inputs[OLE DB Destination Input]"
               name="Union All Output 1"
               startId="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1.Outputs[Union All Output 1]" />
@@ -3400,7 +3400,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
+                  name="OpenRowset">[dbo].[Guaranties]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -3426,7 +3426,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">2</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
@@ -3950,6 +3950,10 @@
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Slowly Changing Dimension"
           TopLeft="1359.5,202.7" />
         <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\datamartDimGuaranties"
+          TopLeft="1449.4428567536,451.523530012348" />
+        <NodeLayout
           Size="251.2,41.6"
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in DescriptionGuaranty"
           TopLeft="1085.9,208.7" />
@@ -3958,6 +3962,10 @@
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in NameGaranty"
           TopLeft="282.5,208.7" />
         <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Derived Column"
+          TopLeft="1282.1,270.299999999999" />
+        <NodeLayout
           Size="129.6,41.6"
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All 1"
           TopLeft="600.7,310.3" />
@@ -3965,6 +3973,14 @@
           Size="204,41.6"
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Incorect data in GarantyID"
           TopLeft="563.5,208.7" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\OLE DB Command"
+          TopLeft="1282.1,353.899999999999" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All"
+          TopLeft="1467.5,265.5" />
         <NodeLayout
           Size="195.2,41.6"
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesCastedData"
@@ -3980,25 +3996,53 @@
         <NodeLayout
           Size="203.2,41.6"
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\DimGarantiesError Table 2"
-          TopLeft="563.9,411.9" />
+          TopLeft="563.9,398.135293924602" />
         <NodeLayout
           Size="154.4,41.6"
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Conditional Split"
           TopLeft="849.3,107.1" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Derived Column 1"
+          TopLeft="1472.3,349.099999999999" />
         <EdgeLayout
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Union All Output 1]"
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Union All Output 11]"
           TopLeft="665.5,351.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,46.2352939246022"
               Start="0,0"
-              End="0,52.5">
+              End="0,38.7352939246022">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,38.7352939246022" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,11.3676469623011,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Union All Output 1]"
+          TopLeft="1549.83333333333,307.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.9999999999998"
+              Start="0,0"
+              End="0,34.4999999999998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.4999999999998" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4066,6 +4110,70 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[OLE DB Command Output]"
+          TopLeft="1390.63333333333,353.899999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118.200000000001,-46.7999999999998"
+              Start="0,0"
+              End="118.200000000001,-39.2999999999998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-19.2969487260144" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-19.2969487260144"
+                    Point2="0,-23.2969487260144"
+                    Point3="4,-23.2969487260144" />
+                  <mssgle:LineSegment
+                    End="114.200000000001,-23.2969487260144" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114.200000000001,-23.2969487260144"
+                    Point2="118.200000000001,-23.2969487260144"
+                    Point3="118.200000000001,-27.2969487260144" />
+                  <mssgle:LineSegment
+                    End="118.200000000001,-39.2999999999998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[New Output]"
+          TopLeft="1496.83333333333,244.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-29.3333333333328,42"
+              Start="0,0"
+              End="-21.8333333333328,42">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38"
+                    Point2="0,42"
+                    Point3="-4,42" />
+                  <mssgle:LineSegment
+                    End="-21.8333333333328,42" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-40.0080533854164,47,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[NameGaranty]"
           TopLeft="895.128571428571,148.7">
           <EdgeLayout.Curve>
@@ -4098,6 +4206,42 @@
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-284.846219308036,27.3502090106828,67.0638671875,11.4140625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Historical Attribute Inserts Output]"
+          TopLeft="1430.16666666667,244.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-71.6666666666663,25.9999999999999"
+              Start="0,0"
+              End="-71.6666666666663,18.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,6.51908396946562" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,6.51908396946562"
+                    Point2="0,10.5190839694656"
+                    Point3="-4,10.5190839694656" />
+                  <mssgle:LineSegment
+                    End="-67.6666666666663,10.5190839694656" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-67.6666666666663,10.5190839694656"
+                    Point2="-71.6666666666663,10.5190839694656"
+                    Point3="-71.6666666666663,14.5190839694656" />
+                  <mssgle:LineSegment
+                    End="-71.6666666666663,18.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-110.889720052083,15.5190839694656,150.1127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4210,75 +4354,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output4]"
-          TopLeft="392.5,250.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="252.733333333333,59.9999999999998"
-              Start="0,0"
-              End="252.733333333333,52.4999999999998">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.560975609756" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.560975609756"
-                    Point2="0,35.560975609756"
-                    Point3="4,35.560975609756" />
-                  <mssgle:LineSegment
-                    End="248.733333333333,35.560975609756" />
-                  <mssgle:CubicBezierSegment
-                    Point1="248.733333333333,35.560975609756"
-                    Point2="252.733333333333,35.560975609756"
-                    Point3="252.733333333333,39.560975609756" />
-                  <mssgle:LineSegment
-                    End="252.733333333333,52.4999999999998" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output3]"
-          TopLeft="113.5,250.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="511.466666666667,59.9999999999998"
-              Start="0,0"
-              End="511.466666666667,52.4999999999998">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.6526946107783" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.6526946107783"
-                    Point2="0,43.6526946107783"
-                    Point3="4,43.6526946107783" />
-                  <mssgle:LineSegment
-                    End="507.466666666667,43.6526946107783" />
-                  <mssgle:CubicBezierSegment
-                    Point1="507.466666666667,43.6526946107783"
-                    Point2="511.466666666667,43.6526946107783"
-                    Point3="511.466666666667,47.6526946107783" />
-                  <mssgle:LineSegment
-                    End="511.466666666667,52.4999999999998" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output2]"
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output6]"
           TopLeft="926.5,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4312,7 +4388,29 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output1]"
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output5]"
+          TopLeft="665.5,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output4]"
           TopLeft="1211.5,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4346,19 +4444,133 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output]"
-          TopLeft="665.5,250.3">
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output3]"
+          TopLeft="1553.5,390.699999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="-8.8571432463973,60.8235300123485"
               Start="0,0"
-              End="0,52.5">
+              End="-8.8571432463973,53.3235300123485">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,26.4117650061742" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.4117650061742"
+                    Point2="0,30.4117650061742"
+                    Point3="-4,30.4117650061742" />
+                  <mssgle:LineSegment
+                    End="-4.8571432463973,30.4117650061742" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.8571432463973,30.4117650061742"
+                    Point2="-8.8571432463973,30.4117650061742"
+                    Point3="-8.8571432463973,34.4117650061742" />
+                  <mssgle:LineSegment
+                    End="-8.8571432463973,53.3235300123485" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output2]"
+          TopLeft="113.5,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="511.466666666667,59.9999999999998"
+              Start="0,0"
+              End="511.466666666667,52.4999999999998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.6526946107783" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.6526946107783"
+                    Point2="0,43.6526946107783"
+                    Point3="4,43.6526946107783" />
+                  <mssgle:LineSegment
+                    End="507.466666666667,43.6526946107783" />
+                  <mssgle:CubicBezierSegment
+                    Point1="507.466666666667,43.6526946107783"
+                    Point2="511.466666666667,43.6526946107783"
+                    Point3="511.466666666667,47.6526946107783" />
+                  <mssgle:LineSegment
+                    End="511.466666666667,52.4999999999998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output1]"
+          TopLeft="392.5,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="252.733333333333,59.9999999999998"
+              Start="0,0"
+              End="252.733333333333,52.4999999999998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.560975609756" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.560975609756"
+                    Point2="0,35.560975609756"
+                    Point3="4,35.560975609756" />
+                  <mssgle:LineSegment
+                    End="248.733333333333,35.560975609756" />
+                  <mssgle:CubicBezierSegment
+                    Point1="248.733333333333,35.560975609756"
+                    Point2="252.733333333333,35.560975609756"
+                    Point3="252.733333333333,39.560975609756" />
+                  <mssgle:LineSegment
+                    End="252.733333333333,52.4999999999998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output]"
+          TopLeft="1358.5,311.899999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20.1333333333341,41.9999999999999"
+              Start="0,0"
+              End="-20.1333333333341,34.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.9576923076923" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.9576923076923"
+                    Point2="0,24.9576923076923"
+                    Point3="-4,24.9576923076923" />
+                  <mssgle:LineSegment
+                    End="-16.1333333333341,24.9576923076923" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.1333333333341,24.9576923076923"
+                    Point2="-20.1333333333341,24.9576923076923"
+                    Point3="-20.1333333333341,28.9576923076923" />
+                  <mssgle:LineSegment
+                    End="-20.1333333333341,34.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4401,210 +4613,6 @@
             <mssgm:EdgeLabel
               BoundingBox="171.743236607143,18.1751538891998,141.2278125,11.658203125"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Derived Column"
-          TopLeft="1282.1,270.299999999999" />
-        <EdgeLayout
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Historical Attribute Inserts Output]"
-          TopLeft="1430.16666666667,244.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-71.6666666666663,25.9999999999999"
-              Start="0,0"
-              End="-71.6666666666663,18.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,6.51908396946562" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,6.51908396946562"
-                    Point2="0,10.5190839694656"
-                    Point3="-4,10.5190839694656" />
-                  <mssgle:LineSegment
-                    End="-67.6666666666663,10.5190839694656" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-67.6666666666663,10.5190839694656"
-                    Point2="-71.6666666666663,10.5190839694656"
-                    Point3="-71.6666666666663,14.5190839694656" />
-                  <mssgle:LineSegment
-                    End="-71.6666666666663,18.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-110.889720052083,15.5190839694656,150.1127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\OLE DB Command"
-          TopLeft="1282.1,353.899999999999" />
-        <EdgeLayout
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output5]"
-          TopLeft="1358.5,311.899999999999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-20.1333333333341,41.9999999999999"
-              Start="0,0"
-              End="-20.1333333333341,34.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.9576923076923" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.9576923076923"
-                    Point2="0,24.9576923076923"
-                    Point3="-4,24.9576923076923" />
-                  <mssgle:LineSegment
-                    End="-16.1333333333341,24.9576923076923" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-16.1333333333341,24.9576923076923"
-                    Point2="-20.1333333333341,24.9576923076923"
-                    Point3="-20.1333333333341,28.9576923076923" />
-                  <mssgle:LineSegment
-                    End="-20.1333333333341,34.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Union All"
-          TopLeft="1467.5,265.5" />
-        <EdgeLayout
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[New Output]"
-          TopLeft="1496.83333333333,244.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-29.3333333333328,42"
-              Start="0,0"
-              End="-21.8333333333328,42">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,38"
-                    Point2="0,42"
-                    Point3="-4,42" />
-                  <mssgle:LineSegment
-                    End="-21.8333333333328,42" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-40.0080533854164,47,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[OLE DB Command Output]"
-          TopLeft="1390.63333333333,353.899999999999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="118.200000000001,-46.7999999999998"
-              Start="0,0"
-              End="118.200000000001,-39.2999999999998">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-19.2969487260144" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-19.2969487260144"
-                    Point2="0,-23.2969487260144"
-                    Point3="4,-23.2969487260144" />
-                  <mssgle:LineSegment
-                    End="114.200000000001,-23.2969487260144" />
-                  <mssgle:CubicBezierSegment
-                    Point1="114.200000000001,-23.2969487260144"
-                    Point2="118.200000000001,-23.2969487260144"
-                    Point3="118.200000000001,-27.2969487260144" />
-                  <mssgle:LineSegment
-                    End="118.200000000001,-39.2999999999998" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\Derived Column 1"
-          TopLeft="1472.3,349.099999999999" />
-        <EdgeLayout
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Union All Output 11]"
-          TopLeft="1549.83333333333,307.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.9999999999998"
-              Start="0,0"
-              End="0,34.4999999999998">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.4999999999998" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="190.4,41.6"
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties\datamartDimGuaranties"
-          TopLeft="1472.3,408.699999999999" />
-        <EdgeLayout
-          Id="Package\From DimGuarantiesCastedData to datamartDimGuaranties.Paths[Derived Column Output6]"
-          TopLeft="1634.7,369.899999999999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-67.1999999999998,38.8"
-              Start="0,0"
-              End="-67.1999999999998,31.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-63.1999999999998,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-63.1999999999998,0"
-                    Point2="-67.1999999999998,0"
-                    Point3="-67.1999999999998,4" />
-                  <mssgle:LineSegment
-                    End="-67.1999999999998,31.3" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4720,7 +4728,7 @@
         <NodeLayout
           Size="167.2,41.6"
           Id="Package\From stageDimGuaranties to DimGuarantiesCastedData\stageDimGaranties"
-          TopLeft="167.214288468264,43.4567338748266" />
+          TopLeft="159.214288468264,43.4567338748266" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\From stageDimGuaranties to DimGuarantiesCastedData\Derived Column"
@@ -4739,30 +4747,18 @@
           TopLeft="406.971427899964,201.164706986998" />
         <EdgeLayout
           Id="Package\From stageDimGuaranties to DimGuarantiesCastedData.Paths[OLE DB Source Output]"
-          TopLeft="250.814288468264,85.0567338748266">
+          TopLeft="240.992858294808,85.0567338748266">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-11.6428603469117,37.7903249100934"
+              EndConnector="0,37.7903249100934"
               Start="0,0"
-              End="-11.6428603469117,30.2903249100934">
+              End="0,30.2903249100934">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.8951624550467" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.8951624550467"
-                    Point2="0,18.8951624550467"
-                    Point3="-4,18.8951624550467" />
-                  <mssgle:LineSegment
-                    End="-7.64286034691173,18.8951624550467" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-7.64286034691173,18.8951624550467"
-                    Point2="-11.6428603469117,18.8951624550467"
-                    Point3="-11.6428603469117,22.8951624550467" />
-                  <mssgle:LineSegment
-                    End="-11.6428603469117,30.2903249100934" />
+                    End="0,30.2903249100934" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4873,6 +4869,11 @@
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Synonym</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
