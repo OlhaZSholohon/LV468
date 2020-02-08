@@ -26,26 +26,26 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">RD7</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAACAAAAAAADZgAAwAAAABAAAAB0qN0U+GRkO28Bq8iWogrMAAAAAASAAACgAAAAEAAAAJWV0VAL6u5CBT1zBT7zGLCIAAAAzEHjdUpcazgIfs/cn+Sj3XMe2ETVx/FoPtmjB1g9TmmT/xKc7WPeVCmGXnR2zH+/TBvorV0wOtoWK9QEBNfvaL7yYh3DiZkd9FPhIPpZp/0YN//wCxF6+7WBkdSD4Y4h3zvf8CUjvCNfnut5MDLgrPET6JMjL6SxKdQxIrhSqxfWEp4B/2Z/qhQAAADsBG0ZL3jbqfSyX2qGB+scDb9UmA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAACAAAAAAADZgAAwAAAABAAAADHng7CHR4gpeRsxz6VK/3MAAAAAASAAACgAAAAEAAAAFWCT/cDtDOY1FAV3v1fklOIAAAAxxkoERmV12RTdtwaIXxcoKDef9wNjy52z8VVRkZgahNYzCNdymJTCzzPU1mlNzuhBaqBmQsYmXLXANo2Z1yRWATsQJyss35yZDVcXuP698dMsZGZv7sBuPlRt+zLwvzHZrehTjCO/sRGArdPgp887atUM1DEphOJdDvqKzCU1G1AoYHygC8flBQAAABzxJgq1bV2x4QfEdlvfsu6kGgd5g==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
-          <SSIS:Package SSIS:Name="DatamartDimGaranties.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="DatamartDimGuaranties.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers />
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters />
           <SSIS:PackageInfo>
-            <SSIS:PackageMetaData SSIS:Name="DatamartDimGaranties.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="DatamartDimGuaranties.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{504F94DD-DFD4-48A0-BAF7-D5E58C8BBF28}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">DatamartDimGaranties</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{44BA0E29-F304-48E2-B66B-1D211607ED11}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">DatamartDimGuaranties</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">147</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">153</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{119B7F33-ECC0-4D89-B224-0205E14BB1E0}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{EF0B8237-3B69-455E-B282-D2CEAA7AF688}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

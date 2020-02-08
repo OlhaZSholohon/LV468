@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DatamartFactOrders"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{5BB0AED6-B8FE-41E5-B9FC-03104EB83088}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{3478BE80-F5EA-4766-A257-EF77E10BE095}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADxFTchPcqS9br0wXp1QNHrAAAAAASAAACgAAAAEAAAAJpHFmDeHm75DPgBjWlcCxAYAAAAYFpKyDYvE9rfRl6ricuAW0M7AGyZHIszFAAAAGB3vwYlbuBmiYWpXdwYbxQLw9uX</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH2MGC3jlv0urU7dV0e1WGwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACsC1hDDdQjdAaO7lKp5EK7AAAAAASAAACgAAAAEAAAAKxCfN1yMER/Y76cK9J+SD8YAAAAXcxEbaIAA5/yXLejPNkMjmXR9j6Q3f1cFAAAAHDyI4zKY8Vl4oHNlAWpfkpwnste</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -375,7 +375,7 @@
           PanelSize="226.4,117.6"
           Size="226.4,160.8"
           Id="Package\Sequence Container"
-          TopLeft="236.380956406497,52.81568701523" />
+          TopLeft="218.666670390539,49.7568634429194" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
