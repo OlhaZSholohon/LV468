@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="2/6/2020 6:27:32 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactOrdersFromStage"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{163599DF-CEE2-4C83-9C36-25F8C08D24FE}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{44A2B7A0-3BDC-4D6D-B190-8FFAF199158A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAq91zRie3DEy4EnLkdJJZRgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACm3AYQX8+ywEWrxLfukvy6AAAAAASAAACgAAAAEAAAAKtFRGIfc2LfWSHe/IwOJXEYAAAAWm2jxLtegFg2oqMkh6pw7lHxTcYYnJGmFAAAAHx7HkxN+cY7vL7KvnBweyUhgHmx</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAq91zRie3DEy4EnLkdJJZRgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABTX7WvIb/zIc7SNyoUg4ggAAAAAASAAACgAAAAEAAAANc6kJTNt47QCBvHIy9BazIYAAAA7VVo/JJBi90Eh7BCU/IDznQB1G6IHLZOFAAAADVAnk3C0bHYwLl5YNU+Zg6s/zpy</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -44,6 +44,66 @@
       DTS:ObjectName="Execute procedure PopulateFactOrders"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Execute procedure PopulateFactOrders.EventHandlers[OnPostExecute]"
+          DTS:CreationName="OnPostExecute"
+          DTS:DTSID="{2B0AF22A-FD37-42DC-AF01-99F2C2670521}"
+          DTS:EventID="0"
+          DTS:EventName="OnPostExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{E0041F35-00C9-46A7-A9A8-AF5293C9E981}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Execute procedure PopulateFactOrders.EventHandlers[OnPostExecute]\Execute SQL Task"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{7af4afcd-36c9-411e-9975-ded1fcad504f}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute SQL Task">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A542A93F-4AF5-463B-BE07-B8D9A98A3E12}"
+                  SQLTask:SqlStatementSource="UPDATE [datamart].[PackageInfo]&#xA;SET [EndTime] = GETDATE(), [PackageStatus] = 'Finished'&#xA;WHERE [PackageName]= 'FactOrdersFromStage' AND [PackageStatus] = 'Started'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+        <DTS:EventHandler
+          DTS:refId="Package\Execute procedure PopulateFactOrders.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{4848740C-BD19-4E56-8074-56E56A2FE699}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{C103B281-7F87-47F9-BD9D-EE4A649E98FD}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables />
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{A542A93F-4AF5-463B-BE07-B8D9A98A3E12}"
@@ -60,6 +120,45 @@
       DTS:ObjectName="form Stage to DataMart"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\form Stage to DataMart.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{1CC22DEF-3E9D-45A6-A008-A13FEBE55540}"
+          DTS:EventID="6881377"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{CDD47C72-2D6C-4CC3-92CD-1C6ED2CB0C6F}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\form Stage to DataMart.EventHandlers[OnPreExecute]\Execute SQL Task"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{DA01D39A-AFAE-4FB5-ACDC-F808DF5E4DE3}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute SQL Task">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A542A93F-4AF5-463B-BE07-B8D9A98A3E12}"
+                  SQLTask:SqlStatementSource="INSERT INTO [datamart].[PackageInfo] ([PackageName], [StartTime], [PackageStatus])&#xA;VALUES ('FactOrdersFromStage', GETDATE(), 'Started')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
       <DTS:ObjectData>
         <pipeline
           version="1">
@@ -1611,6 +1710,45 @@
       DTS:ObjectName="Constraint"
       DTS:To="Package\Execute procedure PopulateFactOrders" />
   </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{73729F06-397B-4C7E-8560-9C089796A831}"
+      DTS:EventID="1072693248"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{715BE6D3-8C23-4808-A244-1B856CB4CAD1}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{91421B8D-71BD-4E26-848D-41490CCF8ED5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A542A93F-4AF5-463B-BE07-B8D9A98A3E12}"
+              SQLTask:SqlStatementSource="UPDATE [datamart].[PackageInfo]&#xA;SET [PackageStatus] = 'Error'&#xA;WHERE [PackageName]= 'FactOrdersFromStage' AND [PackageStatus] = 'Started'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -1841,5 +1979,41 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package.EventHandlers[OnError]\Execute SQL Task"
+          TopLeft="353.6,89.6" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\form Stage to DataMart.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\form Stage to DataMart.EventHandlers[OnPreExecute]\Execute SQL Task"
+          TopLeft="404.8,91.2" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Execute procedure PopulateFactOrders.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Execute procedure PopulateFactOrders.EventHandlers[OnPostExecute]\Execute SQL Task"
+          TopLeft="377.6,64" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

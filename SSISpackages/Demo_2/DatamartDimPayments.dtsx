@@ -1,18 +1,18 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="2/7/2020 12:35:52 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RD7"
   DTS:CreatorName="TRAINING\nbryntc"
-  DTS:DTSID="{17BAAC9F-196B-43AE-B9EB-6F2C03C7F3D7}"
+  DTS:DTSID="{D66AA19D-FFE9-4202-9B7E-C69C0FE6A4D3}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.1301.433"
   DTS:LocaleID="1033"
-  DTS:ObjectName="DataMartDimPayments"
+  DTS:ObjectName="DatamartDimPayments"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{06484D80-20C3-47B9-931A-C194473C18AF}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{BDF99640-30E2-411A-929D-3C10B84F13BF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAq91zRie3DEy4EnLkdJJZRgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA24DcAlV5Cg1/qgpAE5Tw1AAAAAASAAACgAAAAEAAAACv93sDciK8vThoDmvjjrDIYAAAAxMgZzvQ73fWVGtEttW7GQZaWGCgb5YtZFAAAANO8VI10UmXcv5q5RCvc8UwCa9HQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAq91zRie3DEy4EnLkdJJZRgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA4GSOlYLgNk77VeEEsuTjHAAAAAASAAACgAAAAEAAAANaixIkYvbNZ4BA67jzpbkoYAAAA6/iaHfGJZiQc3aJ4/JPrAkzsNf5gYLBJFAAAAPCjmcuFjkO/Hc9/m2pYyzQrFLv3</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -44,6 +44,45 @@
       DTS:ObjectName="Data Flow Task 1"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Data Flow Task 1.EventHandlers[OnPostExecute]"
+          DTS:CreationName="OnPostExecute"
+          DTS:DTSID="{E9BAB251-0405-4706-B957-8D3B6E18544D}"
+          DTS:EventID="1072693248"
+          DTS:EventName="OnPostExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{A890D4CA-4B14-4C3A-9F6B-077C19DA0147}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Data Flow Task 1.EventHandlers[OnPostExecute]\Execute SQL Task"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{BFF40F3D-1FE2-43A3-9684-56A2983F7AEC}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute SQL Task">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{D8331A48-B14D-4B4A-83C5-6296D48D802C}"
+                  SQLTask:SqlStatementSource="UPDATE [datamart].[PackageInfo]&#xA;SET [EndTime] = GETDATE(), [PackageStatus] = 'Finished'&#xA;WHERE [PackageName]= 'DatamartDimPayments' AND [PackageStatus] = 'Started'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
       <DTS:ObjectData>
         <pipeline
           version="1">
@@ -629,7 +668,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -818,7 +857,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [datamart].[DimPayments] SET [PaymentDescription] = ?,[PaymentType] = ?, [UpdateData] = getdate() WHERE [PaymentTypeID] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [datamart].[DimPayments] SET [PaymentDescription] = ?,[PaymentType] = ?, [UpdateData] = getdate() WHERE [PaymentTypeID] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -960,7 +999,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1102,7 +1141,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1384,7 +1423,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [PaymentDescription], [PaymentType], [PaymentTypeID] FROM [datamart].[DimPayments]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [PaymentDescription], [PaymentType], [PaymentTypeID] FROM [datamart].[DimPayments]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -2130,49 +2169,49 @@
               startId="Package\Data Flow Task 1\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
             <path
               refId="Package\Data Flow Task 1.Paths[Derived Column Output7]"
-              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 1]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task 1\Cash.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task 1.Paths[Derived Column Output6]"
-              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 2]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task 1\PayPal.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task 1.Paths[Derived Column Output5]"
-              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 3]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task 1\EasyPay.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task 1.Paths[Derived Column Output4]"
-              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 4]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task 1\Drupal.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task 1.Paths[Derived Column Output8]"
-              endId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task 1\Error.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task 1.Paths[Derived Column Output2]"
-              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 6]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task 1\Britix.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task 1.Paths[Derived Column Output1]"
-              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 7]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task 1\Magento.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task 1.Paths[Derived Column Output]"
               endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 8]"
               name="Derived Column Output"
               startId="Package\Data Flow Task 1\Simpla.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Data Flow Task 1.Paths[Derived Column Output3]"
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output6]"
+              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 7]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task 1\Magento.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output5]"
+              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 6]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task 1\Britix.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output4]"
+              endId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task 1\Error.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output8]"
               endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 5]"
               name="Derived Column Output"
               startId="Package\Data Flow Task 1\OpenCart.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output2]"
+              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 3]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task 1\EasyPay.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output1]"
+              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task 1\PayPal.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task 1\Cash.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output3]"
+              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 4]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task 1\Drupal.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task 1.Paths[Drupal]"
               endId="Package\Data Flow Task 1\Drupal.Inputs[Derived Column Input]"
@@ -2852,7 +2891,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3001,7 +3040,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3138,7 +3177,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -3467,6 +3506,52 @@
       DTS:ObjectName="Truncate tables"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Truncate tables.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{38088992-9375-445F-9F6C-32EB5EF0668F}"
+          DTS:EventID="1893038896"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{CBE1AE42-A7C3-4794-A243-BA7D6C13CA89}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Truncate tables.EventHandlers[OnPreExecute]\Execute SQL Task"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{96D3EBC1-A0E2-406F-A50E-82D498800D6A}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute SQL Task">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{D8331A48-B14D-4B4A-83C5-6296D48D802C}"
+                  SQLTask:SqlStatementSource="INSERT INTO [datamart].[PackageInfo] &#xA;VALUES ([PackageName]= 'DatamartDimPayments', [StartTime] =  GETDATE(), [PackageStatus] = 'Started')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="System::PackageName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D8331A48-B14D-4B4A-83C5-6296D48D802C}"
@@ -3516,6 +3601,45 @@
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Data Flow Task 1" />
   </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{0BFAB159-1325-4298-9B89-43D0F259BC8D}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{5D651CDA-4320-4637-B73B-D5F1B7AEFBA3}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{DB0AFED5-D050-49AD-A3B1-EB8031C7B0FE}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D8331A48-B14D-4B4A-83C5-6296D48D802C}"
+              SQLTask:SqlStatementSource="UPDATE [datamart].[PackageInfo]&#xA;SET [PackageStatus] = 'Error'&#xA;WHERE [PackageName]= 'DatamartDimPayments' AND [PackageStatus] = 'Started'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -3631,6 +3755,18 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package.EventHandlers[OnError]\Execute SQL Task"
+          TopLeft="352,89.6" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\Data Flow Task 1">
     <LayoutInfo>
@@ -3723,7 +3859,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3745,7 +3883,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3875,7 +4015,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4059,7 +4201,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output8]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output4]"
           TopLeft="1430.9,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4077,11 +4219,13 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output7]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output]"
           TopLeft="55.9000000000001,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4111,11 +4255,13 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output6]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output1]"
           TopLeft="220.9,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4145,11 +4291,13 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output5]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output2]"
           TopLeft="393.9,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4179,11 +4327,13 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output4]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output3]"
           TopLeft="910.9,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4213,11 +4363,13 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output3]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output8]"
           TopLeft="1087.9,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4247,11 +4399,13 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output2]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output5]"
           TopLeft="747.011111111111,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4269,11 +4423,13 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output1]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output6]"
           TopLeft="572.9,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4303,11 +4459,13 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output7]"
           TopLeft="1264.9,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4337,7 +4495,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4439,6 +4599,18 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Data Flow Task 1.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Data Flow Task 1.EventHandlers[OnPostExecute]\Execute SQL Task"
+          TopLeft="405.6,89.6" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task 1\OLE DB Destination">
     <Properties>
@@ -4533,59 +4705,81 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="192.8,41.6"
-          Id="Package\Length check\synonym dbo_Payments"
-          TopLeft="75.4285727131124,13.4588237181667" />
+          Size="120,41.6"
+          Id="Package\Length check\Union All"
+          TopLeft="124.571430692867,275.905886222417" />
         <NodeLayout
           Size="154.4,41.6"
           Id="Package\Length check\Conditional Split"
           TopLeft="85.1428585928314,85.6470600246971" />
-        <EdgeLayout
-          Id="Package\Length check.Paths[OLE DB Source Output]"
-          TopLeft="171.828572713112,55.0588237181667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-9.48571412028099,30.5882363065305"
-              Start="0,0"
-              End="-9.48571412028099,23.0882363065305">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.2941181532652" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.2941181532652"
-                    Point2="0,15.2941181532652"
-                    Point3="-4,15.2941181532652" />
-                  <mssgle:LineSegment
-                    End="-5.48571412028099,15.2941181532652" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.48571412028099,15.2941181532652"
-                    Point2="-9.48571412028099,15.2941181532652"
-                    Point3="-9.48571412028099,19.2941181532652" />
-                  <mssgle:LineSegment
-                    End="-9.48571412028099,23.0882363065305" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Length check\OLE DB Destination"
+          TopLeft="544.571437845425,63.3882360148182" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Length check\Data Conversion 1"
+          TopLeft="290.285719229251,310.164710232296" />
+        <NodeLayout
+          Size="192.8,41.6"
+          Id="Package\Length check\synonym dbo_Payments"
+          TopLeft="75.4285727131124,13.4588237181667" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Length check\Data Conversion"
+          TopLeft="445.714293304755,157.600002041985" />
         <NodeLayout
           Size="97.6,41.6"
           Id="Package\Length check\&lt;50"
           TopLeft="36.0000006130764,178.023531908478" />
         <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Length check\Derived Column 2"
+          TopLeft="292.00000497273,82.9647070234622" />
+        <NodeLayout
           Size="104,41.6"
           Id="Package\Length check\&lt;200"
           TopLeft="233.714289694416,179.011767194015" />
         <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Length check\Derived Column 2"
-          TopLeft="292.00000497273,82.9647070234622" />
+          Size="179.2,41.6"
+          Id="Package\Length check\OLE DB Destination 1"
+          TopLeft="516.000008787428,309.882357231061" />
+        <EdgeLayout
+          Id="Package\Length check.Paths[Union All Output 1]"
+          TopLeft="244.571430692867,296.705886222417">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45.7142885363832,34.2588240098788"
+              Start="0,0"
+              End="38.2142885363832,34.2588240098788">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.8571442681916,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.8571442681916,0"
+                    Point2="22.8571442681916,0"
+                    Point3="22.8571442681916,4" />
+                  <mssgle:LineSegment
+                    End="22.8571442681916,30.2588240098788" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.8571442681916,30.2588240098788"
+                    Point2="22.8571442681916,34.2588240098788"
+                    Point3="26.8571442681916,34.2588240098788" />
+                  <mssgle:LineSegment
+                    End="38.2142885363832,34.2588240098788" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Length check.Paths[PaymentType&lt;50]"
           TopLeft="137.942858592831,127.247060024697">
@@ -4659,141 +4853,39 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Length check.Paths[Conditional Split Default Output]"
-          TopLeft="239.542858592831,105.10588352408">
+          Id="Package\Length check.Paths[OLE DB Source Output]"
+          TopLeft="171.828572713112,55.0588237181667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="52.457146379899,0"
+              EndConnector="-9.48571412028099,30.5882363065305"
               Start="0,0"
-              End="44.957146379899,0">
+              End="-9.48571412028099,23.0882363065305">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="44.957146379899,0" />
+                    End="0,11.2941181532652" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.2941181532652"
+                    Point2="0,15.2941181532652"
+                    Point3="-4,15.2941181532652" />
+                  <mssgle:LineSegment
+                    End="-5.48571412028099,15.2941181532652" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.48571412028099,15.2941181532652"
+                    Point2="-9.48571412028099,15.2941181532652"
+                    Point3="-9.48571412028099,19.2941181532652" />
+                  <mssgle:LineSegment
+                    End="-9.48571412028099,23.0882363065305" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.1353330600505,5,141.2278125,11.658203125"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Length check\OLE DB Destination"
-          TopLeft="544.571437845425,63.3882360148182" />
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Length check\Data Conversion"
-          TopLeft="445.714293304755,157.600002041985" />
-        <EdgeLayout
-          Id="Package\Length check.Paths[Derived Column Output]"
-          TopLeft="373.20000497273,124.564707023462">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="150.114288332025,33.0352950185228"
-              Start="0,0"
-              End="150.114288332025,25.5352950185228">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.5176475092614" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.5176475092614"
-                    Point2="0,16.5176475092614"
-                    Point3="4,16.5176475092614" />
-                  <mssgle:LineSegment
-                    End="146.114288332025,16.5176475092614" />
-                  <mssgle:CubicBezierSegment
-                    Point1="146.114288332025,16.5176475092614"
-                    Point2="150.114288332025,16.5176475092614"
-                    Point3="150.114288332025,20.5176475092614" />
-                  <mssgle:LineSegment
-                    End="150.114288332025,25.5352950185228" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Length check.Paths[Data Conversion Output]"
-          TopLeft="547.847626638088,157.600002041985">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="81.9238112073368,-52.6117660271668"
-              Start="0,0"
-              End="81.9238112073368,-45.1117660271668">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-17.3668192640943" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-17.3668192640943"
-                    Point2="0,-21.3668192640943"
-                    Point3="4,-21.3668192640943" />
-                  <mssgle:LineSegment
-                    End="77.9238112073368,-21.3668192640943" />
-                  <mssgle:CubicBezierSegment
-                    Point1="77.9238112073368,-21.3668192640943"
-                    Point2="81.9238112073368,-21.3668192640943"
-                    Point3="81.9238112073368,-25.3668192640943" />
-                  <mssgle:LineSegment
-                    End="81.9238112073368,-45.1117660271668" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\Length check\Union All"
-          TopLeft="124.571430692867,275.905886222417" />
-        <EdgeLayout
-          Id="Package\Length check.Paths[Derived Column Output1]"
-          TopLeft="84.8000006130764,219.623531908478">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="99.7714300797911,56.2823543139395"
-              Start="0,0"
-              End="99.7714300797911,48.7823543139395">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.1411771569697" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.1411771569697"
-                    Point2="0,28.1411771569697"
-                    Point3="4,28.1411771569697" />
-                  <mssgle:LineSegment
-                    End="95.7714300797911,28.1411771569697" />
-                  <mssgle:CubicBezierSegment
-                    Point1="95.7714300797911,28.1411771569697"
-                    Point2="99.7714300797911,28.1411771569697"
-                    Point3="99.7714300797911,32.1411771569697" />
-                  <mssgle:LineSegment
-                    End="99.7714300797911,48.7823543139395" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4827,51 +4919,83 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Length check\Data Conversion 1"
-          TopLeft="290.285719229251,310.164710232296" />
         <EdgeLayout
-          Id="Package\Length check.Paths[Union All Output 1]"
-          TopLeft="244.571430692867,296.705886222417">
+          Id="Package\Length check.Paths[Derived Column Output1]"
+          TopLeft="84.8000006130764,219.623531908478">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="45.7142885363832,34.2588240098788"
+              EndConnector="99.7714300797911,56.2823543139395"
               Start="0,0"
-              End="38.2142885363832,34.2588240098788">
+              End="99.7714300797911,48.7823543139395">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="18.8571442681916,0" />
+                    End="0,24.1411771569697" />
                   <mssgle:CubicBezierSegment
-                    Point1="18.8571442681916,0"
-                    Point2="22.8571442681916,0"
-                    Point3="22.8571442681916,4" />
+                    Point1="0,24.1411771569697"
+                    Point2="0,28.1411771569697"
+                    Point3="4,28.1411771569697" />
                   <mssgle:LineSegment
-                    End="22.8571442681916,30.2588240098788" />
+                    End="95.7714300797911,28.1411771569697" />
                   <mssgle:CubicBezierSegment
-                    Point1="22.8571442681916,30.2588240098788"
-                    Point2="22.8571442681916,34.2588240098788"
-                    Point3="26.8571442681916,34.2588240098788" />
+                    Point1="95.7714300797911,28.1411771569697"
+                    Point2="99.7714300797911,28.1411771569697"
+                    Point3="99.7714300797911,32.1411771569697" />
                   <mssgle:LineSegment
-                    End="38.2142885363832,34.2588240098788" />
+                    End="99.7714300797911,48.7823543139395" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="179.2,41.6"
-          Id="Package\Length check\OLE DB Destination 1"
-          TopLeft="516.000008787428,309.882357231061" />
+        <EdgeLayout
+          Id="Package\Length check.Paths[Derived Column Output]"
+          TopLeft="373.20000497273,124.564707023462">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="150.114288332025,33.0352950185228"
+              Start="0,0"
+              End="150.114288332025,25.5352950185228">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.5176475092614" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.5176475092614"
+                    Point2="0,16.5176475092614"
+                    Point3="4,16.5176475092614" />
+                  <mssgle:LineSegment
+                    End="146.114288332025,16.5176475092614" />
+                  <mssgle:CubicBezierSegment
+                    Point1="146.114288332025,16.5176475092614"
+                    Point2="150.114288332025,16.5176475092614"
+                    Point3="150.114288332025,20.5176475092614" />
+                  <mssgle:LineSegment
+                    End="150.114288332025,25.5352950185228" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Length check.Paths[Data Conversion Output1]"
           TopLeft="455.085719229251,330.823533731678">
@@ -4891,7 +5015,69 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Length check.Paths[Data Conversion Output]"
+          TopLeft="547.847626638088,157.600002041985">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="81.9238112073368,-52.6117660271668"
+              Start="0,0"
+              End="81.9238112073368,-45.1117660271668">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-17.3668192640943" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-17.3668192640943"
+                    Point2="0,-21.3668192640943"
+                    Point3="4,-21.3668192640943" />
+                  <mssgle:LineSegment
+                    End="77.9238112073368,-21.3668192640943" />
+                  <mssgle:CubicBezierSegment
+                    Point1="77.9238112073368,-21.3668192640943"
+                    Point2="81.9238112073368,-21.3668192640943"
+                    Point3="81.9238112073368,-25.3668192640943" />
+                  <mssgle:LineSegment
+                    End="81.9238112073368,-45.1117660271668" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Length check.Paths[Conditional Split Default Output]"
+          TopLeft="239.542858592831,105.10588352408">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52.457146379899,0"
+              Start="0,0"
+              End="44.957146379899,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="44.957146379899,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.1353330600505,5,141.2278125,11.658203125"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4936,5 +5122,17 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\Truncate tables.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Truncate tables.EventHandlers[OnPreExecute]\Execute SQL Task"
+          TopLeft="387.2,92.8" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
