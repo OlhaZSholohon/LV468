@@ -8,7 +8,7 @@ CREATE TABLE [datamart].[FactOrders](
 	[OrderID] [int] NOT NULL
 	, [Date] [date] NOT NULL
 	, [PaymentID] [int] NOT NULL
-	, [GarantyID] [int] NOT NULL
+	, [GuarantyID] [int] NOT NULL
 	, [ClientID] [int] NOT NULL
 	, [DiscountID] [int] --NOT NULL
 	, [ProductID] [int] NOT NULL

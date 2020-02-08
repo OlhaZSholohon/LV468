@@ -12,17 +12,17 @@ AS
 DECLARE @Loop INT
 		, @Date DATE
 		, @PaymentID INT
-		, @GarantyID INT
+		, @GuarantyID INT
 		, @ClientID INT
 		, @DiscountID INT
 		, @ProductID INT
 		, @AmountProducts INT
 		
 --------- Addition variables -----------------
-		, @GarantyPrice DECIMAL (18, 2)
+		, @GuarantyPrice DECIMAL (18, 2)
 		, @ProductPrice DECIMAL (18, 2)
 		, @Discount INT
-		, @GarantyDuration INT
+		, @GuarantyDuration INT
 		;
 
 SET @Loop = 1;
@@ -32,22 +32,22 @@ BEGIN
 	--------- Main variables --------------------
 	SET @Date = (SELECT TOP 1 [Date] FROM [TestDBDataMart].[datamart].[DimDates] ORDER BY NEWID())
 	SET @PaymentID = (SELECT TOP 1 [PaymentTypeID] FROM [TestDBDataMart].[datamart].[DimPayments] ORDER BY NEWID())
-	SET @GarantyID = (SELECT TOP 1 [GarantyID] FROM [TestDBDataMart].[datamart].[DimGaranties] g ORDER BY NEWID())
+	SET @GuarantyID = (SELECT TOP 1 [GuarantyID] FROM [TestDBDataMart].[datamart].[DimGuaranties] g ORDER BY NEWID())
 	SET @ClientID = (SELECT TOP 1 [ClientID] FROM [TestDBDataMart].[datamart].[DimClients] ORDER BY NEWID())
 	SET @DiscountID = (SELECT TOP 1 [DiscountID] FROM [TestDBDataMart].[datamart].[DimDiscounts] ORDER BY NEWID())
 	SET @ProductID = (SELECT TOP 1 [ProductID] FROM [TestDBDataMart].[datamart].[DimProducts] ORDER BY NEWID())
 	SET @AmountProducts = round(rand()*120, 0)
 	
 	--------- Addition variables -----------------
-	SET @GarantyPrice = TRY_CAST((SELECT g.PriceGaranty  FROM [TestDBDataMart].[datamart].[DimGaranties] g WHERE g.GarantyID = @GarantyID AND g.EndDate IS NULL) AS DECIMAL (10, 2))
+	SET @GuarantyPrice = TRY_CAST((SELECT g.PriceGuaranty  FROM [TestDBDataMart].[datamart].[DimGuaranties] g WHERE g.GuarantyID = @GuarantyID AND g.EndDate IS NULL) AS DECIMAL (10, 2))
 	SET @ProductPrice = TRY_CAST((SELECT p.Price FROM [TestDBDataMart].[datamart].[DimProducts] p WHERE p.ProductID = @ProductID) AS DECIMAL (10, 2))
 	SET @Discount = TRY_CAST((SELECT d.PercentDiscount FROM [TestDBDataMart].[datamart].[DimDiscounts] d WHERE d.DiscountID = @DiscountID) AS INT)
-	SET @GarantyDuration = TRY_CAST((SELECT g.Duration  FROM [TestDBDataMart].[datamart].[DimGaranties] g WHERE g.GarantyID = @GarantyID AND g.EndDate IS NULL) AS INT)
+	SET @GuarantyDuration = TRY_CAST((SELECT g.Duration  FROM [TestDBDataMart].[datamart].[DimGuaranties] g WHERE g.GuarantyID = @GuarantyID AND g.EndDate IS NULL) AS INT)
 
 	INSERT INTO datamart.FactOrders (OrderID
 									, [Date]
 									, PaymentID
-									, GarantyID
+									, GuarantyID
 									, ClientID
 									, DiscountID
 									, ProductID
@@ -59,14 +59,14 @@ BEGIN
 		round(rand()*70157, 0)
 		, @Date
 		, @PaymentID
-		, @GarantyID
+		, @GuarantyID
 		, @ClientID
 		, @DiscountID
 		, @ProductID
 		, @AmountProducts
-		, TRY_CAST((@AmountProducts * @ProductPrice + @GarantyPrice) AS DECIMAL (10,2))
-		, TRY_CAST(((@AmountProducts * @ProductPrice + @GarantyPrice) * @Discount *0.1)/100 as decimal (10, 2))
-		, DATEADD (DAY, @GarantyDuration, @Date)
+		, TRY_CAST((@AmountProducts * @ProductPrice + @GuarantyPrice) AS DECIMAL (10,2))
+		, TRY_CAST(((@AmountProducts * @ProductPrice + @GuarantyPrice) * @Discount *0.1)/100 as decimal (10, 2))
+		, DATEADD (DAY, @GuarantyDuration, @Date)
 		)
 
 	SET @Loop = @Loop + 1
