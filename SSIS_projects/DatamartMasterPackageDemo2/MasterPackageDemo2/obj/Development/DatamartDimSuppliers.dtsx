@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimSuppliers"
   DTS:PackageType="5"
-  DTS:VersionBuild="161"
-  DTS:VersionGUID="{B5A81516-BB11-47D7-BA38-61981A02676A}">
+  DTS:VersionBuild="162"
+  DTS:VersionGUID="{D3731EE7-9E02-4FCB-852E-887AFB56CC48}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -3289,7 +3289,7 @@ GO</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
-          SQLTask:SqlStatementSource="IF OBJECT_ID('dbo.##SupplierValidData', 'U') IS NOT NULL &#xA;  DROP TABLE dbo.##SupplierValidData; &#xA;&#xA;IF OBJECT_ID('dbo.##SupplierValidData2', 'U') IS NOT NULL &#xA;  DROP TABLE dbo.##SupplierValidData2; &#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="IF OBJECT_ID('tempdb..##SupplierValidData') IS NOT NULL&#xA;    DROP TABLE ###SupplierValidData&#xA;&#xA;IF OBJECT_ID('tempdb..##SupplierValidData2') IS NOT NULL&#xA;    DROP TABLE ###SupplierValidData2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable

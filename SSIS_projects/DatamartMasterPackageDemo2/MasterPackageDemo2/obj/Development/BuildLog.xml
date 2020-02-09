@@ -2,18 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>MasterPackageDemo2</Name>
-    <LastWriteTime>2020-02-08T19:24:14.1789984Z</LastWriteTime>
+    <LastWriteTime>2020-02-09T11:10:17.4221791Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>MasterDimDatamart.dtsx</Name>
-      <LastWriteTime>2020-02-08T19:56:05.423725Z</LastWriteTime>
+      <LastWriteTime>2020-02-09T11:10:17.3597763Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartDimSuppliers.dtsx</Name>
-      <LastWriteTime>2020-02-08T19:50:41.5684706Z</LastWriteTime>
+      <LastWriteTime>2020-02-08T21:26:05.3266015Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -88,7 +88,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartDimLocations.dtsx</Name>
-      <LastWriteTime>2020-02-08T19:50:41.7088769Z</LastWriteTime>
+      <LastWriteTime>2020-02-08T21:26:05.2329973Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DatamartDimReturnDetails.dtsx</Name>
+      <LastWriteTime>2020-02-09T11:07:23.0054289Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DatamartDimDeliveryDetails.dtsx</Name>
+      <LastWriteTime>2020-02-09T11:12:03.2729286Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

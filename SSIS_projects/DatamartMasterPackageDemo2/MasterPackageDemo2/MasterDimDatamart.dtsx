@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MasterDimDatamart"
   DTS:PackageType="5"
-  DTS:VersionBuild="96"
-  DTS:VersionGUID="{5FA29CC6-3F9F-47DF-A94D-EFE188721FE6}">
+  DTS:VersionBuild="99"
+  DTS:VersionGUID="{C92A6CB8-35CC-4762-B1F6-A520C53F7529}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -66,7 +66,6 @@
           DTS:refId="Package\Populate Dimention Tables\DimDeliveryDetails"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{0E14B53C-6802-4D63-9790-34418D2F1843}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -76,6 +75,7 @@
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartDimDeliveryDetails.dtsx</PackageName>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -187,7 +187,6 @@
           DTS:refId="Package\Populate Dimention Tables\DimReturnDetails"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{A67BCD95-2021-4DC9-B42C-3F99FF1AB7DC}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -197,6 +196,7 @@
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartDimReturnDetails.dtsx</PackageName>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -276,6 +276,22 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 6"
           DTS:To="Package\Populate Dimention Tables\DimLocations" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint 7]"
+          DTS:CreationName=""
+          DTS:DTSID="{466B57C8-4319-4309-8FFD-AB7B973E0CF1}"
+          DTS:From="Package\Populate Dimention Tables\DimLocations"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 7"
+          DTS:To="Package\Populate Dimention Tables\DimReturnDetails" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint 8]"
+          DTS:CreationName=""
+          DTS:DTSID="{A0BA0060-9693-40E5-8A38-38F88D236092}"
+          DTS:From="Package\Populate Dimention Tables\DimReturnDetails"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 8"
+          DTS:To="Package\Populate Dimention Tables\DimDeliveryDetails" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -293,7 +309,6 @@
           DTS:refId="Package\Populate Fact Tables\Fact Returns (from FlarFiles)"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{3DE92B40-5518-4CE7-8868-7AF02678EB39}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -303,6 +318,7 @@
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartFactReturns.dtsx</PackageName>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -451,88 +467,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="213,42"
-          Id="Package\Populate Fact Tables\Fact Returns (from FlarFiles)"
-          TopLeft="294.25,77.25" />
-        <NodeLayout
-          Size="220,42"
-          Id="Package\Populate Fact Tables\FactFeedbacks (from flatFiles)"
-          TopLeft="298.5,149" />
-        <NodeLayout
-          Size="226,42"
-          Id="Package\Populate Fact Tables\FactOrders(from flatFiles)"
-          TopLeft="15.75,87.75" />
-        <NodeLayout
-          Size="230,42"
-          Id="Package\Populate Fact Tables\FactOrders(SELECT statement)"
-          TopLeft="11.75,19.5" />
-        <GroupLayout
-          Text="Fact Orders"
-          ParentId="Package\Populate Fact Tables"
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="250,159"
-          Size="250,202"
-          Id="ac13eb16-7410-425e-8afc-1837ee75cda8"
-          TopLeft="13.5,15.5">
-          <GroupLayout.ChildrenIds>
-            <s:String>Package\Populate Fact Tables\FactOrders(from flatFiles)</s:String>
-            <s:String>Package\Populate Fact Tables\FactOrders(SELECT statement)</s:String>
-          </GroupLayout.ChildrenIds>
-        </GroupLayout>
-        <NodeLayout
-          Size="242,42"
-          Id="Package\Populate Fact Tables\FactDeliveries (SELECT statement)"
-          TopLeft="1.75,11.75" />
-        <NodeLayout
-          Size="230,42"
-          Id="Package\Populate Fact Tables\FactDeliveries (from flatFiles)"
-          TopLeft="9.5,78.75" />
-        <GroupLayout
-          Text="Fact Deliveries"
-          ParentId="Package\Populate Fact Tables"
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="253,142"
-          Size="253,185"
-          Id="4c1aaa61-16f3-431e-97ca-9ed22a8d8a62"
-          TopLeft="19,283">
-          <GroupLayout.ChildrenIds>
-            <s:String>Package\Populate Fact Tables\FactDeliveries (SELECT statement)</s:String>
-            <s:String>Package\Populate Fact Tables\FactDeliveries (from flatFiles)</s:String>
-          </GroupLayout.ChildrenIds>
-        </GroupLayout>
-        <NodeLayout
-          Size="232,42"
-          Id="Package\Populate Fact Tables\FactSupplies (from flatFiles)"
-          TopLeft="18.25,74.5" />
-        <NodeLayout
-          Size="239,42"
-          Id="Package\Populate Fact Tables\FactSupplies (SELECT statement)"
-          TopLeft="16.75,9.25" />
-        <GroupLayout
-          Text="Fact Supplies"
-          ParentId="Package\Populate Fact Tables"
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="271,145"
-          Size="271,188"
-          Id="45f4042b-f677-45b4-81b1-0582b21d1618"
-          TopLeft="279,280.666666666667">
-          <GroupLayout.ChildrenIds>
-            <s:String>Package\Populate Fact Tables\FactSupplies (from flatFiles)</s:String>
-            <s:String>Package\Populate Fact Tables\FactSupplies (SELECT statement)</s:String>
-          </GroupLayout.ChildrenIds>
-        </GroupLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="576,524"
-          Size="576,567"
-          Id="Package\Populate Fact Tables"
-          TopLeft="792.666666666667,177.166666666667" />
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
         <NodeLayout
           Size="165,44"
           Id="Package\Populate Dimention Tables\DimClients"
@@ -542,9 +477,9 @@
           Id="Package\Populate Dimention Tables\DimDates"
           TopLeft="39.5714285714285,123.857142857143" />
         <NodeLayout
-          Size="170,42"
+          Size="173,42"
           Id="Package\Populate Dimention Tables\DimDeliveryDetails"
-          TopLeft="333,16" />
+          TopLeft="339,80" />
         <NodeLayout
           Size="160,43"
           Id="Package\Populate Dimention Tables\DimDiscounts"
@@ -568,11 +503,11 @@
         <NodeLayout
           Size="182,42"
           Id="Package\Populate Dimention Tables\DimProducts"
-          TopLeft="329,143" />
+          TopLeft="345,15" />
         <NodeLayout
           Size="175,42"
           Id="Package\Populate Dimention Tables\DimReturnDetails"
-          TopLeft="333.444444444444,75.111111111111" />
+          TopLeft="339.444444444444,148.111111111111" />
         <NodeLayout
           Size="160,42"
           Id="Package\Populate Dimention Tables\DimSuppliers"
@@ -791,6 +726,50 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint 7]"
+          TopLeft="425.277777777777,215.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-25.555555555556"
+              Start="0,0"
+              End="0,-18.055555555556">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-18.055555555556" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Dimention Tables.PrecedenceConstraints[Constraint 8]"
+          TopLeft="426.222222222222,148.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-26.111111111111"
+              Start="0,0"
+              End="0,-18.611111111111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-18.611111111111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -798,6 +777,87 @@
           Size="611,423"
           Id="Package\Populate Dimention Tables"
           TopLeft="71.7142857142856,249.357142857143" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package\Populate Fact Tables\Fact Returns (from FlarFiles)"
+          TopLeft="294.25,77.25" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Populate Fact Tables\FactFeedbacks (from flatFiles)"
+          TopLeft="298.5,149" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\Populate Fact Tables\FactOrders(from flatFiles)"
+          TopLeft="15.75,87.75" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\Populate Fact Tables\FactOrders(SELECT statement)"
+          TopLeft="11.75,19.5" />
+        <GroupLayout
+          Text="Fact Orders"
+          ParentId="Package\Populate Fact Tables"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="250,159"
+          Size="250,202"
+          Id="ac13eb16-7410-425e-8afc-1837ee75cda8"
+          TopLeft="13.5,15.5">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\Populate Fact Tables\FactOrders(from flatFiles)</s:String>
+            <s:String>Package\Populate Fact Tables\FactOrders(SELECT statement)</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+        <NodeLayout
+          Size="242,42"
+          Id="Package\Populate Fact Tables\FactDeliveries (SELECT statement)"
+          TopLeft="1.75,11.75" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\Populate Fact Tables\FactDeliveries (from flatFiles)"
+          TopLeft="9.5,78.75" />
+        <GroupLayout
+          Text="Fact Deliveries"
+          ParentId="Package\Populate Fact Tables"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="253,142"
+          Size="253,185"
+          Id="4c1aaa61-16f3-431e-97ca-9ed22a8d8a62"
+          TopLeft="19,283">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\Populate Fact Tables\FactDeliveries (SELECT statement)</s:String>
+            <s:String>Package\Populate Fact Tables\FactDeliveries (from flatFiles)</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Populate Fact Tables\FactSupplies (from flatFiles)"
+          TopLeft="18.25,74.5" />
+        <NodeLayout
+          Size="239,42"
+          Id="Package\Populate Fact Tables\FactSupplies (SELECT statement)"
+          TopLeft="16.75,9.25" />
+        <GroupLayout
+          Text="Fact Supplies"
+          ParentId="Package\Populate Fact Tables"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="271,145"
+          Size="271,188"
+          Id="45f4042b-f677-45b4-81b1-0582b21d1618"
+          TopLeft="279,280.666666666667">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\Populate Fact Tables\FactSupplies (from flatFiles)</s:String>
+            <s:String>Package\Populate Fact Tables\FactSupplies (SELECT statement)</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="576,524"
+          Size="576,567"
+          Id="Package\Populate Fact Tables"
+          TopLeft="792.666666666667,177.166666666667" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="682.714285714286,460.761904761905">
