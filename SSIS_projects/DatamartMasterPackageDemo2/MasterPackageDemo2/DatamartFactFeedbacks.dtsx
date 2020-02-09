@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DatamartFactFeedbacks"
   DTS:PackageType="5"
-  DTS:VersionBuild="131"
-  DTS:VersionGUID="{7F30B80C-645A-4906-9B08-39A91A2C6F5D}">
+  DTS:VersionBuild="133"
+  DTS:VersionGUID="{64786301-F2DA-45A6-A65B-73BB5762F6C7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -316,12 +316,12 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Populate DataMartFactFeedbacks Table\Check Data on SCD2.Outputs[Valid data without NULLEndDate]"
+                  refId="Package\Populate DataMartFactFeedbacks Table\Check Data on SCD2.Outputs[Valid data without NULL in the EndDate]"
                   description="Output 1 of the Conditional Split Transformation"
                   errorOrTruncationOperation="Computation"
                   errorRowDisposition="FailComponent"
                   exclusionGroup="1"
-                  name="Valid data without NULLEndDate"
+                  name="Valid data without NULL in the EndDate"
                   synchronousInputId="Package\Populate DataMartFactFeedbacks Table\Check Data on SCD2.Inputs[Conditional Split Input]"
                   truncationRowDisposition="FailComponent">
                   <properties>
@@ -4573,7 +4573,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
               refId="Package\Populate DataMartFactFeedbacks Table.Paths[Valid data without NULLEndDate]"
               endId="Package\Populate DataMartFactFeedbacks Table\Lookup.Inputs[Lookup Input]"
               name="Valid data without NULLEndDate"
-              startId="Package\Populate DataMartFactFeedbacks Table\Check Data on SCD2.Outputs[Valid data without NULLEndDate]" />
+              startId="Package\Populate DataMartFactFeedbacks Table\Check Data on SCD2.Outputs[Valid data without NULL in the EndDate]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -4739,7 +4739,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           Id="Package\Populate DataMartFactFeedbacks Table\Sort data (FeedbackDetailID)"
           TopLeft="433.666666666667,528.619047619048" />
         <NodeLayout
-          Size="192,42"
+          Size="176,42"
           Id="Package\Populate DataMartFactFeedbacks Table\Check Data on SCD2"
           TopLeft="441.428571428571,888.857142857143" />
         <NodeLayout
@@ -4777,9 +4777,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4801,9 +4799,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4837,9 +4833,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4848,9 +4842,9 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-99.3333333333341,43"
+              EndConnector="-107.333333333334,43"
               Start="0,0"
-              End="-99.3333333333341,35.5">
+              End="-107.333333333334,35.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -4861,21 +4855,19 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
                     Point2="0,21.5"
                     Point3="-4,21.5" />
                   <mssgle:LineSegment
-                    End="-95.3333333333341,21.5" />
+                    End="-103.333333333334,21.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-95.3333333333341,21.5"
-                    Point2="-99.3333333333341,21.5"
-                    Point3="-99.3333333333341,25.5" />
+                    Point1="-103.333333333334,21.5"
+                    Point2="-107.333333333334,21.5"
+                    Point3="-107.333333333334,25.5" />
                   <mssgle:LineSegment
-                    End="-99.3333333333341,35.5" />
+                    End="-107.333333333334,35.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4909,9 +4901,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4945,9 +4935,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5041,9 +5029,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5065,32 +5051,30 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate DataMartFactFeedbacks Table.Paths[Data with NULLEndDate (non valid)]"
-          TopLeft="633.428571428571,911.607142857143">
+          TopLeft="617.428571428571,911.607142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="194.142857142859,0"
+              EndConnector="210.142857142859,0"
               Start="0,0"
-              End="186.642857142859,0">
+              End="202.642857142859,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="186.642857142859,0" />
+                    End="202.642857142859,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="14.5046902901795,5,157.6334765625,11.609375"
+              BoundingBox="22.5046902901795,5,157.6334765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5113,9 +5097,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5144,25 +5126,37 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate DataMartFactFeedbacks Table.Paths[Valid data without NULLEndDate]"
-          TopLeft="538.678571428571,930.857142857143">
+          TopLeft="529.428571428571,930.857142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.4285714285669"
+              EndConnector="10.5,43.428571428567"
               Start="0,0"
-              End="0,35.9285714285669">
+              End="10.5,35.928571428567">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.9285714285669" />
+                    End="0,17.7142857142835" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.7142857142835"
+                    Point2="0,21.7142857142835"
+                    Point3="4,21.7142857142835" />
+                  <mssgle:LineSegment
+                    End="6.5,21.7142857142835" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.5,21.7142857142835"
+                    Point2="10.5,21.7142857142835"
+                    Point3="10.5,25.7142857142835" />
+                  <mssgle:LineSegment
+                    End="10.5,35.928571428567" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-72.69453125,13.0897739955334,145.3890625,9.7490234375"
+              BoundingBox="-83.16453125,26.7142857142835,176.8290625,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5197,9 +5191,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5221,9 +5213,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5245,9 +5235,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5269,9 +5257,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5293,9 +5279,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5329,9 +5313,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5365,9 +5347,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5401,9 +5381,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5425,9 +5403,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5449,9 +5425,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5473,9 +5447,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
