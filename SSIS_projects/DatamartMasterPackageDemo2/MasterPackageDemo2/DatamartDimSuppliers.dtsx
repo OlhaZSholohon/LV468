@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimSuppliers"
   DTS:PackageType="5"
-  DTS:VersionBuild="170"
-  DTS:VersionGUID="{3E6CE23A-8CBC-451A-AF65-EDB3D6375D39}">
+  DTS:VersionBuild="171"
+  DTS:VersionGUID="{39318C17-83AF-46C5-9C55-C748F83810F2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA2CjjvPGbi548By4Hq/K8LAAAAAASAAACgAAAAEAAAAO4e8qE2QAHtSZfVed7QJFEYAAAATrJ8WvONgcckLvYTwHOMzuhRdqs09k+/FAAAADC3KrvOeYUaYYDM1Mz5qbXsnnln</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABVfYQikOGY0Meqw+ot/p8BAAAAAASAAACgAAAAEAAAAB24zmrhi2vjNF1NbVkGVsEYAAAA1chDQ1SIarA3LkYLIlLlD92CwD/kOwG3FAAAAC+u5qyRw8VDtvgGtduMFExg0dmX</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -3307,7 +3307,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{2C386F5A-83BD-44B0-A0BE-9BA1E6E4167E}"
-          SQLTask:SqlStatementSource="IF OBJECT_ID('tempdb..##SupplierValidData') IS NOT NULL&#xA;    DROP TABLE ###SupplierValidData&#xA;&#xA;IF OBJECT_ID('tempdb..##SupplierValidData2') IS NOT NULL&#xA;    DROP TABLE ###SupplierValidData2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="IF OBJECT_ID('tempdb..##SupplierValidData') IS NOT NULL&#xA;    DROP TABLE ##SupplierValidData&#xA;&#xA;IF OBJECT_ID('tempdb..##SupplierValidData2') IS NOT NULL&#xA;    DROP TABLE ##SupplierValidData2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
