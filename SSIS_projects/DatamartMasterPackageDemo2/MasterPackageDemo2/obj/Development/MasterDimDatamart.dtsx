@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MasterDimDatamart"
   DTS:PackageType="5"
-  DTS:VersionBuild="111"
-  DTS:VersionGUID="{ACBFBFBA-F576-4A68-B014-5285DDD11E54}">
+  DTS:VersionBuild="112"
+  DTS:VersionGUID="{AAF132EE-0894-4E87-ACAD-49C9938E41F0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -589,7 +589,7 @@
         <NodeLayout
           Size="160,42"
           Id="Package\Sequence Container 1\DimSuppliers"
-          TopLeft="46.4761904761905,42.1666666666667" />
+          TopLeft="30.4761904761905,48.1666666666667" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"

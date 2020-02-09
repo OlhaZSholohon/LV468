@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimSuppliers"
   DTS:PackageType="5"
-  DTS:VersionBuild="166"
-  DTS:VersionGUID="{2CD4CD87-2742-4634-A272-5705FF94C871}">
+  DTS:VersionBuild="168"
+  DTS:VersionGUID="{F5BEF5E8-A785-4183-8169-73BABA9535BD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADEQZrwybm78h0owUoyAdPUAAAAAASAAACgAAAAEAAAAFNBnLN2uOhEAgnSxrbljGEYAAAA3ZWKlapnEPBh3wXnNqWjlZkM6VP0+p5UFAAAAA4MQFG6KbEjNJM9ozLv5eZlqypb</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAlYXwu1hKY4eXZPdGOZ5plAAAAAASAAACgAAAAEAAAADBJL348ndOXxSaj/ugaWAkYAAAAmWUqgUVhHDpc24QEwnU2pNYHQOFtNYrsFAAAAJXMX6NqpZP2hUyObN5x0Y6xXpJw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -90,7 +90,6 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{2C386F5A-83BD-44B0-A0BE-9BA1E6E4167E}"
-          SQLTask:TimeOut="50"
           SQLTask:SqlStatementSource="SELECT SupplierKey, SupplierName, SupplierEmail, SupplierPhone, SupplierDescription,&#xA;&#x9;[datamart].[EmailFormat](SupplierEmail) AS ValidEmail, &#xA;&#x9;[datamart].[NumPhoneFormat](SupplierPhone) AS ValidPhone&#xA;INTO ##SupplierValidData2&#xA;FROM ##SupplierValidData&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
