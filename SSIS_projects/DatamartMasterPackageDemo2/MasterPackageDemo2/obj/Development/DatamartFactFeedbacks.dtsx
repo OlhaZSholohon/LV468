@@ -4506,69 +4506,69 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
               startId="Package\Populate DataMartFactFeedbacks Table\Merge Join on FeedbackDetailID.Outputs[Merge Join Output]" />
             <path
               refId="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output4]"
-              endId="Package\Populate DataMartFactFeedbacks Table\Sort data (ClientKey)2.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Populate DataMartFactFeedbacks Table\ClientKey from DimClients.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output3]"
-              endId="Package\Populate DataMartFactFeedbacks Table\Sort data (FeedbackDetailID)2.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Populate DataMartFactFeedbacks Table\FeedbackDetailID from DimFeedbacksDetails.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output1]"
-              endId="Package\Populate DataMartFactFeedbacks Table\Sort data (Date)2.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Populate DataMartFactFeedbacks Table\Date from DimDates.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output]"
-              endId="Package\Populate DataMartFactFeedbacks Table\Sort data (ProductID)2.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Populate DataMartFactFeedbacks Table\ProductID from DimProducts.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output2]"
               endId="Package\Populate DataMartFactFeedbacks Table\Transform data into correct datatype and remove duplicates.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Populate DataMartFactFeedbacks Table\OLE DB Source.Outputs[OLE DB Source Output]" />
             <path
+              refId="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output3]"
+              endId="Package\Populate DataMartFactFeedbacks Table\Sort data (ProductID)2.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Populate DataMartFactFeedbacks Table\ProductID from DimProducts.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output1]"
+              endId="Package\Populate DataMartFactFeedbacks Table\Sort data (FeedbackDetailID)2.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Populate DataMartFactFeedbacks Table\FeedbackDetailID from DimFeedbacksDetails.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output]"
+              endId="Package\Populate DataMartFactFeedbacks Table\Sort data (ClientKey)2.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Populate DataMartFactFeedbacks Table\ClientKey from DimClients.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output2]"
+              endId="Package\Populate DataMartFactFeedbacks Table\Sort data (Date)2.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Populate DataMartFactFeedbacks Table\Date from DimDates.Outputs[OLE DB Source Output]" />
+            <path
               refId="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output7]"
+              endId="Package\Populate DataMartFactFeedbacks Table\Merge Join on FeedbackDetailID.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Populate DataMartFactFeedbacks Table\Sort data (FeedbackDetailID)2.Outputs[Sort Output]" />
+            <path
+              refId="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output]"
               endId="Package\Populate DataMartFactFeedbacks Table\Merge Join on Date.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Populate DataMartFactFeedbacks Table\Sort data (Date).Outputs[Sort Output]" />
             <path
-              refId="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output]"
+              refId="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output1]"
               endId="Package\Populate DataMartFactFeedbacks Table\Merge Join on FeedbackDetailID.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Populate DataMartFactFeedbacks Table\Sort data (FeedbackDetailID).Outputs[Sort Output]" />
             <path
-              refId="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output1]"
+              refId="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output2]"
               endId="Package\Populate DataMartFactFeedbacks Table\Merge Join on ClientKey.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Populate DataMartFactFeedbacks Table\Sort data (ClientKey).Outputs[Sort Output]" />
             <path
-              refId="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output2]"
+              refId="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output3]"
               endId="Package\Populate DataMartFactFeedbacks Table\Merge Join on ProductID.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Populate DataMartFactFeedbacks Table\Sort data (ProductID).Outputs[Sort Output]" />
             <path
-              refId="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output3]"
+              refId="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output4]"
               endId="Package\Populate DataMartFactFeedbacks Table\Merge Join on ClientKey.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Populate DataMartFactFeedbacks Table\Sort data (ClientKey)2.Outputs[Sort Output]" />
             <path
-              refId="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output4]"
+              refId="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output5]"
               endId="Package\Populate DataMartFactFeedbacks Table\Merge Join on Date.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Populate DataMartFactFeedbacks Table\Sort data (Date)2.Outputs[Sort Output]" />
             <path
-              refId="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output5]"
+              refId="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output6]"
               endId="Package\Populate DataMartFactFeedbacks Table\Merge Join on ProductID.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Populate DataMartFactFeedbacks Table\Sort data (ProductID)2.Outputs[Sort Output]" />
-            <path
-              refId="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output6]"
-              endId="Package\Populate DataMartFactFeedbacks Table\Merge Join on FeedbackDetailID.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\Populate DataMartFactFeedbacks Table\Sort data (FeedbackDetailID)2.Outputs[Sort Output]" />
             <path
               refId="Package\Populate DataMartFactFeedbacks Table.Paths[Valid data without NULLEndDate]"
               endId="Package\Populate DataMartFactFeedbacks Table\Lookup.Inputs[Lookup Input]"
@@ -4747,7 +4747,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           Id="Package\Populate DataMartFactFeedbacks Table\Addded column with error cause2"
           TopLeft="827.57142857143,891.857142857143" />
         <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output2]"
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output4]"
           TopLeft="525.5,63">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4771,7 +4771,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output3]"
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output1]"
           TopLeft="202,572.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5155,7 +5155,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output]"
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output1]"
           TopLeft="530.666666666667,570.619047619048">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5191,7 +5191,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output7]"
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output]"
           TopLeft="524.833333333333,208.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5227,7 +5227,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output6]"
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output7]"
           TopLeft="289,637.976190476191">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5251,7 +5251,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output5]"
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output6]"
           TopLeft="823.095238095238,826.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5275,7 +5275,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output4]"
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output5]"
           TopLeft="280.238095238095,279.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5299,7 +5299,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output3]"
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output4]"
           TopLeft="806,462.119047619048">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5323,7 +5323,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output2]"
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output3]"
           TopLeft="535.547619047619,753.571428571428">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5359,7 +5359,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output1]"
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output2]"
           TopLeft="526.809523809524,388.904761904762">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5395,7 +5395,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output]"
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output3]"
           TopLeft="915.464285714286,753.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5419,7 +5419,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output1]"
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output2]"
           TopLeft="199.547619047619,203.285714285714">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5443,7 +5443,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output4]"
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output]"
           TopLeft="907.5,374">
           <EdgeLayout.Curve>
             <mssgle:Curve

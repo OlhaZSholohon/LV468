@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DatamartDimDeliveryDetails"
   DTS:PackageType="5"
-  DTS:VersionBuild="109"
-  DTS:VersionGUID="{87C88D76-611F-48FB-BD1A-547F2ABE1EBD}">
+  DTS:VersionBuild="110"
+  DTS:VersionGUID="{E5E0873E-E269-4B74-AB89-C955FF50E1A3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -715,7 +715,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[error].[ErrorDimDeliveryDetails]</property>
+                  name="OpenRowset"></property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1655,33 +1655,37 @@
           Id="Package\Validation and SCD1\Slowly Changing Dimension Type 1"
           TopLeft="597.5,515.5" />
         <NodeLayout
-          Size="136,42"
-          Id="Package\Validation and SCD1\ErrorTable"
-          TopLeft="396,515.5" />
+          Size="163,42"
+          Id="Package\Validation and SCD1\Insert Destination"
+          TopLeft="444,614.5" />
+        <NodeLayout
+          Size="231,42"
+          Id="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;"
+          TopLeft="344,311.5" />
         <NodeLayout
           Size="168,42"
           Id="Package\Validation and SCD1\Check NULL values"
           TopLeft="635.5,311.5" />
         <NodeLayout
-          Size="278,42"
-          Id="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;"
-          TopLeft="5.5,311.5" />
-        <NodeLayout
           Size="202,42"
           Id="Package\Validation and SCD1\StagingDimDeliveryDetails"
           TopLeft="43.5,5.49999999999977" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Validation and SCD1\OLE DB Command"
+          TopLeft="836.5,614.5" />
         <NodeLayout
           Size="257,42"
           Id="Package\Validation and SCD1\Data Conversion to correct data types"
           TopLeft="331,209.5" />
         <NodeLayout
+          Size="136,42"
+          Id="Package\Validation and SCD1\ErrorTable"
+          TopLeft="396,515.5" />
+        <NodeLayout
           Size="120,42"
           Id="Package\Validation and SCD1\Union All"
           TopLeft="399.5,413.5" />
-        <NodeLayout
-          Size="231,42"
-          Id="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;"
-          TopLeft="344,311.5" />
         <NodeLayout
           Size="228,42"
           Id="Package\Validation and SCD1\Check StatusDelivery in 0 and 1"
@@ -1690,6 +1694,10 @@
           Size="157,42"
           Id="Package\Validation and SCD1\Check duplicates"
           TopLeft="641,413.5" />
+        <NodeLayout
+          Size="278,42"
+          Id="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;"
+          TopLeft="5.5,311.5" />
         <EdgeLayout
           Id="Package\Validation and SCD1.Paths[Union All Output 1]"
           TopLeft="461.75,455.5">
@@ -1777,6 +1785,42 @@
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-41.237578125,21.37548828125,82.47515625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Validation and SCD1.Paths[New Output]"
+          TopLeft="680.166666666667,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-154.666666666667,57.0000000000001"
+              Start="0,0"
+              End="-154.666666666667,49.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.0228013029316" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.0228013029316"
+                    Point2="0,23.0228013029316"
+                    Point3="-4,23.0228013029316" />
+                  <mssgle:LineSegment
+                    End="-150.666666666667,23.0228013029316" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-150.666666666667,23.0228013029316"
+                    Point2="-154.666666666667,23.0228013029316"
+                    Point3="-154.666666666667,27.0228013029316" />
+                  <mssgle:LineSegment
+                    End="-154.666666666667,49.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-104.424720052083,28.0228013029316,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1955,86 +1999,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Validation and SCD1.Paths[WriteData]"
-          TopLeft="181.166666666667,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="278.333333333333,60.0000000000001"
-              Start="0,0"
-              End="278.333333333333,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2508710801394" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2508710801394"
-                    Point2="0,24.2508710801394"
-                    Point3="4,24.2508710801394" />
-                  <mssgle:LineSegment
-                    End="274.333333333333,24.2508710801394" />
-                  <mssgle:CubicBezierSegment
-                    Point1="274.333333333333,24.2508710801394"
-                    Point2="278.333333333333,24.2508710801394"
-                    Point3="278.333333333333,28.2508710801394" />
-                  <mssgle:LineSegment
-                    End="278.333333333333,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="115.920123697917,29.2508710801394,46.4930859375,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Validation and SCD1\Insert Destination"
-          TopLeft="444,614.5" />
-        <EdgeLayout
-          Id="Package\Validation and SCD1.Paths[New Output]"
-          TopLeft="680.166666666667,557.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-154.666666666667,57.0000000000001"
-              Start="0,0"
-              End="-154.666666666667,49.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.0228013029316" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.0228013029316"
-                    Point2="0,23.0228013029316"
-                    Point3="-4,23.0228013029316" />
-                  <mssgle:LineSegment
-                    End="-150.666666666667,23.0228013029316" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-150.666666666667,23.0228013029316"
-                    Point2="-154.666666666667,23.0228013029316"
-                    Point3="-154.666666666667,27.0228013029316" />
-                  <mssgle:LineSegment
-                    End="-154.666666666667,49.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-104.424720052083,28.0228013029316,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Validation and SCD1\OLE DB Command"
-          TopLeft="836.5,614.5" />
-        <EdgeLayout
           Id="Package\Validation and SCD1.Paths[Changing Attribute Updates Output]"
           TopLeft="758.833333333333,557.5">
           <EdgeLayout.Curve>
@@ -2070,6 +2034,42 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Validation and SCD1.Paths[WriteData]"
+          TopLeft="181.166666666667,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="278.333333333333,60.0000000000001"
+              Start="0,0"
+              End="278.333333333333,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2508710801394" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2508710801394"
+                    Point2="0,24.2508710801394"
+                    Point3="4,24.2508710801394" />
+                  <mssgle:LineSegment
+                    End="274.333333333333,24.2508710801394" />
+                  <mssgle:CubicBezierSegment
+                    Point1="274.333333333333,24.2508710801394"
+                    Point2="278.333333333333,24.2508710801394"
+                    Point3="278.333333333333,28.2508710801394" />
+                  <mssgle:LineSegment
+                    End="278.333333333333,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="115.920123697917,29.2508710801394,46.4930859375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -2097,6 +2097,19 @@
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Validation and SCD1\ErrorTable">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Validation and SCD1\Slowly Changing Dimension Type 1">
     <Properties>
@@ -2137,19 +2150,6 @@
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Validation and SCD1\ErrorTable">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -11,10 +11,29 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimSuppliers"
   DTS:PackageType="5"
-  DTS:VersionBuild="162"
-  DTS:VersionGUID="{D3731EE7-9E02-4FCB-852E-887AFB56CC48}">
+  DTS:VersionBuild="166"
+  DTS:VersionGUID="{2CD4CD87-2742-4634-A272-5705FF94C871}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Suppliers]"
+      DTS:CreationName="OLEDB"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{2C386F5A-83BD-44B0-A0BE-9BA1E6E4167E}"
+      DTS:ObjectName="Suppliers">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Retain="True"
+          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBDataMart;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACfoEDEEKupl7sbaTc4+urCAAAAAASAAACgAAAAEAAAAHgLkTIDrDqetYDUsjIjH5gYAAAA0JH/+9CJXeTiJ/RiFVxjLbdtT1kqaGZ0FAAAAKtkxHPVYKnp5dumMMjs2Eg2WVe3</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -53,7 +72,7 @@
       </DTS:EventHandlers>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+          SQLTask:Connection="{2C386F5A-83BD-44B0-A0BE-9BA1E6E4167E}"
           SQLTask:SqlStatementSource="SELECT * INTO ##SupplierValidData&#xA;FROM [dbo].[DimSuppliers]&#xA;WHERE LEN(SupplierName) &lt; 20&#xA;              AND&#xA;              LEN(SupplierEmail) &lt; 40&#xA;              AND&#xA;              LEN(SupplierPhone) &lt; 18&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -70,7 +89,8 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+          SQLTask:Connection="{2C386F5A-83BD-44B0-A0BE-9BA1E6E4167E}"
+          SQLTask:TimeOut="50"
           SQLTask:SqlStatementSource="SELECT SupplierKey, SupplierName, SupplierEmail, SupplierPhone, SupplierDescription,&#xA;&#x9;[datamart].[EmailFormat](SupplierEmail) AS ValidEmail, &#xA;&#x9;[datamart].[NumPhoneFormat](SupplierPhone) AS ValidPhone&#xA;INTO ##SupplierValidData2&#xA;FROM ##SupplierValidData&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -2443,8 +2463,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM ##SupplierValidData2
-GO</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM ##SupplierValidData2</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -2470,8 +2489,8 @@ GO</property>
               <connections>
                 <connection
                   refId="Package\Transormation data and SCD2\Source - temp table (SQL statement).Connections[OleDbConnection]"
-                  connectionManagerID="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DatamartDB]"
+                  connectionManagerID="Package.ConnectionManagers[Suppliers]"
+                  connectionManagerRefId="Package.ConnectionManagers[Suppliers]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3288,7 +3307,7 @@ GO</property>
       </DTS:EventHandlers>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+          SQLTask:Connection="{2C386F5A-83BD-44B0-A0BE-9BA1E6E4167E}"
           SQLTask:SqlStatementSource="IF OBJECT_ID('tempdb..##SupplierValidData') IS NOT NULL&#xA;    DROP TABLE ###SupplierValidData&#xA;&#xA;IF OBJECT_ID('tempdb..##SupplierValidData2') IS NOT NULL&#xA;    DROP TABLE ###SupplierValidData2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3305,7 +3324,7 @@ GO</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+          SQLTask:Connection="{2C386F5A-83BD-44B0-A0BE-9BA1E6E4167E}"
           SQLTask:SqlStatementSource="INSERT INTO [error].[ErrorDimSuppliers] (SupplierKey, SupplierName, SupplierEmail,SupplierPhone, SupplierDescription, ErrorComment)&#xA;SELECT NULL, s.SupplierName, s.SupplierEmail, s.SupplierPhone, s.SupplierDescription, 'Error datatype'&#xA;FROM [dbo].[DimSuppliers] AS s&#xA;LEFT JOIN ##SupplierValidData AS v&#xA;&#x9;&#x9;  ON s.SupplierID = v.SupplierID&#xA;WHERE v.SupplierID IS NULL&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3672,9 +3691,7 @@ GO</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3768,9 +3785,7 @@ GO</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3792,9 +3807,7 @@ GO</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3972,9 +3985,7 @@ GO</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3996,9 +4007,7 @@ GO</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4020,9 +4029,7 @@ GO</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4044,9 +4051,7 @@ GO</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4068,9 +4073,7 @@ GO</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4092,9 +4095,7 @@ GO</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4140,9 +4141,7 @@ GO</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4164,9 +4163,7 @@ GO</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

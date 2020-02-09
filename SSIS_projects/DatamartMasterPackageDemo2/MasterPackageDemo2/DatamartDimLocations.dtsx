@@ -12,10 +12,29 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="102"
-  DTS:VersionGUID="{ADF3E721-2FC2-4C5B-8C96-CD5420080F6B}">
+  DTS:VersionBuild="104"
+  DTS:VersionGUID="{6D62F419-3A47-4894-8496-1BD0EF0B25EE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Locations]"
+      DTS:CreationName="OLEDB"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{D46EAC03-636D-4A5E-B17B-80BA941E0545}"
+      DTS:ObjectName="Locations">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Retain="True"
+          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBDataMart;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC+qNwOtYtj1zYSFz6kMG01AAAAAASAAACgAAAAEAAAAGBDb3qzOY0kDwixDY8rvDUYAAAAYqKUlLZZPrMbVbjrXk0K4mVMSJp455zEFAAAAAs0J108bPlayGskQoUHbY1yccFH</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -1865,8 +1884,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DatamartDB]"
+                  connectionManagerID="Package.ConnectionManagers[Locations]"
+                  connectionManagerRefId="Package.ConnectionManagers[Locations]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2368,7 +2387,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+          SQLTask:Connection="{D46EAC03-636D-4A5E-B17B-80BA941E0545}"
           SQLTask:SqlStatementSource="exec [datamart].[SP_ToCheckDimLocations] " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -2424,7 +2443,7 @@
       </DTS:EventHandlers>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
+          SQLTask:Connection="{D46EAC03-636D-4A5E-B17B-80BA941E0545}"
           SQLTask:SqlStatementSource="exec [datamart].[SP_DeleteDuplicateAndInsertIntoError] " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>

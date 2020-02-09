@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RD7"
   DTS:CreatorName="TRAINING\mskoltc"
-  DTS:DTSID="{6D5CBAA5-69C6-4FE9-AF2F-4A4DD38ECB7E}"
+  DTS:DTSID="{6FB44BB7-2C41-4C1F-8DB5-B28917DF2D19}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.1301.433"
   DTS:LocaleID="1033"
   DTS:ObjectName="DatamartFactReturns"
   DTS:PackageType="5"
   DTS:VersionBuild="14"
-  DTS:VersionGUID="{A10D8584-6F4D-48F0-B93D-AA4E8B999744}">
+  DTS:VersionGUID="{0D7D4AAC-DF15-416E-9B2C-E79ABC51922B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,7 +21,7 @@
       DTS:refId="Package\Populate DatamartFactReturns"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{D2822BA8-D91C-4A91-858F-F4E69840856F}"
+      DTS:DTSID="{F114698F-4D2D-4B51-B251-1D7AEB67AF83}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Populate DatamartFactReturns"
@@ -31,7 +31,7 @@
         <DTS:EventHandler
           DTS:refId="Package\Populate DatamartFactReturns.EventHandlers[OnPostExecute]"
           DTS:CreationName="OnPostExecute"
-          DTS:DTSID="{418058EB-5984-456E-B5E9-DB94F9152424}"
+          DTS:DTSID="{8D501566-6821-4B83-89B8-C2726533B7CD}"
           DTS:EventID="0"
           DTS:EventName="OnPostExecute"
           DTS:LocaleID="-1">
@@ -39,7 +39,7 @@
             <DTS:Variable
               DTS:CreationName=""
               DTS:Description="The propagate property of the event"
-              DTS:DTSID="{074BE403-4B8B-4864-B89A-99094C8DC592}"
+              DTS:DTSID="{11111336-09D1-46F3-AFC9-C67916B97D83}"
               DTS:IncludeInDebugDump="6789"
               DTS:Namespace="System"
               DTS:ObjectName="Propagate">
@@ -52,7 +52,7 @@
               DTS:refId="Package\Populate DatamartFactReturns.EventHandlers[OnPostExecute]\End Execution Package"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{E9507F01-96F0-450D-9365-DD898E715303}"
+              DTS:DTSID="{2292C57D-8EE2-4D3A-AC9A-4D3EEB9C0D26}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="End Execution Package">
@@ -523,13 +523,13 @@
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [datamart].[DimClients]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select * from datamart.DimClients</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [datamart].[DimClients]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (Select * from datamart.DimClients) [refTable]
 where [refTable].[ClientKey] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -807,13 +807,13 @@ where [refTable].[Date] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [datamart].[DimGuaranties]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from datamart.DimGuaranties where EndDate IS NULL</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [datamart].[DimGuaranties]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from datamart.DimGuaranties where EndDate IS NULL) [refTable]
 where [refTable].[GuarantyID] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -949,13 +949,14 @@ where [refTable].[GuarantyID] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [datamart].[DimProducts_SCD]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM datamart.DimProducts_SCD where datamart.DimProducts_SCD.EndDate IS NULL</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT * FROM datamart.DimProducts_SCD where datamart.DimProducts_SCD.EndDate IS NULL) [refTable]
+where [refTable].[ProductID] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -991,7 +992,7 @@ where [refTable].[GuarantyID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap"></property>
+                  name="ParameterMap">#{Package\Populate DatamartFactReturns\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductId]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1013,6 +1014,24 @@ where [refTable].[GuarantyID] = ?</property>
                 <input
                   refId="Package\Populate DatamartFactReturns\Lookup DimProducts.Inputs[Lookup Input]"
                   name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate DatamartFactReturns\Lookup DimProducts.Inputs[Lookup Input].Columns[ProductId]"
+                      cachedDataType="i4"
+                      cachedName="ProductId"
+                      lineageId="Package\Populate DatamartFactReturns\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductId]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">ProductID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -2184,7 +2203,7 @@ where [refTable].[ReturnDetailID] = ?</property>
       DTS:refId="Package\Truncate table with valid data"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{02D62844-8FCC-4CDD-8265-40FF712A3F2F}"
+      DTS:DTSID="{A483D21A-8CC7-49F7-87EE-4527BE0A68DA}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table with valid data"
@@ -2194,7 +2213,7 @@ where [refTable].[ReturnDetailID] = ?</property>
         <DTS:EventHandler
           DTS:refId="Package\Truncate table with valid data.EventHandlers[OnPreExecute]"
           DTS:CreationName="OnPreExecute"
-          DTS:DTSID="{13778E44-12AF-4874-BBC6-DD9F91F21DE7}"
+          DTS:DTSID="{DE1DE70C-5D21-4E77-928E-18A32692FF20}"
           DTS:EventID="-1"
           DTS:EventName="OnPreExecute"
           DTS:LocaleID="-1">
@@ -2202,7 +2221,7 @@ where [refTable].[ReturnDetailID] = ?</property>
             <DTS:Variable
               DTS:CreationName=""
               DTS:Description="The propagate property of the event"
-              DTS:DTSID="{63C4A032-803F-413B-9429-DF55D61E2FE3}"
+              DTS:DTSID="{46B94735-E1C1-4805-B3A8-8784A1A2709D}"
               DTS:IncludeInDebugDump="6789"
               DTS:Namespace="System"
               DTS:ObjectName="Propagate">
@@ -2215,7 +2234,7 @@ where [refTable].[ReturnDetailID] = ?</property>
               DTS:refId="Package\Truncate table with valid data.EventHandlers[OnPreExecute]\Start Execution Package"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{245CCA41-5FA9-4466-A776-3329BC2CAF51}"
+              DTS:DTSID="{A08DAE0C-DCCD-4A9A-89CD-A257CE038A7C}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Start Execution Package">
@@ -2239,7 +2258,7 @@ where [refTable].[ReturnDetailID] = ?</property>
       DTS:refId="Package\Validation data"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{24E2DCF5-BC80-404A-B75C-032915852F28}"
+      DTS:DTSID="{30412EB4-6420-4B34-954B-C71BDB2CBA58}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Validation data"
@@ -4760,7 +4779,7 @@ where [refTable].[ReturnDetailID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{AA313607-6259-4F6C-A374-0D9D9951F0C1}"
+      DTS:DTSID="{D82E395B-2C56-4054-AA33-ABDB5C731776}"
       DTS:From="Package\Validation data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -4768,7 +4787,7 @@ where [refTable].[ReturnDetailID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{270AB413-DDAD-4AC2-9A0C-7CFC5419A9B6}"
+      DTS:DTSID="{C0D19EA8-FBAB-48C1-9A36-D231A5C62275}"
       DTS:From="Package\Truncate table with valid data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -4778,7 +4797,7 @@ where [refTable].[ReturnDetailID] = ?</property>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{2B9AF046-AEDC-4B74-9F57-078AA05C7974}"
+      DTS:DTSID="{DFFE3F25-E03F-4883-8EF1-C429CE6423E4}"
       DTS:EventID="1072693248"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -4786,7 +4805,7 @@ where [refTable].[ReturnDetailID] = ?</property>
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{0D63BA0E-34DC-4ADD-B4C2-9AECD0B97F27}"
+          DTS:DTSID="{4D05FFF7-9B99-4018-A7F1-158CE2239D75}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -4799,7 +4818,7 @@ where [refTable].[ReturnDetailID] = ?</property>
           DTS:refId="Package.EventHandlers[OnError]\Error Execution Package"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{DB7A1987-991B-471D-8256-27CBD18F53DF}"
+          DTS:DTSID="{EF3FC4AC-31C5-445E-B657-CEE594EA17C2}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Error Execution Package">
@@ -4826,15 +4845,15 @@ where [refTable].[ReturnDetailID] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="222,42"
+          Size="222.4,41.6"
           Id="Package\Populate DatamartFactReturns"
           TopLeft="134.158731421646,199.393464582327" />
         <NodeLayout
-          Size="218,42"
+          Size="218.4,41.6"
           Id="Package\Truncate table with valid data"
           TopLeft="134.285716572587,24.6117648603182" />
         <NodeLayout
-          Size="173,42"
+          Size="172.8,41.6"
           Id="Package\Validation data"
           TopLeft="158.66666834695,107.581700013721" />
         <EdgeLayout
@@ -4890,9 +4909,9 @@ where [refTable].[ReturnDetailID] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="193,42"
+          Size="192.8,41.6"
           Id="Package.EventHandlers[OnError]\Error Execution Package"
-          TopLeft="265.6,81.4" />
+          TopLeft="265.6,82.4" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
@@ -4902,43 +4921,43 @@ where [refTable].[ReturnDetailID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="153,42"
+          Size="152.8,41.6"
           Id="Package\Populate DatamartFactReturns\Derived Column"
           TopLeft="216.544221442921,209.729974021384" />
         <NodeLayout
-          Size="210,42"
+          Size="210.4,41.6"
           Id="Package\Populate DatamartFactReturns\Lookup DimReturnDetails"
           TopLeft="759.23810707793,27.7630246569954" />
         <NodeLayout
-          Size="161,42"
+          Size="160.8,41.6"
           Id="Package\Populate DatamartFactReturns\Lookup DimDates"
           TopLeft="209.850337102183,32.1882328059847" />
         <NodeLayout
-          Size="179,42"
+          Size="179.2,41.6"
           Id="Package\Populate DatamartFactReturns\Lookup DimGaranties"
           TopLeft="451.058511750413,28.8403352262242" />
         <NodeLayout
-          Size="175,42"
+          Size="175.2,41.6"
           Id="Package\Populate DatamartFactReturns\Lookup DimProducts"
           TopLeft="488.1238179455,277.578153593895" />
         <NodeLayout
-          Size="149,42"
+          Size="148.8,41.6"
           Id="Package\Populate DatamartFactReturns\ErrorTable"
           TopLeft="224.457146992975,279.771431905282" />
         <NodeLayout
-          Size="166,42"
+          Size="165.6,41.6"
           Id="Package\Populate DatamartFactReturns\Lookup DimClients"
           TopLeft="807.857156614868,148.549020737513" />
         <NodeLayout
-          Size="120,42"
+          Size="120,41.6"
           Id="Package\Populate DatamartFactReturns\Union All"
           TopLeft="481.398647912806,155.029692877724" />
         <NodeLayout
-          Size="150,42"
+          Size="149.6,41.6"
           Id="Package\Populate DatamartFactReturns\OLE DB Source"
           TopLeft="13.866662284306,31.6817924433514" />
         <NodeLayout
-          Size="178,42"
+          Size="178.4,41.6"
           Id="Package\Populate DatamartFactReturns\DatamartFactReturns"
           TopLeft="791.462592245538,277.245378460438" />
         <EdgeLayout
@@ -5304,7 +5323,7 @@ where [refTable].[ReturnDetailID] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="187,42"
+          Size="187.2,41.6"
           Id="Package\Populate DatamartFactReturns.EventHandlers[OnPostExecute]\End Execution Package"
           TopLeft="365.6,110.4" />
       </GraphLayout>
@@ -5367,7 +5386,7 @@ where [refTable].[ReturnDetailID] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[datamart].[DimGuaranties]</Value>
+          type="q3:string"></Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -5390,7 +5409,7 @@ where [refTable].[ReturnDetailID] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[datamart].[DimProducts_SCD]</Value>
+          type="q3:string"></Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -5426,7 +5445,7 @@ where [refTable].[ReturnDetailID] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[datamart].[DimClients]</Value>
+          type="q3:string"></Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -5470,7 +5489,7 @@ where [refTable].[ReturnDetailID] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="192,42"
+          Size="192,41.6"
           Id="Package\Truncate table with valid data.EventHandlers[OnPreExecute]\Start Execution Package"
           TopLeft="344,86.4" />
       </GraphLayout>
@@ -5482,55 +5501,55 @@ where [refTable].[ReturnDetailID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="184,42"
+          Size="184,41.6"
           Id="Package\Validation data\Check for NULL values"
           TopLeft="783.266677798544,164.392153502336" />
         <NodeLayout
-          Size="206,46"
+          Size="205.6,46.4"
           Id="Package\Validation data\&quot;NULL VALUES in columns&quot;"
           TopLeft="406.057145971182,220.83137140505" />
         <NodeLayout
-          Size="155,42"
+          Size="155.2,41.6"
           Id="Package\Validation data\Data Conversion"
           TopLeft="789.390485151446,272.549022196074" />
         <NodeLayout
-          Size="127,42"
+          Size="127.2,41.6"
           Id="Package\Validation data\ErrorTable"
           TopLeft="20.1714307950463,342.098043261763" />
         <NodeLayout
-          Size="157,42"
+          Size="156.8,41.6"
           Id="Package\Validation data\Check duplicates"
           TopLeft="800.800001362392,35.6078428512626" />
         <NodeLayout
-          Size="207,42"
+          Size="207.2,41.6"
           Id="Package\Validation data\&quot;Incorrect IsGaranty Field!&quot;"
           TopLeft="140.952379606208,115.121568570253" />
         <NodeLayout
-          Size="170,42"
+          Size="170.4,41.6"
           Id="Package\Validation data\OLE DB Destination"
           TopLeft="830.028574978088,352.474511280357" />
         <NodeLayout
-          Size="194,42"
+          Size="194.4,42.4"
           Id="Package\Validation data\Check IsGaranty Column"
           TopLeft="300.647620734391,34.9647057107576" />
         <NodeLayout
-          Size="150,42"
+          Size="149.6,41.6"
           Id="Package\Validation data\OLE DB Source"
           TopLeft="22.314283887221,48.0352943986346" />
         <NodeLayout
-          Size="120,42"
+          Size="120,41.6"
           Id="Package\Validation data\Union All"
           TopLeft="37.1428577753962,199.764708384786" />
         <NodeLayout
-          Size="168,42"
+          Size="168,41.6"
           Id="Package\Validation data\&quot;Incorrect convert&quot;"
           TopLeft="157.666668261801,280.188236889955" />
         <NodeLayout
-          Size="173,42"
+          Size="172.8,41.6"
           Id="Package\Validation data\&quot;Duplicate columns&quot;"
           TopLeft="413.333333969117,147.921568424397" />
         <NodeLayout
-          Size="126,42"
+          Size="126.4,41.6"
           Id="Package\Validation data\Aggregate"
           TopLeft="628.771435614508,35.6862750102904" />
         <EdgeLayout

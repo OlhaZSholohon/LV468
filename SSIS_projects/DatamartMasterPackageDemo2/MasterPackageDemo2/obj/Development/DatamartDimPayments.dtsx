@@ -2152,49 +2152,49 @@
               startId="Package\Data Flow Task 1\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
             <path
               refId="Package\Data Flow Task 1.Paths[Derived Column Output7]"
-              endId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task 1\Error.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task 1.Paths[Derived Column Output6]"
-              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 8]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task 1\Simpla.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task 1.Paths[Derived Column Output5]"
-              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 7]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task 1\Magento.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task 1.Paths[Derived Column Output4]"
-              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 6]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task 1\Britix.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task 1.Paths[Derived Column Output8]"
-              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 1]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task 1\Cash.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task 1.Paths[Derived Column Output2]"
-              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 5]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task 1\OpenCart.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task 1.Paths[Derived Column Output1]"
-              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 3]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task 1\EasyPay.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task 1.Paths[Derived Column Output]"
               endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 2]"
               name="Derived Column Output"
               startId="Package\Data Flow Task 1\PayPal.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Data Flow Task 1.Paths[Derived Column Output3]"
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output6]"
+              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 3]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task 1\EasyPay.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output5]"
+              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 5]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task 1\OpenCart.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output4]"
+              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task 1\Cash.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output8]"
               endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 4]"
               name="Derived Column Output"
               startId="Package\Data Flow Task 1\Drupal.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output2]"
+              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 7]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task 1\Magento.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output1]"
+              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 8]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task 1\Simpla.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task 1\Error.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output3]"
+              endId="Package\Data Flow Task 1\Union All.Inputs[Union All Input 6]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task 1\Britix.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task 1.Paths[Drupal]"
               endId="Package\Data Flow Task 1\Drupal.Inputs[Derived Column Input]"
@@ -4115,7 +4115,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output7]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output]"
           TopLeft="90.5000000000001,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4137,7 +4137,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output6]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output1]"
           TopLeft="943.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4171,7 +4171,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output5]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output2]"
           TopLeft="1296.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4205,7 +4205,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output4]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output3]"
           TopLeft="593.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4239,7 +4239,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output3]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output8]"
           TopLeft="257.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4273,7 +4273,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output2]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output5]"
           TopLeft="763.388888888889,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4295,7 +4295,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output1]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output6]"
           TopLeft="1117.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4329,7 +4329,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output7]"
           TopLeft="427.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4363,7 +4363,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output8]"
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output4]"
           TopLeft="1467.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
