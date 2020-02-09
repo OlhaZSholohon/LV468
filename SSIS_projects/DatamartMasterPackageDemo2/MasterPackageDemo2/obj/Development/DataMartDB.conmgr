@@ -1,16 +1,14 @@
 <?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:DelayValidation="True"
   DTS:ObjectName="DatamartDB"
   DTS:DTSID="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:Retain="True"
       DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBDataMart;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAACAAAAAAADZgAAwAAAABAAAADr1P7yUJsR3ov74fXcdiXJAAAAAASAAACgAAAAEAAAAB75aSlOiZJbiikEZKJyMvZ4AAAAnjJoj0XKRU0rfdG2QOoV82wke6up8HqrPeoXdYCxAO5ZgpwrWG7CkaT+6ZU8nFq5qK6ZapfTmH8YZQygi7GRYYY7XpR9NKF8MPWb3X8kBTCG7tzEWCxoliXp4oess8lUuOUd4bbh0YPPwH6lxA0aQ6ybSRlyaH9CFAAAAP1/nFmBbnhlZExlWvLNhj63g4Do</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAACAAAAAAADZgAAwAAAABAAAAD1Q6StOFlkXxLSrAmjVI/zAAAAAASAAACgAAAAEAAAAKADLqYYwiVIR3ais/XlRBF4AAAAG+ZVAy/mFDkCqC7gwVtV3bsySKVVJTNn6rZzD4F/jvpWT3wy5QSFhT0X8ebMfYrHXpr7uNE7yoiba3i0YCA1DjmPopmRGRP9rAf1VV9AlF3YaNfR/bYBlgH2HNYmYC3vVOZURAGfgq2sCs4tXyQp4oqE1D8eS9ddFAAAAOSyzHsLm4jq2KpCaZT/HDmfAE2I</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

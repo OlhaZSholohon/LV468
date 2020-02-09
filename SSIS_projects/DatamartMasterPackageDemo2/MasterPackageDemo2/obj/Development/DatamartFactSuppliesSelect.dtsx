@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{E21F0CC5-1614-440A-919D-0F69ABAB5FA5}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{FEE4D304-B76E-44BF-BC13-0C1140BA1B88}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -30,7 +30,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{EE0DC0CF-1497-473A-8D9D-75985D8C81FC}"
-          SQLTask:SqlStatementSource="EXECUTE [dbo].[STP_PopulateFactSupplies] @num = 20000" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[STP_PopulateFactSupplies] @num = 200" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>

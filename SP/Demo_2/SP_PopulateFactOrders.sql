@@ -40,7 +40,7 @@ BEGIN
 	
 	--------- Addition variables -----------------
 	SET @GuarantyPrice = TRY_CAST((SELECT g.PriceGuaranty  FROM [TestDBDataMart].[datamart].[DimGuaranties] g WHERE g.GuarantyID = @GuarantyID AND g.EndDate IS NULL) AS DECIMAL (10, 2))
-	SET @ProductPrice = TRY_CAST((SELECT p.Price FROM [TestDBDataMart].[datamart].[DimProducts] p WHERE p.ProductID = @ProductID) AS DECIMAL (10, 2))
+	SET @ProductPrice = TRY_CAST((SELECT top 1 p.Price FROM [TestDBDataMart].[datamart].[DimProducts_SCD] p WHERE p.ProductID = @ProductID and p.EndDate is null) AS DECIMAL (10, 2))
 	SET @Discount = TRY_CAST((SELECT d.PercentDiscount FROM [TestDBDataMart].[datamart].[DimDiscounts] d WHERE d.DiscountID = @DiscountID) AS INT)
 	SET @GuarantyDuration = TRY_CAST((SELECT g.Duration  FROM [TestDBDataMart].[datamart].[DimGuaranties] g WHERE g.GuarantyID = @GuarantyID AND g.EndDate IS NULL) AS INT)
 

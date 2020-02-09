@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="CastProducts"
   DTS:PackageType="5"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{3916729B-0A38-4AAD-8DA6-850A2F43E1B9}">
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{3BB8DC2E-98B6-4270-9F82-1D80AFA2A91F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -4244,6 +4244,7 @@
       DTS:refId="Package\End ProcessLog"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{161D23B0-28D0-47B0-A622-887762891BFE}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -5813,6 +5814,7 @@
       DTS:refId="Package\Start ProcessLog"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{C860470B-39E4-4A4C-9567-8686DF4401B5}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -7084,6 +7086,10 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="166,42"
+          Id="Package\SCD2\OLE DB Command"
+          TopLeft="5.50000000000003,311.5" />
+        <NodeLayout
           Size="150,42"
           Id="Package\SCD2\OLE DB Source"
           TopLeft="157.5,5.5" />
@@ -7091,32 +7097,22 @@
           Size="208,42"
           Id="Package\SCD2\Slowly Changing Dimension"
           TopLeft="128.5,107.5" />
-        <EdgeLayout
-          Id="Package\SCD2.Paths[OLE DB Source Output]"
-          TopLeft="232.5,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="121,42"
+          Id="Package\SCD2\Union All"
+          TopLeft="172,413.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\SCD2\Insert Destination"
+          TopLeft="151,617.5" />
         <NodeLayout
           Size="154,42"
           Id="Package\SCD2\Derived Column"
           TopLeft="17.5,209.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\SCD2\Derived Column 1"
+          TopLeft="151,515.5" />
         <EdgeLayout
           Id="Package\SCD2.Paths[Historical Attribute Inserts Output]"
           TopLeft="199.166666666667,149.5">
@@ -7153,10 +7149,28 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\SCD2\OLE DB Command"
-          TopLeft="5.50000000000003,311.5" />
+        <EdgeLayout
+          Id="Package\SCD2.Paths[Derived Column Output1]"
+          TopLeft="232.5,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\SCD2.Paths[Derived Column Output]"
           TopLeft="91.5,251.5">
@@ -7179,44 +7193,48 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\SCD2\Union All"
-          TopLeft="172,413.5" />
         <EdgeLayout
-          Id="Package\SCD2.Paths[New Output]"
-          TopLeft="265.833333333333,149.5">
+          Id="Package\SCD2.Paths[Union All Output 1]"
+          TopLeft="232.5,455.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-14.5,264"
+              EndConnector="0,60"
               Start="0,0"
-              End="-14.5,256.5">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,127.110663672268" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,127.110663672268"
-                    Point2="0,131.110663672268"
-                    Point3="-4,131.110663672268" />
-                  <mssgle:LineSegment
-                    End="-10.5,131.110663672268" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-10.5,131.110663672268"
-                    Point2="-14.5,131.110663672268"
-                    Point3="-14.5,135.110663672268" />
-                  <mssgle:LineSegment
-                    End="-14.5,256.5" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-34.34138671875,136.110663672268,54.1827734375,11.43359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SCD2.Paths[OLE DB Source Output]"
+          TopLeft="232.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7253,56 +7271,40 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\SCD2\Derived Column 1"
-          TopLeft="151,515.5" />
         <EdgeLayout
-          Id="Package\SCD2.Paths[Union All Output 1]"
-          TopLeft="232.5,455.5">
+          Id="Package\SCD2.Paths[New Output]"
+          TopLeft="265.833333333333,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="-14.5,264"
               Start="0,0"
-              End="0,52.5">
+              End="-14.5,256.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,127.110663672268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,127.110663672268"
+                    Point2="0,131.110663672268"
+                    Point3="-4,131.110663672268" />
+                  <mssgle:LineSegment
+                    End="-10.5,131.110663672268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.5,131.110663672268"
+                    Point2="-14.5,131.110663672268"
+                    Point3="-14.5,135.110663672268" />
+                  <mssgle:LineSegment
+                    End="-14.5,256.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\SCD2\Insert Destination"
-          TopLeft="151,617.5" />
-        <EdgeLayout
-          Id="Package\SCD2.Paths[Derived Column Output1]"
-          TopLeft="232.5,557.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-34.34138671875,136.110663672268,54.1827734375,11.43359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
