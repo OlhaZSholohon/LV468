@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="104"
-  DTS:VersionGUID="{6D62F419-3A47-4894-8496-1BD0EF0B25EE}">
+  DTS:VersionBuild="105"
+  DTS:VersionGUID="{C624AAF5-9567-42AB-9761-4C589E47A33F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -30,7 +30,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC+qNwOtYtj1zYSFz6kMG01AAAAAASAAACgAAAAEAAAAGBDb3qzOY0kDwixDY8rvDUYAAAAYqKUlLZZPrMbVbjrXk0K4mVMSJp455zEFAAAAAs0J108bPlayGskQoUHbY1yccFH</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABD7TdslmazY6SeDS7A/ePlAAAAAASAAACgAAAAEAAAADz06ZzXlE3CVqrZ/9UFNe0YAAAAaej8CwAdUM6GOq2FIkpdR35yoSkuwhCiFAAAALPchMjsMEx2Dq9RQVurgnZqr8FA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2708,7 +2708,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2910,7 +2912,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

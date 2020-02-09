@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DatamartFactOrders"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{97DCCED1-CF82-490E-BBC6-ECEBD3D605E0}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{261FBC1C-7644-4082-A16A-D7D5F06B7486}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -151,53 +151,6 @@
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
-      <DTS:EventHandlers>
-        <DTS:EventHandler
-          DTS:refId="Package\Sequence Container.EventHandlers[OnPreExecute]"
-          DTS:CreationName="OnPreExecute"
-          DTS:DTSID="{64484569-D47C-483D-9AB4-F32BC34F11AF}"
-          DTS:EventID="0"
-          DTS:EventName="OnPreExecute"
-          DTS:LocaleID="-1">
-          <DTS:Variables>
-            <DTS:Variable
-              DTS:CreationName=""
-              DTS:Description="The propagate property of the event"
-              DTS:DTSID="{9A97922A-A427-432C-AA2C-D0D6E4DA3FDD}"
-              DTS:IncludeInDebugDump="6789"
-              DTS:Namespace="System"
-              DTS:ObjectName="Propagate">
-              <DTS:VariableValue
-                DTS:DataType="11">-1</DTS:VariableValue>
-            </DTS:Variable>
-          </DTS:Variables>
-          <DTS:Executables>
-            <DTS:Executable
-              DTS:refId="Package\Sequence Container.EventHandlers[OnPreExecute]\OnPreExecute"
-              DTS:CreationName="Microsoft.ExecuteSQLTask"
-              DTS:Description="Execute SQL Task"
-              DTS:Disabled="True"
-              DTS:DTSID="{94D180C1-4A7B-4C1F-9C62-B1B12861D539}"
-              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-              DTS:LocaleID="-1"
-              DTS:ObjectName="OnPreExecute">
-              <DTS:Variables />
-              <DTS:ObjectData>
-                <SQLTask:SqlTaskData
-                  SQLTask:Connection="{21C288CE-A603-4E65-A5AC-F7C412529650}"
-                  SQLTask:SqlStatementSource="&#xA;INSERT INTO datamart.PackageInfo(PackageName,  StartTime, EndTime, PackageStatus)&#xA; VALUES(?, getDate(), null, 'In Progress')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-                  <SQLTask:ParameterBinding
-                    SQLTask:ParameterName="0"
-                    SQLTask:DtsVariableName="System::PackageName"
-                    SQLTask:ParameterDirection="Input"
-                    SQLTask:DataType="130"
-                    SQLTask:ParameterSize="-1" />
-                </SQLTask:SqlTaskData>
-              </DTS:ObjectData>
-            </DTS:Executable>
-          </DTS:Executables>
-        </DTS:EventHandler>
-      </DTS:EventHandlers>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:EventHandlers>
@@ -281,18 +234,6 @@
           Size="115,42"
           Id="Package.EventHandlers[OnError]\OnError"
           TopLeft="246.057139704179,95.5764704252197" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
-  <DtsEventHandler
-    design-time-name="Package\Sequence Container.EventHandlers[OnPreExecute]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="144,41.6"
-          Id="Package\Sequence Container.EventHandlers[OnPreExecute]\OnPreExecute"
-          TopLeft="335.2,116.8" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>

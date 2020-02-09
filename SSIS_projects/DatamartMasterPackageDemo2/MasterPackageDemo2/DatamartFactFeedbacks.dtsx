@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DatamartFactFeedbacks"
   DTS:PackageType="5"
-  DTS:VersionBuild="126"
-  DTS:VersionGUID="{0AED58CA-239E-493B-9513-A0B232CC4A8B}">
+  DTS:VersionBuild="131"
+  DTS:VersionGUID="{7F30B80C-645A-4906-9B08-39A91A2C6F5D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -4633,7 +4633,7 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
         <NodeLayout
           Size="294,61"
           Id="Package\Populate DataMartFactFeedbacks Table"
-          TopLeft="318,154" />
+          TopLeft="340,154" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -4759,19 +4759,19 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           Id="Package\Populate DataMartFactFeedbacks Table\Addded column with error cause2"
           TopLeft="827.57142857143,891.857142857143" />
         <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output2]"
-          TopLeft="525.5,63">
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output1]"
+          TopLeft="199.547619047619,203.285714285714">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,24"
+              EndConnector="0,56.142857142857"
               Start="0,0"
-              End="0,16.5">
+              End="0,48.642857142857">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.5" />
+                    End="0,48.642857142857" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4783,19 +4783,19 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output3]"
-          TopLeft="202,572.666666666667">
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output]"
+          TopLeft="915.464285714286,753.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45.0952380952381"
+              EndConnector="0,53.4761904761909"
               Start="0,0"
-              End="0,37.5952380952381">
+              End="0,45.9761904761909">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.5952380952381" />
+                    End="0,45.9761904761909" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5167,42 +5167,6 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output]"
-          TopLeft="530.666666666667,570.619047619048">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-94.095238095238,45.571428571428"
-              Start="0,0"
-              End="-94.095238095238,38.071428571428">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.785714285714" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.785714285714"
-                    Point2="0,22.785714285714"
-                    Point3="-4,22.785714285714" />
-                  <mssgle:LineSegment
-                    End="-90.095238095238,22.785714285714" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-90.095238095238,22.785714285714"
-                    Point2="-94.095238095238,22.785714285714"
-                    Point3="-94.095238095238,26.785714285714" />
-                  <mssgle:LineSegment
-                    End="-94.095238095238,38.071428571428" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output7]"
           TopLeft="524.833333333333,208.25">
           <EdgeLayout.Curve>
@@ -5407,43 +5371,31 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output]"
-          TopLeft="915.464285714286,753.333333333333">
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[Sort Output]"
+          TopLeft="530.666666666667,570.619047619048">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53.4761904761909"
+              EndConnector="-94.095238095238,45.571428571428"
               Start="0,0"
-              End="0,45.9761904761909">
+              End="-94.095238095238,38.071428571428">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.9761904761909" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output1]"
-          TopLeft="199.547619047619,203.285714285714">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56.142857142857"
-              Start="0,0"
-              End="0,48.642857142857">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="0,18.785714285714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.785714285714"
+                    Point2="0,22.785714285714"
+                    Point3="-4,22.785714285714" />
                   <mssgle:LineSegment
-                    End="0,48.642857142857" />
+                    End="-90.095238095238,22.785714285714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-90.095238095238,22.785714285714"
+                    Point2="-94.095238095238,22.785714285714"
+                    Point3="-94.095238095238,26.785714285714" />
+                  <mssgle:LineSegment
+                    End="-94.095238095238,38.071428571428" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5468,6 +5420,54 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,57.166666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output3]"
+          TopLeft="202,572.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.0952380952381"
+              Start="0,0"
+              End="0,37.5952380952381">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5952380952381" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate DataMartFactFeedbacks Table.Paths[OLE DB Source Output2]"
+          TopLeft="525.5,63">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24"
+              Start="0,0"
+              End="0,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

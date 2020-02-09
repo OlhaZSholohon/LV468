@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DatamartFactFeedbacks"
   DTS:PackageType="5"
-  DTS:VersionBuild="125"
-  DTS:VersionGUID="{9CC66079-310C-4C08-8728-F0A88389912D}">
+  DTS:VersionBuild="126"
+  DTS:VersionGUID="{0AED58CA-239E-493B-9513-A0B232CC4A8B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -4633,10 +4633,22 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
         <NodeLayout
           Size="294,61"
           Id="Package\Populate DataMartFactFeedbacks Table"
-          TopLeft="353,168" />
+          TopLeft="318,154" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="294,42"
+          Id="Package.EventHandlers[OnError]\Error Execution Package (UPDATE statement)"
+          TopLeft="180,123" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\Populate DataMartFactFeedbacks Table">
     <LayoutInfo>
@@ -5469,6 +5481,30 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Populate DataMartFactFeedbacks Table.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="290,42"
+          Id="Package\Populate DataMartFactFeedbacks Table.EventHandlers[OnPreExecute]\Start Execution Package (INSERT statement)"
+          TopLeft="330,146" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Populate DataMartFactFeedbacks Table.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="288,42"
+          Id="Package\Populate DataMartFactFeedbacks Table.EventHandlers[OnPostExecute]\End execution Package (UPDATE statement)"
+          TopLeft="294,172" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <PipelineComponentMetadata
     design-time-name="Package\Populate DataMartFactFeedbacks Table\Date from DimDates">
     <Properties>
@@ -5596,41 +5632,5 @@ where [refTable].[Date] = ? and [refTable].[ClientID] = ? and [refTable].[Feedba
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="294,42"
-          Id="Package.EventHandlers[OnError]\Error Execution Package (UPDATE statement)"
-          TopLeft="180,123" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
-  <DtsEventHandler
-    design-time-name="Package\Populate DataMartFactFeedbacks Table.EventHandlers[OnPreExecute]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="290,42"
-          Id="Package\Populate DataMartFactFeedbacks Table.EventHandlers[OnPreExecute]\Start Execution Package (INSERT statement)"
-          TopLeft="330,146" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
-  <DtsEventHandler
-    design-time-name="Package\Populate DataMartFactFeedbacks Table.EventHandlers[OnPostExecute]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="288,42"
-          Id="Package\Populate DataMartFactFeedbacks Table.EventHandlers[OnPostExecute]\End execution Package (UPDATE statement)"
-          TopLeft="294,172" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
