@@ -1,25 +1,25 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="2/8/2020 6:33:35 PM"
+  DTS:CreationDate="2/9/2020 3:17:32 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RD7"
   DTS:CreatorName="TRAINING\mskoltc"
-  DTS:DTSID="{51AC5B1B-8622-4259-888D-D3644F170C29}"
+  DTS:DTSID="{4381B61C-D495-45C1-A1EC-D6DA639DCC3D}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.1301.433"
   DTS:LocaleID="1033"
-  DTS:ObjectName="DatamartDimReturnDetails"
+  DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{D22626B4-1A4D-4BA9-9310-487F07A9CE6F}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{55AD2DA6-BFA6-4B32-843B-47B0F28499C6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{C1EA120F-8984-4C27-8908-AE2A1E4B504C}"
+      DTS:DTSID="{EE26C96D-A519-49F0-A626-6330FB032851}"
       DTS:ObjectName="192.168.195.147.TestDBDataMart.Lv-468.DB">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvKSvfDvrJk+VLPMlkhjgggAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACTVrJK4f6ApXIKO5EYLkiDAAAAAASAAACgAAAAEAAAAMmn6PYMl9Bh3Mmv675w6qEYAAAAuOSf/zmnUrvYf44xtOEYKkJojRPKaTcPFAAAAAzdSrV7ca2qgKbfCD6CbMQhAaq9</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvKSvfDvrJk+VLPMlkhjgggAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAxYyyyZa5VA9Pfy5WTxt+SAAAAAASAAACgAAAAEAAAAHvMYrNi0S/Kc3j8KAv56+QYAAAAwNlsX+V3R/P/sPk2iiR428rIIUtvpdqOFAAAALxHt7AIXZfNYhIzaNs0S1Z077tU</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -35,22 +35,137 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Execute SQL Task"
+      DTS:refId="Package\Execute SP_ValidateDimReturnDetails"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{C29C9DC1-EF9B-4862-805D-2654F652E053}"
+      DTS:DTSID="{78477AF1-1CE4-4CB0-A6C7-FA2309A30A48}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task"
+      DTS:ObjectName="Execute SP_ValidateDimReturnDetails"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Execute SP_ValidateDimReturnDetails.EventHandlers[OnPostExecute]"
+          DTS:CreationName="OnPostExecute"
+          DTS:DTSID="{70942060-C774-475D-AF91-6B32050FBDF8}"
+          DTS:EventID="1072693248"
+          DTS:EventName="OnPostExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{80142C28-7274-4ABC-9639-3042F1A622EC}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Execute SP_ValidateDimReturnDetails.EventHandlers[OnPostExecute]\End Execution Package"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{6F11733E-EDE4-4CCE-83E5-14835974F8A6}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="End Execution Package">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{EE26C96D-A519-49F0-A626-6330FB032851}"
+                  SQLTask:SqlStatementSource="UPDATE [datamart].[PackageInfo] &#xA;SET &#xA;EndTime = GetDate(), &#xA;PackageStatus = 'Finished' &#xA;WHERE PackageName = 'DatamartDimReturnDetails'&#xA; AND&#xA; PackageInfoID=(&#xA;SELECT MAX(PackageInfoID) FROM [datamart].[PackageInfo] &#xA;)&#xA; AND PackageStatus='Started'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+        <DTS:EventHandler
+          DTS:refId="Package\Execute SP_ValidateDimReturnDetails.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{FC82B82B-A876-4DF1-9D46-08E6F922EA86}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{4A30A2C1-725E-421D-8689-7A14362D87A4}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Execute SP_ValidateDimReturnDetails.EventHandlers[OnPreExecute]\Start Execution Package"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{83BDAAB3-B7ED-4367-B015-89FA63238002}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Start Execution Package">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{EE26C96D-A519-49F0-A626-6330FB032851}"
+                  SQLTask:SqlStatementSource="INSERT INTO [datamart].[PackageInfo]&#xA;VALUES ('DatamartDimReturnDetails', GetDate(),NULL, 'Started')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{C1EA120F-8984-4C27-8908-AE2A1E4B504C}"
+          SQLTask:Connection="{EE26C96D-A519-49F0-A626-6330FB032851}"
           SQLTask:SqlStatementSource="exec [datamart].[SP_ValidateDimReturnDetails] " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{7DD08C7C-4E15-42EA-9357-C73BBCE94707}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{382719CB-C0F9-40DA-B737-F22FB037DF06}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Error Execution Package"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3BC4450E-734D-4629-8D72-51C977885F05}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Error Execution Package">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{EE26C96D-A519-49F0-A626-6330FB032851}"
+              SQLTask:SqlStatementSource="UPDATE [datamart].[PackageInfo] &#xA;SET &#xA;EndTime = GetDate(), &#xA;PackageStatus = 'Failed' &#xA;WHERE PackageName = 'DatamartDimReturnDetails'&#xA;AND&#xA;PackageInfoID=(&#xA;SELECT MAX(PackageInfoID) FROM [datamart].[PackageInfo] &#xA;)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -64,11 +179,47 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Execute SQL Task"
-          TopLeft="173.714288672622,82.5882364523865" />
+          Size="256,41.6"
+          Id="Package\Execute SP_ValidateDimReturnDetails"
+          TopLeft="130.285716504467,64.8470597329849" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="192.8,41.6"
+          Id="Package.EventHandlers[OnError]\Error Execution Package"
+          TopLeft="324.8,96.8" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Execute SP_ValidateDimReturnDetails.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="192,41.6"
+          Id="Package\Execute SP_ValidateDimReturnDetails.EventHandlers[OnPreExecute]\Start Execution Package"
+          TopLeft="290.4,72" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Execute SP_ValidateDimReturnDetails.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Execute SP_ValidateDimReturnDetails.EventHandlers[OnPostExecute]\End Execution Package"
+          TopLeft="331.2,89.6" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

@@ -1,0 +1,2187 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/27/2020 5:33:49 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="RD7"
+  DTS:CreatorName="TRAINING\mskoltc"
+  DTS:DTSID="{9D1FD59E-27DB-4E5E-B861-F415CFCDD2E2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="DatamartDimDeliveryDetails"
+  DTS:PackageType="5"
+  DTS:VersionBuild="106"
+  DTS:VersionGUID="{D671DFDB-87B3-47F7-B1E4-E453DC4A0CB7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{162353EE-1C92-4A73-987D-A8C48F61C8D6}"
+      DTS:ObjectName="192.168.195.147.TestDBDataMart.Lv-468.DB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBDataMart;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvKSvfDvrJk+VLPMlkhjgggAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABGYHD0vwAPef6Ka1fFHb5RAAAAAASAAACgAAAAEAAAANnII+DgluSz6F0tvubhsAYYAAAAwozux9s/43r/aQEqRUVB9P4d5Ovc6LJBFAAAAOrceY82/biEvkNX15DH4tGOuX9w</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Validation and SCD1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{87E8E7E0-6074-44AA-BF3D-CAFAEF96EA71}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Validation and SCD1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Validation and SCD1.EventHandlers[OnPostExecute]"
+          DTS:CreationName="OnPostExecute"
+          DTS:DTSID="{ECE6BC65-FA5C-4D39-99A3-FB399783F974}"
+          DTS:EventID="1660971264"
+          DTS:EventName="OnPostExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{65A62943-EA7E-4EC0-A213-99B0E6E92D08}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Validation and SCD1.EventHandlers[OnPostExecute]\End Execution Package"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{9B96E9E7-0E03-4773-8BDD-A0DB817A8EAD}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="End Execution Package">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{162353EE-1C92-4A73-987D-A8C48F61C8D6}"
+                  SQLTask:SqlStatementSource="UPDATE [datamart].[PackageInfo] &#xA;SET &#xA;EndTime = GetDate(), &#xA;PackageStatus = 'Finished' &#xA;WHERE PackageName = 'DatamartDimDeliveryDetails'&#xA; AND&#xA; PackageInfoID=(&#xA;SELECT MAX(PackageInfoID) FROM [datamart].[PackageInfo] &#xA;)&#xA;AND&#xA;PackageStatus = 'Started'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+        <DTS:EventHandler
+          DTS:refId="Package\Validation and SCD1.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{020E8AC9-8F95-41F9-BDF0-33CC9263C0C6}"
+          DTS:EventID="1660971264"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{07D0B152-B208-428E-ACC9-061BEF079F8C}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Validation and SCD1.EventHandlers[OnPreExecute]\Start Execution Package"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{71A6BD75-DC10-4194-B0EB-AA6F2E7538B6}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Start Execution Package">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{162353EE-1C92-4A73-987D-A8C48F61C8D6}"
+                  SQLTask:SqlStatementSource="INSERT INTO [datamart].[PackageInfo]&#xA;VALUES ('DatamartDimDeliveryDetails', GetDate(),NULL, 'Started')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Validation and SCD1\Check duplicates"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Check duplicates"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Validation and SCD1\Check duplicates.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\Check duplicates.Inputs[Sort Input].Columns[DeliveryDetailID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DeliveryDetailID"
+                      lineageId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[DeliveryDetailID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\Check duplicates.Inputs[Sort Input].Columns[StatusDelivery]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="StatusDelivery"
+                      lineageId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[StatusDelivery]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\Check duplicates.Inputs[Sort Input].Columns[Copy of StatusDelivery]"
+                      cachedDataType="bool"
+                      cachedName="Copy of StatusDelivery"
+                      lineageId="Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Output].Columns[Copy of StatusDelivery]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\Check duplicates.Inputs[Sort Input].Columns[Copy of DeliveryDetailID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of DeliveryDetailID"
+                      lineageId="Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Output].Columns[Copy of DeliveryDetailID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Validation and SCD1\Check duplicates.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Check duplicates.Outputs[Sort Output].Columns[DeliveryDetailID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Validation and SCD1\Check duplicates.Outputs[Sort Output].Columns[DeliveryDetailID]"
+                      name="DeliveryDetailID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[DeliveryDetailID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Check duplicates.Outputs[Sort Output].Columns[StatusDelivery]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Validation and SCD1\Check duplicates.Outputs[Sort Output].Columns[StatusDelivery]"
+                      name="StatusDelivery">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[StatusDelivery]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Check duplicates.Outputs[Sort Output].Columns[Copy of StatusDelivery]"
+                      dataType="bool"
+                      lineageId="Package\Validation and SCD1\Check duplicates.Outputs[Sort Output].Columns[Copy of StatusDelivery]"
+                      name="Copy of StatusDelivery">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Output].Columns[Copy of StatusDelivery]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Check duplicates.Outputs[Sort Output].Columns[Copy of DeliveryDetailID]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\Check duplicates.Outputs[Sort Output].Columns[Copy of DeliveryDetailID]"
+                      name="Copy of DeliveryDetailID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Output].Columns[Copy of DeliveryDetailID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Validation and SCD1\Check NULL values"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Check NULL values"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Validation and SCD1\Check NULL values.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\Check NULL values.Inputs[Conditional Split Input].Columns[Copy of StatusDelivery]"
+                      cachedDataType="bool"
+                      cachedName="Copy of StatusDelivery"
+                      lineageId="Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Output].Columns[Copy of StatusDelivery]" />
+                    <inputColumn
+                      refId="Package\Validation and SCD1\Check NULL values.Inputs[Conditional Split Input].Columns[Copy of DeliveryDetailID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of DeliveryDetailID"
+                      lineageId="Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Output].Columns[Copy of DeliveryDetailID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Validation and SCD1\Check NULL values.Outputs[No NULL elements]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="No NULL elements"
+                  synchronousInputId="Package\Validation and SCD1\Check NULL values.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Output].Columns[Copy of DeliveryDetailID]}) &amp;&amp; ![ISNULL](#{Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Output].Columns[Copy of StatusDelivery]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL([Copy of DeliveryDetailID]) &amp;&amp; !ISNULL([Copy of StatusDelivery])</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Validation and SCD1\Check NULL values.Outputs[Null elements]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Null elements"
+                  synchronousInputId="Package\Validation and SCD1\Check NULL values.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Validation and SCD1\Check NULL values.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Validation and SCD1\Check NULL values.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Check NULL values.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\Check NULL values.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Check NULL values.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\Check NULL values.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Validation and SCD1\Check StatusDelivery in 0 and 1"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Check StatusDelivery in 0 and 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Validation and SCD1\Check StatusDelivery in 0 and 1.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\Check StatusDelivery in 0 and 1.Inputs[Conditional Split Input].Columns[StatusDelivery]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="StatusDelivery"
+                      lineageId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[StatusDelivery]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Validation and SCD1\Check StatusDelivery in 0 and 1.Outputs[Valid Data]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Valid Data"
+                  synchronousInputId="Package\Validation and SCD1\Check StatusDelivery in 0 and 1.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[StatusDelivery]} == "1" || #{Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[StatusDelivery]} == "0"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">StatusDelivery == "1" || StatusDelivery == "0"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Validation and SCD1\Check StatusDelivery in 0 and 1.Outputs[Inorrect data]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Inorrect data"
+                  synchronousInputId="Package\Validation and SCD1\Check StatusDelivery in 0 and 1.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Validation and SCD1\Check StatusDelivery in 0 and 1.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Validation and SCD1\Check StatusDelivery in 0 and 1.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Check StatusDelivery in 0 and 1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\Check StatusDelivery in 0 and 1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Check StatusDelivery in 0 and 1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\Check StatusDelivery in 0 and 1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Validation and SCD1\Data Conversion to correct data types"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion to correct data types"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Validation and SCD1\Data Conversion to correct data types.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\Data Conversion to correct data types.Inputs[Data Conversion Input].Columns[StatusDelivery]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="StatusDelivery"
+                      lineageId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[StatusDelivery]" />
+                    <inputColumn
+                      refId="Package\Validation and SCD1\Data Conversion to correct data types.Inputs[Data Conversion Input].Columns[DeliveryDetailID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DeliveryDetailID"
+                      lineageId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[DeliveryDetailID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Validation and SCD1\Data Conversion to correct data types.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Output].Columns[Copy of StatusDelivery]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Output].Columns[Copy of StatusDelivery]"
+                      name="Copy of StatusDelivery"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[StatusDelivery]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Output].Columns[Copy of DeliveryDetailID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Output].Columns[Copy of DeliveryDetailID]"
+                      name="Copy of DeliveryDetailID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[DeliveryDetailID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Validation and SCD1\Data Conversion to correct data types.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Validation and SCD1\DatamartDimDeliveryDetails"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DatamartDimDeliveryDetails"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[datamart].[DimDeliveryDetails]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Validation and SCD1\DatamartDimDeliveryDetails.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Validation and SCD1\DatamartDimDeliveryDetails.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\DatamartDimDeliveryDetails.Inputs[OLE DB Destination Input].Columns[Copy of DeliveryDetailID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of DeliveryDetailID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Validation and SCD1\DatamartDimDeliveryDetails.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryDetailID]"
+                      lineageId="Package\Validation and SCD1\Check duplicates.Outputs[Sort Output].Columns[Copy of DeliveryDetailID]" />
+                    <inputColumn
+                      refId="Package\Validation and SCD1\DatamartDimDeliveryDetails.Inputs[OLE DB Destination Input].Columns[Copy of StatusDelivery]"
+                      cachedDataType="bool"
+                      cachedName="Copy of StatusDelivery"
+                      externalMetadataColumnId="Package\Validation and SCD1\DatamartDimDeliveryDetails.Inputs[OLE DB Destination Input].ExternalColumns[StatusDelivery]"
+                      lineageId="Package\Validation and SCD1\Check duplicates.Outputs[Sort Output].Columns[Copy of StatusDelivery]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Validation and SCD1\DatamartDimDeliveryDetails.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryDetailID]"
+                      dataType="i4"
+                      name="DeliveryDetailID" />
+                    <externalMetadataColumn
+                      refId="Package\Validation and SCD1\DatamartDimDeliveryDetails.Inputs[OLE DB Destination Input].ExternalColumns[StatusDelivery]"
+                      dataType="bool"
+                      name="StatusDelivery" />
+                    <externalMetadataColumn
+                      refId="Package\Validation and SCD1\DatamartDimDeliveryDetails.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Validation and SCD1\DatamartDimDeliveryDetails.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Validation and SCD1\DatamartDimDeliveryDetails.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Validation and SCD1\DatamartDimDeliveryDetails.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\DatamartDimDeliveryDetails.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\DatamartDimDeliveryDetails.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Validation and SCD1\DatamartDimDeliveryDetails.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\DatamartDimDeliveryDetails.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column &quot;Failed convert&quot;"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="14"
+                      lineageId="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      name="Derived Column 1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Failed convert"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Failed convert"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column &quot;Incorrect StatusDelivery&quot;"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="24"
+                      lineageId="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      name="Derived Column 1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Incorrect StatusDelivery"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Incorrect StatusDelivery"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Validation and SCD1\ErrorTable"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="ErrorTable"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[error].[ErrorDimDeliveryDetails]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Validation and SCD1\ErrorTable.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Validation and SCD1\ErrorTable.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\ErrorTable.Inputs[OLE DB Destination Input].Columns[StatusDelivery]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="StatusDelivery"
+                      externalMetadataColumnId="Package\Validation and SCD1\ErrorTable.Inputs[OLE DB Destination Input].ExternalColumns[StatusDelivery]"
+                      lineageId="Package\Validation and SCD1\Union All.Outputs[Union All Output 1].Columns[StatusDelivery]" />
+                    <inputColumn
+                      refId="Package\Validation and SCD1\ErrorTable.Inputs[OLE DB Destination Input].Columns[Derived Column 1]"
+                      cachedDataType="wstr"
+                      cachedLength="24"
+                      cachedName="Derived Column 1"
+                      externalMetadataColumnId="Package\Validation and SCD1\ErrorTable.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
+                      lineageId="Package\Validation and SCD1\Union All.Outputs[Union All Output 1].Columns[Derived Column 1]" />
+                    <inputColumn
+                      refId="Package\Validation and SCD1\ErrorTable.Inputs[OLE DB Destination Input].Columns[DeliveryDetailID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DeliveryDetailID"
+                      externalMetadataColumnId="Package\Validation and SCD1\ErrorTable.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryDetailID]"
+                      lineageId="Package\Validation and SCD1\Union All.Outputs[Union All Output 1].Columns[DeliveryDetailID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Validation and SCD1\ErrorTable.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryDetailID]"
+                      dataType="wstr"
+                      length="255"
+                      name="DeliveryDetailID" />
+                    <externalMetadataColumn
+                      refId="Package\Validation and SCD1\ErrorTable.Inputs[OLE DB Destination Input].ExternalColumns[StatusDelivery]"
+                      dataType="wstr"
+                      length="255"
+                      name="StatusDelivery" />
+                    <externalMetadataColumn
+                      refId="Package\Validation and SCD1\ErrorTable.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
+                      dataType="wstr"
+                      length="255"
+                      name="ErrorDescription" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Validation and SCD1\ErrorTable.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Validation and SCD1\ErrorTable.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\ErrorTable.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\ErrorTable.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Validation and SCD1\ErrorTable.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\ErrorTable.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Validation and SCD1\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [datamart].[DimDeliveryDetails] SET [StatusDelivery] = ?,[UpdatedDate]=getdate() WHERE [DeliveryDetailID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Validation and SCD1\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Validation and SCD1\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of DeliveryDetailID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of DeliveryDetailID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Validation and SCD1\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Validation and SCD1\Check duplicates.Outputs[Sort Output].Columns[Copy of DeliveryDetailID]" />
+                    <inputColumn
+                      refId="Package\Validation and SCD1\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of StatusDelivery]"
+                      cachedDataType="bool"
+                      cachedName="Copy of StatusDelivery"
+                      externalMetadataColumnId="Package\Validation and SCD1\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Validation and SCD1\Check duplicates.Outputs[Sort Output].Columns[Copy of StatusDelivery]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Validation and SCD1\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="bool"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Validation and SCD1\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Validation and SCD1\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Validation and SCD1\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Validation and SCD1\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Validation and SCD1\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Validation and SCD1\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Validation and SCD1\Slowly Changing Dimension Type 1"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension Type 1"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [DeliveryDetailID], [StatusDelivery] FROM [datamart].[DimDeliveryDetails]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Inputs[Slowly Changing Dimension Input].Columns[Copy of DeliveryDetailID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of DeliveryDetailID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Inputs[Slowly Changing Dimension Input].ExternalColumns[DeliveryDetailID]"
+                      lineageId="Package\Validation and SCD1\Check duplicates.Outputs[Sort Output].Columns[Copy of DeliveryDetailID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Inputs[Slowly Changing Dimension Input].Columns[Copy of StatusDelivery]"
+                      cachedDataType="bool"
+                      cachedName="Copy of StatusDelivery"
+                      externalMetadataColumnId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Inputs[Slowly Changing Dimension Input].ExternalColumns[StatusDelivery]"
+                      lineageId="Package\Validation and SCD1\Check duplicates.Outputs[Sort Output].Columns[Copy of StatusDelivery]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Inputs[Slowly Changing Dimension Input].ExternalColumns[DeliveryDetailID]"
+                      dataType="i4"
+                      name="DeliveryDetailID" />
+                    <externalMetadataColumn
+                      refId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Inputs[Slowly Changing Dimension Input].ExternalColumns[StatusDelivery]"
+                      dataType="bool"
+                      name="StatusDelivery" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Validation and SCD1\StagingDimDeliveryDetails"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="StagingDimDeliveryDetails"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimDeliveryDetails]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Validation and SCD1\StagingDimDeliveryDetails.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[DeliveryDetailID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].ExternalColumns[DeliveryDetailID]"
+                      length="255"
+                      lineageId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[DeliveryDetailID]"
+                      name="DeliveryDetailID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[StatusDelivery]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].ExternalColumns[StatusDelivery]"
+                      length="255"
+                      lineageId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[StatusDelivery]"
+                      name="StatusDelivery"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].ExternalColumns[DeliveryDetailID]"
+                      dataType="wstr"
+                      length="255"
+                      name="DeliveryDetailID" />
+                    <externalMetadataColumn
+                      refId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].ExternalColumns[StatusDelivery]"
+                      dataType="wstr"
+                      length="255"
+                      name="StatusDelivery" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Error Output].Columns[DeliveryDetailID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Error Output].Columns[DeliveryDetailID]"
+                      name="DeliveryDetailID" />
+                    <outputColumn
+                      refId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Error Output].Columns[StatusDelivery]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Error Output].Columns[StatusDelivery]"
+                      name="StatusDelivery" />
+                    <outputColumn
+                      refId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Validation and SCD1\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Validation and SCD1\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\Union All.Inputs[Union All Input 1].Columns[DeliveryDetailID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DeliveryDetailID"
+                      lineageId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[DeliveryDetailID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Validation and SCD1\Union All.Outputs[Union All Output 1].Columns[DeliveryDetailID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\Union All.Inputs[Union All Input 1].Columns[StatusDelivery]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="StatusDelivery"
+                      lineageId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[StatusDelivery]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Validation and SCD1\Union All.Outputs[Union All Output 1].Columns[StatusDelivery]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\Union All.Inputs[Union All Input 1].Columns[Derived Column 1]"
+                      cachedDataType="wstr"
+                      cachedLength="24"
+                      cachedName="Derived Column 1"
+                      lineageId="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;.Outputs[Derived Column Output].Columns[Derived Column 1]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Validation and SCD1\Union All.Outputs[Union All Output 1].Columns[Derived Column 1]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Validation and SCD1\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\Union All.Inputs[Union All Input 2].Columns[DeliveryDetailID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DeliveryDetailID"
+                      lineageId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[DeliveryDetailID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Validation and SCD1\Union All.Outputs[Union All Output 1].Columns[DeliveryDetailID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\Union All.Inputs[Union All Input 2].Columns[StatusDelivery]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="StatusDelivery"
+                      lineageId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output].Columns[StatusDelivery]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Validation and SCD1\Union All.Outputs[Union All Output 1].Columns[StatusDelivery]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Validation and SCD1\Union All.Inputs[Union All Input 2].Columns[Derived Column 1]"
+                      cachedDataType="wstr"
+                      cachedLength="14"
+                      cachedName="Derived Column 1"
+                      lineageId="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;.Outputs[Derived Column Output].Columns[Derived Column 1]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Validation and SCD1\Union All.Outputs[Union All Output 1].Columns[Derived Column 1]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Validation and SCD1\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Validation and SCD1\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Union All.Outputs[Union All Output 1].Columns[DeliveryDetailID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Validation and SCD1\Union All.Outputs[Union All Output 1].Columns[DeliveryDetailID]"
+                      name="DeliveryDetailID" />
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Union All.Outputs[Union All Output 1].Columns[StatusDelivery]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Validation and SCD1\Union All.Outputs[Union All Output 1].Columns[StatusDelivery]"
+                      name="StatusDelivery" />
+                    <outputColumn
+                      refId="Package\Validation and SCD1\Union All.Outputs[Union All Output 1].Columns[Derived Column 1]"
+                      dataType="wstr"
+                      length="24"
+                      lineageId="Package\Validation and SCD1\Union All.Outputs[Union All Output 1].Columns[Derived Column 1]"
+                      name="Derived Column 1" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Validation and SCD1.Paths[Changing Attribute Updates Output]"
+              endId="Package\Validation and SCD1\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\Validation and SCD1.Paths[Data Conversion Error Output]"
+              endId="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;.Inputs[Derived Column Input]"
+              name="Data Conversion Error Output"
+              startId="Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Error Output]" />
+            <path
+              refId="Package\Validation and SCD1.Paths[Data Conversion Output]"
+              endId="Package\Validation and SCD1\Check NULL values.Inputs[Conditional Split Input]"
+              name="Data Conversion Output"
+              startId="Package\Validation and SCD1\Data Conversion to correct data types.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Validation and SCD1.Paths[Derived Column Output]"
+              endId="Package\Validation and SCD1\Union All.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Validation and SCD1.Paths[Derived Column Output1]"
+              endId="Package\Validation and SCD1\Union All.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Validation and SCD1.Paths[Inorrect data]"
+              endId="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;.Inputs[Derived Column Input]"
+              name="Inorrect data"
+              startId="Package\Validation and SCD1\Check StatusDelivery in 0 and 1.Outputs[Inorrect data]" />
+            <path
+              refId="Package\Validation and SCD1.Paths[New Output]"
+              endId="Package\Validation and SCD1\DatamartDimDeliveryDetails.Inputs[OLE DB Destination Input]"
+              name="New Output"
+              startId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Outputs[New Output]" />
+            <path
+              refId="Package\Validation and SCD1.Paths[No NULL elements]"
+              endId="Package\Validation and SCD1\Check duplicates.Inputs[Sort Input]"
+              name="No NULL elements"
+              startId="Package\Validation and SCD1\Check NULL values.Outputs[No NULL elements]" />
+            <path
+              refId="Package\Validation and SCD1.Paths[OLE DB Source Output]"
+              endId="Package\Validation and SCD1\Check StatusDelivery in 0 and 1.Inputs[Conditional Split Input]"
+              name="OLE DB Source Output"
+              startId="Package\Validation and SCD1\StagingDimDeliveryDetails.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Validation and SCD1.Paths[Sort Output]"
+              endId="Package\Validation and SCD1\Slowly Changing Dimension Type 1.Inputs[Slowly Changing Dimension Input]"
+              name="Sort Output"
+              startId="Package\Validation and SCD1\Check duplicates.Outputs[Sort Output]" />
+            <path
+              refId="Package\Validation and SCD1.Paths[Union All Output 1]"
+              endId="Package\Validation and SCD1\ErrorTable.Inputs[OLE DB Destination Input]"
+              name="Union All Output 1"
+              startId="Package\Validation and SCD1\Union All.Outputs[Union All Output 1]" />
+            <path
+              refId="Package\Validation and SCD1.Paths[WriteData]"
+              endId="Package\Validation and SCD1\Data Conversion to correct data types.Inputs[Data Conversion Input]"
+              name="WriteData"
+              startId="Package\Validation and SCD1\Check StatusDelivery in 0 and 1.Outputs[Valid Data]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{9C331F01-AF9A-40EE-9203-A4003DAB8C08}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{0E79E204-447F-453D-B8BF-0DA78661E486}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Error Execution Package"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E7780334-C6C7-4CB6-A97D-42118C3E4F58}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Error Execution Package">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{162353EE-1C92-4A73-987D-A8C48F61C8D6}"
+              SQLTask:SqlStatementSource="UPDATE [datamart].[PackageInfo] &#xA;SET &#xA;EndTime = GetDate(), &#xA;PackageStatus = 'Failed' &#xA;WHERE PackageName = 'DatamartDimDeliveryDetails'&#xA;AND&#xA;PackageInfoID=(&#xA;SELECT MAX(PackageInfoID) FROM [datamart].[PackageInfo] &#xA;)&#xA;AND&#xA;PackageStatus = 'Started'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Validation and SCD1"
+          TopLeft="70.0714296710734,55.664706585894" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="192.8,41.6"
+          Id="Package.EventHandlers[OnError]\Error Execution Package"
+          TopLeft="246.4,77.6" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Validation and SCD1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="244,41.6"
+          Id="Package\Validation and SCD1\Slowly Changing Dimension Type 1"
+          TopLeft="160.985713507205,513.343135195757" />
+        <NodeLayout
+          Size="127.2,41.6"
+          Id="Package\Validation and SCD1\ErrorTable"
+          TopLeft="608.576189292208,512.025490968258" />
+        <NodeLayout
+          Size="210.4,41.6"
+          Id="Package\Validation and SCD1\DatamartDimDeliveryDetails"
+          TopLeft="25.5000003405981,646.550978776301" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Validation and SCD1\Check NULL values"
+          TopLeft="185.747618350204,327.71176330452" />
+        <NodeLayout
+          Size="278.4,41.6"
+          Id="Package\Validation and SCD1\Derived Column &quot;Incorrect StatusDelivery&quot;"
+          TopLeft="616.252379946806,206.425487321856" />
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\Validation and SCD1\StagingDimDeliveryDetails"
+          TopLeft="497.852377903218,19.7745100041162" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Validation and SCD1\OLE DB Command"
+          TopLeft="254.014286152198,646.550978776301" />
+        <NodeLayout
+          Size="256.8,41.6"
+          Id="Package\Validation and SCD1\Data Conversion to correct data types"
+          TopLeft="333.385712144812,208.229408504394" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Validation and SCD1\Union All"
+          TopLeft="620.000010558537,422.352942163145" />
+        <NodeLayout
+          Size="231.2,41.6"
+          Id="Package\Validation and SCD1\Derived Column &quot;Failed convert&quot;"
+          TopLeft="426.928570942003,328.496076629621" />
+        <NodeLayout
+          Size="228,41.6"
+          Id="Package\Validation and SCD1\Check StatusDelivery in 0 and 1"
+          TopLeft="487.223806961215,97.9235292830681" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Validation and SCD1\Check duplicates"
+          TopLeft="199.042856072406,423.978429485" />
+        <EdgeLayout
+          Id="Package\Validation and SCD1.Paths[Union All Output 1]"
+          TopLeft="676.088099925372,463.952942163145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.072548805113"
+              Start="0,0"
+              End="0,40.572548805113">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.572548805113" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Validation and SCD1.Paths[Sort Output]"
+          TopLeft="280.214284789805,465.578429485">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.7647057107572"
+              Start="0,0"
+              End="0,40.2647057107572">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.2647057107572" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Validation and SCD1.Paths[OLE DB Source Output]"
+          TopLeft="599.938092432216,61.3745100041162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.5490192789519"
+              Start="0,0"
+              End="0,29.0490192789519">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.0490192789519" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Validation and SCD1.Paths[No NULL elements]"
+          TopLeft="273.595237211305,369.31176330452">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.66666618048"
+              Start="0,0"
+              End="0,47.16666618048">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.16666618048" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-41.237578125,18.70882137149,82.47515625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Validation and SCD1.Paths[New Output]"
+          TopLeft="243.652380173871,554.943135195757">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-112.952379833273,91.6078435805435"
+              Start="0,0"
+              End="-112.952379833273,84.1078435805435">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.00121369377" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.00121369377"
+                    Point2="0,37.00121369377"
+                    Point3="-4,37.00121369377" />
+                  <mssgle:LineSegment
+                    End="-108.952379833273,37.00121369377" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-108.952379833273,37.00121369377"
+                    Point2="-112.952379833273,37.00121369377"
+                    Point3="-112.952379833273,41.00121369377" />
+                  <mssgle:LineSegment
+                    End="-112.952379833273,84.1078435805435" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-83.5675766353866,42.00121369377,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Validation and SCD1.Paths[Inorrect data]"
+          TopLeft="637.890473627882,139.523529283068">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="117.561906318924,66.901958038788"
+              Start="0,0"
+              End="117.561906318924,59.401958038788">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.0405126567924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.0405126567924"
+                    Point2="0,27.0405126567924"
+                    Point3="4,27.0405126567924" />
+                  <mssgle:LineSegment
+                    End="113.561906318924,27.0405126567924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="113.561906318924,27.0405126567924"
+                    Point2="117.561906318924,27.0405126567924"
+                    Point3="117.561906318924,31.0405126567924" />
+                  <mssgle:LineSegment
+                    End="117.561906318924,59.401958038788" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="29.4959922219622,32.0405126567924,58.569921875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Validation and SCD1.Paths[Derived Column Output1]"
+          TopLeft="542.528570942003,370.096076629621">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118.804772949867,52.256865533524"
+              Start="0,0"
+              End="118.804772949867,44.756865533524">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.9415651185339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.9415651185339"
+                    Point2="0,30.9415651185339"
+                    Point3="4,30.9415651185339" />
+                  <mssgle:LineSegment
+                    End="114.804772949867,30.9415651185339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114.804772949867,30.9415651185339"
+                    Point2="118.804772949867,30.9415651185339"
+                    Point3="118.804772949867,34.9415651185339" />
+                  <mssgle:LineSegment
+                    End="118.804772949867,44.756865533524" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Validation and SCD1.Paths[Derived Column Output]"
+          TopLeft="755.452379946806,248.025487321856">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-56.7857027216024,174.327454841289"
+              Start="0,0"
+              End="-56.7857027216024,166.827454841289">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,99.2202035244473" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,99.2202035244473"
+                    Point2="0,103.220203524447"
+                    Point3="-4,103.220203524447" />
+                  <mssgle:LineSegment
+                    End="-52.7857027216024,103.220203524447" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-52.7857027216024,103.220203524447"
+                    Point2="-56.7857027216024,103.220203524447"
+                    Point3="-56.7857027216024,107.220203524447" />
+                  <mssgle:LineSegment
+                    End="-56.7857027216024,166.827454841289" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Validation and SCD1.Paths[Data Conversion Output]"
+          TopLeft="420.319045478146,249.829408504394">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-150.571427127942,77.882354800126"
+              Start="0,0"
+              End="-150.571427127942,70.382354800126">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.4422881298342" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.4422881298342"
+                    Point2="0,31.4422881298342"
+                    Point3="-4,31.4422881298342" />
+                  <mssgle:LineSegment
+                    End="-146.571427127942,31.4422881298342" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-146.571427127942,31.4422881298342"
+                    Point2="-150.571427127942,31.4422881298342"
+                    Point3="-150.571427127942,35.4422881298342" />
+                  <mssgle:LineSegment
+                    End="-150.571427127942,70.382354800126" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Validation and SCD1.Paths[Data Conversion Error Output]"
+          TopLeft="503.252378811479,249.829408504394">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="39.276192130524,78.666668125227"
+              Start="0,0"
+              End="39.276192130524,71.166668125227">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.7589273174291" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.7589273174291"
+                    Point2="0,31.7589273174291"
+                    Point3="4,31.7589273174291" />
+                  <mssgle:LineSegment
+                    End="35.276192130524,31.7589273174291" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.276192130524,31.7589273174291"
+                    Point2="39.276192130524,31.7589273174291"
+                    Point3="39.276192130524,35.7589273174291" />
+                  <mssgle:LineSegment
+                    End="39.276192130524,71.166668125227" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-46.448290653488,36.7589273174291,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Validation and SCD1.Paths[Changing Attribute Updates Output]"
+          TopLeft="322.319046840538,554.943135195757">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.0952393116598,91.6078435805438"
+              Start="0,0"
+              End="14.0952393116598,84.1078435805438">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.0012136937701" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.0012136937701"
+                    Point2="0,37.0012136937701"
+                    Point3="4,37.0012136937701" />
+                  <mssgle:LineSegment
+                    End="10.0952393116598,37.0012136937701" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.0952393116598,37.0012136937701"
+                    Point2="14.0952393116598,37.0012136937701"
+                    Point3="14.0952393116598,41.0012136937701" />
+                  <mssgle:LineSegment
+                    End="14.0952393116598,84.1078435805438" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-71.4862865941701,42.0012136937701,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Validation and SCD1.Paths[WriteData]"
+          TopLeft="564.557140294548,139.523529283068">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-102.771428149736,68.7058792213259"
+              Start="0,0"
+              End="-102.771428149736,61.2058792213259">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.7696236574" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.7696236574"
+                    Point2="0,27.7696236574"
+                    Point3="-4,27.7696236574" />
+                  <mssgle:LineSegment
+                    End="-98.7714281497362,27.7696236574" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-98.7714281497362,27.7696236574"
+                    Point2="-102.771428149736,27.7696236574"
+                    Point3="-102.771428149736,31.7696236574" />
+                  <mssgle:LineSegment
+                    End="-102.771428149736,61.2058792213259" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-74.6322570436181,32.7696236574,46.4930859375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Validation and SCD1.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="192,41.6"
+          Id="Package\Validation and SCD1.EventHandlers[OnPreExecute]\Start Execution Package"
+          TopLeft="215.2,97.6" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Validation and SCD1.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Validation and SCD1.EventHandlers[OnPostExecute]\End Execution Package"
+          TopLeft="208,83.2" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Validation and SCD1\Slowly Changing Dimension Type 1">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{162353EE-1C92-4A73-987D-A8C48F61C8D6}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[datamart].[DimDeliveryDetails]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Sort.Outputs[Sort Output].Columns[Copy of DeliveryDetailID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;DeliveryDetailID&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Sort.Outputs[Sort Output].Columns[Copy of StatusDelivery]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;StatusDelivery&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Validation and SCD1\ErrorTable">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Validation and SCD1\StagingDimDeliveryDetails">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Synonym</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
