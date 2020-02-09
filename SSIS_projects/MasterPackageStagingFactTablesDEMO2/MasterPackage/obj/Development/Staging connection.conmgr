@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Staging connection"
+  DTS:DTSID="{BB0C4817-C0B2-4544-8EAD-D8006AF84825}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBStage;Provider=SQLNCLI11.1;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvKSvfDvrJk+VLPMlkhjgggAAAAACAAAAAAADZgAAwAAAABAAAADiZe+V6Ie2s0HMj7Suk9DYAAAAAASAAACgAAAAEAAAAIHWF4XzzsWkctRpP3KDyAh4AAAAyLI7p0Mb+UsJAa28zaCUYJBzfp71bbdiTYJ1ccjhzLJqoVkVZN/QFpb+T1vtyNp9U5UipwqPN52lxqgowyDryNzhnXDu/7UpSgLjtuwHLEFgbxgHHyB9M01sqjwPvte7nhSMhJxP9cW8MJFx7DDb7WG1ZLGReQN0FAAAAIIWrUaXtzKvQOYH/E62nDIFGbP1</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
