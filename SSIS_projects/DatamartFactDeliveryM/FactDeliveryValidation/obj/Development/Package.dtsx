@@ -1,0 +1,1229 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/7/2020 12:12:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="RD7"
+  DTS:CreatorName="TRAINING\mkarpatc"
+  DTS:DTSID="{74BA81A7-7329-41AB-9BF8-06C9F7A075B0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{10DD1220-8E5A-46B5-A5FD-3CEABFDF90BD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FA758C1E-173C-4860-9C62-A4DDEA89578F}"
+      DTS:ObjectName="192.168.195.147.TestDBDataMart.Lv-468.DB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Retain="True"
+          DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBDataMart;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAABKx/yN3jIEicC7xF0HsqJwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAB19guoP6R5XTL6jD3u3pt/AAAAAASAAACgAAAAEAAAAFBzJiWLJc9iBiTZAKpVSiUYAAAAycIOdLkZwki0k7TukZmfCQUzYmBZdc6LFAAAADH9Zmhm/+3IwtDTRdVQJEozPGqg</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1A67197C-492B-4630-94F5-F3A508A795B2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[DeliveryDetailID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DeliveryDetailID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[DeliveryDetailID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[DateKey]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DateKey"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[DateKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[LocationID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LocationID"
+                      cachedSortKeyPosition="3"
+                      lineageId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[LocationID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[ClientId]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ClientId"
+                      cachedSortKeyPosition="4"
+                      lineageId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[ClientId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[SumWeight]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SumWeight"
+                      cachedSortKeyPosition="5"
+                      lineageId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[SumWeight]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DeliveryDetailID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DeliveryDetailID]"
+                      name="Copy of DeliveryDetailID"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[DeliveryDetailID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DateKey]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DateKey]"
+                      name="Copy of DateKey"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[DateKey]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of LocationID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of LocationID]"
+                      name="Copy of LocationID"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[LocationID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ClientId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ClientId]"
+                      name="Copy of ClientId"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[ClientId]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SumWeight]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SumWeight]"
+                      name="Copy of SumWeight"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[SumWeight]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\DatamartFactDelivery"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DatamartFactDelivery"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[datamart].[FactDelivery]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\DatamartFactDelivery.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input].Columns[Copy of LocationID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of LocationID"
+                      externalMetadataColumnId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[LocationID]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of LocationID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input].Columns[Copy of DateKey]"
+                      cachedDataType="date"
+                      cachedName="Copy of DateKey"
+                      externalMetadataColumnId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DateKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input].Columns[Copy of DeliveryDetailID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of DeliveryDetailID"
+                      externalMetadataColumnId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryDetailID]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DeliveryDetailID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input].Columns[Copy of SumWeight]"
+                      cachedDataType="i4"
+                      cachedName="Copy of SumWeight"
+                      externalMetadataColumnId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[SumWeight]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SumWeight]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input].Columns[Copy of ClientId]"
+                      cachedDataType="i4"
+                      cachedName="Copy of ClientId"
+                      externalMetadataColumnId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[ClientID]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ClientId]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryDetailID]"
+                      dataType="i4"
+                      name="DeliveryDetailID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
+                      dataType="dbDate"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[LocationID]"
+                      dataType="i4"
+                      name="LocationID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[SumWeight]"
+                      dataType="numeric"
+                      name="SumWeight"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[ClientID]"
+                      dataType="i4"
+                      name="ClientID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\DatamartFactDelivery.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\DatamartFactDelivery.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DatamartFactDelivery.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DatamartFactDelivery.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DatamartFactDelivery.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\dboFactDelivery"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="dboFactDelivery"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[staging].[FactDelivery]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM [dbo].[FactDelivery]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\dboFactDelivery.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[DeliveryDetailID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].ExternalColumns[DeliveryDetailID]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[DeliveryDetailID]"
+                      name="DeliveryDetailID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[DateKey]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[DateKey]"
+                      name="DateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[LocationID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].ExternalColumns[LocationID]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[LocationID]"
+                      name="LocationID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[ClientId]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].ExternalColumns[ClientId]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[ClientId]"
+                      name="ClientId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[SumWeight]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].ExternalColumns[SumWeight]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[SumWeight]"
+                      name="SumWeight"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].ExternalColumns[DeliveryDetailID]"
+                      dataType="wstr"
+                      length="255"
+                      name="DeliveryDetailID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
+                      dataType="wstr"
+                      length="255"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].ExternalColumns[LocationID]"
+                      dataType="wstr"
+                      length="255"
+                      name="LocationID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].ExternalColumns[ClientId]"
+                      dataType="wstr"
+                      length="255"
+                      name="ClientId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].ExternalColumns[SumWeight]"
+                      dataType="wstr"
+                      length="255"
+                      name="SumWeight" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Error Output].Columns[DeliveryDetailID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Error Output].Columns[DeliveryDetailID]"
+                      name="DeliveryDetailID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                      name="DateKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Error Output].Columns[LocationID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Error Output].Columns[LocationID]"
+                      name="LocationID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Error Output].Columns[ClientId]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Error Output].Columns[ClientId]"
+                      name="ClientId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Error Output].Columns[SumWeight]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Error Output].Columns[SumWeight]"
+                      name="SumWeight" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\DeleteDuplicates"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="DeleteDuplicates"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\DeleteDuplicates.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\DeleteDuplicates.Inputs[Sort Input].Columns[DeliveryDetailID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DeliveryDetailID"
+                      lineageId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[DeliveryDetailID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\DeleteDuplicates.Inputs[Sort Input].Columns[DateKey]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DateKey"
+                      lineageId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[DateKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\DeleteDuplicates.Inputs[Sort Input].Columns[LocationID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LocationID"
+                      lineageId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[LocationID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\DeleteDuplicates.Inputs[Sort Input].Columns[ClientId]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ClientId"
+                      lineageId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[ClientId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\DeleteDuplicates.Inputs[Sort Input].Columns[SumWeight]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SumWeight"
+                      lineageId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[SumWeight]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">5</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[DeliveryDetailID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[DeliveryDetailID]"
+                      name="DeliveryDetailID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[DeliveryDetailID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[DateKey]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[DateKey]"
+                      name="DateKey"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[DateKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[LocationID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[LocationID]"
+                      name="LocationID"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[LocationID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[ClientId]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[ClientId]"
+                      name="ClientId"
+                      sortKeyPosition="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[ClientId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[SumWeight]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[SumWeight]"
+                      name="SumWeight"
+                      sortKeyPosition="5">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output].Columns[SumWeight]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\ErrorFactDelivery"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="ErrorFactDelivery"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[error].[ErrorFactDelivery]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\ErrorFactDelivery.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input].Columns[DeliveryDetailID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DeliveryDetailID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryDetailID]"
+                      lineageId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[DeliveryDetailID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input].Columns[DateKey]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DateKey"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
+                      lineageId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[DateKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input].Columns[LocationID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LocationID"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[LocationID]"
+                      lineageId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[LocationID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input].Columns[ClientId]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ClientId"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[ClientId]"
+                      lineageId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[ClientId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input].Columns[SumWeight]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SumWeight"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[SumWeight]"
+                      lineageId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output].Columns[SumWeight]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryDetailID]"
+                      dataType="wstr"
+                      length="255"
+                      name="DeliveryDetailID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
+                      dataType="wstr"
+                      length="255"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[LocationID]"
+                      dataType="wstr"
+                      length="255"
+                      name="LocationID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[ClientId]"
+                      dataType="wstr"
+                      length="255"
+                      name="ClientId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input].ExternalColumns[SumWeight]"
+                      dataType="wstr"
+                      length="255"
+                      name="SumWeight" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\ErrorFactDelivery.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ErrorFactDelivery.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ErrorFactDelivery.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ErrorFactDelivery.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ErrorFactDelivery.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Data Conversion Error Output]"
+              endId="Package\Data Flow Task\ErrorFactDelivery.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Error Output"
+              startId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task\DatamartFactDelivery.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\DeleteDuplicates.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\dboFactDelivery.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sort Output]"
+              endId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task\DeleteDuplicates.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SP_ToPopulateFactDelivery"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{69234009-F709-466E-A355-4421EBC045B1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SP_ToPopulateFactDelivery"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FA758C1E-173C-4860-9C62-A4DDEA89578F}"
+          SQLTask:SqlStatementSource="exec [datamart].[SP_ToPopulateFactDelivery]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{9BE587C9-CCCD-4E64-AFD9-751F29BC4BFF}"
+      DTS:From="Package\Data Flow Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\SP_ToPopulateFactDelivery" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="251.5,60.5" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\SP_ToPopulateFactDelivery"
+          TopLeft="227,158" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="328.75,102.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.5"
+              Start="0,0"
+              End="0,48">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Data Flow Task\ErrorFactDelivery"
+          TopLeft="440,237" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Data Flow Task\DatamartFactDelivery"
+          TopLeft="124,242" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow Task\dboFactDelivery"
+          TopLeft="251,17" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Data Flow Task\Data Conversion"
+          TopLeft="258,151" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Data Flow Task\DeleteDuplicates"
+          TopLeft="255,85" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output]"
+          TopLeft="334.75,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24"
+              Start="0,0"
+              End="0,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="330.75,59">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="311.333333333333,193">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-97.3333333333333,49"
+              Start="0,0"
+              End="-97.3333333333333,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.8984771573604" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.8984771573604"
+                    Point2="0,19.8984771573604"
+                    Point3="-4,19.8984771573604" />
+                  <mssgle:LineSegment
+                    End="-93.3333333333333,19.8984771573604" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-93.3333333333333,19.8984771573604"
+                    Point2="-97.3333333333333,19.8984771573604"
+                    Point3="-97.3333333333333,23.8984771573604" />
+                  <mssgle:LineSegment
+                    End="-97.3333333333333,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Error Output]"
+          TopLeft="360.666666666667,193">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="159.333333333333,44"
+              Start="0,0"
+              End="159.333333333333,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.8680203045685" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.8680203045685"
+                    Point2="0,17.8680203045685"
+                    Point3="4,17.8680203045685" />
+                  <mssgle:LineSegment
+                    End="155.333333333333,17.8680203045685" />
+                  <mssgle:CubicBezierSegment
+                    Point1="155.333333333333,17.8680203045685"
+                    Point2="159.333333333333,17.8680203045685"
+                    Point3="159.333333333333,21.8680203045685" />
+                  <mssgle:LineSegment
+                    End="159.333333333333,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="13.5802799479167,22.8680203045685,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\dboFactDelivery">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\ErrorFactDelivery">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\DatamartFactDelivery">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
