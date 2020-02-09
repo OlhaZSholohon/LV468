@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="CastProducts"
   DTS:PackageType="5"
-  DTS:VersionBuild="51"
-  DTS:VersionGUID="{3BB8DC2E-98B6-4270-9F82-1D80AFA2A91F}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{F80D84A4-960A-4EE4-8F12-F82C9750BA07}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -6149,7 +6149,7 @@
         <NodeLayout
           Size="162,42"
           Id="Package.EventHandlers[OnError]\Failed ProcessLog"
-          TopLeft="237.5,112.7" />
+          TopLeft="293.5,112.7" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
