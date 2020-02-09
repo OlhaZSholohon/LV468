@@ -11,12 +11,76 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MasterDimDatamart"
   DTS:PackageType="5"
-  DTS:VersionBuild="113"
-  DTS:VersionGUID="{6452AC56-8419-430B-97F2-DE0DF63B9A00}">
+  DTS:VersionBuild="119"
+  DTS:VersionGUID="{159DFEAF-5507-4209-8ABE-F690928B0321}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DimLocations (TempTables)"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DelayValidation="True"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{03D04E18-E46F-4D39-928A-28ED9A8D8B0B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:MaxErrorCount="10"
+      DTS:ObjectName="DimLocations (TempTables)">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\DimLocations (TempTables)\DimLocations"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{7EA8BB75-ACBC-441C-9C37-923852F2CC44}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimLocations"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartDimLocations.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DimSuppliers (TempTables)"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DelayValidation="True"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{6E249AB4-55AA-4D9F-9487-C0C84273F705}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:MaxErrorCount="10"
+      DTS:ObjectName="DimSuppliers (TempTables)">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\DimSuppliers (TempTables)\DimSuppliers"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{5CD4BBC7-7F1E-4128-9D37-A3500F23108D}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimSuppliers"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DatamartDimSuppliers.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Populate Dimention Tables"
       DTS:CreationName="STOCK:SEQUENCE"
@@ -150,6 +214,7 @@
           DTS:refId="Package\Populate Dimention Tables\DimProducts"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
           DTS:DTSID="{2D332F31-B53C-44B8-B0D0-9316A9D8F9BB}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -318,10 +383,10 @@
           DTS:refId="Package\Populate Fact Tables\FactSupplies (SELECT statement)"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{9A1796F6-C943-436B-9AAB-D6C170B8D8DB}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
+          DTS:MaxErrorCount="10"
           DTS:ObjectName="FactSupplies (SELECT statement)"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
@@ -334,77 +399,13 @@
         </DTS:Executable>
       </DTS:Executables>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Sequence Container"
-      DTS:CreationName="STOCK:SEQUENCE"
-      DTS:DelayValidation="True"
-      DTS:Description="Sequence Container"
-      DTS:DTSID="{03D04E18-E46F-4D39-928A-28ED9A8D8B0B}"
-      DTS:ExecutableType="STOCK:SEQUENCE"
-      DTS:LocaleID="-1"
-      DTS:MaxErrorCount="10"
-      DTS:ObjectName="Sequence Container">
-      <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Sequence Container\DimLocations"
-          DTS:CreationName="Microsoft.ExecutePackageTask"
-          DTS:DelayValidation="True"
-          DTS:Description="Execute Package Task"
-          DTS:DTSID="{7EA8BB75-ACBC-441C-9C37-923852F2CC44}"
-          DTS:ExecutableType="Microsoft.ExecutePackageTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="DimLocations"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <ExecutePackageTask>
-              <UseProjectReference>True</UseProjectReference>
-              <PackageName>DatamartDimLocations.dtsx</PackageName>
-            </ExecutePackageTask>
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Sequence Container 1"
-      DTS:CreationName="STOCK:SEQUENCE"
-      DTS:DelayValidation="True"
-      DTS:Description="Sequence Container"
-      DTS:DTSID="{6E249AB4-55AA-4D9F-9487-C0C84273F705}"
-      DTS:ExecutableType="STOCK:SEQUENCE"
-      DTS:LocaleID="-1"
-      DTS:MaxErrorCount="10"
-      DTS:ObjectName="Sequence Container 1">
-      <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Sequence Container 1\DimSuppliers"
-          DTS:CreationName="Microsoft.ExecutePackageTask"
-          DTS:DelayValidation="True"
-          DTS:Description="Execute Package Task"
-          DTS:DTSID="{5CD4BBC7-7F1E-4128-9D37-A3500F23108D}"
-          DTS:ExecutableType="Microsoft.ExecutePackageTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="DimSuppliers"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <ExecutePackageTask>
-              <UseProjectReference>True</UseProjectReference>
-              <PackageName>DatamartDimSuppliers.dtsx</PackageName>
-            </ExecutePackageTask>
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{CBDAC495-2E2E-4722-B131-8C0D767B9279}"
-      DTS:From="Package\Sequence Container"
+      DTS:From="Package\DimLocations (TempTables)"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Populate Dimention Tables" />
@@ -415,12 +416,12 @@
       DTS:From="Package\Populate Dimention Tables"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Sequence Container 1" />
+      DTS:To="Package\DimSuppliers (TempTables)" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{5947FC0F-72EA-4A98-9B14-1D5FC6011619}"
-      DTS:From="Package\Sequence Container 1"
+      DTS:From="Package\DimSuppliers (TempTables)"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Populate Fact Tables" />
@@ -440,46 +441,46 @@
         <NodeLayout
           Size="165,44"
           Id="Package\Populate Dimention Tables\DimClients"
-          TopLeft="40,65" />
+          TopLeft="40,33.5714285714286" />
         <NodeLayout
           Size="166,43"
           Id="Package\Populate Dimention Tables\DimDates"
-          TopLeft="39.5714285714285,123.857142857143" />
+          TopLeft="39.5714285714285,105.285714285714" />
         <NodeLayout
           Size="173,42"
           Id="Package\Populate Dimention Tables\DimDeliveryDetails"
-          TopLeft="339,80" />
+          TopLeft="281.857142857143,107.142857142857" />
         <NodeLayout
-          Size="160,43"
+          Size="167,43"
           Id="Package\Populate Dimention Tables\DimDiscounts"
-          TopLeft="42,226" />
+          TopLeft="37.7142857142857,224.571428571428" />
         <NodeLayout
           Size="183,42"
           Id="Package\Populate Dimention Tables\DimFeedbackDetails"
-          TopLeft="337.142857142857,282.571428571429" />
+          TopLeft="281.428571428571,258.285714285715" />
         <NodeLayout
           Size="172,42"
           Id="Package\Populate Dimention Tables\DimGuaranties"
           TopLeft="32,282.428571428571" />
         <NodeLayout
-          Size="163,44"
+          Size="166,44"
           Id="Package\Populate Dimention Tables\DimPayments"
-          TopLeft="38,174" />
+          TopLeft="38,164" />
         <NodeLayout
           Size="182,42"
           Id="Package\Populate Dimention Tables\DimProducts"
-          TopLeft="345,15" />
+          TopLeft="282.142857142857,27.8571428571428" />
         <NodeLayout
           Size="175,42"
           Id="Package\Populate Dimention Tables\DimReturnDetails"
-          TopLeft="339.444444444444,148.111111111111" />
+          TopLeft="285.15873015873,182.396825396825" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="611,380"
-          Size="611,423"
+          PanelSize="532,379"
+          Size="532,422"
           Id="Package\Populate Dimention Tables"
-          TopLeft="50.0476190476189,236.02380952381" />
+          TopLeft="151.904761904761,250.238095238095" />
         <NodeLayout
           Size="213,42"
           Id="Package\Populate Fact Tables\Fact Returns (from FlarFiles)"
@@ -487,7 +488,7 @@
         <NodeLayout
           Size="220,42"
           Id="Package\Populate Fact Tables\FactFeedbacks (from flatFiles)"
-          TopLeft="298.5,149" />
+          TopLeft="309.928571428572,149" />
         <NodeLayout
           Size="226,42"
           Id="Package\Populate Fact Tables\FactOrders(from flatFiles)"
@@ -560,43 +561,55 @@
           PanelSize="576,524"
           Size="576,567"
           Id="Package\Populate Fact Tables"
-          TopLeft="1054.33333333333,172.166666666667" />
+          TopLeft="1105.7619047619,172.166666666667" />
         <NodeLayout
           Size="142,42"
-          Id="Package\Sequence Container\DimLocations"
+          Id="Package\DimLocations (TempTables)\DimLocations"
           TopLeft="35.7777777777777,34.3333333333336" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="205,131"
-          Size="205,174"
-          Id="Package\Sequence Container"
-          TopLeft="247.5,31.6666666666667" />
+          PanelSize="233,131"
+          Size="233,174"
+          Id="Package\DimLocations (TempTables)"
+          TopLeft="796.071428571429,247.380952380952" />
         <NodeLayout
           Size="160,42"
-          Id="Package\Sequence Container 1\DimSuppliers"
-          TopLeft="30.4761904761905,48.1666666666667" />
+          Id="Package\DimSuppliers (TempTables)\DimSuppliers"
+          TopLeft="41.9047619047619,22.4523809523811" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="243,180"
-          Size="243,223"
-          Id="Package\Sequence Container 1"
-          TopLeft="732.5,340" />
+          PanelSize="243,119"
+          Size="243,162"
+          Id="Package\DimSuppliers (TempTables)"
+          TopLeft="792.5,482.857142857143" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="352.77380952381,205.666666666667">
+          TopLeft="796.071428571429,334.380952380952">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30.3571428571431"
+              EndConnector="-112.166666666667,57.8571428571428"
               Start="0,0"
-              End="0,22.8571428571431">
+              End="-104.666666666667,57.8571428571428">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.8571428571431" />
+                    End="-63.0457979225687,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-63.0457979225687,0"
+                    Point2="-67.0457979225687,0"
+                    Point3="-67.0457979225687,4" />
+                  <mssgle:LineSegment
+                    End="-67.0457979225687,53.8571428571428" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-67.0457979225687,53.8571428571428"
+                    Point2="-67.0457979225687,57.8571428571428"
+                    Point3="-71.0457979225687,57.8571428571428" />
+                  <mssgle:LineSegment
+                    End="-104.666666666667,57.8571428571428" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -607,18 +620,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="661.047619047619,449.511904761905">
+          TopLeft="683.904761904761,530.238095238095">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="71.4523809523813,0"
+              EndConnector="108.595238095238,33.6190476190477"
               Start="0,0"
-              End="63.9523809523813,0">
+              End="101.095238095238,33.6190476190477">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="63.9523809523813,0" />
+                    End="39.6842034264132,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="39.6842034264132,0"
+                    Point2="43.6842034264132,0"
+                    Point3="43.6842034264132,4" />
+                  <mssgle:LineSegment
+                    End="43.6842034264132,29.6190476190477" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.6842034264132,29.6190476190477"
+                    Point2="43.6842034264132,33.6190476190477"
+                    Point3="47.6842034264132,33.6190476190477" />
+                  <mssgle:LineSegment
+                    End="101.095238095238,33.6190476190477" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -629,18 +654,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="975.5,453.583333333333">
+          TopLeft="1035.5,563.857142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="78.8333333333301,0"
+              EndConnector="70.2619047619016,-108.190476190476"
               Start="0,0"
-              End="71.3333333333301,0">
+              End="62.7619047619016,-108.190476190476">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="71.3333333333301,0" />
+                    End="31.1309523809508,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.1309523809508,0"
+                    Point2="35.1309523809508,0"
+                    Point3="35.1309523809508,-4" />
+                  <mssgle:LineSegment
+                    End="35.1309523809508,-104.190476190476" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.1309523809508,-104.190476190476"
+                    Point2="35.1309523809508,-108.190476190476"
+                    Point3="39.1309523809508,-108.190476190476" />
+                  <mssgle:LineSegment
+                    End="62.7619047619016,-108.190476190476" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
