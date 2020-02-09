@@ -5,7 +5,7 @@ IF OBJECT_ID('staging.DimReturnDetails') IS NOT NULL
 
 
 CREATE TABLE [staging].[DimReturnDetails](
-	[ReturnDetailID] [int] NULL,
+	[ReturnDetailID] [nvarchar](255) NULL,
 	[ReturnKind] [nvarchar](255) NULL,
 	[ReturnDescription] [nvarchar](255) NULL
 ) 
