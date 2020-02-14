@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimSuppliers"
   DTS:PackageType="5"
-  DTS:VersionBuild="123"
-  DTS:VersionGUID="{1836AC90-EA6B-47B1-8F26-2D1C4364E9B9}">
+  DTS:VersionBuild="183"
+  DTS:VersionGUID="{FFD91359-112F-49CE-BD85-409F0AA57FEB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,7 +28,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACxc5GqPbsO8awr1B0CuCdIAAAAAASAAACgAAAAEAAAAHIRbmgz2px3D9NfoQHv/fMYAAAA2oESHKavhAeKPogvDQ4yVy6q2Eud2y0dFAAAANP/RtHH64mIV9EY+zLnOR6Zt3dc</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2RjKmX9+0GHVUMcpTF/MQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABA+t3JQ5iJJarX5wfyW03XAAAAAASAAACgAAAAEAAAAPgniY3//veTkHSiZ3PkymoYAAAA9I2R47krkouSkROWIWeTgKFrCJXQQsbQFAAAAJlhsxXqpUJ6SqPl6oUzFVM+uwwl</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -87,7 +87,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{DDF8B122-E598-4FC1-97B9-08B1C59A9927}"
-          SQLTask:SqlStatementSource="IF OBJECT_ID('dbo.##SupplierValidData', 'U') IS NOT NULL &#xA;  DROP TABLE dbo.##SupplierValidData; &#xA;&#xA;IF OBJECT_ID('dbo.##SupplierValidData2', 'U') IS NOT NULL &#xA;  DROP TABLE dbo.##SupplierValidData2; &#xA;&#xA;SELECT * INTO ##SupplierValidData&#xA;FROM [dbo].[DimSuppliers]&#xA;WHERE LEN(SupplierName) &lt; 20&#xA;              AND&#xA;              LEN(SupplierEmail) &lt; 40&#xA;              AND&#xA;              LEN(SupplierPhone) &lt; 18" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="SELECT * INTO ##SupplierValidData&#xA;FROM [dbo].[DimSuppliers]&#xA;WHERE LEN(SupplierName) &lt; 20&#xA;              AND&#xA;              LEN(SupplierEmail) &lt; 40&#xA;              AND&#xA;              LEN(SupplierPhone) &lt; 18&#xA;              AND&#xA;              ISNUMERIC(SupplierID) =1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -103,7 +103,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{DDF8B122-E598-4FC1-97B9-08B1C59A9927}"
-          SQLTask:SqlStatementSource="SELECT SupplierKey, SupplierName, SupplierEmail, SupplierPhone, SupplierDescription,&#xA;&#x9;[datamart].[EmailFormat](SupplierEmail) AS ValidEmail, &#xA;&#x9;[datamart].[NumPhoneFormat](SupplierPhone) AS ValidPhone&#xA;INTO ##SupplierValidData2&#xA;FROM ##SupplierValidData" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="SELECT SupplierID, SupplierName, SupplierEmail, SupplierPhone, SupplierDescription,&#xA;&#x9;[datamart].[EmailFormat](SupplierEmail) AS ValidEmail, &#xA;&#x9;[datamart].[NumPhoneFormat](SupplierPhone) AS ValidPhone&#xA;INTO ##SupplierValidData2&#xA;FROM ##SupplierValidData" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -161,95 +161,6 @@
           version="1">
           <components>
             <component
-              refId="Package\Transormation data and SCD2\Check dublicates"
-              componentClassID="Microsoft.ConditionalSplit"
-              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-              name="Check dublicates"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Transormation data and SCD2\Check dublicates.Inputs[Conditional Split Input]"
-                  description="Input to the Conditional Split Transformation"
-                  name="Conditional Split Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Transormation data and SCD2\Check dublicates.Inputs[Conditional Split Input].Columns[Count all]"
-                      cachedDataType="ui8"
-                      cachedName="Count all"
-                      lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Count all]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Transormation data and SCD2\Check dublicates.Outputs[Duplicate records]"
-                  description="Output 1 of the Conditional Split Transformation"
-                  errorOrTruncationOperation="Computation"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="Duplicate records"
-                  synchronousInputId="Package\Transormation data and SCD2\Check dublicates.Inputs[Conditional Split Input]"
-                  truncationRowDisposition="FailComponent">
-                  <properties>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">(DT_I4)#{Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Count all]} &gt; 1</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the friendly version of the expression. This expression version uses column names."
-                      expressionType="Notify"
-                      name="FriendlyExpression">(DT_I4)[Count all] &gt; 1</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
-                      name="EvaluationOrder">0</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Transormation data and SCD2\Check dublicates.Outputs[Data without duplicates]"
-                  description="Default Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  name="Data without duplicates"
-                  synchronousInputId="Package\Transormation data and SCD2\Check dublicates.Inputs[Conditional Split Input]">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      name="IsDefaultOut">true</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Transormation data and SCD2\Check dublicates.Outputs[Conditional Split Error Output]"
-                  description="Error Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Conditional Split Error Output"
-                  synchronousInputId="Package\Transormation data and SCD2\Check dublicates.Inputs[Conditional Split Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Transormation data and SCD2\Check dublicates.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Transormation data and SCD2\Check dublicates.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Transormation data and SCD2\Check dublicates.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Transormation data and SCD2\Check dublicates.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Transormation data and SCD2\Check on NULL rows"
               componentClassID="Microsoft.ConditionalSplit"
               contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -286,6 +197,11 @@
                       cachedLength="255"
                       cachedName="Copy of SupplierDescription"
                       lineageId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierDescription]" />
+                    <inputColumn
+                      refId="Package\Transormation data and SCD2\Check on NULL rows.Inputs[Conditional Split Input].Columns[Copy of SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of SupplierID"
+                      lineageId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierID]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -305,13 +221,13 @@
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">[ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierName]}) &amp;&amp; [ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierEmail]}) &amp;&amp; [ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierPhone]}) &amp;&amp; [ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierDescription]})</property>
+                      name="Expression">[ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierID]}) &amp;&amp; [ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierName]}) &amp;&amp; [ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierEmail]}) &amp;&amp; [ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierPhone]}) &amp;&amp; [ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierDescription]})</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">ISNULL([Copy of SupplierName]) &amp;&amp; ISNULL([Copy of SupplierEmail]) &amp;&amp; ISNULL([Copy of SupplierPhone]) &amp;&amp; ISNULL([Copy of SupplierDescription])</property>
+                      name="FriendlyExpression">ISNULL([Copy of SupplierID]) &amp;&amp; ISNULL([Copy of SupplierName]) &amp;&amp; ISNULL([Copy of SupplierEmail]) &amp;&amp; ISNULL([Copy of SupplierPhone]) &amp;&amp; ISNULL([Copy of SupplierDescription])</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -394,6 +310,11 @@
                       cachedLength="40"
                       cachedName="Copy of ValidEmail"
                       lineageId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of ValidEmail]" />
+                    <inputColumn
+                      refId="Package\Transormation data and SCD2\Check on some NULLs values.Inputs[Conditional Split Input].Columns[Copy of SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of SupplierID"
+                      lineageId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierID]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -413,13 +334,13 @@
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">[ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierName]}) || [ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of ValidEmail]}) || [ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of ValidPhone]}) || [ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierDescription]})</property>
+                      name="Expression">[ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierID]}) || [ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierName]}) || [ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of ValidEmail]}) || [ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of ValidPhone]}) || [ISNULL](#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierDescription]})</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">ISNULL([Copy of SupplierName]) || ISNULL([Copy of ValidEmail]) || ISNULL([Copy of ValidPhone]) || ISNULL([Copy of SupplierDescription])</property>
+                      name="FriendlyExpression">ISNULL([Copy of SupplierID]) || ISNULL([Copy of SupplierName]) || ISNULL([Copy of ValidEmail]) || ISNULL([Copy of ValidPhone]) || ISNULL([Copy of SupplierDescription])</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -458,6 +379,95 @@
                       refId="Package\Transormation data and SCD2\Check on some NULLs values.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Transormation data and SCD2\Check on some NULLs values.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transormation data and SCD2\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Transormation data and SCD2\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transormation data and SCD2\Conditional Split.Inputs[Conditional Split Input].Columns[Count all]"
+                      cachedDataType="ui8"
+                      cachedName="Count all"
+                      lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Count all]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transormation data and SCD2\Conditional Split.Outputs[Duplicated rows]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Duplicated rows"
+                  synchronousInputId="Package\Transormation data and SCD2\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">(DT_I4)#{Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Count all]} &gt; 1</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">(DT_I4)[Count all] &gt; 1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transormation data and SCD2\Conditional Split.Outputs[Data without duplicates]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Data without duplicates"
+                  synchronousInputId="Package\Transormation data and SCD2\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transormation data and SCD2\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Transormation data and SCD2\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transormation data and SCD2\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transormation data and SCD2\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transormation data and SCD2\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transormation data and SCD2\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -514,11 +524,11 @@
                       cachedName="ValidEmail"
                       lineageId="Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[ValidEmail]" />
                     <inputColumn
-                      refId="Package\Transormation data and SCD2\Convert data in correct datatype.Inputs[Data Conversion Input].Columns[SupplierKey]"
+                      refId="Package\Transormation data and SCD2\Convert data in correct datatype.Inputs[Data Conversion Input].Columns[SupplierID]"
                       cachedDataType="wstr"
-                      cachedLength="19"
-                      cachedName="SupplierKey"
-                      lineageId="Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierKey]" />
+                      cachedLength="255"
+                      cachedName="SupplierID"
+                      lineageId="Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierID]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -657,20 +667,19 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierKey]"
-                      dataType="wstr"
+                      refId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierID]"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="19"
-                      lineageId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierKey]"
-                      name="Copy of SupplierKey"
+                      lineageId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierID]"
+                      name="Copy of SupplierID"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierKey]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierID]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -804,6 +813,7 @@
                     <outputColumn
                       refId="Package\Transormation data and SCD2\Derived Column 1.Outputs[Derived Column Output].Columns[StartDate]"
                       dataType="dbTimeStamp"
+                      description="StartDate"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Transormation data and SCD2\Derived Column 1.Outputs[Derived Column Output].Columns[StartDate]"
@@ -924,11 +934,10 @@
                       cachedName="Copy of ValidEmail"
                       lineageId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of ValidEmail]" />
                     <inputColumn
-                      refId="Package\Transormation data and SCD2\GROUP BY rows.Inputs[Aggregate Input 1].Columns[Copy of SupplierKey]"
-                      cachedDataType="wstr"
-                      cachedLength="19"
-                      cachedName="Copy of SupplierKey"
-                      lineageId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierKey]" />
+                      refId="Package\Transormation data and SCD2\GROUP BY rows.Inputs[Aggregate Input 1].Columns[Copy of SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of SupplierID"
+                      lineageId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierID]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -949,6 +958,32 @@
                       name="Keys" />
                   </properties>
                   <outputColumns>
+                    <outputColumn
+                      refId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierID]"
+                      dataType="i4"
+                      lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierID]"
+                      name="Copy of SupplierID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
                     <outputColumn
                       refId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierName]"
                       dataType="wstr"
@@ -1096,33 +1131,6 @@
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
                           name="AggregationColumnId">#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of ValidEmail]}</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the type of aggregation."
-                          name="AggregationType"
-                          typeConverter="AggregationType">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
-                          name="IsBig">1</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the string comparison options."
-                          name="AggregationComparisonFlags">0</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierKey]"
-                      dataType="wstr"
-                      length="19"
-                      lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierKey]"
-                      name="Copy of SupplierKey">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierKey]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -1471,13 +1479,6 @@
                       externalMetadataColumnId="Package\Transormation data and SCD2\Insert data into Error table.Inputs[OLE DB Destination Input].ExternalColumns[ErrorComment]"
                       lineageId="Package\Transormation data and SCD2\Insert column with comment EmptyRow.Outputs[Derived Column Output].Columns[Comment]" />
                     <inputColumn
-                      refId="Package\Transormation data and SCD2\Insert data into Error table.Inputs[OLE DB Destination Input].Columns[Copy of SupplierKey]"
-                      cachedDataType="wstr"
-                      cachedLength="19"
-                      cachedName="Copy of SupplierKey"
-                      externalMetadataColumnId="Package\Transormation data and SCD2\Insert data into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierKey]"
-                      lineageId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierKey]" />
-                    <inputColumn
                       refId="Package\Transormation data and SCD2\Insert data into Error table.Inputs[OLE DB Destination Input].Columns[Copy of SupplierName]"
                       cachedDataType="wstr"
                       cachedLength="20"
@@ -1505,18 +1506,20 @@
                       cachedName="Copy of SupplierDescription"
                       externalMetadataColumnId="Package\Transormation data and SCD2\Insert data into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierDescription]"
                       lineageId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierDescription]" />
+                    <inputColumn
+                      refId="Package\Transormation data and SCD2\Insert data into Error table.Inputs[OLE DB Destination Input].Columns[Copy of SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of SupplierID"
+                      externalMetadataColumnId="Package\Transormation data and SCD2\Insert data into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
+                      lineageId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Transormation data and SCD2\Insert data into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
-                      dataType="i4"
-                      name="SupplierID" />
-                    <externalMetadataColumn
-                      refId="Package\Transormation data and SCD2\Insert data into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierKey]"
                       dataType="wstr"
-                      length="20"
-                      name="SupplierKey" />
+                      length="255"
+                      name="SupplierID" />
                     <externalMetadataColumn
                       refId="Package\Transormation data and SCD2\Insert data into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierName]"
                       dataType="wstr"
@@ -1643,12 +1646,11 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Transormation data and SCD2\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of SupplierKey]"
-                      cachedDataType="wstr"
-                      cachedLength="19"
-                      cachedName="Copy of SupplierKey"
-                      externalMetadataColumnId="Package\Transormation data and SCD2\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplierKey]"
-                      lineageId="Package\Transormation data and SCD2\Union All.Outputs[Union All Output 1].Columns[Copy of SupplierKey]" />
+                      refId="Package\Transormation data and SCD2\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of SupplierID"
+                      externalMetadataColumnId="Package\Transormation data and SCD2\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
+                      lineageId="Package\Transormation data and SCD2\Union All.Outputs[Union All Output 1].Columns[Copy of SupplierID]" />
                     <inputColumn
                       refId="Package\Transormation data and SCD2\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of SupplierName]"
                       cachedDataType="wstr"
@@ -1690,11 +1692,6 @@
                       refId="Package\Transormation data and SCD2\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
                       dataType="i4"
                       name="SupplierID" />
-                    <externalMetadataColumn
-                      refId="Package\Transormation data and SCD2\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplierKey]"
-                      dataType="wstr"
-                      length="20"
-                      name="SupplierKey" />
                     <externalMetadataColumn
                       refId="Package\Transormation data and SCD2\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplierName]"
                       dataType="wstr"
@@ -1831,13 +1828,6 @@
                       externalMetadataColumnId="Package\Transormation data and SCD2\Insert2 into Error table.Inputs[OLE DB Destination Input].ExternalColumns[ErrorComment]"
                       lineageId="Package\Transormation data and SCD2\Insert column with comment SomeValuesAreEmpty.Outputs[Derived Column Output].Columns[Comment]" />
                     <inputColumn
-                      refId="Package\Transormation data and SCD2\Insert2 into Error table.Inputs[OLE DB Destination Input].Columns[Copy of SupplierKey]"
-                      cachedDataType="wstr"
-                      cachedLength="19"
-                      cachedName="Copy of SupplierKey"
-                      externalMetadataColumnId="Package\Transormation data and SCD2\Insert2 into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierKey]"
-                      lineageId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierKey]" />
-                    <inputColumn
                       refId="Package\Transormation data and SCD2\Insert2 into Error table.Inputs[OLE DB Destination Input].Columns[Copy of SupplierName]"
                       cachedDataType="wstr"
                       cachedLength="20"
@@ -1865,18 +1855,20 @@
                       cachedName="Copy of SupplierDescription"
                       externalMetadataColumnId="Package\Transormation data and SCD2\Insert2 into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierDescription]"
                       lineageId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierDescription]" />
+                    <inputColumn
+                      refId="Package\Transormation data and SCD2\Insert2 into Error table.Inputs[OLE DB Destination Input].Columns[Copy of SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of SupplierID"
+                      externalMetadataColumnId="Package\Transormation data and SCD2\Insert2 into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
+                      lineageId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output].Columns[Copy of SupplierID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Transormation data and SCD2\Insert2 into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
-                      dataType="i4"
-                      name="SupplierID" />
-                    <externalMetadataColumn
-                      refId="Package\Transormation data and SCD2\Insert2 into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierKey]"
                       dataType="wstr"
-                      length="20"
-                      name="SupplierKey" />
+                      length="255"
+                      name="SupplierID" />
                     <externalMetadataColumn
                       refId="Package\Transormation data and SCD2\Insert2 into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierName]"
                       dataType="wstr"
@@ -2010,13 +2002,6 @@
                       externalMetadataColumnId="Package\Transormation data and SCD2\Insert3 into Error table.Inputs[OLE DB Destination Input].ExternalColumns[ErrorComment]"
                       lineageId="Package\Transormation data and SCD2\Insert column with comment DuplicatedRows.Outputs[Derived Column Output].Columns[Comment]" />
                     <inputColumn
-                      refId="Package\Transormation data and SCD2\Insert3 into Error table.Inputs[OLE DB Destination Input].Columns[Copy of SupplierKey]"
-                      cachedDataType="wstr"
-                      cachedLength="19"
-                      cachedName="Copy of SupplierKey"
-                      externalMetadataColumnId="Package\Transormation data and SCD2\Insert3 into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierKey]"
-                      lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierKey]" />
-                    <inputColumn
                       refId="Package\Transormation data and SCD2\Insert3 into Error table.Inputs[OLE DB Destination Input].Columns[Copy of SupplierName]"
                       cachedDataType="wstr"
                       cachedLength="20"
@@ -2044,18 +2029,20 @@
                       cachedName="Copy of SupplierDescription"
                       externalMetadataColumnId="Package\Transormation data and SCD2\Insert3 into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierDescription]"
                       lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierDescription]" />
+                    <inputColumn
+                      refId="Package\Transormation data and SCD2\Insert3 into Error table.Inputs[OLE DB Destination Input].Columns[Copy of SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of SupplierID"
+                      externalMetadataColumnId="Package\Transormation data and SCD2\Insert3 into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
+                      lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Transormation data and SCD2\Insert3 into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
-                      dataType="i4"
-                      name="SupplierID" />
-                    <externalMetadataColumn
-                      refId="Package\Transormation data and SCD2\Insert3 into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierKey]"
                       dataType="wstr"
-                      length="20"
-                      name="SupplierKey" />
+                      length="255"
+                      name="SupplierID" />
                     <externalMetadataColumn
                       refId="Package\Transormation data and SCD2\Insert3 into Error table.Inputs[OLE DB Destination Input].ExternalColumns[SupplierName]"
                       dataType="wstr"
@@ -2127,7 +2114,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [datamart].[DimSuppliers] SET [EndDate] = ? WHERE [SupplierKey] = ? AND [EndDate] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [datamart].[DimSuppliers] SET [EndDate] = ? WHERE [SupplierID] = ? AND [EndDate] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2150,12 +2137,11 @@
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Transormation data and SCD2\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of SupplierKey]"
-                      cachedDataType="wstr"
-                      cachedLength="19"
-                      cachedName="Copy of SupplierKey"
+                      refId="Package\Transormation data and SCD2\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of SupplierID"
                       externalMetadataColumnId="Package\Transormation data and SCD2\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierKey]" />
+                      lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierID]" />
                     <inputColumn
                       refId="Package\Transormation data and SCD2\OLE DB Command.Inputs[OLE DB Command Input].Columns[EndDate]"
                       cachedDataType="dbTimeStamp"
@@ -2178,14 +2164,13 @@
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Transormation data and SCD2\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      dataType="wstr"
-                      length="20"
+                      dataType="i4"
                       name="Param_1">
                       <properties>
                         <property
                           dataType="System.Int32"
                           description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
+                          name="DBParamInfoFlags">81</property>
                       </properties>
                     </externalMetadataColumn>
                   </externalMetadataColumns>
@@ -2224,18 +2209,18 @@
               </outputs>
             </component>
             <component
-              refId="Package\Transormation data and SCD2\SCD2"
+              refId="Package\Transormation data and SCD2\Slowly Changing Dimension"
               componentClassID="Microsoft.SCD"
               contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
               description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
-              name="SCD2"
+              name="Slowly Changing Dimension"
               version="3">
               <properties>
                 <property
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [SupplierDescription], [SupplierEmail], [SupplierKey], [SupplierName], [SupplierPhone],[StartDate],[EndDate] FROM [datamart].[DimSuppliers]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [SupplierDescription], [SupplierEmail], [SupplierID], [SupplierName], [SupplierPhone],[StartDate],[EndDate] FROM [datamart].[DimSuppliers]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -2243,11 +2228,11 @@
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
-                  name="UpdateChangingAttributeHistory">true</property>
+                  name="UpdateChangingAttributeHistory">false</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
-                  name="FailOnFixedAttributeChange">false</property>
+                  name="FailOnFixedAttributeChange">true</property>
                 <property
                   dataType="System.String"
                   description="Specifies the column name for the inferred member."
@@ -2272,7 +2257,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Transormation data and SCD2\SCD2.Connections[LookupConnection]"
+                  refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Connections[LookupConnection]"
                   connectionManagerID="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
                   connectionManagerRefId="Package.ConnectionManagers[192.168.195.147.TestDBDataMart.Lv-468.DB]"
                   description="Defines the connection to use for lookups in the dimension table"
@@ -2280,15 +2265,15 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input]"
+                  refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
                   name="Slowly Changing Dimension Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input].Columns[Copy of SupplierDescription]"
+                      refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of SupplierDescription]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Copy of SupplierDescription"
-                      externalMetadataColumnId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierDescription]"
+                      externalMetadataColumnId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierDescription]"
                       lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierDescription]">
                       <properties>
                         <property
@@ -2298,11 +2283,11 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input].Columns[Copy of ValidEmail]"
+                      refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of ValidEmail]"
                       cachedDataType="wstr"
                       cachedLength="40"
                       cachedName="Copy of ValidEmail"
-                      externalMetadataColumnId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierEmail]"
+                      externalMetadataColumnId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierEmail]"
                       lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of ValidEmail]">
                       <properties>
                         <property
@@ -2312,12 +2297,11 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input].Columns[Copy of SupplierKey]"
-                      cachedDataType="wstr"
-                      cachedLength="19"
-                      cachedName="Copy of SupplierKey"
-                      externalMetadataColumnId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierKey]"
-                      lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierKey]">
+                      refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of SupplierID"
+                      externalMetadataColumnId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierID]"
+                      lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierID]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2326,11 +2310,11 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input].Columns[Copy of SupplierName]"
+                      refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of SupplierName]"
                       cachedDataType="wstr"
                       cachedLength="20"
                       cachedName="Copy of SupplierName"
-                      externalMetadataColumnId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierName]"
+                      externalMetadataColumnId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierName]"
                       lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierName]">
                       <properties>
                         <property
@@ -2340,11 +2324,11 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input].Columns[Copy of ValidPhone]"
+                      refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of ValidPhone]"
                       cachedDataType="wstr"
                       cachedLength="18"
                       cachedName="Copy of ValidPhone"
-                      externalMetadataColumnId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierPhone]"
+                      externalMetadataColumnId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierPhone]"
                       lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of ValidPhone]">
                       <properties>
                         <property
@@ -2357,36 +2341,35 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierDescription]"
+                      refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierDescription]"
                       dataType="wstr"
                       length="255"
                       name="SupplierDescription" />
                     <externalMetadataColumn
-                      refId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierEmail]"
+                      refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierEmail]"
                       dataType="wstr"
                       length="40"
                       name="SupplierEmail" />
                     <externalMetadataColumn
-                      refId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierKey]"
-                      dataType="wstr"
-                      length="20"
-                      name="SupplierKey" />
+                      refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierID]"
+                      dataType="i4"
+                      name="SupplierID" />
                     <externalMetadataColumn
-                      refId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierName]"
+                      refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierName]"
                       dataType="wstr"
                       length="20"
                       name="SupplierName" />
                     <externalMetadataColumn
-                      refId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierPhone]"
+                      refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SupplierPhone]"
                       dataType="wstr"
                       length="18"
                       name="SupplierPhone" />
                     <externalMetadataColumn
-                      refId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input].ExternalColumns[StartDate]"
+                      refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[StartDate]"
                       dataType="dbTimeStamp"
                       name="StartDate" />
                     <externalMetadataColumn
-                      refId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input].ExternalColumns[EndDate]"
+                      refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[EndDate]"
                       dataType="dbTimeStamp"
                       name="EndDate" />
                   </externalMetadataColumns>
@@ -2394,51 +2377,51 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Transormation data and SCD2\SCD2.Outputs[Unchanged Output]"
+                  refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Outputs[Unchanged Output]"
                   description="Unchanged rows"
                   exclusionGroup="1"
                   name="Unchanged Output"
-                  synchronousInputId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input]">
+                  synchronousInputId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Transormation data and SCD2\SCD2.Outputs[New Output]"
+                  refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Outputs[New Output]"
                   description="New rows"
                   exclusionGroup="1"
                   name="New Output"
-                  synchronousInputId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input]">
+                  synchronousInputId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Transormation data and SCD2\SCD2.Outputs[Fixed Attribute Output]"
+                  refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
                   description="Rows with changes in columns tagged FixedAttribute"
                   exclusionGroup="1"
                   name="Fixed Attribute Output"
-                  synchronousInputId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input]">
+                  synchronousInputId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Transormation data and SCD2\SCD2.Outputs[Changing Attribute Updates Output]"
+                  refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
                   description="These rows contain new information for ChangingAttribute (Type 1) column changes"
                   exclusionGroup="1"
                   name="Changing Attribute Updates Output"
-                  synchronousInputId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input]">
+                  synchronousInputId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Transormation data and SCD2\SCD2.Outputs[Historical Attribute Inserts Output]"
+                  refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
                   description="HistoricalAttribute (Type 2) changes result in these new rows"
                   exclusionGroup="2"
                   name="Historical Attribute Inserts Output"
-                  synchronousInputId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input]">
+                  synchronousInputId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Transormation data and SCD2\SCD2.Outputs[Inferred Member Updates Output]"
+                  refId="Package\Transormation data and SCD2\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
                   description="Information to update unpopulated initial dimension row"
                   exclusionGroup="1"
                   name="Inferred Member Updates Output"
-                  synchronousInputId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input]">
+                  synchronousInputId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -2566,14 +2549,14 @@ FROM ##SupplierValidData2</property>
                       name="ValidPhone"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierKey]"
+                      refId="Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierID]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].ExternalColumns[SupplierKey]"
-                      length="19"
-                      lineageId="Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierKey]"
-                      name="SupplierKey"
+                      externalMetadataColumnId="Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].ExternalColumns[SupplierID]"
+                      length="255"
+                      lineageId="Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].Columns[SupplierID]"
+                      name="SupplierID"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -2609,10 +2592,10 @@ FROM ##SupplierValidData2</property>
                       length="18"
                       name="ValidPhone" />
                     <externalMetadataColumn
-                      refId="Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].ExternalColumns[SupplierKey]"
+                      refId="Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Output].ExternalColumns[SupplierID]"
                       dataType="wstr"
-                      length="19"
-                      name="SupplierKey" />
+                      length="255"
+                      name="SupplierID" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2621,11 +2604,11 @@ FROM ##SupplierValidData2</property>
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Error Output].Columns[SupplierKey]"
+                      refId="Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Error Output].Columns[SupplierID]"
                       dataType="wstr"
-                      length="19"
-                      lineageId="Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Error Output].Columns[SupplierKey]"
-                      name="SupplierKey" />
+                      length="255"
+                      lineageId="Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Error Output].Columns[SupplierID]"
+                      name="SupplierID" />
                     <outputColumn
                       refId="Package\Transormation data and SCD2\Source - temp table (SQL statement).Outputs[OLE DB Source Error Output].Columns[SupplierName]"
                       dataType="wstr"
@@ -2839,6 +2822,19 @@ FROM ##SupplierValidData2</property>
                   name="Union All Input 1">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\Transormation data and SCD2\Union All.Inputs[Union All Input 1].Columns[Copy of SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of SupplierID"
+                      lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transormation data and SCD2\Union All.Outputs[Union All Output 1].Columns[Copy of SupplierID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
                       refId="Package\Transormation data and SCD2\Union All.Inputs[Union All Input 1].Columns[Copy of SupplierName]"
                       cachedDataType="wstr"
                       cachedLength="20"
@@ -2923,20 +2919,6 @@ FROM ##SupplierValidData2</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Transormation data and SCD2\Union All.Inputs[Union All Input 1].Columns[Copy of SupplierKey]"
-                      cachedDataType="wstr"
-                      cachedLength="19"
-                      cachedName="Copy of SupplierKey"
-                      lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierKey]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transormation data and SCD2\Union All.Outputs[Union All Output 1].Columns[Copy of SupplierKey]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Transormation data and SCD2\Union All.Inputs[Union All Input 1].Columns[Count all]"
                       cachedDataType="ui8"
                       cachedName="Count all"
@@ -2957,6 +2939,19 @@ FROM ##SupplierValidData2</property>
                   hasSideEffects="true"
                   name="Union All Input 2">
                   <inputColumns>
+                    <inputColumn
+                      refId="Package\Transormation data and SCD2\Union All.Inputs[Union All Input 2].Columns[Copy of SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of SupplierID"
+                      lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transormation data and SCD2\Union All.Outputs[Union All Output 1].Columns[Copy of SupplierID]}</property>
+                      </properties>
+                    </inputColumn>
                     <inputColumn
                       refId="Package\Transormation data and SCD2\Union All.Inputs[Union All Input 2].Columns[Copy of SupplierName]"
                       cachedDataType="wstr"
@@ -3042,20 +3037,6 @@ FROM ##SupplierValidData2</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Transormation data and SCD2\Union All.Inputs[Union All Input 2].Columns[Copy of SupplierKey]"
-                      cachedDataType="wstr"
-                      cachedLength="19"
-                      cachedName="Copy of SupplierKey"
-                      lineageId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierKey]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transormation data and SCD2\Union All.Outputs[Union All Output 1].Columns[Copy of SupplierKey]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Transormation data and SCD2\Union All.Inputs[Union All Input 2].Columns[Count all]"
                       cachedDataType="ui8"
                       cachedName="Count all"
@@ -3084,6 +3065,11 @@ FROM ##SupplierValidData2</property>
                   refId="Package\Transormation data and SCD2\Union All.Outputs[Union All Output 1]"
                   name="Union All Output 1">
                   <outputColumns>
+                    <outputColumn
+                      refId="Package\Transormation data and SCD2\Union All.Outputs[Union All Output 1].Columns[Copy of SupplierID]"
+                      dataType="i4"
+                      lineageId="Package\Transormation data and SCD2\Union All.Outputs[Union All Output 1].Columns[Copy of SupplierID]"
+                      name="Copy of SupplierID" />
                     <outputColumn
                       refId="Package\Transormation data and SCD2\Union All.Outputs[Union All Output 1].Columns[Copy of SupplierName]"
                       dataType="wstr"
@@ -3121,12 +3107,6 @@ FROM ##SupplierValidData2</property>
                       lineageId="Package\Transormation data and SCD2\Union All.Outputs[Union All Output 1].Columns[Copy of ValidEmail]"
                       name="Copy of ValidEmail" />
                     <outputColumn
-                      refId="Package\Transormation data and SCD2\Union All.Outputs[Union All Output 1].Columns[Copy of SupplierKey]"
-                      dataType="wstr"
-                      length="19"
-                      lineageId="Package\Transormation data and SCD2\Union All.Outputs[Union All Output 1].Columns[Copy of SupplierKey]"
-                      name="Copy of SupplierKey" />
-                    <outputColumn
                       refId="Package\Transormation data and SCD2\Union All.Outputs[Union All Output 1].Columns[Count all]"
                       dataType="ui8"
                       lineageId="Package\Transormation data and SCD2\Union All.Outputs[Union All Output 1].Columns[Count all]"
@@ -3140,7 +3120,7 @@ FROM ##SupplierValidData2</property>
           <paths>
             <path
               refId="Package\Transormation data and SCD2.Paths[Aggregate Output 1]"
-              endId="Package\Transormation data and SCD2\Check dublicates.Inputs[Conditional Split Input]"
+              endId="Package\Transormation data and SCD2\Conditional Split.Inputs[Conditional Split Input]"
               name="Aggregate Output 1"
               startId="Package\Transormation data and SCD2\GROUP BY rows.Outputs[Aggregate Output 1]" />
             <path
@@ -3150,24 +3130,24 @@ FROM ##SupplierValidData2</property>
               startId="Package\Transormation data and SCD2\Convert data in correct datatype.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Transormation data and SCD2.Paths[Data without duplicates]"
-              endId="Package\Transormation data and SCD2\SCD2.Inputs[Slowly Changing Dimension Input]"
+              endId="Package\Transormation data and SCD2\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="Data without duplicates"
-              startId="Package\Transormation data and SCD2\Check dublicates.Outputs[Data without duplicates]" />
+              startId="Package\Transormation data and SCD2\Conditional Split.Outputs[Data without duplicates]" />
             <path
               refId="Package\Transormation data and SCD2.Paths[Derived Column Output4]"
               endId="Package\Transormation data and SCD2\OLE DB Command.Inputs[OLE DB Command Input]"
               name="Derived Column Output"
               startId="Package\Transormation data and SCD2\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Transormation data and SCD2.Paths[Derived Column Output3]"
-              endId="Package\Transormation data and SCD2\Insert2 into Error table.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Transormation data and SCD2\Insert column with comment SomeValuesAreEmpty.Outputs[Derived Column Output]" />
-            <path
               refId="Package\Transormation data and SCD2.Paths[Derived Column Output5]"
               endId="Package\Transormation data and SCD2\Insert Destination.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
               startId="Package\Transormation data and SCD2\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Transormation data and SCD2.Paths[Derived Column Output2]"
+              endId="Package\Transormation data and SCD2\Check on NULL rows.Inputs[Conditional Split Input]"
+              name="Derived Column Output"
+              startId="Package\Transormation data and SCD2\Transform empty value to NULL.Outputs[Derived Column Output]" />
             <path
               refId="Package\Transormation data and SCD2.Paths[Derived Column Output1]"
               endId="Package\Transormation data and SCD2\Insert data into Error table.Inputs[OLE DB Destination Input]"
@@ -3175,29 +3155,29 @@ FROM ##SupplierValidData2</property>
               startId="Package\Transormation data and SCD2\Insert column with comment EmptyRow.Outputs[Derived Column Output]" />
             <path
               refId="Package\Transormation data and SCD2.Paths[Derived Column Output]"
-              endId="Package\Transormation data and SCD2\Check on NULL rows.Inputs[Conditional Split Input]"
+              endId="Package\Transormation data and SCD2\Insert2 into Error table.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\Transormation data and SCD2\Transform empty value to NULL.Outputs[Derived Column Output]" />
+              startId="Package\Transormation data and SCD2\Insert column with comment SomeValuesAreEmpty.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Transormation data and SCD2.Paths[Derived Column Output2]"
+              refId="Package\Transormation data and SCD2.Paths[Derived Column Output3]"
               endId="Package\Transormation data and SCD2\Insert3 into Error table.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
               startId="Package\Transormation data and SCD2\Insert column with comment DuplicatedRows.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Transormation data and SCD2.Paths[Duplicate records]"
+              refId="Package\Transormation data and SCD2.Paths[Duplicated rows]"
               endId="Package\Transormation data and SCD2\Insert column with comment DuplicatedRows.Inputs[Derived Column Input]"
-              name="Duplicate records"
-              startId="Package\Transormation data and SCD2\Check dublicates.Outputs[Duplicate records]" />
+              name="Duplicated rows"
+              startId="Package\Transormation data and SCD2\Conditional Split.Outputs[Duplicated rows]" />
             <path
               refId="Package\Transormation data and SCD2.Paths[Historical Attribute Inserts Output]"
               endId="Package\Transormation data and SCD2\Derived Column.Inputs[Derived Column Input]"
               name="Historical Attribute Inserts Output"
-              startId="Package\Transormation data and SCD2\SCD2.Outputs[Historical Attribute Inserts Output]" />
+              startId="Package\Transormation data and SCD2\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
             <path
               refId="Package\Transormation data and SCD2.Paths[New Output]"
               endId="Package\Transormation data and SCD2\Union All.Inputs[Union All Input 1]"
               name="New Output"
-              startId="Package\Transormation data and SCD2\SCD2.Outputs[New Output]" />
+              startId="Package\Transormation data and SCD2\Slowly Changing Dimension.Outputs[New Output]" />
             <path
               refId="Package\Transormation data and SCD2.Paths[Not empty rows]"
               endId="Package\Transormation data and SCD2\Check on some NULLs values.Inputs[Conditional Split Input]"
@@ -3238,6 +3218,23 @@ FROM ##SupplierValidData2</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Truncate table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{52BD46CA-3ECE-431E-9938-BD4E219FCFFA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate table"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DDF8B122-E598-4FC1-97B9-08B1C59A9927}"
+          SQLTask:SqlStatementSource="IF OBJECT_ID('dbo.##SupplierValidData', 'U') IS NOT NULL &#xA;  DROP TABLE dbo.##SupplierValidData; &#xA;&#xA;IF OBJECT_ID('dbo.##SupplierValidData2', 'U') IS NOT NULL &#xA;  DROP TABLE dbo.##SupplierValidData2; &#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Validation Error, insert data into Error table"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -3250,7 +3247,7 @@ FROM ##SupplierValidData2</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{DDF8B122-E598-4FC1-97B9-08B1C59A9927}"
-          SQLTask:SqlStatementSource="INSERT INTO [error].[ErrorDimSuppliers] (SupplierKey, SupplierName, SupplierEmail,SupplierPhone, SupplierDescription, ErrorComment)&#xA;SELECT NULL, s.SupplierName, s.SupplierEmail, s.SupplierPhone, s.SupplierDescription, 'Error datatype'&#xA;FROM [dbo].[DimSuppliers] AS s&#xA;LEFT JOIN ##SupplierValidData AS v&#xA;&#x9;&#x9;  ON s.SupplierID = v.SupplierID&#xA;WHERE v.SupplierID IS NULL&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="INSERT INTO [error].[ErrorDimSuppliers] (SupplierID, SupplierName, SupplierEmail,SupplierPhone, SupplierDescription, ErrorComment)&#xA;SELECT s.SupplierID, s.SupplierName, s.SupplierEmail, s.SupplierPhone, s.SupplierDescription, 'Error datatype'&#xA;FROM [dbo].[DimSuppliers] AS s&#xA;LEFT JOIN ##SupplierValidData AS v&#xA;&#x9;&#x9;  ON s.SupplierID = v.SupplierID&#xA;WHERE v.SupplierID IS NULL&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -3279,6 +3276,14 @@ FROM ##SupplierValidData2</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Transormation data and SCD2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{A351C898-18E0-4355-815F-6B4F8B0F1C0B}"
+      DTS:From="Package\Truncate table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Check the validation into correct datatype" />
   </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
@@ -3372,7 +3377,7 @@ FROM ##SupplierValidData2</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="275,42"
           Id="Package\Check the validation into correct datatype"
@@ -3455,6 +3460,32 @@ FROM ##SupplierValidData2</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="262,42"
+          Id="Package\Truncate table"
+          TopLeft="233,22" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="364.75,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3490,68 +3521,60 @@ FROM ##SupplierValidData2</property>
         <NodeLayout
           Size="244,42"
           Id="Package\Transormation data and SCD2\Check on NULL rows"
-          TopLeft="403,311.5" />
+          TopLeft="341,311.5" />
         <NodeLayout
           Size="269,42"
           Id="Package\Transormation data and SCD2\Insert data into Error table"
-          TopLeft="70.5000000000001,515.5" />
+          TopLeft="8.50000000000011,515.5" />
         <NodeLayout
           Size="244,42"
           Id="Package\Transormation data and SCD2\Check on some NULLs values"
-          TopLeft="403,413.5" />
+          TopLeft="341,413.5" />
         <NodeLayout
           Size="253,42"
           Id="Package\Transormation data and SCD2\Source - temp table (SQL statement)"
-          TopLeft="398.5,5.5" />
+          TopLeft="336.5,5.5" />
         <NodeLayout
           Size="320,42"
           Id="Package\Transormation data and SCD2\Insert column with comment SomeValuesAreEmpty"
-          TopLeft="703,515.5" />
+          TopLeft="635,515.5" />
         <NodeLayout
-          Size="242,42"
+          Size="236,42"
           Id="Package\Transormation data and SCD2\GROUP BY rows"
-          TopLeft="400,515.5" />
-        <NodeLayout
-          Size="235,42"
-          Id="Package\Transormation data and SCD2\SCD2"
-          TopLeft="406.5,710.5" />
+          TopLeft="338,515.5" />
         <NodeLayout
           Size="318,42"
           Id="Package\Transormation data and SCD2\Insert2 into Error table"
-          TopLeft="704,617.5" />
+          TopLeft="636,617.5" />
         <NodeLayout
           Size="247,42"
           Id="Package\Transormation data and SCD2\Transform empty value to NULL"
-          TopLeft="401.5,209.5" />
+          TopLeft="339.5,209.5" />
         <NodeLayout
           Size="275,42"
           Id="Package\Transormation data and SCD2\Insert column with comment EmptyRow"
-          TopLeft="67.5000000000001,413.5" />
+          TopLeft="5.50000000000011,413.5" />
         <NodeLayout
-          Size="227,42"
+          Size="294,42"
           Id="Package\Transormation data and SCD2\Insert3 into Error table"
-          TopLeft="69.0000000000001,707.5" />
+          TopLeft="197,821.5" />
         <NodeLayout
           Size="248,42"
           Id="Package\Transormation data and SCD2\Convert data in correct datatype"
-          TopLeft="401,107.5" />
+          TopLeft="339,107.5" />
         <NodeLayout
-          Size="227,42"
+          Size="292,42"
           Id="Package\Transormation data and SCD2\Insert column with comment DuplicatedRows"
-          TopLeft="71.0000000000001,616.5" />
-        <NodeLayout
-          Size="239,42"
-          Id="Package\Transormation data and SCD2\Check dublicates"
-          TopLeft="402.5,616.5" />
+          TopLeft="310,719.5" />
         <EdgeLayout
           Id="Package\Transormation data and SCD2.Paths[Rows without empty values]"
-          TopLeft="485.666666666667,455.5">
+          TopLeft="423.666666666667,455.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="35.3333333333333,60"
+              EndConnector="32.3333333333333,60"
               Start="0,0"
-              End="35.3333333333333,52.5">
+              End="32.3333333333333,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -3562,32 +3585,32 @@ FROM ##SupplierValidData2</property>
                     Point2="0,24.2345276872964"
                     Point3="4,24.2345276872964" />
                   <mssgle:LineSegment
-                    End="31.3333333333333,24.2345276872964" />
+                    End="28.3333333333333,24.2345276872964" />
                   <mssgle:CubicBezierSegment
-                    Point1="31.3333333333333,24.2345276872964"
-                    Point2="35.3333333333333,24.2345276872964"
-                    Point3="35.3333333333333,28.2345276872964" />
+                    Point1="28.3333333333333,24.2345276872964"
+                    Point2="32.3333333333333,24.2345276872964"
+                    Point3="32.3333333333333,28.2345276872964" />
                   <mssgle:LineSegment
-                    End="35.3333333333333,52.5" />
+                    End="32.3333333333333,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-43.4809114583334,29.2345276872964,122.29515625,11.609375"
+              BoundingBox="-44.9809114583334,29.2345276872964,122.29515625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Transormation data and SCD2.Paths[One or more Values in row are empty]"
-          TopLeft="564.333333333333,455.5">
+          TopLeft="502.333333333333,455.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="298.666666666667,60"
+              EndConnector="292.666666666667,60"
               Start="0,0"
-              End="298.666666666667,52.5">
+              End="292.666666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -3598,26 +3621,26 @@ FROM ##SupplierValidData2</property>
                     Point2="0,24.2345276872964"
                     Point3="4,24.2345276872964" />
                   <mssgle:LineSegment
-                    End="294.666666666667,24.2345276872964" />
+                    End="288.666666666667,24.2345276872964" />
                   <mssgle:CubicBezierSegment
-                    Point1="294.666666666667,24.2345276872964"
-                    Point2="298.666666666667,24.2345276872964"
-                    Point3="298.666666666667,28.2345276872964" />
+                    Point1="288.666666666667,24.2345276872964"
+                    Point2="292.666666666667,24.2345276872964"
+                    Point3="292.666666666667,28.2345276872964" />
                   <mssgle:LineSegment
-                    End="298.666666666667,52.5" />
+                    End="292.666666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="65.3588802083334,29.2345276872964,167.94890625,11.609375"
+              BoundingBox="62.3588802083334,29.2345276872964,167.94890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Transormation data and SCD2.Paths[OLE DB Source Output]"
-          TopLeft="525,47.5">
+          TopLeft="463,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3639,7 +3662,7 @@ FROM ##SupplierValidData2</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Transormation data and SCD2.Paths[NULL Rows]"
-          TopLeft="485.666666666667,353.5">
+          TopLeft="423.666666666667,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3675,7 +3698,7 @@ FROM ##SupplierValidData2</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Transormation data and SCD2.Paths[Not empty rows]"
-          TopLeft="564.333333333333,353.5">
+          TopLeft="502.333333333333,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3710,32 +3733,42 @@ FROM ##SupplierValidData2</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[Duplicate records]"
-          TopLeft="402.5,637.5">
+          Id="Package\Transormation data and SCD2.Paths[Derived Column Output3]"
+          TopLeft="456,761.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-104.5,0"
+              EndConnector="-112,60"
               Start="0,0"
-              End="-97,0">
+              End="-112,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-97,0" />
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-108,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-108,30"
+                    Point2="-112,30"
+                    Point3="-112,34" />
+                  <mssgle:LineSegment
+                    End="-112,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-87.312578125,5,77.62515625,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[Derived Column Output3]"
-          TopLeft="863,557.5">
+          Id="Package\Transormation data and SCD2.Paths[Derived Column Output2]"
+          TopLeft="463,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3756,30 +3789,8 @@ FROM ##SupplierValidData2</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[Derived Column Output2]"
-          TopLeft="183.5,658.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,49"
-              Start="0,0"
-              End="0,41.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Transormation data and SCD2.Paths[Derived Column Output1]"
-          TopLeft="205,455.5">
+          TopLeft="143,455.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3801,7 +3812,7 @@ FROM ##SupplierValidData2</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Transormation data and SCD2.Paths[Derived Column Output]"
-          TopLeft="525,251.5">
+          TopLeft="795,557.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3819,35 +3830,11 @@ FROM ##SupplierValidData2</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[Data without duplicates]"
-          TopLeft="523,658.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52"
-              Start="0,0"
-              End="0,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-52.537578125,16.4453125,105.07515625,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Transormation data and SCD2.Paths[Data Conversion Output]"
-          TopLeft="525,149.5">
+          TopLeft="463,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3859,28 +3846,6 @@ FROM ##SupplierValidData2</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[Aggregate Output 1]"
-          TopLeft="521.5,557.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59"
-              Start="0,0"
-              End="0,51.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3890,40 +3855,154 @@ FROM ##SupplierValidData2</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="157,42"
-          Id="Package\Transormation data and SCD2\Derived Column"
-          TopLeft="861,704.5" />
+          Size="229,42"
+          Id="Package\Transormation data and SCD2\Conditional Split"
+          TopLeft="341.5,617.5" />
         <EdgeLayout
-          Id="Package\Transormation data and SCD2.Paths[Historical Attribute Inserts Output]"
-          TopLeft="641.5,728.5">
+          Id="Package\Transormation data and SCD2.Paths[Aggregate Output 1]"
+          TopLeft="456,557.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="219.5,0"
+              EndConnector="0,60"
               Start="0,0"
-              End="212,0">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="212,0" />
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transormation data and SCD2.Paths[Duplicated rows]"
+          TopLeft="419.166666666667,659.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36.8333333333334,60"
+              Start="0,0"
+              End="36.8333333333334,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2497831743278" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2497831743278"
+                    Point2="0,24.2497831743278"
+                    Point3="4,24.2497831743278" />
+                  <mssgle:LineSegment
+                    End="32.8333333333334,24.2497831743278" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32.8333333333334,24.2497831743278"
+                    Point2="36.8333333333334,24.2497831743278"
+                    Point3="36.8333333333334,28.2497831743278" />
+                  <mssgle:LineSegment
+                    End="36.8333333333334,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="30.94361328125,5,150.1127734375,11.609375"
+              BoundingBox="-17.3709114583333,29.2497831743278,71.57515625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Transormation data and SCD2\Slowly Changing Dimension"
+          TopLeft="662.5,719.5" />
+        <EdgeLayout
+          Id="Package\Transormation data and SCD2.Paths[Data without duplicates]"
+          TopLeft="492.833333333333,659.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="274.166666666667,60"
+              Start="0,0"
+              End="274.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2497831743278" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2497831743278"
+                    Point2="0,24.2497831743278"
+                    Point3="4,24.2497831743278" />
+                  <mssgle:LineSegment
+                    End="270.166666666667,24.2497831743278" />
+                  <mssgle:CubicBezierSegment
+                    Point1="270.166666666667,24.2497831743278"
+                    Point2="274.166666666667,24.2497831743278"
+                    Point3="274.166666666667,28.2497831743278" />
+                  <mssgle:LineSegment
+                    End="274.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="84.5457552083333,29.2497831743278,105.07515625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Transormation data and SCD2\Derived Column"
+          TopLeft="552,821.5" />
+        <EdgeLayout
+          Id="Package\Transormation data and SCD2.Paths[Historical Attribute Inserts Output]"
+          TopLeft="733.5,761.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-104.5,60"
+              Start="0,0"
+              End="-104.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2735042735043"
+                    Point2="0,24.2735042735043"
+                    Point3="-4,24.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-100.5,24.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-100.5,24.2735042735043"
+                    Point2="-104.5,24.2735042735043"
+                    Point3="-104.5,28.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-104.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-127.30638671875,29.2735042735043,150.1127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="166,42"
           Id="Package\Transormation data and SCD2\OLE DB Command"
-          TopLeft="855,806.5" />
+          TopLeft="540,923.5" />
         <EdgeLayout
           Id="Package\Transormation data and SCD2.Paths[Derived Column Output4]"
-          TopLeft="938.75,746.5">
+          TopLeft="626,863.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3944,47 +4023,71 @@ FROM ##SupplierValidData2</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="231,42"
+          Size="121,42"
           Id="Package\Transormation data and SCD2\Union All"
-          TopLeft="413.5,810.5" />
+          TopLeft="706.5,1025.5" />
         <EdgeLayout
           Id="Package\Transormation data and SCD2.Paths[New Output]"
-          TopLeft="526.5,752.5">
+          TopLeft="800.5,761.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,58"
+              EndConnector="-14.6666666666666,264"
               Start="0,0"
-              End="0,50.5">
+              End="-14.6666666666666,256.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.5" />
+                    End="0,127.104705383637" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,127.104705383637"
+                    Point2="0,131.104705383637"
+                    Point3="-4,131.104705383637" />
+                  <mssgle:LineSegment
+                    End="-10.6666666666666,131.104705383637" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.6666666666666,131.104705383637"
+                    Point2="-14.6666666666666,131.104705383637"
+                    Point3="-14.6666666666666,135.104705383637" />
+                  <mssgle:LineSegment
+                    End="-14.6666666666666,256.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-27.09138671875,19.533203125,54.1827734375,11.43359375"
+              BoundingBox="-34.4247200520833,136.104705383637,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Transormation data and SCD2.Paths[OLE DB Command Output]"
-          TopLeft="855,829.5">
+          TopLeft="623,965.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-210.5,0"
+              EndConnector="125.166666666667,60"
               Start="0,0"
-              End="-203,0">
+              End="125.166666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-203,0" />
+                    End="0,31.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="4,35.5301794453507" />
+                  <mssgle:LineSegment
+                    End="121.166666666667,35.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.166666666667,35.5301794453507"
+                    Point2="125.166666666667,35.5301794453507"
+                    Point3="125.166666666667,39.5301794453507" />
+                  <mssgle:LineSegment
+                    End="125.166666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3994,23 +4097,23 @@ FROM ##SupplierValidData2</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="228,42"
+          Size="163,42"
           Id="Package\Transormation data and SCD2\Derived Column 1"
-          TopLeft="416.5,893.5" />
+          TopLeft="685.5,1127.5" />
         <EdgeLayout
           Id="Package\Transormation data and SCD2.Paths[Union All Output 1]"
-          TopLeft="529.75,852.5">
+          TopLeft="767,1067.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,33.5">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.5" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4020,23 +4123,23 @@ FROM ##SupplierValidData2</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="221,42"
+          Size="163,42"
           Id="Package\Transormation data and SCD2\Insert Destination"
-          TopLeft="425.5,988.5" />
+          TopLeft="685.5,1229.5" />
         <EdgeLayout
           Id="Package\Transormation data and SCD2.Paths[Derived Column Output5]"
-          TopLeft="533.25,935.5">
+          TopLeft="767,1169.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,45.5">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.5" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4082,70 +4185,6 @@ FROM ##SupplierValidData2</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Transormation data and SCD2\SCD2">
-    <Properties>
-      <Property>
-        <Name>SCDMetadata</Name>
-        <Value
-          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{DDF8B122-E598-4FC1-97B9-08B1C59A9927}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[datamart].[DimSuppliers]&lt;/TableName&gt;
-  &lt;InputToColumnsCollection&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierDescription]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;SupplierDescription&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of ValidEmail]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;SupplierEmail&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierKey]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;SupplierKey&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierName]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;SupplierName&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of ValidPhone]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;SupplierPhone&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-  &lt;/InputToColumnsCollection&gt;
-  &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-  &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
-  &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;
-  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn /&gt;
-  &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent /&gt;
-  &lt;ValueExpired /&gt;
-  &lt;StartDateColumn&gt;StartDate&lt;/StartDateColumn&gt;
-  &lt;EndDateColumn&gt;EndDate&lt;/EndDateColumn&gt;
-  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
-  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
-&lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Transormation data and SCD2\Insert2 into Error table">
     <Properties>
       <Property>
@@ -4172,15 +4211,66 @@ FROM ##SupplierValidData2</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Transormation data and SCD2\Insert Destination">
+    design-time-name="Package\Transormation data and SCD2\Slowly Changing Dimension">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
+        <Name>SCDMetadata</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{DDF8B122-E598-4FC1-97B9-08B1C59A9927}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[datamart].[DimSuppliers]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierDescription]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;SupplierDescription&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of ValidEmail]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;SupplierEmail&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;SupplierID&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of SupplierName]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;SupplierName&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;GROUP BY rows.Outputs[Aggregate Output 1].Columns[Copy of ValidPhone]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;SupplierPhone&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;StartDate&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;EndDate&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
