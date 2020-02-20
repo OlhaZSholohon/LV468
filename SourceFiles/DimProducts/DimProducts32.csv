@@ -1,0 +1,1001 @@
+ProductID,ProductName,CategoryName,SubcategoryName,BrandName,Thicknes,Weight,ProductDescription,DefaultGaranty,DefaultGarantyName,Price
+1,Apple MacBook Air 13,New,Thin,Apple,1.24,1305,Some description about laptop Apple MacBook Air 13,1,Default Garanty Used laptops,1454.46
+2,MSI GF63 9RCX,New,For Work and Study,MSI,1.24,1305,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,741.90
+3,Apple MacBook Pro,New,For Simple Tasks,Apple,1.5,2539,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,823.40
+4,Microsoft Surface Laptop 3 15,New,For Simple Tasks,Microsoft,1.35,2356,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,1005.42
+5,Macbook Pro 15 Retina,New,For Cut Design,Apple,1.24,2539,Some description about laptop Macbook Pro 15 Retina,12,Default Garanty Apple,1984.20
+6,MSI GL65 9SD206XRO,Used,For Work and Study,MSI,2.5,2536,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,1194.32
+7,Lenovo IdeaPad 33015AST,New,Thin,Lenovo,1.35,2536,Some description about laptop Lenovo IdeaPad 33015AST,12,Default Garanty Used laptops,800.72
+8,Asus ROG STRIX 5,New,For Simple Tasks,Asus,2.78,1305,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,657.15
+9,Asus ROG STRIX 5,New,For Work and Study,Asus,1.5,1305,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,670.24
+10,Lenovo IdeaPad 33015AST,New,Thin,Lenovo,2.5,1790,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,720.62
+11,Asus ROG Strix G531GT,Used,For Simple Tasks,Asus,2.5,1305,Some description about laptop Asus ROG Strix G531GT,1,Default Garanty Used laptops,1725.04
+12,Acer Nitro 5,New,For Business,Acer,2.56,1245,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,650.07
+13,Apple MacBook Pro,New,Gaming,Apple,1.5,1790,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,614.13
+14,Apple MacBook Pro,New,For Simple Tasks,Apple,2.78,2312,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,1853.38
+15,MSI GF63 9RCX,New,For Simple Tasks,MSI,1.35,1234,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,1208.99
+16,HP 255 G7,Used,For Business,HP,1.5,2539,Some description about laptop HP 255 G7,6,Default Garanty Used laptops,909.46
+17,Google Pixelbook Go 256GB,New,Thin,Google,2.56,1234,Some description about laptop Google Pixelbook Go 256GB,1,Default Garanty Google,952.99
+18,HP 255 G7,Used,Thin,HP,1.35,2356,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,835.55
+19,Lenovo IdeaPad S34014IWL,New,For Business,Lenovo,1.24,1790,Some description about laptop Lenovo IdeaPad S34014IWL,1,Default Garanty Used laptops,1276.74
+20,HP 255 G7,Used,For Work and Study,HP,2.34,2356,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,1281.48
+21,Lenovo IdeaPad S34014IWL,New,For Work and Study,Lenovo,2.56,2536,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1479.13
+22,Acer Aspire 5 A51554G,New,For Business,Acer,2.56,2356,Some description about laptop Acer Aspire 5 A51554G,6,Default Garanty Used laptops,1239.80
+23,Acer Nitro 5,New,For Business,Acer,2.56,2539,Some description about laptop Acer Nitro 5,1,Default Garanty Acer,1769.94
+24,Dream Machines RS206017,New,Gaming,Dream Machines,1.5,2539,Some description about laptop Dream Machines RS206017,1,Default Garanty Used laptops,1230.21
+25,HP Pavilion Gaming 15cx0027ua,Used,For Work and Study,HP,1.24,1234,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,625.57
+26,Google Pixelbook Go 256GB,New,For Cut Design,Google,2.78,1790,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,572.51
+27,Apple MacBook Air 13,New,For Cut Design,Apple,1.24,2356,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,773.17
+28,Asus ROG STRIX 5,New,For Simple Tasks,Asus,1.5,2312,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,1130.96
+29,HP Pavilion Gaming 15cx0027ua,New,Gaming,HP,2.34,1234,Some description about laptop HP Pavilion Gaming 15cx0027ua,12,Default Garanty HP,1245.91
+30,HP Envy 17ce0005ur,New,For Cut Design,HP,2.56,2536,Some description about laptop HP Envy 17ce0005ur,6,Default Garanty HP,1435.45
+31,Lenovo IdeaPad S34014IWL,Used,Thin,Lenovo,1.5,1245,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1495.68
+32,Asus ROG STRIX 5,New,For Work and Study,Asus,2.34,2536,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1037.09
+33,Google Pixelbook Go 256GB,New,For Cut Design,Google,2.34,2536,Some description about laptop Google Pixelbook Go 256GB,1,Default Garanty Google,1351.25
+34,HP Envy 17ce0005ur,New,For Work and Study,HP,1.5,1234,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,755.27
+35,Microsoft Surface Laptop 3 15,Used,For Cut Design,Microsoft,1.35,2312,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,606.78
+36,Dell Inspiron G5 15 5587,Used,For Simple Tasks,Dell,2.78,1234,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,1463.26
+37,HP 255 G7,Used,For Work and Study,HP,2.56,1245,Some description about laptop HP 255 G7,6,Default Garanty Used laptops,534.24
+38,HP 255 G7,Used,For Business,HP,2.5,1234,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,732.68
+39,Asus ROG Strix G531GT,Used,For Simple Tasks,Asus,1.5,1790,Some description about laptop Asus ROG Strix G531GT,1,Default Garanty Used laptops,917.56
+40,Macbook Pro 15 Retina,Used,For Simple Tasks,Apple,1.5,2356,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,1041.61
+41,Lenovo IdeaPad 33015AST,Used,For Simple Tasks,Lenovo,2.56,1790,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,801.26
+42,Asus ROG Strix G531GT,Used,For Simple Tasks,Asus,2.78,1234,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,1037.55
+43,HP Pavilion Gaming 15cx0027ua,New,For Cut Design,HP,1.5,2539,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,1539.62
+44,Microsoft Surface Laptop 3 15,New,For Cut Design,Microsoft,1.35,1245,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,1338.36
+45,Lenovo IdeaPad S34014IWL,New,For Business,Lenovo,2.78,2536,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1940.81
+46,Macbook Pro 15 Retina,Used,For Work and Study,Apple,2.34,2312,Some description about laptop Macbook Pro 15 Retina,12,Default Garanty Apple,1725.31
+47,Macbook Pro 15 Retina,Used,Gaming,Apple,2.56,1305,Some description about laptop Macbook Pro 15 Retina,6,Default Garanty Apple,1600.45
+48,Macbook Pro 15 Retina,Used,Gaming,Apple,2.78,1305,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,627.06
+49,Lenovo IdeaPad S34014IWL,New,Gaming,Lenovo,1.5,1305,Some description about laptop Lenovo IdeaPad S34014IWL,1,Default Garanty Used laptops,746.79
+50,Acer Nitro 5,New,For Work and Study,Acer,1.35,2312,Some description about laptop Acer Nitro 5,6,Default Garanty Acer,1099.92
+51,Google Pixelbook Go 256GB,New,For Work and Study,Google,2.56,2356,Some description about laptop Google Pixelbook Go 256GB,1,Default Garanty Google,1826.07
+52,Microsoft Surface Laptop 3 15,New,For Simple Tasks,Microsoft,2.5,1245,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,1216.84
+53,HP Envy 17ce0005ur,New,For Business,HP,2.5,2356,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,1443.91
+54,Microsoft Surface Laptop 3 15,New,For Cut Design,Microsoft,2.34,1245,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,1932.44
+55,MSI GL65 9SD206XRO,Used,For Simple Tasks,MSI,1.24,2312,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,1665.82
+56,Lenovo IdeaPad 33015AST,New,For Business,Lenovo,1.5,2539,Some description about laptop Lenovo IdeaPad 33015AST,12,Default Garanty Used laptops,1324.43
+57,HP Envy 17ce0005ur,New,Thin,HP,1.24,2312,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,982.42
+58,Google Pixelbook Go 256GB,New,For Cut Design,Google,2.34,2356,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,1253.28
+59,MSI GL65 9SD206XRO,New,For Work and Study,MSI,2.5,1305,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,1725.04
+60,MSI GL65 9SD206XRO,New,For Simple Tasks,MSI,1.5,2312,Some description about laptop MSI GL65 9SD206XRO,1,Default Garanty Used laptops,1568.02
+61,Acer Aspire 5 A51554G,Used,For Work and Study,Acer,2.34,1245,Some description about laptop Acer Aspire 5 A51554G,6,Default Garanty Used laptops,823.98
+62,Lenovo IdeaPad S34014IWL,New,For Work and Study,Lenovo,1.24,2536,Some description about laptop Lenovo IdeaPad S34014IWL,1,Default Garanty Used laptops,1366.36
+63,Lenovo IdeaPad 33015AST,Used,For Business,Lenovo,1.35,1234,Some description about laptop Lenovo IdeaPad 33015AST,12,Default Garanty Used laptops,1499.65
+64,Microsoft Surface Laptop 3 15,Used,For Business,Microsoft,2.56,2356,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,539.01
+65,Apple MacBook Pro,New,Gaming,Apple,2.78,1305,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,1544.91
+66,Google Pixelbook Go 256GB,New,Gaming,Google,2.5,1245,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,567.16
+67,MSI GL65 9SD206XRO,New,For Work and Study,MSI,2.5,2356,Some description about laptop MSI GL65 9SD206XRO,1,Default Garanty Used laptops,1737.09
+68,Apple MacBook Pro,New,For Simple Tasks,Apple,1.35,1305,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,979.41
+69,MSI GF63 9RCX,New,For Business,MSI,1.24,1234,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,1290.86
+70,HP Pavilion Gaming 15cx0027ua,Used,Gaming,HP,2.78,1245,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,1484.41
+71,Google Pixelbook Go 256GB,New,For Business,Google,1.5,2539,Some description about laptop Google Pixelbook Go 256GB,1,Default Garanty Google,1151.95
+72,HP Pavilion Gaming 15cx0027ua,Used,Thin,HP,2.56,2536,Some description about laptop HP Pavilion Gaming 15cx0027ua,12,Default Garanty HP,831.86
+73,MSI GL65 9SD206XRO,Used,For Simple Tasks,MSI,2.56,1245,Some description about laptop MSI GL65 9SD206XRO,12,Default Garanty Used laptops,514.24
+74,HP 255 G7,Used,Gaming,HP,1.35,2356,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,1278.87
+75,HP Pavilion Gaming 15cx0027ua,New,Thin,HP,2.5,2536,Some description about laptop HP Pavilion Gaming 15cx0027ua,12,Default Garanty HP,974.33
+76,Microsoft Surface Laptop 3 15,Used,For Business,Microsoft,1.5,2356,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,1565.60
+77,MSI GL65 9SD206XRO,New,Thin,MSI,1.35,1305,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,1318.30
+78,MSI GL65 9SD206XRO,Used,For Work and Study,MSI,1.5,2312,Some description about laptop MSI GL65 9SD206XRO,12,Default Garanty Used laptops,609.90
+79,HP Pavilion Gaming 15cx0027ua,Used,For Work and Study,HP,2.34,2312,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,507.64
+80,Google Pixelbook Go 256GB,New,For Simple Tasks,Google,1.5,1790,Some description about laptop Google Pixelbook Go 256GB,1,Default Garanty Google,585.37
+81,Lenovo IdeaPad S34014IWL,Used,Thin,Lenovo,2.5,2312,Some description about laptop Lenovo IdeaPad S34014IWL,1,Default Garanty Used laptops,1134.76
+82,Apple MacBook Air 13,New,For Work and Study,Apple,1.24,2536,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,1183.94
+83,HP Envy 17ce0005ur,New,For Simple Tasks,HP,1.24,2539,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,1712.22
+84,HP Envy 17ce0005ur,Used,Thin,HP,2.78,1790,Some description about laptop HP Envy 17ce0005ur,6,Default Garanty HP,1676.09
+85,Apple MacBook Pro,New,Thin,Apple,2.5,1790,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,1186.86
+86,Asus ROG STRIX 5,New,For Business,Asus,1.35,2312,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,1251.90
+87,HP Envy 17ce0005ur,Used,Gaming,HP,2.78,2312,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,1646.71
+88,Dell Inspiron G5 15 5587,Used,For Simple Tasks,Dell,1.24,1305,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,574.80
+89,Asus ROG Strix G531GT,Used,For Business,Asus,2.34,2356,Some description about laptop Asus ROG Strix G531GT,1,Default Garanty Used laptops,1952.31
+90,MSI GF63 9RCX,New,For Simple Tasks,MSI,2.78,1234,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,1218.13
+91,Asus ROG STRIX 5,New,Gaming,Asus,1.24,1245,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,1327.27
+92,Dell Inspiron G5 15 5587,Used,For Business,Dell,2.5,1790,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,1831.25
+93,Apple MacBook Air 13,New,For Work and Study,Apple,2.56,2356,Some description about laptop Apple MacBook Air 13,1,Default Garanty Used laptops,1480.67
+94,Lenovo IdeaPad 33015AST,New,For Business,Lenovo,2.5,2356,Some description about laptop Lenovo IdeaPad 33015AST,12,Default Garanty Used laptops,770.85
+95,Asus ROG STRIX 5,New,Gaming,Asus,2.56,1790,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1549.38
+96,HP Envy 17ce0005ur,Used,For Work and Study,HP,2.34,1245,Some description about laptop HP Envy 17ce0005ur,6,Default Garanty HP,886.27
+97,Asus ROG Strix G531GT,Used,Gaming,Asus,2.34,1305,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,710.61
+98,MSI GL65 9SD206XRO,New,For Work and Study,MSI,2.34,2356,Some description about laptop MSI GL65 9SD206XRO,1,Default Garanty Used laptops,1437.12
+99,Dell Inspiron G5 15 5587,Used,For Cut Design,Dell,1.35,1305,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,870.48
+100,MSI GF63 9RCX,New,Thin,MSI,2.34,2312,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,1529.96
+101,Acer Aspire 5 A51554G,Used,For Cut Design,Acer,2.56,2356,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,1755.50
+102,Macbook Pro 15 Retina,New,For Business,Apple,2.56,2356,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,647.00
+103,Dream Machines RS206017,New,For Work and Study,Dream Machines,2.5,2536,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,1514.44
+104,Dell Inspiron G5 15 5587,Used,For Cut Design,Dell,1.24,1790,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,1299.20
+105,Asus ROG Strix G531GT,Used,For Cut Design,Asus,1.5,2536,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,1418.07
+106,Lenovo IdeaPad S34014IWL,New,For Simple Tasks,Lenovo,1.35,1305,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,514.12
+107,Dell Inspiron G5 15 5587,Used,For Simple Tasks,Dell,2.78,1790,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,1539.57
+108,Acer Nitro 5,New,Thin,Acer,1.35,2312,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,1430.09
+109,Macbook Pro 15 Retina,Used,For Simple Tasks,Apple,2.34,2312,Some description about laptop Macbook Pro 15 Retina,12,Default Garanty Apple,1762.61
+110,Dell Inspiron G5 15 5587,Used,For Business,Dell,2.56,1234,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,1010.21
+111,HP Envy 17ce0005ur,New,Thin,HP,2.78,1234,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,785.61
+112,Dream Machines RS206017,New,For Business,Dream Machines,1.5,1305,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,591.85
+113,Lenovo IdeaPad S34014IWL,Used,For Simple Tasks,Lenovo,1.5,2356,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1789.43
+114,Asus ROG Strix G531GT,Used,Thin,Asus,2.78,2356,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,1982.59
+115,MSI GL65 9SD206XRO,New,For Cut Design,MSI,1.35,2312,Some description about laptop MSI GL65 9SD206XRO,12,Default Garanty Used laptops,642.66
+116,Acer Aspire 5 A51554G,New,For Simple Tasks,Acer,2.56,2356,Some description about laptop Acer Aspire 5 A51554G,6,Default Garanty Used laptops,975.95
+117,Asus ROG Strix G531GT,Used,For Work and Study,Asus,1.24,2356,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,1612.01
+118,HP Envy 17ce0005ur,Used,Thin,HP,1.5,1234,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,1109.63
+119,HP Pavilion Gaming 15cx0027ua,Used,For Simple Tasks,HP,1.24,1245,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,648.34
+120,Dell Inspiron G5 15 5587,Used,For Work and Study,Dell,2.5,2356,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,1927.39
+121,Apple MacBook Air 13,New,Thin,Apple,2.78,2356,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,1744.67
+122,Microsoft Surface Laptop 3 15,New,For Work and Study,Microsoft,2.34,2539,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,1285.17
+123,MSI GF63 9RCX,New,Thin,MSI,1.5,2312,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,1910.53
+124,Acer Nitro 5,New,For Business,Acer,2.56,2536,Some description about laptop Acer Nitro 5,6,Default Garanty Acer,1591.43
+125,Dream Machines RS206017,Used,Thin,Dream Machines,1.24,1234,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,972.57
+126,Google Pixelbook Go 256GB,New,For Business,Google,1.35,1790,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,1804.16
+127,Asus ROG STRIX 5,New,Thin,Asus,1.5,2356,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,1222.31
+128,MSI GF63 9RCX,New,For Work and Study,MSI,2.5,2356,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,571.04
+129,Asus ROG STRIX 5,New,Gaming,Asus,2.56,2312,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1087.29
+130,Asus ROG STRIX 5,New,Thin,Asus,2.78,1245,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,683.40
+131,Dell Inspiron G5 15 5587,Used,For Simple Tasks,Dell,2.34,1245,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,1831.73
+132,Asus ROG STRIX 5,New,For Work and Study,Asus,2.56,1790,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1156.56
+133,MSI GF63 9RCX,New,Gaming,MSI,1.5,1245,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,1867.22
+134,Google Pixelbook Go 256GB,New,For Cut Design,Google,1.5,1245,Some description about laptop Google Pixelbook Go 256GB,12,Default Garanty Google,920.94
+135,MSI GF63 9RCX,New,For Business,MSI,2.78,2539,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,588.66
+136,HP Pavilion Gaming 15cx0027ua,New,Gaming,HP,2.56,1245,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,1568.20
+137,Asus ROG Strix G531GT,Used,Gaming,Asus,2.78,1305,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,1617.85
+138,HP Envy 17ce0005ur,Used,For Cut Design,HP,1.5,1245,Some description about laptop HP Envy 17ce0005ur,6,Default Garanty HP,962.48
+139,HP Pavilion Gaming 15cx0027ua,New,Gaming,HP,1.35,1790,Some description about laptop HP Pavilion Gaming 15cx0027ua,6,Default Garanty HP,1885.78
+140,Lenovo IdeaPad S34014IWL,New,For Work and Study,Lenovo,1.5,2536,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1849.43
+141,Microsoft Surface Laptop 3 15,Used,For Simple Tasks,Microsoft,2.78,1234,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,745.85
+142,Apple MacBook Pro,New,Thin,Apple,1.35,2536,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,1053.58
+143,Google Pixelbook Go 256GB,New,For Business,Google,1.5,2536,Some description about laptop Google Pixelbook Go 256GB,1,Default Garanty Google,1781.03
+144,MSI GF63 9RCX,New,Gaming,MSI,2.34,2356,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,1039.79
+145,HP Pavilion Gaming 15cx0027ua,New,For Cut Design,HP,1.35,2312,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,706.18
+146,Microsoft Surface Laptop 3 15,New,For Business,Microsoft,1.24,1305,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,853.81
+147,Dell Inspiron G5 15 5587,Used,Thin,Dell,2.78,1305,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,1484.16
+148,Asus ROG STRIX 5,New,For Cut Design,Asus,1.24,2312,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1284.87
+149,HP Pavilion Gaming 15cx0027ua,Used,Thin,HP,1.5,2312,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,1820.02
+150,Microsoft Surface Laptop 3 15,Used,For Cut Design,Microsoft,2.34,2539,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,1443.49
+151,Dell Inspiron G5 15 5587,Used,For Cut Design,Dell,2.56,2539,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,547.34
+152,Google Pixelbook Go 256GB,New,For Work and Study,Google,1.5,1305,Some description about laptop Google Pixelbook Go 256GB,12,Default Garanty Google,1745.75
+153,Acer Nitro 5,New,Gaming,Acer,2.56,2536,Some description about laptop Acer Nitro 5,1,Default Garanty Acer,1266.05
+154,Google Pixelbook Go 256GB,New,For Simple Tasks,Google,1.24,2312,Some description about laptop Google Pixelbook Go 256GB,12,Default Garanty Google,1672.51
+155,MSI GL65 9SD206XRO,Used,For Business,MSI,2.78,1234,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,1781.62
+156,Lenovo IdeaPad 33015AST,New,For Cut Design,Lenovo,2.78,2356,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,1122.05
+157,Apple MacBook Air 13,Used,For Work and Study,Apple,1.24,2536,Some description about laptop Apple MacBook Air 13,1,Default Garanty Used laptops,1312.79
+158,Lenovo IdeaPad S34014IWL,Used,For Simple Tasks,Lenovo,1.35,2312,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1433.18
+159,HP 255 G7,Used,Gaming,HP,1.5,2356,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,1637.69
+160,Acer Aspire 5 A51554G,Used,Thin,Acer,1.5,1245,Some description about laptop Acer Aspire 5 A51554G,6,Default Garanty Used laptops,1563.32
+161,Asus ROG STRIX 5,New,For Work and Study,Asus,2.78,2539,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1717.70
+162,MSI GF63 9RCX,New,For Work and Study,MSI,1.24,2539,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,1119.05
+163,MSI GF63 9RCX,New,For Work and Study,MSI,2.34,2356,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,1448.19
+164,Acer Nitro 5,New,For Business,Acer,2.56,1234,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,1723.85
+165,HP 255 G7,Used,Gaming,HP,2.56,2539,Some description about laptop HP 255 G7,12,Default Garanty Used laptops,780.34
+166,MSI GF63 9RCX,New,Thin,MSI,2.78,2539,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,1439.38
+167,HP Envy 17ce0005ur,Used,Gaming,HP,2.34,1234,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,1338.39
+168,Google Pixelbook Go 256GB,New,Gaming,Google,2.5,2312,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,1243.02
+169,Acer Aspire 5 A51554G,New,For Work and Study,Acer,1.35,2539,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,1103.12
+170,Dell Inspiron G5 15 5587,Used,Thin,Dell,2.56,1790,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,871.60
+171,Apple MacBook Air 13,Used,For Cut Design,Apple,2.34,2312,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,942.63
+172,Apple MacBook Air 13,New,Gaming,Apple,1.24,1790,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,716.98
+173,HP 255 G7,Used,For Business,HP,2.34,1305,Some description about laptop HP 255 G7,12,Default Garanty Used laptops,1835.57
+174,MSI GF63 9RCX,New,Thin,MSI,2.34,2539,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,1624.40
+175,Asus ROG STRIX 5,New,For Work and Study,Asus,1.5,1245,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1515.80
+176,Dell Inspiron G5 15 5587,Used,For Simple Tasks,Dell,1.5,2356,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,782.64
+177,Asus ROG Strix G531GT,Used,Gaming,Asus,2.5,2312,Some description about laptop Asus ROG Strix G531GT,1,Default Garanty Used laptops,1192.03
+178,Dream Machines RS206017,Used,For Business,Dream Machines,1.24,2536,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,1158.16
+179,HP Pavilion Gaming 15cx0027ua,Used,For Cut Design,HP,1.5,1234,Some description about laptop HP Pavilion Gaming 15cx0027ua,12,Default Garanty HP,1631.29
+180,Apple MacBook Air 13,Used,For Work and Study,Apple,2.34,2356,Some description about laptop Apple MacBook Air 13,1,Default Garanty Used laptops,1645.29
+181,Apple MacBook Air 13,New,For Business,Apple,2.34,2356,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,1610.20
+182,Microsoft Surface Laptop 3 15,Used,For Business,Microsoft,2.78,1790,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,1792.60
+183,Lenovo IdeaPad 33015AST,New,Thin,Lenovo,1.35,2539,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,933.29
+184,Macbook Pro 15 Retina,Used,For Business,Apple,2.34,2539,Some description about laptop Macbook Pro 15 Retina,12,Default Garanty Apple,1317.52
+185,Acer Nitro 5,New,For Business,Acer,2.5,2312,Some description about laptop Acer Nitro 5,6,Default Garanty Acer,536.73
+186,Asus ROG Strix G531GT,Used,For Cut Design,Asus,1.5,1790,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,1154.21
+187,MSI GF63 9RCX,New,For Business,MSI,1.35,1790,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,1585.88
+188,HP 255 G7,Used,For Business,HP,1.24,1305,Some description about laptop HP 255 G7,6,Default Garanty Used laptops,1729.72
+189,Apple MacBook Air 13,Used,Thin,Apple,2.78,2356,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,1250.79
+190,MSI GF63 9RCX,New,For Simple Tasks,MSI,1.5,1234,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,1130.20
+191,Acer Nitro 5,New,Thin,Acer,2.56,2356,Some description about laptop Acer Nitro 5,1,Default Garanty Acer,569.32
+192,MSI GL65 9SD206XRO,Used,For Business,MSI,1.35,2312,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,1708.91
+193,Acer Nitro 5,New,For Cut Design,Acer,2.78,2536,Some description about laptop Acer Nitro 5,6,Default Garanty Acer,1524.86
+194,Apple MacBook Pro,New,Thin,Apple,2.5,2356,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,973.60
+195,HP Envy 17ce0005ur,Used,For Business,HP,2.5,2356,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,1208.27
+196,Apple MacBook Pro,New,For Business,Apple,2.5,1790,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,1836.24
+197,Acer Aspire 5 A51554G,New,For Cut Design,Acer,1.5,2312,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,1912.55
+198,Asus ROG STRIX 5,New,For Work and Study,Asus,1.5,2539,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,1536.61
+199,Lenovo IdeaPad 33015AST,Used,For Work and Study,Lenovo,2.5,2356,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,1656.05
+200,Google Pixelbook Go 256GB,New,For Work and Study,Google,1.5,2312,Some description about laptop Google Pixelbook Go 256GB,12,Default Garanty Google,1503.11
+201,Dell Inspiron G5 15 5587,Used,For Cut Design,Dell,2.78,2539,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,1082.11
+202,HP Envy 17ce0005ur,New,For Simple Tasks,HP,1.35,2539,Some description about laptop HP Envy 17ce0005ur,6,Default Garanty HP,1887.15
+203,Asus ROG STRIX 5,New,For Cut Design,Asus,2.56,2356,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,1179.43
+204,Microsoft Surface Laptop 3 15,New,For Business,Microsoft,2.56,1790,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,1156.91
+205,Lenovo IdeaPad S34014IWL,Used,For Cut Design,Lenovo,2.34,2536,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,633.42
+206,HP 255 G7,Used,Thin,HP,2.78,1790,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,1117.47
+207,Lenovo IdeaPad S34014IWL,New,Thin,Lenovo,1.35,1305,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1419.36
+208,MSI GL65 9SD206XRO,New,Thin,MSI,1.5,1234,Some description about laptop MSI GL65 9SD206XRO,12,Default Garanty Used laptops,629.94
+209,Asus ROG Strix G531GT,Used,Thin,Asus,2.5,1790,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,1696.26
+210,Apple MacBook Air 13,Used,For Simple Tasks,Apple,1.24,1305,Some description about laptop Apple MacBook Air 13,1,Default Garanty Used laptops,1311.17
+211,MSI GL65 9SD206XRO,Used,For Business,MSI,1.35,2539,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,742.70
+212,HP Pavilion Gaming 15cx0027ua,New,For Work and Study,HP,1.35,2312,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,605.00
+213,Asus ROG STRIX 5,New,For Simple Tasks,Asus,2.78,2539,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,1365.86
+214,MSI GF63 9RCX,New,Thin,MSI,2.5,1305,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,1338.86
+215,Apple MacBook Air 13,New,For Simple Tasks,Apple,2.78,2356,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,625.34
+216,Lenovo IdeaPad S34014IWL,New,Gaming,Lenovo,2.78,1790,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1280.85
+217,HP 255 G7,Used,For Business,HP,2.5,1234,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,1865.03
+218,Acer Aspire 5 A51554G,Used,For Work and Study,Acer,1.35,1790,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,631.29
+219,HP Envy 17ce0005ur,Used,For Work and Study,HP,2.78,1245,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,1076.99
+220,Dell Inspiron G5 15 5587,Used,For Work and Study,Dell,1.5,1790,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,1272.96
+221,Lenovo IdeaPad S34014IWL,Used,Thin,Lenovo,2.78,2539,Some description about laptop Lenovo IdeaPad S34014IWL,1,Default Garanty Used laptops,586.74
+222,Dell Inspiron G5 15 5587,Used,For Work and Study,Dell,2.56,2539,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,1154.91
+223,Asus ROG Strix G531GT,Used,For Simple Tasks,Asus,2.5,2539,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,1946.09
+224,Acer Aspire 5 A51554G,Used,For Cut Design,Acer,2.56,2539,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,1863.68
+225,MSI GF63 9RCX,New,Thin,MSI,1.35,2356,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,1161.16
+226,HP Envy 17ce0005ur,Used,Gaming,HP,1.5,1305,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,1937.30
+227,Acer Nitro 5,New,Gaming,Acer,2.5,1790,Some description about laptop Acer Nitro 5,6,Default Garanty Acer,1459.42
+228,Apple MacBook Pro,New,For Simple Tasks,Apple,2.5,2539,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,747.28
+229,Acer Nitro 5,New,For Simple Tasks,Acer,2.5,2539,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,635.29
+230,Dell Inspiron G5 15 5587,Used,For Cut Design,Dell,2.56,2539,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,999.09
+231,Apple MacBook Air 13,New,For Cut Design,Apple,1.35,1790,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,950.98
+232,Lenovo IdeaPad S34014IWL,New,For Business,Lenovo,2.78,1790,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1935.17
+233,Apple MacBook Air 13,New,Thin,Apple,2.78,1245,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,1016.44
+234,Dell Inspiron G5 15 5587,Used,For Cut Design,Dell,1.5,1305,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,1256.75
+235,Asus ROG STRIX 5,New,For Cut Design,Asus,1.24,1245,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,1345.74
+236,Acer Aspire 5 A51554G,New,For Cut Design,Acer,2.5,1234,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,1815.20
+237,HP Pavilion Gaming 15cx0027ua,New,For Simple Tasks,HP,1.5,1245,Some description about laptop HP Pavilion Gaming 15cx0027ua,6,Default Garanty HP,1898.96
+238,Dream Machines RS206017,Used,Thin,Dream Machines,1.24,1245,Some description about laptop Dream Machines RS206017,6,Default Garanty Used laptops,1524.83
+239,Google Pixelbook Go 256GB,New,For Simple Tasks,Google,1.35,2539,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,1022.21
+240,Lenovo IdeaPad S34014IWL,New,Thin,Lenovo,1.24,1305,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1784.89
+241,Acer Aspire 5 A51554G,New,For Work and Study,Acer,1.35,2539,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,1933.57
+242,Macbook Pro 15 Retina,New,For Work and Study,Apple,2.5,2312,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,1838.81
+243,Microsoft Surface Laptop 3 15,New,For Business,Microsoft,1.24,1245,Some description about laptop Microsoft Surface Laptop 3 15,1,Default Garanty Microsoft,1229.65
+244,Apple MacBook Air 13,New,For Business,Apple,2.5,2312,Some description about laptop Apple MacBook Air 13,1,Default Garanty Used laptops,1075.45
+245,Asus ROG STRIX 5,New,Gaming,Asus,2.34,2539,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1755.86
+246,HP Envy 17ce0005ur,Used,For Simple Tasks,HP,2.78,2539,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,622.17
+247,Microsoft Surface Laptop 3 15,Used,For Business,Microsoft,2.5,1305,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,1190.60
+248,MSI GF63 9RCX,New,For Cut Design,MSI,2.34,1305,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,1010.51
+249,Dell Inspiron G5 15 5587,Used,Gaming,Dell,2.56,1305,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,932.16
+250,HP Envy 17ce0005ur,New,For Business,HP,2.56,2356,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,685.08
+251,Macbook Pro 15 Retina,Used,Gaming,Apple,2.78,2356,Some description about laptop Macbook Pro 15 Retina,12,Default Garanty Apple,657.87
+252,Lenovo IdeaPad 33015AST,Used,Gaming,Lenovo,1.5,2536,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,1797.66
+253,Apple MacBook Air 13,New,For Business,Apple,2.56,2312,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,1712.43
+254,Apple MacBook Pro,New,For Simple Tasks,Apple,2.34,1245,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,1523.67
+255,Apple MacBook Pro,New,For Simple Tasks,Apple,2.56,1305,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,608.90
+256,Lenovo IdeaPad 33015AST,New,For Work and Study,Lenovo,1.5,1305,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,1220.13
+257,Asus ROG STRIX 5,New,For Work and Study,Asus,1.24,2536,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1272.94
+258,MSI GL65 9SD206XRO,New,For Business,MSI,1.35,2536,Some description about laptop MSI GL65 9SD206XRO,12,Default Garanty Used laptops,1320.84
+259,HP Pavilion Gaming 15cx0027ua,Used,Gaming,HP,2.5,2356,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,837.02
+260,MSI GL65 9SD206XRO,Used,Thin,MSI,1.5,1305,Some description about laptop MSI GL65 9SD206XRO,1,Default Garanty Used laptops,993.93
+261,Microsoft Surface Laptop 3 15,New,Thin,Microsoft,2.78,1245,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,926.20
+262,HP Envy 17ce0005ur,Used,For Simple Tasks,HP,1.5,1245,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,1250.52
+263,MSI GL65 9SD206XRO,New,Thin,MSI,2.56,1234,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,581.18
+264,MSI GL65 9SD206XRO,New,For Business,MSI,1.35,2312,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,856.28
+265,Microsoft Surface Laptop 3 15,Used,For Work and Study,Microsoft,2.78,1305,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,1979.25
+266,HP 255 G7,Used,For Business,HP,1.5,2536,Some description about laptop HP 255 G7,6,Default Garanty Used laptops,1535.17
+267,Lenovo IdeaPad S34014IWL,Used,For Cut Design,Lenovo,2.56,1790,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,860.05
+268,HP 255 G7,Used,Gaming,HP,1.5,2536,Some description about laptop HP 255 G7,6,Default Garanty Used laptops,1285.91
+269,MSI GL65 9SD206XRO,Used,For Business,MSI,1.24,1305,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,1646.06
+270,Asus ROG Strix G531GT,Used,For Work and Study,Asus,2.5,1305,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,702.09
+271,HP 255 G7,Used,For Work and Study,HP,1.24,1790,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,1159.65
+272,Microsoft Surface Laptop 3 15,Used,Thin,Microsoft,1.5,1245,Some description about laptop Microsoft Surface Laptop 3 15,1,Default Garanty Microsoft,1979.54
+273,Asus ROG STRIX 5,New,For Simple Tasks,Asus,2.5,1790,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1129.21
+274,Asus ROG STRIX 5,New,For Business,Asus,2.78,2312,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,1545.79
+275,HP Pavilion Gaming 15cx0027ua,New,Thin,HP,2.5,1234,Some description about laptop HP Pavilion Gaming 15cx0027ua,12,Default Garanty HP,1720.80
+276,Google Pixelbook Go 256GB,New,For Business,Google,2.34,1234,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,1436.33
+277,MSI GF63 9RCX,New,Thin,MSI,1.24,2356,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,643.90
+278,Macbook Pro 15 Retina,Used,For Simple Tasks,Apple,2.5,2356,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,762.59
+279,Lenovo IdeaPad 33015AST,New,For Simple Tasks,Lenovo,1.24,1790,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,1156.55
+280,Macbook Pro 15 Retina,New,For Cut Design,Apple,1.35,2356,Some description about laptop Macbook Pro 15 Retina,6,Default Garanty Apple,1789.07
+281,MSI GL65 9SD206XRO,Used,For Business,MSI,2.5,2539,Some description about laptop MSI GL65 9SD206XRO,1,Default Garanty Used laptops,1804.13
+282,Microsoft Surface Laptop 3 15,Used,For Cut Design,Microsoft,2.34,1245,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,999.21
+283,Acer Nitro 5,New,For Cut Design,Acer,2.34,1245,Some description about laptop Acer Nitro 5,6,Default Garanty Acer,761.05
+284,HP 255 G7,Used,Gaming,HP,2.5,2539,Some description about laptop HP 255 G7,6,Default Garanty Used laptops,600.70
+285,HP 255 G7,Used,Gaming,HP,2.56,1790,Some description about laptop HP 255 G7,6,Default Garanty Used laptops,510.05
+286,Apple MacBook Air 13,Used,Gaming,Apple,2.56,1305,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,778.54
+287,Asus ROG Strix G531GT,Used,Thin,Asus,2.78,1245,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,1545.09
+288,Acer Nitro 5,New,For Cut Design,Acer,2.56,2356,Some description about laptop Acer Nitro 5,6,Default Garanty Acer,776.34
+289,Acer Aspire 5 A51554G,Used,Thin,Acer,1.5,1234,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,904.38
+290,Lenovo IdeaPad 33015AST,Used,For Business,Lenovo,1.24,1305,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,553.23
+291,Lenovo IdeaPad 33015AST,Used,For Business,Lenovo,1.35,2356,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,636.73
+292,Dell Inspiron G5 15 5587,Used,For Cut Design,Dell,2.34,1305,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,929.68
+293,Asus ROG Strix G531GT,Used,Gaming,Asus,1.5,1305,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,1195.05
+294,Acer Aspire 5 A51554G,Used,For Work and Study,Acer,1.24,2356,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,1549.88
+295,Dell Inspiron G5 15 5587,Used,For Simple Tasks,Dell,2.34,2312,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,1121.85
+296,Macbook Pro 15 Retina,Used,For Cut Design,Apple,1.24,1245,Some description about laptop Macbook Pro 15 Retina,6,Default Garanty Apple,1260.17
+297,Macbook Pro 15 Retina,New,For Simple Tasks,Apple,1.24,2312,Some description about laptop Macbook Pro 15 Retina,6,Default Garanty Apple,1434.80
+298,Apple MacBook Pro,New,For Business,Apple,2.78,1245,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,1537.26
+299,Acer Nitro 5,New,Thin,Acer,2.5,2312,Some description about laptop Acer Nitro 5,6,Default Garanty Acer,1812.30
+300,MSI GL65 9SD206XRO,New,Thin,MSI,2.56,1234,Some description about laptop MSI GL65 9SD206XRO,12,Default Garanty Used laptops,1294.16
+301,Lenovo IdeaPad 33015AST,Used,Gaming,Lenovo,2.56,2536,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,770.34
+302,MSI GF63 9RCX,New,Gaming,MSI,2.78,1305,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,1062.23
+303,Lenovo IdeaPad S34014IWL,New,For Business,Lenovo,2.56,1790,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1013.29
+304,Lenovo IdeaPad 33015AST,Used,For Cut Design,Lenovo,1.5,2536,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,659.27
+305,Asus ROG STRIX 5,New,For Simple Tasks,Asus,2.56,2356,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,1681.10
+306,HP Envy 17ce0005ur,New,For Business,HP,1.35,2312,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,717.41
+307,Dream Machines RS206017,Used,For Business,Dream Machines,1.5,1245,Some description about laptop Dream Machines RS206017,6,Default Garanty Used laptops,1613.84
+308,Asus ROG STRIX 5,New,Gaming,Asus,1.24,2536,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,778.72
+309,Asus ROG STRIX 5,New,For Business,Asus,1.35,1245,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,1718.18
+310,HP Envy 17ce0005ur,New,For Cut Design,HP,2.5,2539,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,1082.68
+311,Lenovo IdeaPad S34014IWL,Used,For Work and Study,Lenovo,1.35,1790,Some description about laptop Lenovo IdeaPad S34014IWL,1,Default Garanty Used laptops,731.44
+312,HP 255 G7,Used,Gaming,HP,2.56,2539,Some description about laptop HP 255 G7,6,Default Garanty Used laptops,1031.99
+313,Microsoft Surface Laptop 3 15,Used,Thin,Microsoft,1.24,1305,Some description about laptop Microsoft Surface Laptop 3 15,1,Default Garanty Microsoft,988.90
+314,Lenovo IdeaPad 33015AST,Used,For Simple Tasks,Lenovo,1.24,1245,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,1309.58
+315,Google Pixelbook Go 256GB,New,For Work and Study,Google,1.35,2312,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,670.78
+316,Asus ROG STRIX 5,New,For Work and Study,Asus,2.34,2312,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,1291.15
+317,HP Envy 17ce0005ur,New,For Simple Tasks,HP,1.35,1234,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,1419.21
+318,Microsoft Surface Laptop 3 15,Used,For Cut Design,Microsoft,1.24,2536,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,1594.14
+319,Google Pixelbook Go 256GB,New,For Cut Design,Google,2.5,1305,Some description about laptop Google Pixelbook Go 256GB,1,Default Garanty Google,1230.69
+320,Asus ROG Strix G531GT,Used,For Cut Design,Asus,1.35,2536,Some description about laptop Asus ROG Strix G531GT,1,Default Garanty Used laptops,1866.74
+321,Dream Machines RS206017,Used,Thin,Dream Machines,2.78,2356,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,592.92
+322,Acer Nitro 5,New,Gaming,Acer,1.24,1245,Some description about laptop Acer Nitro 5,6,Default Garanty Acer,1721.48
+323,Apple MacBook Pro,New,For Business,Apple,2.5,1245,Some description about laptop Apple MacBook Pro,1,Default Garanty Apple,1713.30
+324,Apple MacBook Air 13,New,For Work and Study,Apple,2.56,1305,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,1967.98
+325,Lenovo IdeaPad S34014IWL,Used,For Work and Study,Lenovo,1.5,2356,Some description about laptop Lenovo IdeaPad S34014IWL,1,Default Garanty Used laptops,1701.87
+326,MSI GL65 9SD206XRO,New,For Business,MSI,1.35,1790,Some description about laptop MSI GL65 9SD206XRO,12,Default Garanty Used laptops,952.53
+327,HP Pavilion Gaming 15cx0027ua,Used,Gaming,HP,2.78,1305,Some description about laptop HP Pavilion Gaming 15cx0027ua,6,Default Garanty HP,1956.33
+328,MSI GL65 9SD206XRO,New,For Business,MSI,1.24,2539,Some description about laptop MSI GL65 9SD206XRO,1,Default Garanty Used laptops,1610.48
+329,HP Pavilion Gaming 15cx0027ua,New,For Work and Study,HP,1.35,1790,Some description about laptop HP Pavilion Gaming 15cx0027ua,12,Default Garanty HP,1682.24
+330,Dell Inspiron G5 15 5587,Used,For Simple Tasks,Dell,1.5,2356,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,1367.68
+331,Acer Aspire 5 A51554G,Used,For Simple Tasks,Acer,2.78,1305,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,1243.69
+332,Apple MacBook Air 13,Used,For Cut Design,Apple,2.34,2539,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,1227.90
+333,Lenovo IdeaPad 33015AST,Used,For Work and Study,Lenovo,2.5,2539,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,1494.11
+334,Apple MacBook Pro,New,For Work and Study,Apple,2.56,2536,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,1819.13
+335,MSI GF63 9RCX,New,For Business,MSI,2.78,2536,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,1702.38
+336,Apple MacBook Air 13,New,For Simple Tasks,Apple,2.78,1245,Some description about laptop Apple MacBook Air 13,1,Default Garanty Used laptops,1382.23
+337,MSI GL65 9SD206XRO,Used,For Simple Tasks,MSI,1.5,2356,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,781.59
+338,Asus ROG STRIX 5,New,Gaming,Asus,2.56,2536,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1743.26
+339,Asus ROG Strix G531GT,Used,For Work and Study,Asus,1.5,1305,Some description about laptop Asus ROG Strix G531GT,1,Default Garanty Used laptops,1315.99
+340,Lenovo IdeaPad 33015AST,New,Thin,Lenovo,2.34,1234,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,1390.75
+341,Macbook Pro 15 Retina,New,For Simple Tasks,Apple,2.78,1245,Some description about laptop Macbook Pro 15 Retina,6,Default Garanty Apple,1320.28
+342,HP Envy 17ce0005ur,New,For Simple Tasks,HP,2.78,2539,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,1735.39
+343,Asus ROG Strix G531GT,Used,Gaming,Asus,1.24,2536,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,1672.32
+344,HP Pavilion Gaming 15cx0027ua,Used,For Work and Study,HP,1.24,2312,Some description about laptop HP Pavilion Gaming 15cx0027ua,6,Default Garanty HP,524.31
+345,Acer Aspire 5 A51554G,New,Gaming,Acer,2.34,2312,Some description about laptop Acer Aspire 5 A51554G,6,Default Garanty Used laptops,797.23
+346,Lenovo IdeaPad S34014IWL,Used,Thin,Lenovo,2.78,1234,Some description about laptop Lenovo IdeaPad S34014IWL,1,Default Garanty Used laptops,1060.58
+347,Apple MacBook Pro,New,For Cut Design,Apple,2.56,2312,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,861.47
+348,Acer Aspire 5 A51554G,New,For Cut Design,Acer,2.78,1790,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,939.43
+349,Dream Machines RS206017,New,For Simple Tasks,Dream Machines,1.5,2536,Some description about laptop Dream Machines RS206017,1,Default Garanty Used laptops,1554.36
+350,Microsoft Surface Laptop 3 15,Used,Gaming,Microsoft,1.24,1790,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,637.96
+351,Acer Aspire 5 A51554G,Used,Gaming,Acer,1.5,1245,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,1418.51
+352,Asus ROG STRIX 5,New,Thin,Asus,2.34,1305,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1890.70
+353,Dell Inspiron G5 15 5587,Used,Gaming,Dell,1.5,2356,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,1530.17
+354,Macbook Pro 15 Retina,New,For Simple Tasks,Apple,1.35,1305,Some description about laptop Macbook Pro 15 Retina,12,Default Garanty Apple,1961.98
+355,Apple MacBook Air 13,Used,For Simple Tasks,Apple,1.35,2536,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,913.94
+356,Acer Nitro 5,New,For Simple Tasks,Acer,2.34,2536,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,1147.13
+357,Apple MacBook Air 13,New,For Business,Apple,2.34,1245,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,542.30
+358,Dream Machines RS206017,Used,For Simple Tasks,Dream Machines,2.56,1790,Some description about laptop Dream Machines RS206017,1,Default Garanty Used laptops,1021.35
+359,Apple MacBook Pro,New,For Cut Design,Apple,2.34,2539,Some description about laptop Apple MacBook Pro,1,Default Garanty Apple,1730.95
+360,Asus ROG Strix G531GT,Used,For Simple Tasks,Asus,1.24,2539,Some description about laptop Asus ROG Strix G531GT,1,Default Garanty Used laptops,1209.10
+361,Microsoft Surface Laptop 3 15,New,Thin,Microsoft,1.35,2539,Some description about laptop Microsoft Surface Laptop 3 15,1,Default Garanty Microsoft,985.28
+362,Macbook Pro 15 Retina,Used,For Simple Tasks,Apple,1.24,1234,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,1362.25
+363,Google Pixelbook Go 256GB,New,Gaming,Google,2.34,1790,Some description about laptop Google Pixelbook Go 256GB,12,Default Garanty Google,1194.29
+364,Asus ROG STRIX 5,New,For Simple Tasks,Asus,2.78,2356,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,1605.01
+365,Dell Inspiron G5 15 5587,Used,Thin,Dell,1.5,2536,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,1013.72
+366,Dell Inspiron G5 15 5587,Used,For Business,Dell,2.34,2356,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,1925.27
+367,Lenovo IdeaPad 33015AST,Used,For Business,Lenovo,2.5,2356,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,1730.01
+368,Lenovo IdeaPad 33015AST,Used,For Cut Design,Lenovo,1.5,2536,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,894.14
+369,Google Pixelbook Go 256GB,New,Gaming,Google,1.24,2356,Some description about laptop Google Pixelbook Go 256GB,12,Default Garanty Google,1106.61
+370,Dell Inspiron G5 15 5587,Used,For Cut Design,Dell,1.24,1234,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,548.38
+371,Google Pixelbook Go 256GB,New,For Simple Tasks,Google,2.5,2539,Some description about laptop Google Pixelbook Go 256GB,12,Default Garanty Google,871.02
+372,MSI GL65 9SD206XRO,Used,Thin,MSI,1.5,2536,Some description about laptop MSI GL65 9SD206XRO,1,Default Garanty Used laptops,1892.68
+373,Dell Inspiron G5 15 5587,Used,For Simple Tasks,Dell,2.78,1305,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,1084.18
+374,Macbook Pro 15 Retina,Used,Thin,Apple,2.34,2312,Some description about laptop Macbook Pro 15 Retina,6,Default Garanty Apple,978.62
+375,HP Pavilion Gaming 15cx0027ua,Used,For Simple Tasks,HP,2.34,1234,Some description about laptop HP Pavilion Gaming 15cx0027ua,12,Default Garanty HP,1561.88
+376,HP Pavilion Gaming 15cx0027ua,New,Thin,HP,2.34,2312,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,1983.50
+377,HP Pavilion Gaming 15cx0027ua,New,For Work and Study,HP,1.24,1790,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,509.37
+378,HP 255 G7,Used,For Cut Design,HP,2.5,2312,Some description about laptop HP 255 G7,12,Default Garanty Used laptops,1490.85
+379,Acer Nitro 5,New,For Work and Study,Acer,2.78,2312,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,1150.09
+380,MSI GL65 9SD206XRO,Used,For Cut Design,MSI,2.34,2356,Some description about laptop MSI GL65 9SD206XRO,12,Default Garanty Used laptops,1437.61
+381,Asus ROG STRIX 5,New,For Simple Tasks,Asus,1.5,2539,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,1132.29
+382,MSI GF63 9RCX,New,For Simple Tasks,MSI,1.35,1305,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,1661.82
+383,Lenovo IdeaPad S34014IWL,Used,For Cut Design,Lenovo,1.35,1305,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1377.99
+384,Dream Machines RS206017,Used,For Cut Design,Dream Machines,2.78,1305,Some description about laptop Dream Machines RS206017,6,Default Garanty Used laptops,1791.44
+385,Apple MacBook Pro,New,For Simple Tasks,Apple,1.35,1234,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,985.73
+386,Acer Aspire 5 A51554G,New,For Work and Study,Acer,1.35,1305,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,967.75
+387,Apple MacBook Air 13,Used,Thin,Apple,1.35,2312,Some description about laptop Apple MacBook Air 13,1,Default Garanty Used laptops,924.96
+388,Asus ROG STRIX 5,New,For Work and Study,Asus,2.34,1305,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,1265.78
+389,Asus ROG Strix G531GT,Used,For Work and Study,Asus,2.78,2312,Some description about laptop Asus ROG Strix G531GT,1,Default Garanty Used laptops,1669.51
+390,Acer Aspire 5 A51554G,Used,For Cut Design,Acer,1.5,1790,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,1161.10
+391,Asus ROG Strix G531GT,Used,For Cut Design,Asus,2.78,1790,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,551.37
+392,Acer Aspire 5 A51554G,New,For Simple Tasks,Acer,2.5,1245,Some description about laptop Acer Aspire 5 A51554G,6,Default Garanty Used laptops,568.78
+393,Apple MacBook Pro,New,For Simple Tasks,Apple,1.24,1305,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,1763.86
+394,HP Envy 17ce0005ur,Used,For Cut Design,HP,2.34,1305,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,856.27
+395,Acer Nitro 5,New,For Work and Study,Acer,1.5,2356,Some description about laptop Acer Nitro 5,6,Default Garanty Acer,1940.95
+396,Lenovo IdeaPad 33015AST,Used,Thin,Lenovo,1.35,2312,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,1304.53
+397,Lenovo IdeaPad 33015AST,New,For Work and Study,Lenovo,2.34,1790,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,523.35
+398,Acer Aspire 5 A51554G,New,For Work and Study,Acer,1.24,2539,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,1552.83
+399,Google Pixelbook Go 256GB,New,For Business,Google,1.5,1790,Some description about laptop Google Pixelbook Go 256GB,12,Default Garanty Google,1368.63
+400,HP Pavilion Gaming 15cx0027ua,Used,For Simple Tasks,HP,2.56,2536,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,1346.41
+401,Asus ROG STRIX 5,New,For Simple Tasks,Asus,2.34,2356,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1536.56
+402,Asus ROG STRIX 5,New,Gaming,Asus,2.56,1305,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,700.05
+403,HP 255 G7,Used,For Simple Tasks,HP,2.34,1245,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,1760.27
+404,Google Pixelbook Go 256GB,New,Thin,Google,1.35,1245,Some description about laptop Google Pixelbook Go 256GB,1,Default Garanty Google,531.36
+405,HP 255 G7,Used,For Business,HP,2.34,1790,Some description about laptop HP 255 G7,12,Default Garanty Used laptops,1920.96
+406,Dell Inspiron G5 15 5587,Used,Thin,Dell,2.56,2536,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,1787.04
+407,Dream Machines RS206017,New,For Work and Study,Dream Machines,1.24,2356,Some description about laptop Dream Machines RS206017,1,Default Garanty Used laptops,507.06
+408,Macbook Pro 15 Retina,Used,For Cut Design,Apple,1.5,2539,Some description about laptop Macbook Pro 15 Retina,6,Default Garanty Apple,1677.57
+409,Microsoft Surface Laptop 3 15,New,For Business,Microsoft,2.56,1234,Some description about laptop Microsoft Surface Laptop 3 15,1,Default Garanty Microsoft,899.64
+410,Acer Nitro 5,New,For Business,Acer,1.5,2356,Some description about laptop Acer Nitro 5,1,Default Garanty Acer,1857.93
+411,Apple MacBook Pro,New,Gaming,Apple,2.56,1790,Some description about laptop Apple MacBook Pro,1,Default Garanty Apple,655.88
+412,Asus ROG STRIX 5,New,For Work and Study,Asus,2.5,1245,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,975.12
+413,Macbook Pro 15 Retina,Used,For Simple Tasks,Apple,2.56,1790,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,1266.43
+414,Apple MacBook Pro,New,Thin,Apple,2.56,2539,Some description about laptop Apple MacBook Pro,1,Default Garanty Apple,1521.65
+415,Asus ROG STRIX 5,New,For Cut Design,Asus,1.24,2539,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,1947.12
+416,Acer Aspire 5 A51554G,New,For Simple Tasks,Acer,2.34,1234,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,1374.60
+417,Microsoft Surface Laptop 3 15,Used,Thin,Microsoft,1.24,1234,Some description about laptop Microsoft Surface Laptop 3 15,1,Default Garanty Microsoft,1020.14
+418,HP Envy 17ce0005ur,Used,Gaming,HP,1.5,2536,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,814.23
+419,Apple MacBook Pro,New,For Simple Tasks,Apple,2.56,1790,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,1244.19
+420,Acer Nitro 5,New,Gaming,Acer,1.35,1305,Some description about laptop Acer Nitro 5,6,Default Garanty Acer,1817.78
+421,Asus ROG STRIX 5,New,For Work and Study,Asus,1.35,2312,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,914.75
+422,Macbook Pro 15 Retina,New,Thin,Apple,2.56,2356,Some description about laptop Macbook Pro 15 Retina,12,Default Garanty Apple,801.83
+423,Macbook Pro 15 Retina,Used,For Cut Design,Apple,2.78,2312,Some description about laptop Macbook Pro 15 Retina,6,Default Garanty Apple,1075.65
+424,Lenovo IdeaPad S34014IWL,New,For Simple Tasks,Lenovo,1.24,1305,Some description about laptop Lenovo IdeaPad S34014IWL,1,Default Garanty Used laptops,577.10
+425,Asus ROG STRIX 5,New,Gaming,Asus,1.35,2356,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,1217.02
+426,Macbook Pro 15 Retina,Used,For Work and Study,Apple,2.78,1245,Some description about laptop Macbook Pro 15 Retina,12,Default Garanty Apple,1230.37
+427,Microsoft Surface Laptop 3 15,Used,Thin,Microsoft,1.24,2356,Some description about laptop Microsoft Surface Laptop 3 15,1,Default Garanty Microsoft,1798.27
+428,MSI GL65 9SD206XRO,New,For Simple Tasks,MSI,2.5,1305,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,1484.53
+429,Asus ROG Strix G531GT,Used,For Simple Tasks,Asus,2.78,1790,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,1868.44
+430,Apple MacBook Pro,New,For Business,Apple,1.24,1234,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,1345.61
+431,Dell Inspiron G5 15 5587,Used,For Work and Study,Dell,2.5,2312,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,1598.92
+432,Apple MacBook Pro,New,For Cut Design,Apple,1.24,1790,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,536.53
+433,Lenovo IdeaPad S34014IWL,Used,For Business,Lenovo,2.5,2312,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1647.57
+434,Dell Inspiron G5 15 5587,Used,Gaming,Dell,2.78,2356,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,551.20
+435,Acer Nitro 5,New,Thin,Acer,2.78,2312,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,754.89
+436,MSI GF63 9RCX,New,For Work and Study,MSI,1.35,1305,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,1984.96
+437,Lenovo IdeaPad 33015AST,New,For Business,Lenovo,2.78,2539,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,1313.00
+438,Acer Nitro 5,New,Thin,Acer,1.35,1790,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,1336.33
+439,Dream Machines RS206017,New,For Cut Design,Dream Machines,1.35,2312,Some description about laptop Dream Machines RS206017,1,Default Garanty Used laptops,875.00
+440,MSI GF63 9RCX,New,For Work and Study,MSI,1.24,2312,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,507.67
+441,Macbook Pro 15 Retina,Used,For Simple Tasks,Apple,2.78,2536,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,911.10
+442,Lenovo IdeaPad S34014IWL,Used,For Work and Study,Lenovo,1.35,1305,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1498.14
+443,HP Pavilion Gaming 15cx0027ua,Used,For Work and Study,HP,1.35,2536,Some description about laptop HP Pavilion Gaming 15cx0027ua,6,Default Garanty HP,1944.82
+444,Asus ROG STRIX 5,New,Thin,Asus,2.56,1245,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,895.31
+445,MSI GF63 9RCX,New,For Cut Design,MSI,1.35,2312,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,1821.74
+446,Macbook Pro 15 Retina,New,For Simple Tasks,Apple,2.56,2536,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,1112.28
+447,Lenovo IdeaPad 33015AST,New,For Simple Tasks,Lenovo,2.34,2356,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,749.99
+448,Google Pixelbook Go 256GB,New,For Work and Study,Google,1.35,2536,Some description about laptop Google Pixelbook Go 256GB,1,Default Garanty Google,1610.93
+449,Dream Machines RS206017,New,For Business,Dream Machines,2.78,2539,Some description about laptop Dream Machines RS206017,1,Default Garanty Used laptops,607.56
+450,Dell Inspiron G5 15 5587,Used,Thin,Dell,1.35,1234,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,1635.50
+451,Asus ROG Strix G531GT,Used,For Simple Tasks,Asus,2.34,2539,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,1005.07
+452,Apple MacBook Pro,New,For Simple Tasks,Apple,1.5,2536,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,1728.69
+453,HP 255 G7,Used,For Work and Study,HP,2.56,2539,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,1240.24
+454,HP 255 G7,Used,For Cut Design,HP,1.35,2356,Some description about laptop HP 255 G7,12,Default Garanty Used laptops,645.54
+455,Dell Inspiron G5 15 5587,Used,For Simple Tasks,Dell,1.35,1305,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,1943.34
+456,Acer Nitro 5,New,For Business,Acer,2.56,1245,Some description about laptop Acer Nitro 5,1,Default Garanty Acer,697.99
+457,Google Pixelbook Go 256GB,New,For Business,Google,2.5,1305,Some description about laptop Google Pixelbook Go 256GB,12,Default Garanty Google,998.89
+458,Lenovo IdeaPad S34014IWL,Used,For Work and Study,Lenovo,2.5,2536,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,866.07
+459,Google Pixelbook Go 256GB,New,For Business,Google,2.78,2312,Some description about laptop Google Pixelbook Go 256GB,1,Default Garanty Google,528.57
+460,Dream Machines RS206017,Used,Thin,Dream Machines,2.56,2356,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,623.26
+461,Apple MacBook Pro,New,Thin,Apple,1.35,1790,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,854.60
+462,Asus ROG Strix G531GT,Used,For Work and Study,Asus,2.34,2539,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,771.35
+463,Google Pixelbook Go 256GB,New,For Business,Google,2.56,2312,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,1927.39
+464,Lenovo IdeaPad 33015AST,New,For Business,Lenovo,1.24,1305,Some description about laptop Lenovo IdeaPad 33015AST,12,Default Garanty Used laptops,1212.98
+465,Dream Machines RS206017,New,For Simple Tasks,Dream Machines,2.34,2536,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,946.40
+466,Asus ROG Strix G531GT,Used,Gaming,Asus,1.5,2536,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,1062.11
+467,Dream Machines RS206017,New,Thin,Dream Machines,2.56,1305,Some description about laptop Dream Machines RS206017,1,Default Garanty Used laptops,929.64
+468,Lenovo IdeaPad S34014IWL,Used,For Business,Lenovo,2.56,1245,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1591.28
+469,Apple MacBook Pro,New,Thin,Apple,1.35,1234,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,1143.02
+470,Lenovo IdeaPad S34014IWL,Used,For Simple Tasks,Lenovo,2.56,2356,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1878.32
+471,Lenovo IdeaPad 33015AST,New,For Simple Tasks,Lenovo,1.5,1790,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,502.10
+472,Google Pixelbook Go 256GB,New,Thin,Google,2.5,1790,Some description about laptop Google Pixelbook Go 256GB,1,Default Garanty Google,968.43
+473,Microsoft Surface Laptop 3 15,New,For Business,Microsoft,2.56,1234,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,815.73
+474,Macbook Pro 15 Retina,New,For Work and Study,Apple,1.24,2536,Some description about laptop Macbook Pro 15 Retina,6,Default Garanty Apple,617.58
+475,Microsoft Surface Laptop 3 15,New,For Work and Study,Microsoft,1.24,1790,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,1581.78
+476,Asus ROG STRIX 5,New,For Cut Design,Asus,1.24,1234,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,1529.61
+477,Dream Machines RS206017,New,Thin,Dream Machines,1.24,2312,Some description about laptop Dream Machines RS206017,1,Default Garanty Used laptops,833.00
+478,HP 255 G7,Used,Gaming,HP,2.78,2536,Some description about laptop HP 255 G7,12,Default Garanty Used laptops,1813.73
+479,Dell Inspiron G5 15 5587,Used,For Business,Dell,1.5,2312,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,845.50
+480,Asus ROG STRIX 5,New,Thin,Asus,1.35,2539,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,1577.59
+481,Apple MacBook Air 13,New,For Cut Design,Apple,1.5,1790,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,1791.38
+482,Macbook Pro 15 Retina,Used,For Work and Study,Apple,2.56,2312,Some description about laptop Macbook Pro 15 Retina,12,Default Garanty Apple,1425.62
+483,Asus ROG STRIX 5,New,Thin,Asus,1.35,1245,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,580.56
+484,Acer Aspire 5 A51554G,Used,Gaming,Acer,1.5,1234,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,1956.73
+485,Apple MacBook Air 13,New,For Cut Design,Apple,2.56,1790,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,1099.89
+486,Microsoft Surface Laptop 3 15,Used,For Business,Microsoft,1.24,2539,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,1376.29
+487,Asus ROG Strix G531GT,Used,Thin,Asus,1.24,1305,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,805.86
+488,Acer Nitro 5,New,For Cut Design,Acer,2.78,1234,Some description about laptop Acer Nitro 5,1,Default Garanty Acer,1196.62
+489,Dream Machines RS206017,New,For Business,Dream Machines,2.78,2312,Some description about laptop Dream Machines RS206017,6,Default Garanty Used laptops,1001.31
+490,Apple MacBook Air 13,Used,For Simple Tasks,Apple,2.78,2536,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,1261.75
+491,Acer Nitro 5,New,For Simple Tasks,Acer,2.78,2356,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,1942.98
+492,Acer Aspire 5 A51554G,New,Thin,Acer,1.24,2356,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,1779.66
+493,Google Pixelbook Go 256GB,New,For Simple Tasks,Google,2.5,2539,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,1315.42
+494,Asus ROG Strix G531GT,Used,For Business,Asus,1.35,2356,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,1737.17
+495,Asus ROG STRIX 5,New,For Simple Tasks,Asus,1.24,2312,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,1681.24
+496,MSI GF63 9RCX,New,For Simple Tasks,MSI,1.5,1790,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,1240.64
+497,Asus ROG Strix G531GT,Used,Thin,Asus,2.78,1790,Some description about laptop Asus ROG Strix G531GT,1,Default Garanty Used laptops,1882.03
+498,Apple MacBook Air 13,Used,For Work and Study,Apple,1.5,1305,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,1723.56
+499,Acer Aspire 5 A51554G,Used,For Work and Study,Acer,2.78,1234,Some description about laptop Acer Aspire 5 A51554G,6,Default Garanty Used laptops,1292.05
+500,Apple MacBook Pro,New,For Cut Design,Apple,1.5,2356,Some description about laptop Apple MacBook Pro,1,Default Garanty Apple,1877.31
+501,Apple MacBook Pro,New,Thin,Apple,1.24,2539,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,894.11
+502,Google Pixelbook Go 256GB,New,For Business,Google,1.35,2312,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,1662.21
+503,Apple MacBook Air 13,Used,For Work and Study,Apple,1.35,2539,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,1510.21
+504,Dell Inspiron G5 15 5587,Used,Thin,Dell,2.34,2539,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,1200.12
+505,Asus ROG STRIX 5,New,For Cut Design,Asus,1.35,1305,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,864.01
+506,Dell Inspiron G5 15 5587,Used,For Simple Tasks,Dell,1.35,2536,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,839.16
+507,Macbook Pro 15 Retina,New,Gaming,Apple,2.56,2356,Some description about laptop Macbook Pro 15 Retina,12,Default Garanty Apple,513.92
+508,HP 255 G7,Used,For Business,HP,2.5,2312,Some description about laptop HP 255 G7,6,Default Garanty Used laptops,1634.16
+509,Apple MacBook Pro,New,For Work and Study,Apple,2.56,2536,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,866.67
+510,MSI GL65 9SD206XRO,Used,For Cut Design,MSI,2.5,2312,Some description about laptop MSI GL65 9SD206XRO,1,Default Garanty Used laptops,1316.29
+511,HP Envy 17ce0005ur,Used,For Business,HP,1.24,1245,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,1645.04
+512,MSI GF63 9RCX,New,For Cut Design,MSI,2.78,1245,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,1443.11
+513,Apple MacBook Air 13,New,Thin,Apple,1.24,2312,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,1949.37
+514,Microsoft Surface Laptop 3 15,New,Gaming,Microsoft,2.56,1245,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,1663.19
+515,Acer Aspire 5 A51554G,New,For Business,Acer,1.5,1790,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,1028.83
+516,Acer Aspire 5 A51554G,New,For Business,Acer,1.24,1790,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,1170.55
+517,MSI GF63 9RCX,New,For Work and Study,MSI,1.24,1305,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,924.76
+518,Lenovo IdeaPad 33015AST,New,Thin,Lenovo,2.56,1305,Some description about laptop Lenovo IdeaPad 33015AST,12,Default Garanty Used laptops,1916.64
+519,Asus ROG STRIX 5,New,For Simple Tasks,Asus,1.35,2539,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1127.45
+520,Acer Nitro 5,New,For Work and Study,Acer,2.5,2539,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,1421.56
+521,HP Pavilion Gaming 15cx0027ua,Used,For Cut Design,HP,2.34,2539,Some description about laptop HP Pavilion Gaming 15cx0027ua,6,Default Garanty HP,1434.56
+522,MSI GL65 9SD206XRO,New,For Work and Study,MSI,1.24,1234,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,1647.20
+523,Lenovo IdeaPad S34014IWL,New,Thin,Lenovo,1.35,2536,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1203.41
+524,Dell Inspiron G5 15 5587,Used,Thin,Dell,1.5,2356,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,1159.50
+525,HP Envy 17ce0005ur,Used,For Simple Tasks,HP,2.34,1245,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,1113.44
+526,HP 255 G7,Used,For Simple Tasks,HP,2.78,2312,Some description about laptop HP 255 G7,6,Default Garanty Used laptops,1599.88
+527,Acer Aspire 5 A51554G,Used,For Business,Acer,1.35,2539,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,1512.96
+528,Acer Nitro 5,New,For Simple Tasks,Acer,1.35,2536,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,1372.86
+529,Acer Aspire 5 A51554G,New,Gaming,Acer,2.78,2356,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,758.80
+530,Microsoft Surface Laptop 3 15,Used,Gaming,Microsoft,1.24,2539,Some description about laptop Microsoft Surface Laptop 3 15,1,Default Garanty Microsoft,912.01
+531,HP Pavilion Gaming 15cx0027ua,Used,For Simple Tasks,HP,2.78,2536,Some description about laptop HP Pavilion Gaming 15cx0027ua,12,Default Garanty HP,1193.37
+532,Lenovo IdeaPad S34014IWL,Used,For Business,Lenovo,1.24,2356,Some description about laptop Lenovo IdeaPad S34014IWL,1,Default Garanty Used laptops,714.22
+533,Apple MacBook Air 13,New,Gaming,Apple,1.35,2536,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,691.14
+534,Dream Machines RS206017,New,Thin,Dream Machines,1.24,2312,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,1905.93
+535,Acer Nitro 5,New,For Work and Study,Acer,1.24,2539,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,1907.38
+536,HP 255 G7,Used,Thin,HP,2.34,1790,Some description about laptop HP 255 G7,12,Default Garanty Used laptops,1375.48
+537,MSI GF63 9RCX,New,Thin,MSI,1.5,2539,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,693.40
+538,Acer Nitro 5,New,Thin,Acer,2.34,2312,Some description about laptop Acer Nitro 5,6,Default Garanty Acer,1321.04
+539,Apple MacBook Pro,New,Gaming,Apple,2.78,2536,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,748.00
+540,Dell Inspiron G5 15 5587,Used,For Cut Design,Dell,1.5,1245,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,1904.73
+541,Acer Nitro 5,New,For Work and Study,Acer,2.78,1305,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,710.60
+542,Apple MacBook Air 13,New,Thin,Apple,2.34,2312,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,1926.05
+543,Asus ROG STRIX 5,New,For Work and Study,Asus,1.35,2312,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1829.56
+544,Asus ROG STRIX 5,New,Gaming,Asus,2.56,1790,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1765.65
+545,HP Envy 17ce0005ur,New,For Business,HP,1.35,1305,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,1755.62
+546,Acer Aspire 5 A51554G,Used,Gaming,Acer,2.34,1790,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,1320.51
+547,Apple MacBook Pro,New,For Cut Design,Apple,2.5,2312,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,564.76
+548,Asus ROG STRIX 5,New,Thin,Asus,1.35,2539,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1747.85
+549,Lenovo IdeaPad S34014IWL,New,For Work and Study,Lenovo,2.56,1234,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1432.10
+550,MSI GL65 9SD206XRO,Used,For Simple Tasks,MSI,2.34,1305,Some description about laptop MSI GL65 9SD206XRO,1,Default Garanty Used laptops,925.84
+551,HP Envy 17ce0005ur,Used,Gaming,HP,2.78,1305,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,1045.57
+552,Dream Machines RS206017,Used,Gaming,Dream Machines,2.56,1305,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,1939.30
+553,Dell Inspiron G5 15 5587,Used,For Work and Study,Dell,2.78,1245,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,1414.76
+554,Acer Nitro 5,New,For Business,Acer,2.5,2312,Some description about laptop Acer Nitro 5,1,Default Garanty Acer,1017.36
+555,HP Pavilion Gaming 15cx0027ua,New,Gaming,HP,2.34,1234,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,1246.08
+556,Asus ROG STRIX 5,New,Thin,Asus,1.35,1234,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1673.25
+557,Acer Nitro 5,New,For Business,Acer,2.34,1245,Some description about laptop Acer Nitro 5,1,Default Garanty Acer,1974.14
+558,Lenovo IdeaPad S34014IWL,Used,For Business,Lenovo,2.34,1234,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,924.90
+559,Asus ROG Strix G531GT,Used,For Cut Design,Asus,2.56,2312,Some description about laptop Asus ROG Strix G531GT,1,Default Garanty Used laptops,1713.16
+560,Dell Inspiron G5 15 5587,Used,Gaming,Dell,2.78,1245,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,1546.14
+561,HP Envy 17ce0005ur,New,For Cut Design,HP,1.24,1790,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,1053.79
+562,Microsoft Surface Laptop 3 15,New,Thin,Microsoft,1.24,1245,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,813.39
+563,Google Pixelbook Go 256GB,New,Thin,Google,2.5,2539,Some description about laptop Google Pixelbook Go 256GB,1,Default Garanty Google,570.44
+564,HP Envy 17ce0005ur,New,For Simple Tasks,HP,2.78,2356,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,1766.00
+565,Dream Machines RS206017,New,Gaming,Dream Machines,2.34,1790,Some description about laptop Dream Machines RS206017,1,Default Garanty Used laptops,1845.40
+566,Dream Machines RS206017,New,For Business,Dream Machines,1.35,2536,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,1827.71
+567,Apple MacBook Pro,New,For Simple Tasks,Apple,1.5,1234,Some description about laptop Apple MacBook Pro,1,Default Garanty Apple,1191.23
+568,HP Pavilion Gaming 15cx0027ua,New,For Work and Study,HP,2.34,1305,Some description about laptop HP Pavilion Gaming 15cx0027ua,6,Default Garanty HP,935.12
+569,Apple MacBook Pro,New,Thin,Apple,1.24,1790,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,1001.17
+570,Lenovo IdeaPad 33015AST,Used,For Business,Lenovo,1.5,2539,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,890.28
+571,Acer Aspire 5 A51554G,Used,For Simple Tasks,Acer,1.5,2356,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,691.93
+572,MSI GL65 9SD206XRO,New,For Work and Study,MSI,2.78,1245,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,1762.30
+573,Microsoft Surface Laptop 3 15,Used,For Simple Tasks,Microsoft,1.24,2312,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,1227.96
+574,Asus ROG STRIX 5,New,For Cut Design,Asus,1.35,1234,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1192.11
+575,Dell Inspiron G5 15 5587,Used,For Simple Tasks,Dell,2.34,1790,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,1515.83
+576,Lenovo IdeaPad S34014IWL,Used,Thin,Lenovo,2.34,1790,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1988.12
+577,Microsoft Surface Laptop 3 15,New,For Work and Study,Microsoft,1.35,1234,Some description about laptop Microsoft Surface Laptop 3 15,1,Default Garanty Microsoft,775.34
+578,HP Pavilion Gaming 15cx0027ua,New,Gaming,HP,2.5,1790,Some description about laptop HP Pavilion Gaming 15cx0027ua,6,Default Garanty HP,864.06
+579,Microsoft Surface Laptop 3 15,Used,Thin,Microsoft,2.34,2536,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,727.68
+580,Asus ROG Strix G531GT,Used,Thin,Asus,1.24,1234,Some description about laptop Asus ROG Strix G531GT,1,Default Garanty Used laptops,1454.72
+581,HP Pavilion Gaming 15cx0027ua,Used,Gaming,HP,2.5,1305,Some description about laptop HP Pavilion Gaming 15cx0027ua,12,Default Garanty HP,1915.60
+582,HP Pavilion Gaming 15cx0027ua,Used,For Simple Tasks,HP,1.35,2536,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,1261.27
+583,Asus ROG Strix G531GT,Used,Gaming,Asus,2.5,2536,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,695.30
+584,Lenovo IdeaPad 33015AST,Used,For Cut Design,Lenovo,1.35,2356,Some description about laptop Lenovo IdeaPad 33015AST,12,Default Garanty Used laptops,1425.71
+585,Lenovo IdeaPad S34014IWL,Used,For Cut Design,Lenovo,2.78,1305,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1780.19
+586,MSI GF63 9RCX,New,For Work and Study,MSI,1.24,1245,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,1704.76
+587,Acer Aspire 5 A51554G,New,Thin,Acer,2.34,1234,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,547.53
+588,Apple MacBook Air 13,New,Thin,Apple,1.35,1245,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,1009.21
+589,MSI GL65 9SD206XRO,Used,For Cut Design,MSI,1.24,2536,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,701.66
+590,Asus ROG Strix G531GT,Used,For Simple Tasks,Asus,1.5,2539,Some description about laptop Asus ROG Strix G531GT,1,Default Garanty Used laptops,584.66
+591,MSI GF63 9RCX,New,For Cut Design,MSI,1.5,2312,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,1993.03
+592,Google Pixelbook Go 256GB,New,Thin,Google,2.56,1234,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,1445.61
+593,Dell Inspiron G5 15 5587,Used,For Business,Dell,1.5,1790,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,1353.32
+594,HP Pavilion Gaming 15cx0027ua,Used,For Work and Study,HP,2.34,2312,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,1784.20
+595,HP 255 G7,Used,For Business,HP,2.78,2536,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,1869.74
+596,MSI GF63 9RCX,New,For Business,MSI,2.56,1234,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,1398.59
+597,Lenovo IdeaPad 33015AST,Used,For Work and Study,Lenovo,2.78,1234,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,1507.84
+598,Apple MacBook Pro,New,For Work and Study,Apple,2.78,2312,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,1175.14
+599,MSI GF63 9RCX,New,For Work and Study,MSI,2.34,2312,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,1469.46
+600,Lenovo IdeaPad S34014IWL,New,For Cut Design,Lenovo,1.24,1305,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1714.02
+601,MSI GF63 9RCX,New,For Business,MSI,1.35,1245,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,1737.85
+602,Lenovo IdeaPad S34014IWL,New,Thin,Lenovo,2.34,1790,Some description about laptop Lenovo IdeaPad S34014IWL,1,Default Garanty Used laptops,808.61
+603,Apple MacBook Air 13,Used,For Work and Study,Apple,2.78,2536,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,844.12
+604,HP Pavilion Gaming 15cx0027ua,New,Gaming,HP,1.35,1305,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,1725.27
+605,Microsoft Surface Laptop 3 15,New,For Simple Tasks,Microsoft,1.24,2539,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,1695.83
+606,HP Envy 17ce0005ur,New,Thin,HP,2.78,1790,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,1880.63
+607,Asus ROG STRIX 5,New,For Cut Design,Asus,2.34,1305,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,1952.00
+608,Asus ROG STRIX 5,New,For Cut Design,Asus,2.56,1305,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,800.65
+609,Google Pixelbook Go 256GB,New,For Cut Design,Google,2.56,1245,Some description about laptop Google Pixelbook Go 256GB,12,Default Garanty Google,760.11
+610,Acer Aspire 5 A51554G,New,For Work and Study,Acer,1.24,2536,Some description about laptop Acer Aspire 5 A51554G,6,Default Garanty Used laptops,1266.67
+611,Dream Machines RS206017,New,Gaming,Dream Machines,2.56,2312,Some description about laptop Dream Machines RS206017,1,Default Garanty Used laptops,912.08
+612,Apple MacBook Pro,New,Gaming,Apple,2.34,1790,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,1462.06
+613,Microsoft Surface Laptop 3 15,New,For Cut Design,Microsoft,1.5,2536,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,846.27
+614,Apple MacBook Air 13,New,For Cut Design,Apple,1.24,1234,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,1861.43
+615,Apple MacBook Pro,New,Gaming,Apple,1.35,2356,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,1533.02
+616,Google Pixelbook Go 256GB,New,Gaming,Google,1.5,1790,Some description about laptop Google Pixelbook Go 256GB,1,Default Garanty Google,1894.44
+617,Acer Aspire 5 A51554G,Used,Gaming,Acer,2.5,2536,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,643.73
+618,Google Pixelbook Go 256GB,New,Gaming,Google,1.5,1234,Some description about laptop Google Pixelbook Go 256GB,12,Default Garanty Google,1268.18
+619,MSI GF63 9RCX,New,For Simple Tasks,MSI,2.78,1234,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,929.00
+620,Apple MacBook Air 13,Used,For Business,Apple,1.5,2539,Some description about laptop Apple MacBook Air 13,1,Default Garanty Used laptops,1234.97
+621,MSI GL65 9SD206XRO,New,Gaming,MSI,1.35,1234,Some description about laptop MSI GL65 9SD206XRO,1,Default Garanty Used laptops,744.98
+622,MSI GF63 9RCX,New,For Business,MSI,2.34,2536,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,745.24
+623,Macbook Pro 15 Retina,Used,For Work and Study,Apple,2.56,2539,Some description about laptop Macbook Pro 15 Retina,6,Default Garanty Apple,980.68
+624,Lenovo IdeaPad 33015AST,Used,Thin,Lenovo,2.56,2356,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,1625.48
+625,HP Pavilion Gaming 15cx0027ua,New,Thin,HP,2.5,2356,Some description about laptop HP Pavilion Gaming 15cx0027ua,12,Default Garanty HP,956.86
+626,Dell Inspiron G5 15 5587,Used,Gaming,Dell,2.34,2539,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,1919.20
+627,Acer Nitro 5,New,For Cut Design,Acer,2.5,1790,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,1436.40
+628,Acer Aspire 5 A51554G,Used,For Simple Tasks,Acer,2.56,2356,Some description about laptop Acer Aspire 5 A51554G,6,Default Garanty Used laptops,1025.35
+629,Apple MacBook Pro,New,Thin,Apple,2.5,2356,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,1303.88
+630,Microsoft Surface Laptop 3 15,Used,For Simple Tasks,Microsoft,2.56,2536,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,651.54
+631,Apple MacBook Air 13,Used,For Cut Design,Apple,2.56,1245,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,1122.93
+632,MSI GF63 9RCX,New,For Business,MSI,2.78,2536,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,1889.69
+633,Dream Machines RS206017,Used,Gaming,Dream Machines,1.24,1234,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,560.68
+634,Google Pixelbook Go 256GB,New,For Business,Google,2.56,1790,Some description about laptop Google Pixelbook Go 256GB,12,Default Garanty Google,1318.81
+635,Acer Nitro 5,New,For Simple Tasks,Acer,2.56,1305,Some description about laptop Acer Nitro 5,1,Default Garanty Acer,1206.05
+636,Lenovo IdeaPad 33015AST,Used,Gaming,Lenovo,1.24,2536,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,1255.60
+637,MSI GL65 9SD206XRO,Used,Gaming,MSI,2.34,1234,Some description about laptop MSI GL65 9SD206XRO,1,Default Garanty Used laptops,977.55
+638,Dream Machines RS206017,New,For Simple Tasks,Dream Machines,1.5,1245,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,1833.16
+639,Microsoft Surface Laptop 3 15,Used,For Simple Tasks,Microsoft,2.5,1234,Some description about laptop Microsoft Surface Laptop 3 15,1,Default Garanty Microsoft,1588.27
+640,MSI GF63 9RCX,New,For Cut Design,MSI,2.56,1234,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,1968.21
+641,MSI GF63 9RCX,New,For Cut Design,MSI,2.78,1245,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,669.01
+642,Apple MacBook Pro,New,For Business,Apple,2.5,1245,Some description about laptop Apple MacBook Pro,1,Default Garanty Apple,1331.33
+643,Macbook Pro 15 Retina,New,Gaming,Apple,2.56,2312,Some description about laptop Macbook Pro 15 Retina,12,Default Garanty Apple,1246.48
+644,Dream Machines RS206017,New,Thin,Dream Machines,1.5,2539,Some description about laptop Dream Machines RS206017,6,Default Garanty Used laptops,1458.38
+645,Asus ROG Strix G531GT,Used,Gaming,Asus,2.34,1305,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,1183.11
+646,MSI GF63 9RCX,New,For Simple Tasks,MSI,2.5,2539,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,894.65
+647,HP 255 G7,Used,Thin,HP,2.5,2312,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,1069.62
+648,Asus ROG STRIX 5,New,For Work and Study,Asus,2.34,2312,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,1500.76
+649,Apple MacBook Pro,New,For Business,Apple,2.5,1790,Some description about laptop Apple MacBook Pro,1,Default Garanty Apple,1030.71
+650,HP Pavilion Gaming 15cx0027ua,Used,For Simple Tasks,HP,2.5,2356,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,1751.47
+651,HP Envy 17ce0005ur,New,Gaming,HP,1.35,1245,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,946.35
+652,Lenovo IdeaPad S34014IWL,Used,For Simple Tasks,Lenovo,1.35,1245,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1139.64
+653,Asus ROG STRIX 5,New,For Work and Study,Asus,1.35,2312,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,519.99
+654,Macbook Pro 15 Retina,New,For Simple Tasks,Apple,2.5,2539,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,1255.12
+655,Asus ROG Strix G531GT,Used,Thin,Asus,2.34,2356,Some description about laptop Asus ROG Strix G531GT,1,Default Garanty Used laptops,1410.44
+656,Dream Machines RS206017,New,Gaming,Dream Machines,1.5,2536,Some description about laptop Dream Machines RS206017,1,Default Garanty Used laptops,1272.52
+657,Dell Inspiron G5 15 5587,Used,Thin,Dell,2.78,1790,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,1138.12
+658,Microsoft Surface Laptop 3 15,Used,For Cut Design,Microsoft,2.56,1245,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,1947.89
+659,Macbook Pro 15 Retina,New,For Simple Tasks,Apple,2.5,1790,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,1551.01
+660,Asus ROG Strix G531GT,Used,For Business,Asus,1.35,1790,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,997.77
+661,HP Pavilion Gaming 15cx0027ua,New,Gaming,HP,1.35,1245,Some description about laptop HP Pavilion Gaming 15cx0027ua,12,Default Garanty HP,889.08
+662,Lenovo IdeaPad S34014IWL,New,Gaming,Lenovo,2.56,2536,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1337.80
+663,HP 255 G7,Used,Gaming,HP,2.5,1305,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,1410.04
+664,Lenovo IdeaPad 33015AST,New,Gaming,Lenovo,2.78,2539,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,1860.57
+665,Apple MacBook Air 13,Used,For Cut Design,Apple,1.35,1305,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,1735.35
+666,Lenovo IdeaPad S34014IWL,Used,For Cut Design,Lenovo,1.35,1245,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1161.52
+667,HP Envy 17ce0005ur,New,Thin,HP,2.56,2536,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,1385.74
+668,Macbook Pro 15 Retina,New,For Simple Tasks,Apple,1.5,1790,Some description about laptop Macbook Pro 15 Retina,6,Default Garanty Apple,747.92
+669,Acer Aspire 5 A51554G,New,Gaming,Acer,1.35,1305,Some description about laptop Acer Aspire 5 A51554G,6,Default Garanty Used laptops,863.58
+670,Lenovo IdeaPad S34014IWL,New,Thin,Lenovo,1.24,1790,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1173.89
+671,MSI GL65 9SD206XRO,Used,For Work and Study,MSI,1.24,1234,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,1147.29
+672,Apple MacBook Pro,New,Thin,Apple,2.78,2539,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,1618.08
+673,MSI GF63 9RCX,New,For Simple Tasks,MSI,2.5,1234,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,1273.97
+674,Lenovo IdeaPad S34014IWL,New,For Business,Lenovo,2.56,2539,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,901.24
+675,Acer Aspire 5 A51554G,Used,Thin,Acer,2.56,1245,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,1250.96
+676,Apple MacBook Pro,New,For Business,Apple,2.78,1245,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,1262.00
+677,MSI GF63 9RCX,New,For Business,MSI,2.34,1305,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,547.77
+678,Microsoft Surface Laptop 3 15,Used,Gaming,Microsoft,2.78,2356,Some description about laptop Microsoft Surface Laptop 3 15,1,Default Garanty Microsoft,990.83
+679,HP Envy 17ce0005ur,Used,For Business,HP,2.78,2356,Some description about laptop HP Envy 17ce0005ur,6,Default Garanty HP,1695.19
+680,MSI GF63 9RCX,New,For Work and Study,MSI,2.5,2356,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,1095.78
+681,Acer Nitro 5,New,For Cut Design,Acer,2.56,1245,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,678.04
+682,HP 255 G7,Used,For Work and Study,HP,2.5,1790,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,1703.37
+683,Macbook Pro 15 Retina,New,For Simple Tasks,Apple,2.56,1790,Some description about laptop Macbook Pro 15 Retina,6,Default Garanty Apple,1613.75
+684,Apple MacBook Pro,New,For Simple Tasks,Apple,1.24,1790,Some description about laptop Apple MacBook Pro,1,Default Garanty Apple,1375.08
+685,Lenovo IdeaPad 33015AST,New,For Business,Lenovo,1.5,1245,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,1791.43
+686,MSI GF63 9RCX,New,Gaming,MSI,2.34,1245,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,1365.42
+687,MSI GL65 9SD206XRO,New,For Work and Study,MSI,2.34,1305,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,1962.69
+688,Macbook Pro 15 Retina,Used,Thin,Apple,1.24,2536,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,1250.17
+689,Dell Inspiron G5 15 5587,Used,Thin,Dell,1.5,2539,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,730.74
+690,HP Pavilion Gaming 15cx0027ua,New,Gaming,HP,2.34,1305,Some description about laptop HP Pavilion Gaming 15cx0027ua,6,Default Garanty HP,608.69
+691,Apple MacBook Pro,New,Thin,Apple,2.34,1790,Some description about laptop Apple MacBook Pro,1,Default Garanty Apple,1055.05
+692,Lenovo IdeaPad 33015AST,New,Gaming,Lenovo,1.24,2536,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,1965.54
+693,HP Pavilion Gaming 15cx0027ua,Used,For Simple Tasks,HP,2.78,1245,Some description about laptop HP Pavilion Gaming 15cx0027ua,12,Default Garanty HP,1045.22
+694,Google Pixelbook Go 256GB,New,For Business,Google,2.78,1790,Some description about laptop Google Pixelbook Go 256GB,1,Default Garanty Google,799.72
+695,Dell Inspiron G5 15 5587,Used,For Work and Study,Dell,1.24,1234,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,786.16
+696,Macbook Pro 15 Retina,Used,For Simple Tasks,Apple,2.56,2536,Some description about laptop Macbook Pro 15 Retina,12,Default Garanty Apple,1308.88
+697,Asus ROG STRIX 5,New,Thin,Asus,1.35,1234,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,1144.53
+698,Asus ROG STRIX 5,New,Gaming,Asus,2.78,1790,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1491.82
+699,Apple MacBook Pro,New,For Work and Study,Apple,1.35,1234,Some description about laptop Apple MacBook Pro,1,Default Garanty Apple,815.12
+700,Asus ROG STRIX 5,New,Gaming,Asus,1.5,1245,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,883.49
+701,Lenovo IdeaPad S34014IWL,Used,For Simple Tasks,Lenovo,2.78,2536,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1381.80
+702,Apple MacBook Pro,New,For Work and Study,Apple,1.24,1245,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,1371.56
+703,MSI GF63 9RCX,New,For Simple Tasks,MSI,2.56,1305,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,1873.45
+704,MSI GF63 9RCX,New,Thin,MSI,1.24,2539,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,1714.20
+705,Microsoft Surface Laptop 3 15,New,For Work and Study,Microsoft,2.34,1790,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,833.45
+706,Asus ROG STRIX 5,New,For Simple Tasks,Asus,1.24,2539,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,571.90
+707,Apple MacBook Air 13,New,Gaming,Apple,1.5,1234,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,1906.85
+708,Lenovo IdeaPad 33015AST,New,For Simple Tasks,Lenovo,1.5,1305,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,711.91
+709,Acer Aspire 5 A51554G,Used,Thin,Acer,2.56,2356,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,841.87
+710,Asus ROG STRIX 5,New,For Business,Asus,2.78,1234,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,1021.19
+711,HP Pavilion Gaming 15cx0027ua,Used,For Work and Study,HP,2.5,1790,Some description about laptop HP Pavilion Gaming 15cx0027ua,12,Default Garanty HP,501.29
+712,Asus ROG STRIX 5,New,For Work and Study,Asus,2.34,2356,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1769.51
+713,Apple MacBook Air 13,New,For Cut Design,Apple,1.35,1790,Some description about laptop Apple MacBook Air 13,1,Default Garanty Used laptops,1920.52
+714,Apple MacBook Pro,New,For Business,Apple,2.34,1245,Some description about laptop Apple MacBook Pro,1,Default Garanty Apple,902.05
+715,Lenovo IdeaPad S34014IWL,New,Thin,Lenovo,2.34,1305,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,853.09
+716,Microsoft Surface Laptop 3 15,New,For Business,Microsoft,1.5,2539,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,690.89
+717,Acer Nitro 5,New,For Business,Acer,1.35,2312,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,747.56
+718,Asus ROG Strix G531GT,Used,For Cut Design,Asus,2.5,2312,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,1256.86
+719,HP 255 G7,Used,For Simple Tasks,HP,2.34,2312,Some description about laptop HP 255 G7,12,Default Garanty Used laptops,1099.22
+720,Apple MacBook Pro,New,For Business,Apple,1.5,1234,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,1134.76
+721,Apple MacBook Pro,New,For Simple Tasks,Apple,2.56,1305,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,658.23
+722,Dream Machines RS206017,Used,For Work and Study,Dream Machines,2.5,2539,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,1795.67
+723,HP Envy 17ce0005ur,Used,For Cut Design,HP,2.34,1790,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,1579.13
+724,Lenovo IdeaPad 33015AST,Used,For Cut Design,Lenovo,1.24,1234,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,812.62
+725,Dell Inspiron G5 15 5587,Used,Gaming,Dell,1.35,1305,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,681.52
+726,Lenovo IdeaPad S34014IWL,Used,Gaming,Lenovo,2.5,1790,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1190.73
+727,Dream Machines RS206017,New,For Simple Tasks,Dream Machines,1.5,2312,Some description about laptop Dream Machines RS206017,6,Default Garanty Used laptops,1988.42
+728,Lenovo IdeaPad S34014IWL,New,For Cut Design,Lenovo,1.35,2536,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1161.46
+729,Apple MacBook Pro,New,For Business,Apple,1.24,2536,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,1150.83
+730,HP Envy 17ce0005ur,Used,Gaming,HP,1.5,1245,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,1994.57
+731,Apple MacBook Air 13,New,For Simple Tasks,Apple,2.78,1790,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,752.33
+732,HP Pavilion Gaming 15cx0027ua,New,Gaming,HP,2.5,1234,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,1875.69
+733,Microsoft Surface Laptop 3 15,Used,For Work and Study,Microsoft,1.5,1245,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,717.94
+734,HP Pavilion Gaming 15cx0027ua,New,Thin,HP,1.24,2539,Some description about laptop HP Pavilion Gaming 15cx0027ua,12,Default Garanty HP,561.32
+735,Apple MacBook Air 13,Used,Thin,Apple,1.5,2356,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,1123.38
+736,HP 255 G7,Used,For Simple Tasks,HP,1.5,2539,Some description about laptop HP 255 G7,6,Default Garanty Used laptops,916.70
+737,Asus ROG Strix G531GT,Used,For Cut Design,Asus,1.35,2356,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,1440.14
+738,Macbook Pro 15 Retina,Used,Thin,Apple,1.24,1305,Some description about laptop Macbook Pro 15 Retina,6,Default Garanty Apple,824.23
+739,MSI GL65 9SD206XRO,New,For Simple Tasks,MSI,2.56,2356,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,1283.33
+740,MSI GF63 9RCX,New,For Work and Study,MSI,2.5,2356,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,1165.19
+741,Macbook Pro 15 Retina,New,For Work and Study,Apple,2.78,1305,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,602.32
+742,Microsoft Surface Laptop 3 15,New,For Business,Microsoft,1.5,2536,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,1443.06
+743,Dream Machines RS206017,New,For Simple Tasks,Dream Machines,2.78,2536,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,1060.91
+744,MSI GL65 9SD206XRO,Used,Gaming,MSI,1.5,2356,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,687.70
+745,Dell Inspiron G5 15 5587,Used,For Business,Dell,1.5,1305,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,1511.73
+746,Dream Machines RS206017,Used,For Business,Dream Machines,1.24,2539,Some description about laptop Dream Machines RS206017,1,Default Garanty Used laptops,1544.25
+747,HP Pavilion Gaming 15cx0027ua,New,Gaming,HP,2.78,2312,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,1868.44
+748,Dream Machines RS206017,Used,Gaming,Dream Machines,2.78,2536,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,1067.37
+749,Lenovo IdeaPad 33015AST,New,For Cut Design,Lenovo,2.34,1790,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,1612.20
+750,Macbook Pro 15 Retina,Used,For Business,Apple,2.34,2356,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,755.00
+751,Macbook Pro 15 Retina,New,For Simple Tasks,Apple,1.24,2539,Some description about laptop Macbook Pro 15 Retina,6,Default Garanty Apple,1859.46
+752,Apple MacBook Air 13,Used,For Business,Apple,1.5,1790,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,1576.18
+753,Google Pixelbook Go 256GB,New,For Business,Google,2.5,1305,Some description about laptop Google Pixelbook Go 256GB,12,Default Garanty Google,1761.23
+754,MSI GF63 9RCX,New,Gaming,MSI,1.24,1790,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,1684.94
+755,HP Pavilion Gaming 15cx0027ua,Used,For Work and Study,HP,2.56,1245,Some description about laptop HP Pavilion Gaming 15cx0027ua,12,Default Garanty HP,1749.87
+756,Lenovo IdeaPad S34014IWL,Used,Thin,Lenovo,2.34,2312,Some description about laptop Lenovo IdeaPad S34014IWL,1,Default Garanty Used laptops,1459.67
+757,HP Pavilion Gaming 15cx0027ua,New,For Business,HP,1.24,1790,Some description about laptop HP Pavilion Gaming 15cx0027ua,6,Default Garanty HP,1728.02
+758,Apple MacBook Pro,New,For Work and Study,Apple,2.56,2539,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,926.86
+759,Acer Aspire 5 A51554G,New,Thin,Acer,2.78,2356,Some description about laptop Acer Aspire 5 A51554G,6,Default Garanty Used laptops,1906.29
+760,Dream Machines RS206017,New,For Work and Study,Dream Machines,1.35,1245,Some description about laptop Dream Machines RS206017,6,Default Garanty Used laptops,714.78
+761,Microsoft Surface Laptop 3 15,Used,For Business,Microsoft,2.34,2536,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,1511.29
+762,Lenovo IdeaPad 33015AST,Used,For Work and Study,Lenovo,1.24,1790,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,1594.90
+763,Asus ROG Strix G531GT,Used,For Business,Asus,2.78,1245,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,1575.86
+764,Acer Aspire 5 A51554G,Used,Thin,Acer,2.78,1305,Some description about laptop Acer Aspire 5 A51554G,6,Default Garanty Used laptops,1545.09
+765,HP Pavilion Gaming 15cx0027ua,New,For Simple Tasks,HP,2.34,1234,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,1851.30
+766,Dream Machines RS206017,Used,For Simple Tasks,Dream Machines,1.35,1305,Some description about laptop Dream Machines RS206017,6,Default Garanty Used laptops,938.07
+767,Lenovo IdeaPad 33015AST,Used,For Work and Study,Lenovo,1.5,2312,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,845.39
+768,Lenovo IdeaPad S34014IWL,New,For Work and Study,Lenovo,1.24,2356,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1040.46
+769,Apple MacBook Air 13,Used,Thin,Apple,2.78,1234,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,611.58
+770,Acer Aspire 5 A51554G,New,For Simple Tasks,Acer,2.5,2312,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,1205.74
+771,Google Pixelbook Go 256GB,New,For Cut Design,Google,2.78,2536,Some description about laptop Google Pixelbook Go 256GB,1,Default Garanty Google,786.78
+772,Lenovo IdeaPad 33015AST,New,For Business,Lenovo,1.35,1234,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,1138.28
+773,Microsoft Surface Laptop 3 15,New,For Work and Study,Microsoft,2.34,1234,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,1886.29
+774,Lenovo IdeaPad 33015AST,New,For Simple Tasks,Lenovo,1.24,2539,Some description about laptop Lenovo IdeaPad 33015AST,12,Default Garanty Used laptops,716.34
+775,Lenovo IdeaPad S34014IWL,Used,Gaming,Lenovo,2.5,1305,Some description about laptop Lenovo IdeaPad S34014IWL,1,Default Garanty Used laptops,1792.55
+776,Acer Nitro 5,New,For Simple Tasks,Acer,1.24,1790,Some description about laptop Acer Nitro 5,6,Default Garanty Acer,1760.52
+777,Dell Inspiron G5 15 5587,Used,For Work and Study,Dell,1.35,1790,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,766.12
+778,Asus ROG Strix G531GT,Used,For Cut Design,Asus,2.56,2539,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,1271.66
+779,Acer Aspire 5 A51554G,Used,Thin,Acer,2.78,2536,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,1573.54
+780,Asus ROG STRIX 5,New,Thin,Asus,1.24,1790,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,1178.61
+781,Lenovo IdeaPad 33015AST,Used,For Cut Design,Lenovo,2.56,2312,Some description about laptop Lenovo IdeaPad 33015AST,12,Default Garanty Used laptops,1386.95
+782,Asus ROG Strix G531GT,Used,Gaming,Asus,2.78,1234,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,1474.67
+783,Microsoft Surface Laptop 3 15,Used,For Simple Tasks,Microsoft,2.34,2312,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,1001.05
+784,Asus ROG STRIX 5,New,Gaming,Asus,2.5,2356,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,1517.45
+785,Acer Nitro 5,New,For Work and Study,Acer,1.35,1790,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,1442.61
+786,Acer Nitro 5,New,For Simple Tasks,Acer,1.5,1790,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,1183.00
+787,HP Envy 17ce0005ur,Used,For Cut Design,HP,2.34,1305,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,1916.92
+788,HP 255 G7,Used,For Cut Design,HP,1.24,1305,Some description about laptop HP 255 G7,6,Default Garanty Used laptops,1756.21
+789,MSI GF63 9RCX,New,For Cut Design,MSI,1.24,2312,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,1637.49
+790,Acer Aspire 5 A51554G,Used,For Work and Study,Acer,2.56,2536,Some description about laptop Acer Aspire 5 A51554G,6,Default Garanty Used laptops,1824.84
+791,Asus ROG Strix G531GT,Used,For Work and Study,Asus,2.78,1790,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,589.39
+792,Acer Nitro 5,New,For Cut Design,Acer,2.78,1245,Some description about laptop Acer Nitro 5,1,Default Garanty Acer,1136.98
+793,Asus ROG STRIX 5,New,Gaming,Asus,1.5,1245,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,1631.13
+794,Acer Aspire 5 A51554G,New,For Simple Tasks,Acer,2.5,2312,Some description about laptop Acer Aspire 5 A51554G,6,Default Garanty Used laptops,1903.76
+795,Lenovo IdeaPad S34014IWL,New,For Work and Study,Lenovo,2.78,1234,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1035.78
+796,Lenovo IdeaPad S34014IWL,Used,Gaming,Lenovo,1.35,1245,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1175.27
+797,Dream Machines RS206017,Used,Gaming,Dream Machines,2.5,1234,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,1713.83
+798,Asus ROG Strix G531GT,Used,Gaming,Asus,2.78,1245,Some description about laptop Asus ROG Strix G531GT,1,Default Garanty Used laptops,1856.22
+799,Acer Aspire 5 A51554G,Used,For Work and Study,Acer,2.56,1305,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,1044.99
+800,Google Pixelbook Go 256GB,New,Thin,Google,2.34,2312,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,1440.84
+801,HP 255 G7,Used,For Simple Tasks,HP,2.34,1245,Some description about laptop HP 255 G7,6,Default Garanty Used laptops,985.71
+802,HP Envy 17ce0005ur,Used,For Business,HP,1.24,2356,Some description about laptop HP Envy 17ce0005ur,6,Default Garanty HP,1228.09
+803,Dell Inspiron G5 15 5587,Used,For Work and Study,Dell,2.78,2356,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,1963.07
+804,Asus ROG Strix G531GT,Used,Thin,Asus,1.24,1234,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,543.52
+805,Dell Inspiron G5 15 5587,Used,Gaming,Dell,1.35,1305,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,1090.19
+806,Dream Machines RS206017,Used,For Cut Design,Dream Machines,2.5,2536,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,678.43
+807,Google Pixelbook Go 256GB,New,For Work and Study,Google,1.5,1245,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,1550.43
+808,Acer Aspire 5 A51554G,New,For Work and Study,Acer,2.78,1305,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,760.92
+809,HP Pavilion Gaming 15cx0027ua,Used,Thin,HP,1.35,1234,Some description about laptop HP Pavilion Gaming 15cx0027ua,6,Default Garanty HP,1887.65
+810,Asus ROG STRIX 5,New,For Business,Asus,2.34,2539,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,1273.32
+811,Dell Inspiron G5 15 5587,Used,For Simple Tasks,Dell,2.34,2539,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,1477.90
+812,MSI GF63 9RCX,New,For Work and Study,MSI,1.5,1305,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,1186.34
+813,MSI GF63 9RCX,New,For Work and Study,MSI,1.5,2536,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,1725.75
+814,Microsoft Surface Laptop 3 15,Used,For Work and Study,Microsoft,1.24,2356,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,855.77
+815,MSI GF63 9RCX,New,Thin,MSI,1.35,1234,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,877.48
+816,Dream Machines RS206017,New,For Work and Study,Dream Machines,1.35,1305,Some description about laptop Dream Machines RS206017,1,Default Garanty Used laptops,1185.21
+817,Apple MacBook Pro,New,For Simple Tasks,Apple,1.5,2539,Some description about laptop Apple MacBook Pro,1,Default Garanty Apple,1476.73
+818,Lenovo IdeaPad 33015AST,Used,For Simple Tasks,Lenovo,2.78,1305,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,1175.23
+819,Acer Aspire 5 A51554G,New,For Business,Acer,2.5,2356,Some description about laptop Acer Aspire 5 A51554G,6,Default Garanty Used laptops,1642.29
+820,Lenovo IdeaPad S34014IWL,New,For Cut Design,Lenovo,2.56,1234,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1770.19
+821,Microsoft Surface Laptop 3 15,Used,For Cut Design,Microsoft,1.35,2312,Some description about laptop Microsoft Surface Laptop 3 15,12,Default Garanty Microsoft,1035.26
+822,HP 255 G7,Used,Gaming,HP,2.34,2312,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,1637.98
+823,HP Envy 17ce0005ur,Used,For Business,HP,2.56,2536,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,1075.15
+824,Lenovo IdeaPad 33015AST,New,For Simple Tasks,Lenovo,1.35,2356,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,1824.62
+825,Asus ROG Strix G531GT,Used,For Business,Asus,2.34,2539,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,1858.16
+826,Asus ROG STRIX 5,New,Gaming,Asus,1.5,2536,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,647.28
+827,Asus ROG Strix G531GT,Used,For Cut Design,Asus,2.5,1245,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,1062.51
+828,HP Pavilion Gaming 15cx0027ua,Used,For Business,HP,1.5,1790,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,1433.62
+829,MSI GF63 9RCX,New,For Work and Study,MSI,1.24,2539,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,796.87
+830,MSI GF63 9RCX,New,For Business,MSI,2.78,2539,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,1467.79
+831,Acer Aspire 5 A51554G,New,For Cut Design,Acer,1.5,2539,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,1167.19
+832,Acer Nitro 5,New,For Work and Study,Acer,2.34,2312,Some description about laptop Acer Nitro 5,6,Default Garanty Acer,1271.06
+833,Asus ROG STRIX 5,New,Gaming,Asus,2.56,2539,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,671.08
+834,Apple MacBook Pro,New,For Simple Tasks,Apple,2.5,2312,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,690.59
+835,Lenovo IdeaPad S34014IWL,New,Gaming,Lenovo,2.56,1790,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1201.93
+836,Asus ROG Strix G531GT,Used,For Work and Study,Asus,2.5,2539,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,1835.00
+837,HP 255 G7,Used,For Simple Tasks,HP,1.35,2539,Some description about laptop HP 255 G7,6,Default Garanty Used laptops,1983.67
+838,HP Envy 17ce0005ur,New,For Work and Study,HP,2.5,1245,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,1846.67
+839,Dell Inspiron G5 15 5587,Used,Thin,Dell,2.78,1305,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,1232.77
+840,HP Envy 17ce0005ur,New,Thin,HP,1.5,2536,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,1414.24
+841,Dream Machines RS206017,Used,For Cut Design,Dream Machines,2.78,2356,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,1196.19
+842,MSI GL65 9SD206XRO,Used,Thin,MSI,1.24,2312,Some description about laptop MSI GL65 9SD206XRO,12,Default Garanty Used laptops,1900.25
+843,Apple MacBook Air 13,Used,Thin,Apple,1.35,1790,Some description about laptop Apple MacBook Air 13,1,Default Garanty Used laptops,1622.98
+844,Lenovo IdeaPad 33015AST,Used,Thin,Lenovo,2.5,1234,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,580.36
+845,Asus ROG STRIX 5,New,For Cut Design,Asus,1.24,1245,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,813.00
+846,Dell Inspiron G5 15 5587,Used,For Cut Design,Dell,2.5,1234,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,1162.43
+847,Lenovo IdeaPad 33015AST,Used,Thin,Lenovo,2.78,1234,Some description about laptop Lenovo IdeaPad 33015AST,6,Default Garanty Used laptops,1059.98
+848,HP 255 G7,Used,Gaming,HP,2.34,1234,Some description about laptop HP 255 G7,12,Default Garanty Used laptops,1406.59
+849,Apple MacBook Air 13,Used,For Work and Study,Apple,1.35,1234,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,1374.11
+850,Lenovo IdeaPad S34014IWL,Used,For Simple Tasks,Lenovo,1.5,2356,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,515.93
+851,HP 255 G7,Used,For Cut Design,HP,1.35,1234,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,548.54
+852,Apple MacBook Pro,New,For Work and Study,Apple,2.5,2536,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,582.83
+853,Macbook Pro 15 Retina,Used,For Cut Design,Apple,2.78,1245,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,761.71
+854,HP Envy 17ce0005ur,New,For Simple Tasks,HP,1.35,2539,Some description about laptop HP Envy 17ce0005ur,6,Default Garanty HP,1285.58
+855,Asus ROG STRIX 5,New,Gaming,Asus,1.35,2539,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1601.22
+856,Google Pixelbook Go 256GB,New,For Cut Design,Google,2.56,1305,Some description about laptop Google Pixelbook Go 256GB,1,Default Garanty Google,792.60
+857,Acer Aspire 5 A51554G,Used,Gaming,Acer,1.5,2536,Some description about laptop Acer Aspire 5 A51554G,6,Default Garanty Used laptops,1628.19
+858,Microsoft Surface Laptop 3 15,Used,For Work and Study,Microsoft,1.35,1245,Some description about laptop Microsoft Surface Laptop 3 15,6,Default Garanty Microsoft,1612.94
+859,MSI GF63 9RCX,New,For Work and Study,MSI,2.34,2536,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,1587.35
+860,Google Pixelbook Go 256GB,New,For Cut Design,Google,1.24,2536,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,1016.68
+861,Dream Machines RS206017,New,Thin,Dream Machines,2.34,2356,Some description about laptop Dream Machines RS206017,1,Default Garanty Used laptops,1884.56
+862,HP Pavilion Gaming 15cx0027ua,New,For Cut Design,HP,1.35,1305,Some description about laptop HP Pavilion Gaming 15cx0027ua,6,Default Garanty HP,902.86
+863,Lenovo IdeaPad 33015AST,Used,For Cut Design,Lenovo,2.34,1245,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,1721.00
+864,Google Pixelbook Go 256GB,New,Gaming,Google,1.24,2312,Some description about laptop Google Pixelbook Go 256GB,12,Default Garanty Google,1443.26
+865,Macbook Pro 15 Retina,Used,Thin,Apple,1.35,2312,Some description about laptop Macbook Pro 15 Retina,12,Default Garanty Apple,1798.94
+866,MSI GF63 9RCX,New,For Work and Study,MSI,1.24,1245,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,1665.06
+867,Dell Inspiron G5 15 5587,Used,For Work and Study,Dell,2.78,1234,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,1014.68
+868,Dell Inspiron G5 15 5587,Used,For Work and Study,Dell,2.78,2539,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,1428.36
+869,Google Pixelbook Go 256GB,New,For Cut Design,Google,2.5,2356,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,1686.08
+870,Macbook Pro 15 Retina,New,For Simple Tasks,Apple,2.34,2356,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,1975.71
+871,Macbook Pro 15 Retina,Used,Thin,Apple,2.78,1305,Some description about laptop Macbook Pro 15 Retina,12,Default Garanty Apple,1383.92
+872,Lenovo IdeaPad S34014IWL,New,For Simple Tasks,Lenovo,2.34,2539,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1811.83
+873,Lenovo IdeaPad S34014IWL,New,For Simple Tasks,Lenovo,1.35,2356,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,738.38
+874,Asus ROG Strix G531GT,Used,For Work and Study,Asus,1.24,1305,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,924.37
+875,HP 255 G7,Used,For Simple Tasks,HP,2.5,1245,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,1382.81
+876,Google Pixelbook Go 256GB,New,For Cut Design,Google,2.34,1234,Some description about laptop Google Pixelbook Go 256GB,12,Default Garanty Google,733.33
+877,Lenovo IdeaPad 33015AST,Used,For Simple Tasks,Lenovo,2.5,2312,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,1831.23
+878,Acer Aspire 5 A51554G,New,For Business,Acer,1.24,2312,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,756.09
+879,Acer Nitro 5,New,For Business,Acer,2.78,1245,Some description about laptop Acer Nitro 5,12,Default Garanty Acer,692.08
+880,Acer Nitro 5,New,For Work and Study,Acer,1.24,2536,Some description about laptop Acer Nitro 5,6,Default Garanty Acer,550.45
+881,HP Pavilion Gaming 15cx0027ua,Used,For Simple Tasks,HP,1.24,1234,Some description about laptop HP Pavilion Gaming 15cx0027ua,12,Default Garanty HP,1786.93
+882,HP Envy 17ce0005ur,New,For Work and Study,HP,1.24,1790,Some description about laptop HP Envy 17ce0005ur,6,Default Garanty HP,1603.33
+883,Google Pixelbook Go 256GB,New,For Work and Study,Google,2.78,2312,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,1144.12
+884,HP Envy 17ce0005ur,Used,For Cut Design,HP,1.35,1245,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,1489.11
+885,HP Pavilion Gaming 15cx0027ua,Used,For Cut Design,HP,2.5,2356,Some description about laptop HP Pavilion Gaming 15cx0027ua,6,Default Garanty HP,1026.18
+886,Macbook Pro 15 Retina,New,Thin,Apple,2.78,2312,Some description about laptop Macbook Pro 15 Retina,6,Default Garanty Apple,647.65
+887,MSI GF63 9RCX,New,For Simple Tasks,MSI,1.35,2312,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,791.31
+888,HP Pavilion Gaming 15cx0027ua,New,For Cut Design,HP,1.5,1245,Some description about laptop HP Pavilion Gaming 15cx0027ua,6,Default Garanty HP,636.49
+889,Dream Machines RS206017,Used,For Business,Dream Machines,2.78,2312,Some description about laptop Dream Machines RS206017,1,Default Garanty Used laptops,1377.81
+890,MSI GL65 9SD206XRO,New,For Business,MSI,2.5,1305,Some description about laptop MSI GL65 9SD206XRO,1,Default Garanty Used laptops,1806.37
+891,MSI GF63 9RCX,New,Thin,MSI,2.78,2536,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,820.01
+892,HP 255 G7,Used,For Business,HP,1.24,2312,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,754.24
+893,MSI GL65 9SD206XRO,Used,For Simple Tasks,MSI,1.5,2539,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,870.06
+894,HP Pavilion Gaming 15cx0027ua,New,For Simple Tasks,HP,2.34,2312,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,961.24
+895,MSI GF63 9RCX,New,For Work and Study,MSI,1.35,1305,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,576.18
+896,MSI GL65 9SD206XRO,Used,For Business,MSI,2.34,1305,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,1443.27
+897,Asus ROG STRIX 5,New,For Work and Study,Asus,1.24,2356,Some description about laptop Asus ROG STRIX 5,1,Default Garanty Asus,1720.32
+898,HP Pavilion Gaming 15cx0027ua,New,For Business,HP,2.56,2536,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,1968.50
+899,MSI GF63 9RCX,New,For Work and Study,MSI,1.5,1245,Some description about laptop MSI GF63 9RCX,12,Default Garanty MSI,829.25
+900,Acer Aspire 5 A51554G,New,For Simple Tasks,Acer,2.78,1305,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,1352.86
+901,HP 255 G7,Used,For Business,HP,1.5,2356,Some description about laptop HP 255 G7,12,Default Garanty Used laptops,1725.75
+902,MSI GF63 9RCX,New,For Work and Study,MSI,1.5,2539,Some description about laptop MSI GF63 9RCX,1,Default Garanty MSI,809.11
+903,Macbook Pro 15 Retina,Used,Gaming,Apple,2.78,1790,Some description about laptop Macbook Pro 15 Retina,12,Default Garanty Apple,1335.53
+904,Lenovo IdeaPad S34014IWL,Used,For Business,Lenovo,2.78,2312,Some description about laptop Lenovo IdeaPad S34014IWL,1,Default Garanty Used laptops,763.80
+905,Dream Machines RS206017,New,For Simple Tasks,Dream Machines,2.5,1305,Some description about laptop Dream Machines RS206017,6,Default Garanty Used laptops,1594.71
+906,Lenovo IdeaPad 33015AST,Used,For Simple Tasks,Lenovo,2.34,2356,Some description about laptop Lenovo IdeaPad 33015AST,1,Default Garanty Used laptops,785.34
+907,MSI GF63 9RCX,New,For Work and Study,MSI,2.78,2536,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,742.99
+908,Apple MacBook Pro,New,Gaming,Apple,2.5,1234,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,1941.69
+909,Asus ROG STRIX 5,New,For Simple Tasks,Asus,1.35,1234,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,647.57
+910,MSI GL65 9SD206XRO,Used,For Simple Tasks,MSI,2.5,1305,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,1984.99
+911,MSI GF63 9RCX,New,For Cut Design,MSI,1.35,2356,Some description about laptop MSI GF63 9RCX,6,Default Garanty MSI,1549.27
+912,Apple MacBook Air 13,Used,Gaming,Apple,2.78,2356,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,1870.23
+913,Dell Inspiron G5 15 5587,Used,For Cut Design,Dell,2.34,1305,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,1517.43
+914,Microsoft Surface Laptop 3 15,New,Gaming,Microsoft,1.5,1790,Some description about laptop Microsoft Surface Laptop 3 15,1,Default Garanty Microsoft,1232.76
+915,Dell Inspiron G5 15 5587,Used,For Work and Study,Dell,2.34,2536,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,1225.04
+916,Lenovo IdeaPad S34014IWL,New,For Work and Study,Lenovo,2.78,1790,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,605.48
+917,HP 255 G7,Used,For Cut Design,HP,2.5,1790,Some description about laptop HP 255 G7,6,Default Garanty Used laptops,1040.19
+918,HP Envy 17ce0005ur,Used,For Cut Design,HP,2.34,1790,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,618.42
+919,Lenovo IdeaPad 33015AST,Used,For Business,Lenovo,2.78,2539,Some description about laptop Lenovo IdeaPad 33015AST,12,Default Garanty Used laptops,812.40
+920,Asus ROG Strix G531GT,Used,For Work and Study,Asus,1.35,1790,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,1469.58
+921,Dell Inspiron G5 15 5587,Used,For Simple Tasks,Dell,1.5,1245,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,1039.89
+922,Lenovo IdeaPad S34014IWL,New,For Business,Lenovo,1.5,2539,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,528.64
+923,Lenovo IdeaPad S34014IWL,Used,For Business,Lenovo,2.34,1305,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,1929.65
+924,Dream Machines RS206017,New,For Work and Study,Dream Machines,1.35,2312,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,1518.56
+925,Lenovo IdeaPad S34014IWL,Used,For Cut Design,Lenovo,1.35,1790,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,1620.41
+926,MSI GL65 9SD206XRO,Used,For Simple Tasks,MSI,1.5,2536,Some description about laptop MSI GL65 9SD206XRO,1,Default Garanty Used laptops,750.47
+927,HP Pavilion Gaming 15cx0027ua,New,Gaming,HP,2.56,1234,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,577.95
+928,HP Envy 17ce0005ur,Used,Thin,HP,2.78,1234,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,1625.48
+929,Apple MacBook Air 13,New,For Business,Apple,2.78,2356,Some description about laptop Apple MacBook Air 13,12,Default Garanty Used laptops,1142.25
+930,Macbook Pro 15 Retina,Used,Gaming,Apple,2.78,1245,Some description about laptop Macbook Pro 15 Retina,6,Default Garanty Apple,1813.24
+931,Acer Aspire 5 A51554G,Used,For Cut Design,Acer,1.24,1245,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,973.12
+932,HP Pavilion Gaming 15cx0027ua,Used,Thin,HP,2.34,2356,Some description about laptop HP Pavilion Gaming 15cx0027ua,6,Default Garanty HP,1633.00
+933,Asus ROG Strix G531GT,Used,Thin,Asus,1.35,2536,Some description about laptop Asus ROG Strix G531GT,6,Default Garanty Used laptops,655.49
+934,Asus ROG STRIX 5,New,For Cut Design,Asus,2.5,2356,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1779.83
+935,Macbook Pro 15 Retina,Used,Gaming,Apple,1.5,1790,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,679.58
+936,Macbook Pro 15 Retina,Used,Thin,Apple,2.56,2536,Some description about laptop Macbook Pro 15 Retina,1,Default Garanty Apple,1792.19
+937,Apple MacBook Pro,New,For Cut Design,Apple,1.35,2356,Some description about laptop Apple MacBook Pro,1,Default Garanty Apple,1051.84
+938,Dell Inspiron G5 15 5587,Used,Thin,Dell,2.56,2539,Some description about laptop Dell Inspiron G5 15 5587,12,Default Garanty Used laptops,1682.00
+939,Apple MacBook Pro,New,Thin,Apple,2.56,1305,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,819.87
+940,Acer Aspire 5 A51554G,New,For Work and Study,Acer,1.24,1245,Some description about laptop Acer Aspire 5 A51554G,12,Default Garanty Used laptops,1555.27
+941,HP Envy 17ce0005ur,Used,For Business,HP,2.78,1305,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,1767.22
+942,Apple MacBook Air 13,Used,For Work and Study,Apple,2.34,2539,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,707.69
+943,Dell Inspiron G5 15 5587,Used,For Work and Study,Dell,2.5,1305,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,1315.88
+944,Apple MacBook Air 13,New,Thin,Apple,1.24,1305,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,885.68
+945,Apple MacBook Air 13,New,For Work and Study,Apple,1.35,2536,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,1440.47
+946,Asus ROG STRIX 5,New,For Cut Design,Asus,1.35,2356,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,1128.66
+947,Lenovo IdeaPad S34014IWL,Used,For Cut Design,Lenovo,1.24,2536,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,781.37
+948,HP Envy 17ce0005ur,Used,For Simple Tasks,HP,1.35,1305,Some description about laptop HP Envy 17ce0005ur,6,Default Garanty HP,748.39
+949,Asus ROG STRIX 5,New,Gaming,Asus,1.5,1790,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,502.01
+950,HP Envy 17ce0005ur,Used,For Work and Study,HP,1.35,2312,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,580.33
+951,MSI GL65 9SD206XRO,New,Thin,MSI,1.24,1245,Some description about laptop MSI GL65 9SD206XRO,1,Default Garanty Used laptops,880.96
+952,Acer Nitro 5,New,Thin,Acer,2.78,2536,Some description about laptop Acer Nitro 5,6,Default Garanty Acer,726.77
+953,Lenovo IdeaPad 33015AST,Used,For Cut Design,Lenovo,2.78,2536,Some description about laptop Lenovo IdeaPad 33015AST,12,Default Garanty Used laptops,1983.66
+954,Asus ROG Strix G531GT,Used,For Business,Asus,2.5,1305,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,1480.01
+955,Apple MacBook Air 13,Used,Thin,Apple,2.5,1245,Some description about laptop Apple MacBook Air 13,1,Default Garanty Used laptops,1644.47
+956,Asus ROG Strix G531GT,Used,For Cut Design,Asus,2.34,2356,Some description about laptop Asus ROG Strix G531GT,12,Default Garanty Used laptops,1018.42
+957,HP Envy 17ce0005ur,New,For Simple Tasks,HP,2.78,2536,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,642.26
+958,HP Envy 17ce0005ur,Used,For Cut Design,HP,1.35,2536,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,1731.31
+959,Lenovo IdeaPad S34014IWL,New,For Cut Design,Lenovo,1.5,2312,Some description about laptop Lenovo IdeaPad S34014IWL,6,Default Garanty Used laptops,709.93
+960,Acer Nitro 5,New,For Simple Tasks,Acer,2.34,1234,Some description about laptop Acer Nitro 5,6,Default Garanty Acer,1427.06
+961,MSI GL65 9SD206XRO,New,For Cut Design,MSI,2.34,1234,Some description about laptop MSI GL65 9SD206XRO,1,Default Garanty Used laptops,1670.79
+962,Apple MacBook Pro,New,Gaming,Apple,2.78,2539,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,1177.83
+963,Lenovo IdeaPad S34014IWL,Used,For Business,Lenovo,2.56,2312,Some description about laptop Lenovo IdeaPad S34014IWL,12,Default Garanty Used laptops,583.36
+964,Apple MacBook Pro,New,For Business,Apple,2.34,1245,Some description about laptop Apple MacBook Pro,1,Default Garanty Apple,568.95
+965,Dell Inspiron G5 15 5587,Used,For Business,Dell,2.78,1305,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,1342.18
+966,Asus ROG STRIX 5,New,Thin,Asus,1.35,1245,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,1689.53
+967,Dell Inspiron G5 15 5587,Used,Thin,Dell,2.34,2356,Some description about laptop Dell Inspiron G5 15 5587,6,Default Garanty Used laptops,1874.62
+968,MSI GL65 9SD206XRO,New,Gaming,MSI,2.34,1305,Some description about laptop MSI GL65 9SD206XRO,1,Default Garanty Used laptops,1893.57
+969,Apple MacBook Pro,New,Gaming,Apple,2.56,2536,Some description about laptop Apple MacBook Pro,6,Default Garanty Apple,1243.80
+970,HP 255 G7,Used,Gaming,HP,2.56,2536,Some description about laptop HP 255 G7,6,Default Garanty Used laptops,965.62
+971,Lenovo IdeaPad S34014IWL,New,Thin,Lenovo,1.24,1790,Some description about laptop Lenovo IdeaPad S34014IWL,1,Default Garanty Used laptops,1142.91
+972,Dream Machines RS206017,Used,Gaming,Dream Machines,2.5,2536,Some description about laptop Dream Machines RS206017,6,Default Garanty Used laptops,1975.26
+973,Google Pixelbook Go 256GB,New,For Work and Study,Google,2.34,1790,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,819.53
+974,Macbook Pro 15 Retina,New,For Business,Apple,2.5,1234,Some description about laptop Macbook Pro 15 Retina,12,Default Garanty Apple,1707.19
+975,HP Envy 17ce0005ur,Used,For Simple Tasks,HP,1.35,1305,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,1463.36
+976,HP 255 G7,Used,Thin,HP,2.78,1245,Some description about laptop HP 255 G7,1,Default Garanty Used laptops,737.80
+977,Apple MacBook Pro,New,Thin,Apple,2.34,1234,Some description about laptop Apple MacBook Pro,12,Default Garanty Apple,798.33
+978,Google Pixelbook Go 256GB,New,Thin,Google,1.5,2312,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,1127.33
+979,Google Pixelbook Go 256GB,New,For Simple Tasks,Google,2.56,2312,Some description about laptop Google Pixelbook Go 256GB,6,Default Garanty Google,1380.23
+980,HP Envy 17ce0005ur,Used,For Cut Design,HP,1.5,1245,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,936.32
+981,Google Pixelbook Go 256GB,New,Gaming,Google,2.56,2312,Some description about laptop Google Pixelbook Go 256GB,12,Default Garanty Google,1036.08
+982,Dream Machines RS206017,New,For Business,Dream Machines,2.56,1245,Some description about laptop Dream Machines RS206017,1,Default Garanty Used laptops,1694.30
+983,Dream Machines RS206017,New,Gaming,Dream Machines,2.56,1305,Some description about laptop Dream Machines RS206017,1,Default Garanty Used laptops,1996.80
+984,Asus ROG STRIX 5,New,Thin,Asus,2.78,2356,Some description about laptop Asus ROG STRIX 5,6,Default Garanty Asus,1943.60
+985,HP Envy 17ce0005ur,New,For Work and Study,HP,2.56,2356,Some description about laptop HP Envy 17ce0005ur,6,Default Garanty HP,751.29
+986,Dell Inspiron G5 15 5587,Used,Thin,Dell,2.5,2312,Some description about laptop Dell Inspiron G5 15 5587,1,Default Garanty Used laptops,1348.89
+987,HP Pavilion Gaming 15cx0027ua,Used,For Cut Design,HP,1.5,1234,Some description about laptop HP Pavilion Gaming 15cx0027ua,12,Default Garanty HP,1569.35
+988,Apple MacBook Pro,New,Thin,Apple,2.78,2312,Some description about laptop Apple MacBook Pro,1,Default Garanty Apple,1218.63
+989,HP Envy 17ce0005ur,New,For Cut Design,HP,1.5,2312,Some description about laptop HP Envy 17ce0005ur,12,Default Garanty HP,1493.79
+990,Dream Machines RS206017,Used,For Work and Study,Dream Machines,2.5,2312,Some description about laptop Dream Machines RS206017,12,Default Garanty Used laptops,807.93
+991,MSI GL65 9SD206XRO,Used,Gaming,MSI,2.56,1234,Some description about laptop MSI GL65 9SD206XRO,6,Default Garanty Used laptops,519.39
+992,MSI GL65 9SD206XRO,Used,For Work and Study,MSI,2.56,2312,Some description about laptop MSI GL65 9SD206XRO,12,Default Garanty Used laptops,941.55
+993,Asus ROG STRIX 5,New,For Work and Study,Asus,2.78,1790,Some description about laptop Asus ROG STRIX 5,12,Default Garanty Asus,974.09
+994,HP Pavilion Gaming 15cx0027ua,New,For Cut Design,HP,1.35,1305,Some description about laptop HP Pavilion Gaming 15cx0027ua,1,Default Garanty HP,1780.76
+995,Microsoft Surface Laptop 3 15,Used,For Work and Study,Microsoft,2.34,2312,Some description about laptop Microsoft Surface Laptop 3 15,1,Default Garanty Microsoft,757.83
+996,Apple MacBook Air 13,New,For Cut Design,Apple,2.78,2536,Some description about laptop Apple MacBook Air 13,6,Default Garanty Used laptops,741.74
+997,HP Envy 17ce0005ur,New,For Simple Tasks,HP,2.56,2539,Some description about laptop HP Envy 17ce0005ur,1,Default Garanty HP,1418.54
+998,Apple MacBook Air 13,Used,Thin,Apple,1.5,2356,Some description about laptop Apple MacBook Air 13,1,Default Garanty Used laptops,1798.67
+999,Acer Nitro 5,New,For Cut Design,Acer,1.5,1245,Some description about laptop Acer Nitro 5,1,Default Garanty Acer,1698.63
+1000,Acer Aspire 5 A51554G,Used,For Work and Study,Acer,2.34,1790,Some description about laptop Acer Aspire 5 A51554G,1,Default Garanty Used laptops,1153.12
