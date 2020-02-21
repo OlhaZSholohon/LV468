@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{F3AC303B-F0DE-455E-AF2E-B3A91467FDB6}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{F11C61C0-F239-4F92-8CC6-B08D716FCC6D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -45,6 +45,15 @@
       DTS:ObjectName="Loop">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3C24CD77-EF16-4AE1-99BC-9B09E68D0EB7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NumberOfRows">
+      <DTS:VariableValue
+        DTS:DataType="3">300</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
