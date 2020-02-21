@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{93E0B55F-DAC1-4618-9B15-F512078DC93B}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{2F1070A3-BBDF-4F6C-823B-BAF5DDD4D8D2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -41,7 +41,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="NumberOfRows">
       <DTS:VariableValue
-        DTS:DataType="3">7500</DTS:VariableValue>
+        DTS:DataType="3">10000</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -140,18 +140,18 @@
           TopLeft="170.571431476243,51.2352948362027" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="290.614288664107,92.8352948362027">
+          TopLeft="290.614288664108,92.8352948362027">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49.0941189190098"
+              EndConnector="0,49.0941189190093"
               Start="0,0"
-              End="0,41.5941189190098">
+              End="0,41.5941189190093">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.5941189190098" />
+                    End="0,41.5941189190093" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
