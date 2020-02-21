@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimSuppliers"
   DTS:PackageType="5"
-  DTS:VersionBuild="115"
-  DTS:VersionGUID="{6CCBA950-0DEF-43C4-8CC8-5122C973F380}">
+  DTS:VersionBuild="117"
+  DTS:VersionGUID="{9CC67126-55B4-4072-990E-194EE5CAC73A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -667,13 +667,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151,42"
-          Id="Package\Populate DimSuppliers with foreach container\Data Load from csv to DimSuppliers\Flat File Source"
-          TopLeft="460,74" />
-        <NodeLayout
           Size="171,42"
           Id="Package\Populate DimSuppliers with foreach container\Data Load from csv to DimSuppliers\OLE DB Destination"
           TopLeft="466,210" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Populate DimSuppliers with foreach container\Data Load from csv to DimSuppliers\Flat File Source"
+          TopLeft="460,74" />
         <EdgeLayout
           Id="Package\Populate DimSuppliers with foreach container\Data Load from csv to DimSuppliers.Paths[Flat File Source Output]"
           TopLeft="535.5,116">
