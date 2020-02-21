@@ -32,7 +32,7 @@ BEGIN
 	--------- Main variables --------------------
 	SET @Date = (SELECT TOP 1 [Date] FROM [TestDBDataMart].[datamart].[DimDates] ORDER BY NEWID())
 	SET @PaymentID = (SELECT TOP 1 [PaymentTypeID] FROM [TestDBDataMart].[datamart].[DimPayments] ORDER BY NEWID())
-	SET @GuarantyID = (SELECT TOP 1 [GuarantyID] FROM [TestDBDataMart].[datamart].[DimGuaranties] g ORDER BY NEWID())
+	SET @GuarantyID = (SELECT TOP 1 [GuarantyID] FROM [TestDBDataMart].[datamart].[DimGuaranties] ORDER BY NEWID())
 	SET @ClientID = (SELECT TOP 1 [ClientID] FROM [TestDBDataMart].[datamart].[DimClients] ORDER BY NEWID())
 	SET @DiscountID = (SELECT TOP 1 [DiscountID] FROM [TestDBDataMart].[datamart].[DimDiscounts] ORDER BY NEWID())
 	SET @ProductID = (SELECT TOP 1 [ProductID] FROM [TestDBDataMart].[datamart].[DimProducts] ORDER BY NEWID())
@@ -72,4 +72,11 @@ BEGIN
 	SET @Loop = @Loop + 1
 END
 
---execute datamart.SP_PopulateFactOrders 200
+DELETE f1
+FROM datamart.FactOrders f1
+WHERE (SELECT COUNT(*)
+       FROM datamart.FactOrders f2
+       WHERE f1.OrderID = f2.OrderID) > 1
+
+
+--execute datamart.SP_PopulateFactOrders 20
