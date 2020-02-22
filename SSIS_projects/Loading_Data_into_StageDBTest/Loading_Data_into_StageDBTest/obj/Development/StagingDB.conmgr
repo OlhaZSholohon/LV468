@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="StagingDB"
   DTS:DTSID="{886EB12D-D24E-4F88-B465-FC068D180E12}"
@@ -8,7 +8,7 @@
       DTS:ConnectionString="Data Source=192.168.195.147;User ID=Lv-468.DB;Initial Catalog=TestDBStage;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2KtgmFAkb0iwZ1gYlE+9IgAAAAACAAAAAAADZgAAwAAAABAAAACdTxUsrwl8IjXjmaP4rUXzAAAAAASAAACgAAAAEAAAAODsI+NI57OZxd9nZJX7dMN4AAAARLnBVywphlC8e92Eh2w8b47L6seQluu7K4j2ZX8ykN15Hrg+JAJn13wQlNVkWMT2k1E5vw+1hA80WAfLNmtcjmDQdjWX1N4a5San6/PSlBSlXB8GWjQscfjfZv/5TowOCWnyQzjcyGGtvBBLXtm+AS5DSrOmAS0+FAAAAITiVX4aZ0Ydb1j3qQCMZHzwF4bX</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2KtgmFAkb0iwZ1gYlE+9IgAAAAACAAAAAAADZgAAwAAAABAAAADQzDMJ6wvvPKOn84Ga0pusAAAAAASAAACgAAAAEAAAAKaBKYPXczwrQ/43zziTRyB4AAAAOCRMwyQXODYvi9tJPxDqkIEVjjuKchmw7FpI37vHsgDcJcPxonbn4hm8FcIyz0LdyNkScIUfvufd1w1qAuVqiOYgc/25kjXyUCCZFZQYbbiss4myNChKBa0oQx1+0w9eo9MgetGYVq8+YCJe2dJ5Ir5uIudFNy3HFAAAAGXSiwG2KxVlZcRc9cuq6G1Ld9QA</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

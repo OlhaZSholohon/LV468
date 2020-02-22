@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{8A3E5878-1AD6-456C-AD8A-43F2C5E93524}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{95091A16-0840-4F9E-9848-DAF660781864}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="NumberOfRowsDimDiscounts">
       <DTS:Property
         DTS:DataType="3"
-        DTS:Name="ParameterValue">300</DTS:Property>
+        DTS:Name="ParameterValue">150</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>

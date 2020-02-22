@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DatamartDimFeedbackDetails"
   DTS:PackageType="5"
-  DTS:VersionBuild="65"
-  DTS:VersionGUID="{57249D39-0E26-4B0C-9490-56F97FA3F7FF}">
+  DTS:VersionBuild="66"
+  DTS:VersionGUID="{C17FFD11-6041-4756-843D-4E58EF89B59E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2KtgmFAkb0iwZ1gYlE+9IgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA9g3g7hPXxMiOZWQp+NMUVAAAAAASAAACgAAAAEAAAAE2CLAUXlO4EXw9axrcSpz8YAAAAzj3zUyY5/sQ08jCfSUpgrTBvZMvH8jdlFAAAAIw6YZRn2BILTSDkkidRBTyTYdRR</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2KtgmFAkb0iwZ1gYlE+9IgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA5eAD8dSsIaltl07hyfNccAAAAAASAAACgAAAAEAAAAJqqdGfhdP4a/tpsPjYuxLgYAAAA37KUtRcEgtxqNoFADuwl69ra7CIsK3+WFAAAAOGXiBDcXCatwVbcUndXkxXmq9t7</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
