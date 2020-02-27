@@ -2,98 +2,98 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>MasterPackageDemo2</Name>
-    <LastWriteTime>2020-02-15T12:29:57.2374282Z</LastWriteTime>
+    <LastWriteTime>2020-02-20T13:49:24.1258719Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>MasterDimDatamart.dtsx</Name>
-      <LastWriteTime>2020-02-09T22:30:06.7503283Z</LastWriteTime>
+      <LastWriteTime>2020-02-11T07:08:57.7906563Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartDimClients.dtsx</Name>
-      <LastWriteTime>2020-02-08T11:15:04.1041158Z</LastWriteTime>
+      <LastWriteTime>2020-02-09T09:22:27.6678815Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartDimDiscounts.dtsx</Name>
-      <LastWriteTime>2020-02-08T13:03:53.3088639Z</LastWriteTime>
+      <LastWriteTime>2020-02-09T09:22:27.6834823Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartDimFeedbackDetails.dtsx</Name>
-      <LastWriteTime>2020-02-08T13:02:12.2787307Z</LastWriteTime>
+      <LastWriteTime>2020-02-09T09:22:27.6834823Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartDimGuaranties.dtsx</Name>
-      <LastWriteTime>2020-02-08T11:48:44.3050078Z</LastWriteTime>
+      <LastWriteTime>2020-02-09T09:22:27.6834823Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartDimProducts.dtsx</Name>
-      <LastWriteTime>2020-02-09T22:07:20.6697464Z</LastWriteTime>
+      <LastWriteTime>2020-02-27T10:41:42.5800077Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartDimDates.dtsx</Name>
-      <LastWriteTime>2020-02-08T17:05:17.519177Z</LastWriteTime>
+      <LastWriteTime>2020-02-09T09:22:27.6678815Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartDimPayments.dtsx</Name>
-      <LastWriteTime>2020-02-08T17:25:57.6533299Z</LastWriteTime>
+      <LastWriteTime>2020-02-09T09:22:27.6990831Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartFactFeedbacks.dtsx</Name>
-      <LastWriteTime>2020-02-09T23:04:42.4450108Z</LastWriteTime>
+      <LastWriteTime>2020-02-11T07:08:57.7750556Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartFactOrdersFromStage.dtsx</Name>
-      <LastWriteTime>2020-02-08T18:10:02.2432263Z</LastWriteTime>
+      <LastWriteTime>2020-02-09T09:22:27.7458855Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartFactSupplies.dtsx</Name>
-      <LastWriteTime>2020-02-08T18:10:02.1964242Z</LastWriteTime>
+      <LastWriteTime>2020-02-09T09:22:27.8082887Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartFactSuppliesSelect.dtsx</Name>
-      <LastWriteTime>2020-02-09T22:16:45.2458199Z</LastWriteTime>
+      <LastWriteTime>2020-02-11T07:08:57.7906563Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartFactDelivery.dtsx</Name>
-      <LastWriteTime>2020-02-08T19:07:01.4574815Z</LastWriteTime>
+      <LastWriteTime>2020-02-09T09:22:27.7302847Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartFactDeliveryValidationM.dtsx</Name>
-      <LastWriteTime>2020-02-08T18:26:03.7630925Z</LastWriteTime>
+      <LastWriteTime>2020-02-09T09:22:27.7302847Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartDimLocations.dtsx</Name>
-      <LastWriteTime>2020-02-09T22:10:50.9695236Z</LastWriteTime>
+      <LastWriteTime>2020-02-11T07:08:57.7438542Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartDimReturnDetails.dtsx</Name>
-      <LastWriteTime>2020-02-09T11:07:23.0054289Z</LastWriteTime>
+      <LastWriteTime>2020-02-09T14:41:41.5317877Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartDimDeliveryDetails.dtsx</Name>
-      <LastWriteTime>2020-02-09T22:19:53.6710745Z</LastWriteTime>
+      <LastWriteTime>2020-02-11T07:08:57.7438542Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartFactOrders.dtsx</Name>
-      <LastWriteTime>2020-02-09T22:05:54.147155Z</LastWriteTime>
+      <LastWriteTime>2020-02-11T07:08:57.7906563Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -103,7 +103,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DatamartDimSuppliers.dtsx</Name>
-      <LastWriteTime>2020-02-15T13:06:26.9811744Z</LastWriteTime>
+      <LastWriteTime>2020-02-20T13:49:24.1102714Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

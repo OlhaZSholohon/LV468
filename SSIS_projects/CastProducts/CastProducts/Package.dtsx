@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{4DBB7854-B71E-4E90-91B4-93A1C2B72F5E}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{B301D7AB-B6A6-42E3-81FA-574A89E3FC57}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAn3nYPS+Oskqbou5CF0i8JwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD1w5jLMimicfAzmbLdRti+AAAAAASAAACgAAAAEAAAACqReCZIwR0vMHIoO8+Vw3kYAAAAJGRO6ZvHlsxjcgJ9wM+/0BGe5lTv/WfdFAAAAErtDYvVy49TpiUvkvj9hNmTDSlQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2KtgmFAkb0iwZ1gYlE+9IgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACxSYQOdnWuo2siB+lQT0aoAAAAAASAAACgAAAAEAAAANsuzsmtsnB2DrYCIWoUA8IYAAAAe5n9ufLHNMVU3GTl3w72VQilWSROqdhiFAAAAK2TexBoRXrpNqotMIdMSPmcicLB</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -42,7 +42,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAn3nYPS+Oskqbou5CF0i8JwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABZ09GNekBruDSwiyUK3ymRAAAAAASAAACgAAAAEAAAAHttVwG3AJf8SQmlA8JQ3v8YAAAAndHuft0b7OF40t55V3ZUGs1+ySqGZUGbFAAAAPbZUlYP0FW8VUyBnLib8hWggoaW</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2KtgmFAkb0iwZ1gYlE+9IgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAXi23Or2hbENTST3eAnjbzAAAAAASAAACgAAAAEAAAAKArMFibHSLDYxM1GKF9uc4YAAAAmNipZa4xLmva/3IO7KmO6cGUGFgIAgupFAAAAMCTq1gYP4R0WSN46SueX9iBpva3</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1189,7 +1189,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[datamart].[ErrorDimProducts]</property>
+                  name="OpenRowset">[datamart].[DimProducts_SCD]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1321,13 +1321,6 @@
                       cachedName="Price"
                       externalMetadataColumnId="Package\Casting and filtering data\ErrorDimProduct.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
                       lineageId="Package\Casting and filtering data\Union All.Outputs[Union All Output 1].Columns[Price]" />
-                    <inputColumn
-                      refId="Package\Casting and filtering data\ErrorDimProduct.Inputs[OLE DB Destination Input].Columns[ErrorDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="43"
-                      cachedName="ErrorDescription"
-                      externalMetadataColumnId="Package\Casting and filtering data\ErrorDimProduct.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
-                      lineageId="Package\Casting and filtering data\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1388,10 +1381,13 @@
                       precision="18"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Casting and filtering data\ErrorDimProduct.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
-                      dataType="wstr"
-                      length="200"
-                      name="ErrorDescription" />
+                      refId="Package\Casting and filtering data\ErrorDimProduct.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                      dataType="dbTimeStamp"
+                      name="StartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Casting and filtering data\ErrorDimProduct.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
+                      dataType="dbTimeStamp"
+                      name="EndDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4146,52 +4142,52 @@
               name="Data Conversion Output"
               startId="Package\Casting and filtering data\Data Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Casting and filtering data.Paths[Derived Column Output8]"
+              refId="Package\Casting and filtering data.Paths[Derived Column Output]"
               endId="Package\Casting and filtering data\Union All.Inputs[Union All Input 4]"
               name="Derived Column Output"
               startId="Package\Casting and filtering data\ErrorLengthBrandName.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Casting and filtering data.Paths[Derived Column Output7]"
+              refId="Package\Casting and filtering data.Paths[Derived Column Output1]"
               endId="Package\Casting and filtering data\Union All.Inputs[Union All Input 7]"
               name="Derived Column Output"
               startId="Package\Casting and filtering data\ErrorLengthProductName.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Casting and filtering data.Paths[Derived Column Output6]"
+              refId="Package\Casting and filtering data.Paths[Derived Column Output2]"
               endId="Package\Casting and filtering data\Union All.Inputs[Union All Input 6]"
               name="Derived Column Output"
               startId="Package\Casting and filtering data\ErrorLengthProductDescription.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Casting and filtering data.Paths[Derived Column Output5]"
+              refId="Package\Casting and filtering data.Paths[Derived Column Output3]"
               endId="Package\Casting and filtering data\Union All.Inputs[Union All Input 5]"
               name="Derived Column Output"
               startId="Package\Casting and filtering data\ErrorLengthCategoryName.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Casting and filtering data.Paths[Derived Column Output9]"
+              refId="Package\Casting and filtering data.Paths[Derived Column Output4]"
               endId="Package\Casting and filtering data\Union All.Inputs[Union All Input 11]"
               name="Derived Column Output"
               startId="Package\Casting and filtering data\Error Convertation.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Casting and filtering data.Paths[Derived Column Output3]"
+              refId="Package\Casting and filtering data.Paths[Derived Column Output5]"
               endId="Package\Casting and filtering data\Union All.Inputs[Union All Input 8]"
               name="Derived Column Output"
               startId="Package\Casting and filtering data\ErrorLengthSubcategoryName.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Casting and filtering data.Paths[Derived Column Output2]"
+              refId="Package\Casting and filtering data.Paths[Derived Column Output6]"
               endId="Package\Casting and filtering data\Union All.Inputs[Union All Input 3]"
               name="Derived Column Output"
               startId="Package\Casting and filtering data\ErrorLengthDefaultGarantyName.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Casting and filtering data.Paths[Derived Column Output1]"
+              refId="Package\Casting and filtering data.Paths[Derived Column Output7]"
               endId="Package\Casting and filtering data\Union All.Inputs[Union All Input 2]"
               name="Derived Column Output"
               startId="Package\Casting and filtering data\ErrorCategoryName.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Casting and filtering data.Paths[Derived Column Output]"
+              refId="Package\Casting and filtering data.Paths[Derived Column Output8]"
               endId="Package\Casting and filtering data\Union All.Inputs[Union All Input 1]"
               name="Derived Column Output"
               startId="Package\Casting and filtering data\NULL values.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Casting and filtering data.Paths[Derived Column Output4]"
+              refId="Package\Casting and filtering data.Paths[Derived Column Output9]"
               endId="Package\Casting and filtering data\Union All.Inputs[Union All Input 9]"
               name="Derived Column Output"
               startId="Package\Casting and filtering data\ErrorSubcategoryName.Outputs[Derived Column Output]" />
@@ -6158,14 +6154,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29.7941180074097"
+              EndConnector="0,29.7941180074094"
               Start="0,0"
-              End="0,22.2941180074097">
+              End="0,22.2941180074094">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.2941180074097" />
+                    End="0,22.2941180074094" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6227,33 +6223,21 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="136,41.6"
-          Id="Package\Casting and filtering data\NULL values"
-          TopLeft="20.4047621585884,351.382073361195" />
+          Size="187.2,41.6"
+          Id="Package\Casting and filtering data\ErrorSubcategoryName"
+          TopLeft="1912.85717543291,342.333338134429" />
         <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Casting and filtering data\ErrorCategoryName"
-          TopLeft="199.944447755814,353.239534212378" />
+          Size="164.8,41.6"
+          Id="Package\Casting and filtering data\Error Convertation"
+          TopLeft="1321.79593449362,253.84874271934" />
         <NodeLayout
           Size="176.8,41.6"
           Id="Package\Casting and filtering data\DimProductDatamart"
           TopLeft="1374.22729514481,140.04973340576" />
         <NodeLayout
-          Size="232,41.6"
-          Id="Package\Casting and filtering data\ErrorLengthDefaultGarantyName"
-          TopLeft="414.230165690792,354.552290050766" />
-        <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\Casting and filtering data\ErrorSubcategoryName"
-          TopLeft="1912.85717543291,342.333338134429" />
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Casting and filtering data\Data Conversion"
-          TopLeft="1053.71430365893,172.517649478319" />
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\Casting and filtering data\Union All"
-          TopLeft="583.142867073721,474.129415651341" />
+          Size="129.6,41.6"
+          Id="Package\Casting and filtering data\Row Count"
+          TopLeft="614.103906562023,145.600002041985" />
         <NodeLayout
           Size="203.2,41.6"
           Id="Package\Casting and filtering data\ErrorLengthCategoryName"
@@ -6262,6 +6246,10 @@
           Size="220,41.6"
           Id="Package\Casting and filtering data\ErrorLengthSubcategoryName"
           TopLeft="1633.11113860494,346.49673688563" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Casting and filtering data\Data Conversion"
+          TopLeft="1053.71430365893,172.517649478319" />
         <NodeLayout
           Size="188.8,41.6"
           Id="Package\Casting and filtering data\ErrorLengthBrandName"
@@ -6279,87 +6267,31 @@
           Id="Package\Casting and filtering data\ErrorDimProduct"
           TopLeft="559.071437998694,543.323534570351" />
         <NodeLayout
+          Size="222.4,41.6"
+          Id="Package\Casting and filtering data\ErrorLengthProductDescription"
+          TopLeft="1148.60319416377,352.326801586371" />
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Casting and filtering data\NULL values"
+          TopLeft="20.4047621585884,351.382073361195" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Casting and filtering data\ErrorCategoryName"
+          TopLeft="199.944447755814,353.239534212378" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Casting and filtering data\Union All"
+          TopLeft="583.142867073721,474.129415651341" />
+        <NodeLayout
           Size="154.4,41.6"
           Id="Package\Casting and filtering data\Conditional Split"
           TopLeft="599.090919293367,241.55080502691" />
         <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Casting and filtering data\Row Count"
-          TopLeft="614.103906562023,145.600002041985" />
-        <NodeLayout
-          Size="222.4,41.6"
-          Id="Package\Casting and filtering data\ErrorLengthProductDescription"
-          TopLeft="1148.60319416377,352.326801586371" />
+          Size="232,41.6"
+          Id="Package\Casting and filtering data\ErrorLengthDefaultGarantyName"
+          TopLeft="414.230165690792,354.552290050766" />
         <EdgeLayout
-          Id="Package\Casting and filtering data.Paths[Derived Column Output4]"
-          TopLeft="2006.45717543291,383.933338134429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-1318.51430835919,90.1960775169118"
-              Start="0,0"
-              End="-1318.51430835919,82.6960775169118">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,67.9649554656211" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,67.9649554656211"
-                    Point2="0,71.9649554656211"
-                    Point3="-4,71.9649554656211" />
-                  <mssgle:LineSegment
-                    End="-1314.51430835919,71.9649554656211" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-1314.51430835919,71.9649554656211"
-                    Point2="-1318.51430835919,71.9649554656211"
-                    Point3="-1318.51430835919,75.9649554656211" />
-                  <mssgle:LineSegment
-                    End="-1318.51430835919,82.6960775169118" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Casting and filtering data.Paths[Derived Column Output3]"
-          TopLeft="1743.11113860494,388.09673688563">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-1056.41271597566,86.0326787657116"
-              Start="0,0"
-              End="-1056.41271597566,78.5326787657116">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.5256490312271" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,63.5256490312271"
-                    Point2="0,67.5256490312271"
-                    Point3="-4,67.5256490312271" />
-                  <mssgle:LineSegment
-                    End="-1052.41271597566,67.5256490312271" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-1052.41271597566,67.5256490312271"
-                    Point2="-1056.41271597566,67.5256490312271"
-                    Point3="-1056.41271597566,71.5256490312271" />
-                  <mssgle:LineSegment
-                    End="-1056.41271597566,78.5326787657116" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Casting and filtering data.Paths[Derived Column Output2]"
+          Id="Package\Casting and filtering data.Paths[Derived Column Output6]"
           TopLeft="530.230165690792,396.152290050766">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6393,31 +6325,167 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Casting and filtering data.Paths[Derived Column Output1]"
-          TopLeft="285.544447755814,394.839534212378">
+          Id="Package\Casting and filtering data.Paths[Derived Column Output5]"
+          TopLeft="1743.11113860494,388.09673688563">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="326.487308206796,79.2898814389628"
+              EndConnector="-1056.41271597566,86.0326787657116"
               Start="0,0"
-              End="326.487308206796,71.7898814389628">
+              End="-1056.41271597566,78.5326787657116">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.5206699712999" />
+                    End="0,63.5256490312271" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,49.5206699712999"
-                    Point2="0,53.5206699712999"
-                    Point3="4,53.5206699712999" />
+                    Point1="0,63.5256490312271"
+                    Point2="0,67.5256490312271"
+                    Point3="-4,67.5256490312271" />
                   <mssgle:LineSegment
-                    End="322.487308206796,53.5206699712999" />
+                    End="-1052.41271597566,67.5256490312271" />
                   <mssgle:CubicBezierSegment
-                    Point1="322.487308206796,53.5206699712999"
-                    Point2="326.487308206796,53.5206699712999"
-                    Point3="326.487308206796,57.5206699712999" />
+                    Point1="-1052.41271597566,67.5256490312271"
+                    Point2="-1056.41271597566,67.5256490312271"
+                    Point3="-1056.41271597566,71.5256490312271" />
                   <mssgle:LineSegment
-                    End="326.487308206796,71.7898814389628" />
+                    End="-1056.41271597566,78.5326787657116" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casting and filtering data.Paths[Derived Column Output4]"
+          TopLeft="1404.19593449362,295.44874271934">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-745.780340147171,178.680672932001"
+              Start="0,0"
+              End="-745.780340147171,171.180672932001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,98.3691355339588" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,98.3691355339588"
+                    Point2="0,102.369135533959"
+                    Point3="-4,102.369135533959" />
+                  <mssgle:LineSegment
+                    End="-741.780340147171,102.369135533959" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-741.780340147171,102.369135533959"
+                    Point2="-745.780340147171,102.369135533959"
+                    Point3="-745.780340147171,106.369135533959" />
+                  <mssgle:LineSegment
+                    End="-745.780340147171,171.180672932001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casting and filtering data.Paths[Derived Column Output3]"
+          TopLeft="1015.72699969447,394.224840030831">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-366.36191039853,79.9045756205098"
+              Start="0,0"
+              End="-366.36191039853,72.4045756205098">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.1371785498782" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.1371785498782"
+                    Point2="0,42.1371785498782"
+                    Point3="-4,42.1371785498782" />
+                  <mssgle:LineSegment
+                    End="-362.36191039853,42.1371785498782" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-362.36191039853,42.1371785498782"
+                    Point2="-366.36191039853,42.1371785498782"
+                    Point3="-366.36191039853,46.1371785498782" />
+                  <mssgle:LineSegment
+                    End="-366.36191039853,72.4045756205098" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casting and filtering data.Paths[Derived Column Output2]"
+          TopLeft="1259.80319416377,393.926801586371">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-597.993660423382,80.20261406497"
+              Start="0,0"
+              End="-597.993660423382,72.70261406497">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.4883899068901" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.4883899068901"
+                    Point2="0,47.4883899068901"
+                    Point3="-4,47.4883899068901" />
+                  <mssgle:LineSegment
+                    End="-593.993660423382,47.4883899068901" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-593.993660423382,47.4883899068901"
+                    Point2="-597.993660423382,47.4883899068901"
+                    Point3="-597.993660423382,51.4883899068901" />
+                  <mssgle:LineSegment
+                    End="-597.993660423382,72.70261406497" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casting and filtering data.Paths[Derived Column Output1]"
+          TopLeft="1501.03494321981,390.698044027507">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-826.780965034978,83.4313716238343"
+              Start="0,0"
+              End="-826.780965034978,75.9313716238343">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.3161758460881" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.3161758460881"
+                    Point2="0,56.3161758460881"
+                    Point3="-4,56.3161758460881" />
+                  <mssgle:LineSegment
+                    End="-822.780965034978,56.3161758460881" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-822.780965034978,56.3161758460881"
+                    Point2="-826.780965034978,56.3161758460881"
+                    Point3="-826.780965034978,60.3161758460881" />
+                  <mssgle:LineSegment
+                    End="-826.780965034978,75.9313716238343" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6428,30 +6496,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Casting and filtering data.Paths[Derived Column Output]"
-          TopLeft="88.4047621585884,392.982073361195">
+          TopLeft="784.78096413807,395.1607878586">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="511.182549359577,81.1473422901464"
+              EndConnector="-147.86031928657,78.9686277927411"
               Start="0,0"
-              End="511.182549359577,73.6473422901464">
+              End="-147.86031928657,71.4686277927411">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,59.6912279602893" />
+                    End="0,37.6436123125783" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,59.6912279602893"
-                    Point2="0,63.6912279602893"
-                    Point3="4,63.6912279602893" />
+                    Point1="0,37.6436123125783"
+                    Point2="0,41.6436123125783"
+                    Point3="-4,41.6436123125783" />
                   <mssgle:LineSegment
-                    End="507.182549359577,63.6912279602893" />
+                    End="-143.86031928657,41.6436123125783" />
                   <mssgle:CubicBezierSegment
-                    Point1="507.182549359577,63.6912279602893"
-                    Point2="511.182549359577,63.6912279602893"
-                    Point3="511.182549359577,67.6912279602893" />
+                    Point1="-143.86031928657,41.6436123125783"
+                    Point2="-147.86031928657,41.6436123125783"
+                    Point3="-147.86031928657,45.6436123125783" />
                   <mssgle:LineSegment
-                    End="511.182549359577,73.6473422901464" />
+                    End="-147.86031928657,71.4686277927411" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6492,6 +6560,42 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casting and filtering data.Paths[Data Conversion Error Output]"
+          TopLeft="1155.84763699226,214.117649478319">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="248.348297501356,39.7310932410211"
+              Start="0,0"
+              End="248.348297501356,32.2310932410211">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.13568888768" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.13568888768"
+                    Point2="0,16.13568888768"
+                    Point3="4,16.13568888768" />
+                  <mssgle:LineSegment
+                    End="244.348297501356,16.13568888768" />
+                  <mssgle:CubicBezierSegment
+                    Point1="244.348297501356,16.13568888768"
+                    Point2="248.348297501356,16.13568888768"
+                    Point3="248.348297501356,20.13568888768" />
+                  <mssgle:LineSegment
+                    End="248.348297501356,32.2310932410211" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="58.0877620319279,21.13568888768,132.1727734375,11.43359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6933,31 +7037,65 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Casting and filtering data.Paths[Derived Column Output8]"
-          TopLeft="784.78096413807,395.1607878586">
+          Id="Package\Casting and filtering data.Paths[Derived Column Output9]"
+          TopLeft="2006.45717543291,383.933338134429">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-147.86031928657,78.9686277927411"
+              EndConnector="-1318.51430835919,90.1960775169118"
               Start="0,0"
-              End="-147.86031928657,71.4686277927411">
+              End="-1318.51430835919,82.6960775169118">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.6436123125783" />
+                    End="0,67.9649554656211" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37.6436123125783"
-                    Point2="0,41.6436123125783"
-                    Point3="-4,41.6436123125783" />
+                    Point1="0,67.9649554656211"
+                    Point2="0,71.9649554656211"
+                    Point3="-4,71.9649554656211" />
                   <mssgle:LineSegment
-                    End="-143.86031928657,41.6436123125783" />
+                    End="-1314.51430835919,71.9649554656211" />
                   <mssgle:CubicBezierSegment
-                    Point1="-143.86031928657,41.6436123125783"
-                    Point2="-147.86031928657,41.6436123125783"
-                    Point3="-147.86031928657,45.6436123125783" />
+                    Point1="-1314.51430835919,71.9649554656211"
+                    Point2="-1318.51430835919,71.9649554656211"
+                    Point3="-1318.51430835919,75.9649554656211" />
                   <mssgle:LineSegment
-                    End="-147.86031928657,71.4686277927411" />
+                    End="-1318.51430835919,82.6960775169118" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casting and filtering data.Paths[Derived Column Output8]"
+          TopLeft="88.4047621585884,392.982073361195">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="511.182549359577,81.1473422901464"
+              Start="0,0"
+              End="511.182549359577,73.6473422901464">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.6912279602893" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,59.6912279602893"
+                    Point2="0,63.6912279602893"
+                    Point3="4,63.6912279602893" />
+                  <mssgle:LineSegment
+                    End="507.182549359577,63.6912279602893" />
+                  <mssgle:CubicBezierSegment
+                    Point1="507.182549359577,63.6912279602893"
+                    Point2="511.182549359577,63.6912279602893"
+                    Point3="511.182549359577,67.6912279602893" />
+                  <mssgle:LineSegment
+                    End="511.182549359577,73.6473422901464" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6968,172 +7106,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Casting and filtering data.Paths[Derived Column Output7]"
-          TopLeft="1501.03494321981,390.698044027507">
+          TopLeft="285.544447755814,394.839534212378">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-826.780965034978,83.4313716238343"
+              EndConnector="326.487308206796,79.2898814389628"
               Start="0,0"
-              End="-826.780965034978,75.9313716238343">
+              End="326.487308206796,71.7898814389628">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.3161758460881" />
+                    End="0,49.5206699712999" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,52.3161758460881"
-                    Point2="0,56.3161758460881"
-                    Point3="-4,56.3161758460881" />
+                    Point1="0,49.5206699712999"
+                    Point2="0,53.5206699712999"
+                    Point3="4,53.5206699712999" />
                   <mssgle:LineSegment
-                    End="-822.780965034978,56.3161758460881" />
+                    End="322.487308206796,53.5206699712999" />
                   <mssgle:CubicBezierSegment
-                    Point1="-822.780965034978,56.3161758460881"
-                    Point2="-826.780965034978,56.3161758460881"
-                    Point3="-826.780965034978,60.3161758460881" />
+                    Point1="322.487308206796,53.5206699712999"
+                    Point2="326.487308206796,53.5206699712999"
+                    Point3="326.487308206796,57.5206699712999" />
                   <mssgle:LineSegment
-                    End="-826.780965034978,75.9313716238343" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Casting and filtering data.Paths[Derived Column Output6]"
-          TopLeft="1259.80319416377,393.926801586371">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-597.993660423382,80.20261406497"
-              Start="0,0"
-              End="-597.993660423382,72.70261406497">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.4883899068901" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.4883899068901"
-                    Point2="0,47.4883899068901"
-                    Point3="-4,47.4883899068901" />
-                  <mssgle:LineSegment
-                    End="-593.993660423382,47.4883899068901" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-593.993660423382,47.4883899068901"
-                    Point2="-597.993660423382,47.4883899068901"
-                    Point3="-597.993660423382,51.4883899068901" />
-                  <mssgle:LineSegment
-                    End="-597.993660423382,72.70261406497" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Casting and filtering data.Paths[Derived Column Output5]"
-          TopLeft="1015.72699969447,394.224840030831">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-366.36191039853,79.9045756205098"
-              Start="0,0"
-              End="-366.36191039853,72.4045756205098">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.1371785498782" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,38.1371785498782"
-                    Point2="0,42.1371785498782"
-                    Point3="-4,42.1371785498782" />
-                  <mssgle:LineSegment
-                    End="-362.36191039853,42.1371785498782" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-362.36191039853,42.1371785498782"
-                    Point2="-366.36191039853,42.1371785498782"
-                    Point3="-366.36191039853,46.1371785498782" />
-                  <mssgle:LineSegment
-                    End="-366.36191039853,72.4045756205098" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Casting and filtering data\Error Convertation"
-          TopLeft="1321.79593449362,253.84874271934" />
-        <EdgeLayout
-          Id="Package\Casting and filtering data.Paths[Data Conversion Error Output]"
-          TopLeft="1155.84763699226,214.117649478319">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="248.348297501356,39.7310932410211"
-              Start="0,0"
-              End="248.348297501356,32.2310932410211">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.13568888768" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.13568888768"
-                    Point2="0,16.13568888768"
-                    Point3="4,16.13568888768" />
-                  <mssgle:LineSegment
-                    End="244.348297501356,16.13568888768" />
-                  <mssgle:CubicBezierSegment
-                    Point1="244.348297501356,16.13568888768"
-                    Point2="248.348297501356,16.13568888768"
-                    Point3="248.348297501356,20.13568888768" />
-                  <mssgle:LineSegment
-                    End="248.348297501356,32.2310932410211" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="58.0877620319279,21.13568888768,132.1727734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Casting and filtering data.Paths[Derived Column Output9]"
-          TopLeft="1404.19593449362,295.44874271934">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-745.780340147171,178.680672932001"
-              Start="0,0"
-              End="-745.780340147171,171.180672932001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,98.3691355339588" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,98.3691355339588"
-                    Point2="0,102.369135533959"
-                    Point3="-4,102.369135533959" />
-                  <mssgle:LineSegment
-                    End="-741.780340147171,102.369135533959" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-741.780340147171,102.369135533959"
-                    Point2="-745.780340147171,102.369135533959"
-                    Point3="-745.780340147171,106.369135533959" />
-                  <mssgle:LineSegment
-                    End="-745.780340147171,171.180672932001" />
+                    End="326.487308206796,71.7898814389628" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="CastProducts"
   DTS:PackageType="5"
-  DTS:VersionBuild="52"
-  DTS:VersionGUID="{F80D84A4-960A-4EE4-8F12-F82C9750BA07}">
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{391A2211-DC17-42E4-9201-5FC87C669C5F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -5979,47 +5979,47 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="197,42"
+          Size="196.8,41.6"
           Id="Package\Casting and filtering data"
           TopLeft="338.042850793138,148.652941069224" />
         <NodeLayout
-          Size="152,42"
+          Size="152,41.6"
           Id="Package\End ProcessLog"
           TopLeft="1012.3,161.099999999999" />
         <NodeLayout
-          Size="200,42"
+          Size="200,41.6"
           Id="Package\Execute Stored Procedure"
           TopLeft="703.3,23.9" />
         <NodeLayout
-          Size="168,42"
+          Size="168,41.6"
           Id="Package\Remove Duplicates"
           TopLeft="1004.01429688103,26.4647038875566" />
         <NodeLayout
-          Size="104,42"
+          Size="104,41.6"
           Id="Package\SCD2"
           TopLeft="754.442852325828,150.38235467858" />
         <NodeLayout
-          Size="157,42"
+          Size="156.8,41.6"
           Id="Package\Start ProcessLog"
           TopLeft="47.9,5.49999999999995" />
         <NodeLayout
-          Size="242,42"
+          Size="241.6,41.6"
           Id="Package\Truncate table CastedDimProducts"
           TopLeft="316.5,10.1" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="437.021425396569,52.1">
+          TopLeft="436.871425396569,51.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,96.552941069224"
+              EndConnector="0,96.952941069224"
               Start="0,0"
-              End="0,89.052941069224">
+              End="0,89.452941069224">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,89.052941069224" />
+                    End="0,89.452941069224" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6030,18 +6030,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="535.042850793138,170.517647873902">
+          TopLeft="534.842850793138,170.317647873902">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="219.40000153269,0"
+              EndConnector="219.60000153269,0"
               Start="0,0"
-              End="211.90000153269,0">
+              End="212.10000153269,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="211.90000153269,0" />
+                    End="212.10000153269,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6159,71 +6159,71 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="232,42"
+          Size="232,41.6"
           Id="Package\Casting and filtering data\ErrorLengthDefaultGarantyName"
           TopLeft="1649.5,413.5" />
         <NodeLayout
-          Size="187,42"
+          Size="187.2,41.6"
           Id="Package\Casting and filtering data\ErrorSubcategoryName"
           TopLeft="599,311.5" />
         <NodeLayout
-          Size="165,56"
+          Size="164.8,56"
           Id="Package\Casting and filtering data\Error Convertation"
           TopLeft="737.428571428572,44.928571428571" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Casting and filtering data\OLE DB Source"
           TopLeft="1111.5,5.49999999999977" />
         <NodeLayout
-          Size="130,42"
+          Size="129.6,41.6"
           Id="Package\Casting and filtering data\Row Count"
           TopLeft="1124.5,107.5" />
         <NodeLayout
-          Size="203,42"
+          Size="203.2,41.6"
           Id="Package\Casting and filtering data\ErrorLengthCategoryName"
           TopLeft="1251,311.5" />
         <NodeLayout
-          Size="220,42"
+          Size="220,41.6"
           Id="Package\Casting and filtering data\ErrorLengthSubcategoryName"
           TopLeft="846.5,311.5" />
         <NodeLayout
-          Size="120,42"
+          Size="120,41.6"
           Id="Package\Casting and filtering data\Union All"
           TopLeft="1294.5,515.5" />
         <NodeLayout
-          Size="156,42"
+          Size="156,41.6"
           Id="Package\Casting and filtering data\Data Conversion"
           TopLeft="300.285714285715,162.214285714286" />
         <NodeLayout
-          Size="189,42"
+          Size="188.8,41.6"
           Id="Package\Casting and filtering data\ErrorLengthBrandName"
           TopLeft="1515,311.5" />
         <NodeLayout
-          Size="197,42"
+          Size="196.8,41.6"
           Id="Package\Casting and filtering data\ErrorLengthProductName"
           TopLeft="986,413.5" />
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\Casting and filtering data\OLE DB Destination"
           TopLeft="14.5714286492795,165.56470600247" />
         <NodeLayout
-          Size="156,42"
+          Size="156,41.6"
           Id="Package\Casting and filtering data\ErrorDimProduct"
           TopLeft="1276.5,617.5" />
         <NodeLayout
-          Size="222,42"
+          Size="222.4,41.6"
           Id="Package\Casting and filtering data\ErrorLengthProductDescription"
           TopLeft="1243.5,413.5" />
         <NodeLayout
-          Size="136,42"
+          Size="136,41.6"
           Id="Package\Casting and filtering data\NULL values"
           TopLeft="410.071428571429,296.357142857143" />
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\Casting and filtering data\ErrorCategoryName"
           TopLeft="1942,413.5" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\Casting and filtering data\Conditional Split"
           TopLeft="1112.5,209.5" />
         <EdgeLayout
@@ -7086,31 +7086,31 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="166,42"
+          Size="166.4,41.6"
           Id="Package\SCD2\OLE DB Command"
           TopLeft="5.50000000000003,311.5" />
         <NodeLayout
-          Size="150,42"
+          Size="149.6,41.6"
           Id="Package\SCD2\OLE DB Source"
           TopLeft="157.5,5.5" />
         <NodeLayout
-          Size="208,42"
+          Size="208,41.6"
           Id="Package\SCD2\Slowly Changing Dimension"
           TopLeft="128.5,107.5" />
         <NodeLayout
-          Size="121,42"
+          Size="120.8,41.6"
           Id="Package\SCD2\Union All"
           TopLeft="172,413.5" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\SCD2\Insert Destination"
           TopLeft="151,617.5" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\SCD2\Derived Column"
           TopLeft="17.5,209.5" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\SCD2\Derived Column 1"
           TopLeft="151,515.5" />
         <EdgeLayout
@@ -7168,7 +7168,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7190,7 +7192,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7212,29 +7216,33 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SCD2.Paths[OLE DB Source Output]"
-          TopLeft="232.5,47.5">
+          TopLeft="232.4,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,60.4"
               Start="0,0"
-              End="0,52.5">
+              End="0,52.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,52.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7268,7 +7276,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
